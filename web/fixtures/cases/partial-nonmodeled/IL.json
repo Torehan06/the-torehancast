@@ -1,0 +1,20 @@
+{
+ "state": "IL",
+ "race": "2026-IL-SEN",
+ "as_of": "21:25 CT",
+ "status": "live",
+ "modeled": false,
+ "candidates": {
+  "D": "IL Fixture A (Dem)",
+  "R": "IL Fixture B (Rep)"
+ },
+ "votes": {
+  "D": 801233,
+  "R": 602118
+ },
+ "vote_share": {
+  "D": 0.5709,
+  "R": 0.4291
+ },
+ "pct_reporting": 0.42
+}
