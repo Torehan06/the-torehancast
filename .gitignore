@@ -6,3 +6,4 @@ data/archives/
 out/
 .DS_Store
 *.egg-info/
+config/priors.yaml

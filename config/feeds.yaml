@@ -1,0 +1,116 @@
+# Private poller settings. Never serve config/ from the public site.
+# No 2026 live election IDs have been verified here; null means not configured.
+# Historical/reference URLs are not live feed URLs. No network checks run on validate.
+# GA url: complete API URL for the statewide document (county URLs derived by adapter).
+# NC url: complete precinct-results ZIP URL. FL url: POST endpoint; set ElectionDate
+# in params and election_id to the election date when verified. Reload each poll cycle.
+feeds:
+  2026-GA-SEN:
+    adapter: ga_enhanced_voting
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://results.sos.ga.gov/results/public
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-NC-SEN:
+    adapter: nc_sbe
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-FL-SEN-SPECIAL:
+    adapter: fl_dos
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
+    election_id: null
+    status: pending
+    reference_url: https://results.elections.myflorida.com/ResultsExtract.Asp
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
+  2026-TX-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://results.texas-election.com/static/data/ElectionConstants_404.json
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-OH-SEN-SPECIAL:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://liveresults.ohiosos.gov/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-IA-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://electionresults.iowa.gov/IA/elections.json
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-KS-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://ent.sos.ks.gov/national.html
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-SC-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://www.enr-scvotes.org/SC/122436/current_ver.txt
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-MI-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://mielections.us/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-MN-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://electionresultsfiles.sos.mn.gov/20241105/ussenate.txt
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-ME-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://www.maine.gov/sos/cec/elec/results/index.html
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-AK-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://www.elections.alaska.gov/election-results/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-NE-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://electionresults.nebraska.gov/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
