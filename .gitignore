@@ -10,3 +10,8 @@ out/
 docs/outreach/
 # Working notes / checklist stay local only.
 PLAN.md
+
+# Firebase: local deploy cache; service-account keys never enter the repo.
+.firebase/
+*serviceaccount*.json
+*service-account*.json

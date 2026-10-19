@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:staging": "npm run build && tsx scripts/stage-fixtures.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "lint": "eslint .",

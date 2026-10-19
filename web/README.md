@@ -73,6 +73,26 @@ yellow; a failing fetch inverts to ink, so neither can be mistaken for a party c
 - No analytics, trackers or third-party fonts. The map is us-atlas (US Census
   boundaries, bundled), so the page talks only to its own origin and the data bucket.
 
+## Deploy (Firebase Hosting)
+
+`firebase.json` and `.firebaserc` are at the repo root. **Always pass
+`--project torehancast-2026`**: a `firebase use` set in a parent folder overrides
+`.firebaserc`, and a deploy without the flag can land in a different project.
+
+```sh
+cd web && npm run build:staging && cd ..   # build plus fixtures/demo at /data/replay/
+firebase hosting:channel:deploy staging --expires 30d --project torehancast-2026
+```
+
+`build:staging` is the only build that puts data in `dist/`. A production build
+reads live JSON from the GCS bucket via `VITE_DATA_BASE` and ships no data.
+
+Headers (in `firebase.json`): `no-cache` by default, so a new release reaches
+everyone on the next load; `max-age=31536000, immutable` on hashed `/assets/**`;
+`max-age=20` on staging `/data/**`. The CSP allows scripts only from the site's
+own origin (which is why the theme script is `public/theme-init.js`, not inline)
+and network requests only to the site and `storage.googleapis.com`.
+
 ## Browser tests
 
 Playwright uses the installed Google Chrome by default. In CI, run
