@@ -2,7 +2,7 @@
 
 Names are matched exactly as printed in the feed — never fuzzily. Alaska's 2026
 ballot has two Dan Sullivans ("Sullivan, Dan S." is the senator, "Sullivan,
-Daniel J." is not), and a fuzzy matcher would quietly merge them.
+Daniel J. Jr." is not), and a fuzzy matcher would quietly merge them.
 """
 
 from __future__ import annotations

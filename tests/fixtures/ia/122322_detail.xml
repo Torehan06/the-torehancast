@@ -1,0 +1,2007 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ElectionResult>
+    <Timestamp>12/16/2024 8:19:40 AM CST</Timestamp>
+    <ElectionName>2024 General Election</ElectionName>
+    <ElectionDate>11/5/2024</ElectionDate>
+    <Region>IA</Region>
+    <ElectionVoterTurnout totalVoters="2256774" ballotsCast="1674011" voterTurnout="74.18">
+        <Counties>
+            <County name="Adair" totalVoters="5423" ballotsCast="4104" voterTurnout="75.68" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Adams" totalVoters="2856" ballotsCast="2153" voterTurnout="75.39" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Allamakee" totalVoters="10077" ballotsCast="7410" voterTurnout="73.53" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Appanoose" totalVoters="8931" ballotsCast="6535" voterTurnout="73.17" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Audubon" totalVoters="4206" ballotsCast="3286" voterTurnout="78.13" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Benton" totalVoters="18773" ballotsCast="14593" voterTurnout="77.73" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Black Hawk" totalVoters="86676" ballotsCast="63279" voterTurnout="73.01" precinctsParticipating="59" precinctsReported="59" precinctsReportingPercent="100.00" />
+            <County name="Boone" totalVoters="20406" ballotsCast="15520" voterTurnout="76.06" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="Bremer" totalVoters="18377" ballotsCast="14673" voterTurnout="79.84" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Buchanan" totalVoters="14204" ballotsCast="10856" voterTurnout="76.43" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Buena Vista" totalVoters="12067" ballotsCast="7593" voterTurnout="62.92" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Butler" totalVoters="10265" ballotsCast="8102" voterTurnout="78.93" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" totalVoters="6736" ballotsCast="5121" voterTurnout="76.02" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Carroll" totalVoters="15022" ballotsCast="11209" voterTurnout="74.62" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Cass" totalVoters="9655" ballotsCast="7292" voterTurnout="75.53" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Cedar" totalVoters="13358" ballotsCast="10709" voterTurnout="80.17" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Cerro Gordo" totalVoters="31600" ballotsCast="23152" voterTurnout="73.27" precinctsParticipating="23" precinctsReported="23" precinctsReportingPercent="100.00" />
+            <County name="Cherokee" totalVoters="8216" ballotsCast="6143" voterTurnout="74.77" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Chickasaw" totalVoters="8306" ballotsCast="6277" voterTurnout="75.57" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Clarke" totalVoters="6244" ballotsCast="4552" voterTurnout="72.90" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Clay" totalVoters="11795" ballotsCast="8609" voterTurnout="72.99" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Clayton" totalVoters="12441" ballotsCast="9461" voterTurnout="76.05" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Clinton" totalVoters="34257" ballotsCast="24026" voterTurnout="70.13" precinctsParticipating="24" precinctsReported="24" precinctsReportingPercent="100.00" />
+            <County name="Crawford" totalVoters="9873" ballotsCast="6605" voterTurnout="66.90" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Dallas" totalVoters="78445" ballotsCast="63330" voterTurnout="80.73" precinctsParticipating="46" precinctsReported="46" precinctsReportingPercent="100.00" />
+            <County name="Davis" totalVoters="5166" ballotsCast="3970" voterTurnout="76.85" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Decatur" totalVoters="4946" ballotsCast="3754" voterTurnout="75.90" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Delaware" totalVoters="12486" ballotsCast="10211" voterTurnout="81.78" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Des Moines" totalVoters="28052" ballotsCast="19171" voterTurnout="68.34" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Dickinson" totalVoters="14939" ballotsCast="11319" voterTurnout="75.77" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Dubuque" totalVoters="71711" ballotsCast="53057" voterTurnout="73.99" precinctsParticipating="34" precinctsReported="34" precinctsReportingPercent="100.00" />
+            <County name="Emmet" totalVoters="6728" ballotsCast="4831" voterTurnout="71.80" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Fayette" totalVoters="12651" ballotsCast="9928" voterTurnout="78.48" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Floyd" totalVoters="10769" ballotsCast="7704" voterTurnout="71.54" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Franklin" totalVoters="6622" ballotsCast="4947" voterTurnout="74.71" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Fremont" totalVoters="5216" ballotsCast="3814" voterTurnout="73.12" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Greene" totalVoters="6522" ballotsCast="4968" voterTurnout="76.17" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Grundy" totalVoters="9140" ballotsCast="7202" voterTurnout="78.80" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Guthrie" totalVoters="8475" ballotsCast="6606" voterTurnout="77.95" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Hamilton" totalVoters="10251" ballotsCast="7643" voterTurnout="74.56" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Hancock" totalVoters="7850" ballotsCast="5979" voterTurnout="76.17" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Hardin" totalVoters="11499" ballotsCast="8538" voterTurnout="74.25" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Harrison" totalVoters="9538" ballotsCast="8015" voterTurnout="84.03" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Henry" totalVoters="13551" ballotsCast="9673" voterTurnout="71.38" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Howard" totalVoters="6445" ballotsCast="4884" voterTurnout="75.78" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Humboldt" totalVoters="6750" ballotsCast="5135" voterTurnout="76.07" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Ida" totalVoters="4896" ballotsCast="3671" voterTurnout="74.98" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Iowa" totalVoters="12579" ballotsCast="9704" voterTurnout="77.14" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Jackson" totalVoters="14742" ballotsCast="10849" voterTurnout="73.59" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Jasper" totalVoters="26979" ballotsCast="20306" voterTurnout="75.27" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Jefferson" totalVoters="11476" ballotsCast="8454" voterTurnout="73.67" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Johnson" totalVoters="115634" ballotsCast="87107" voterTurnout="75.33" precinctsParticipating="65" precinctsReported="65" precinctsReportingPercent="100.00" />
+            <County name="Jones" totalVoters="14293" ballotsCast="11054" voterTurnout="77.34" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Keokuk" totalVoters="6764" ballotsCast="5182" voterTurnout="76.61" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Kossuth" totalVoters="11015" ballotsCast="8450" voterTurnout="76.71" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Lee" totalVoters="23092" ballotsCast="16311" voterTurnout="70.63" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Linn" totalVoters="164056" ballotsCast="123750" voterTurnout="75.43" precinctsParticipating="94" precinctsReported="94" precinctsReportingPercent="100.00" />
+            <County name="Louisa" totalVoters="7409" ballotsCast="5178" voterTurnout="69.89" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Lucas" totalVoters="6180" ballotsCast="4676" voterTurnout="75.66" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Lyon" totalVoters="8913" ballotsCast="7046" voterTurnout="79.05" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Madison" totalVoters="12672" ballotsCast="10117" voterTurnout="79.84" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Mahaska" totalVoters="14711" ballotsCast="11017" voterTurnout="74.89" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Marion" totalVoters="25297" ballotsCast="19661" voterTurnout="77.72" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Marshall" totalVoters="24836" ballotsCast="17406" voterTurnout="70.08" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Mills" totalVoters="11690" ballotsCast="8329" voterTurnout="71.25" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Mitchell" totalVoters="7381" ballotsCast="5796" voterTurnout="78.53" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Monona" totalVoters="5804" ballotsCast="4669" voterTurnout="80.44" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Monroe" totalVoters="5395" ballotsCast="4185" voterTurnout="77.57" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Montgomery" totalVoters="7306" ballotsCast="5105" voterTurnout="69.87" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Muscatine" totalVoters="29203" ballotsCast="19873" voterTurnout="68.05" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="O'Brien" totalVoters="9759" ballotsCast="7569" voterTurnout="77.56" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Osceola" totalVoters="4236" ballotsCast="3245" voterTurnout="76.61" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Page" totalVoters="10563" ballotsCast="7419" voterTurnout="70.24" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Palo Alto" totalVoters="6420" ballotsCast="5013" voterTurnout="78.08" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Plymouth" totalVoters="18505" ballotsCast="14084" voterTurnout="76.11" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Pocahontas" totalVoters="4870" ballotsCast="3600" voterTurnout="73.92" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Polk" totalVoters="339707" ballotsCast="258067" voterTurnout="75.97" precinctsParticipating="176" precinctsReported="176" precinctsReportingPercent="100.00" />
+            <County name="Pottawattamie" totalVoters="66005" ballotsCast="44766" voterTurnout="67.82" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Poweshiek" totalVoters="14656" ballotsCast="10069" voterTurnout="68.70" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Ringgold" totalVoters="3357" ballotsCast="2711" voterTurnout="80.76" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Sac" totalVoters="7266" ballotsCast="5498" voterTurnout="75.67" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Scott" totalVoters="131759" ballotsCast="90612" voterTurnout="68.77" precinctsParticipating="66" precinctsReported="66" precinctsReportingPercent="100.00" />
+            <County name="Shelby" totalVoters="8720" ballotsCast="6543" voterTurnout="75.03" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Sioux" totalVoters="23783" ballotsCast="19120" voterTurnout="80.39" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Story" totalVoters="70204" ballotsCast="49818" voterTurnout="70.96" precinctsParticipating="45" precinctsReported="45" precinctsReportingPercent="100.00" />
+            <County name="Tama" totalVoters="11407" ballotsCast="8685" voterTurnout="76.14" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Taylor" totalVoters="4020" ballotsCast="3102" voterTurnout="77.16" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Union" totalVoters="8381" ballotsCast="6041" voterTurnout="72.08" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Van Buren" totalVoters="4960" ballotsCast="3655" voterTurnout="73.69" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Wapello" totalVoters="21531" ballotsCast="14697" voterTurnout="68.26" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Warren" totalVoters="40922" ballotsCast="33123" voterTurnout="80.94" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Washington" totalVoters="15617" ballotsCast="11673" voterTurnout="74.75" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Wayne" totalVoters="3987" ballotsCast="3162" voterTurnout="79.31" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Webster" totalVoters="24855" ballotsCast="16825" voterTurnout="67.69" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Winnebago" totalVoters="7959" ballotsCast="5668" voterTurnout="71.21" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Winneshiek" totalVoters="15314" ballotsCast="12079" voterTurnout="78.88" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Woodbury" totalVoters="64678" ballotsCast="43247" voterTurnout="66.87" precinctsParticipating="44" precinctsReported="44" precinctsReportingPercent="100.00" />
+            <County name="Worth" totalVoters="5553" ballotsCast="4313" voterTurnout="77.67" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Wright" totalVoters="7941" ballotsCast="5772" voterTurnout="72.69" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+        </Counties>
+    </ElectionVoterTurnout>
+    <Contest key="1000" text="President and Vice President" voteFor="1" isQuestion="false" countiesParticipating="99" countiesReported="99" precinctsParticipating="1653" precinctsReported="1653" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Adair" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Adams" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Allamakee" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Appanoose" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Audubon" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Benton" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Black Hawk" precinctsParticipating="59" precinctsReported="59" precinctsReportingPercent="100.00" />
+            <County name="Boone" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="Bremer" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Buchanan" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Buena Vista" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Butler" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Carroll" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Cass" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Cedar" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Cerro Gordo" precinctsParticipating="23" precinctsReported="23" precinctsReportingPercent="100.00" />
+            <County name="Cherokee" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Chickasaw" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Clarke" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Clay" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Clayton" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Clinton" precinctsParticipating="24" precinctsReported="24" precinctsReportingPercent="100.00" />
+            <County name="Crawford" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Dallas" precinctsParticipating="46" precinctsReported="46" precinctsReportingPercent="100.00" />
+            <County name="Davis" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Decatur" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Delaware" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Des Moines" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Dickinson" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Dubuque" precinctsParticipating="34" precinctsReported="34" precinctsReportingPercent="100.00" />
+            <County name="Emmet" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Fayette" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Floyd" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Franklin" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Fremont" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Greene" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Grundy" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Guthrie" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Hamilton" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Hancock" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Hardin" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Harrison" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Henry" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Howard" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Humboldt" precinctsParticipating="6" precinctsReported="6" precinctsReportingPercent="100.00" />
+            <County name="Ida" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Iowa" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Jackson" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Jefferson" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Johnson" precinctsParticipating="65" precinctsReported="65" precinctsReportingPercent="100.00" />
+            <County name="Jones" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Keokuk" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Kossuth" precinctsParticipating="20" precinctsReported="20" precinctsReportingPercent="100.00" />
+            <County name="Lee" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Linn" precinctsParticipating="94" precinctsReported="94" precinctsReportingPercent="100.00" />
+            <County name="Louisa" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Lucas" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Lyon" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Madison" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Mahaska" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Marion" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Marshall" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Mills" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Mitchell" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Monona" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Monroe" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Montgomery" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Muscatine" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="O'Brien" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Osceola" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Page" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Palo Alto" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Plymouth" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Pocahontas" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Polk" precinctsParticipating="176" precinctsReported="176" precinctsReportingPercent="100.00" />
+            <County name="Pottawattamie" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Poweshiek" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Ringgold" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Sac" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Scott" precinctsParticipating="66" precinctsReported="66" precinctsReportingPercent="100.00" />
+            <County name="Shelby" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Sioux" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Story" precinctsParticipating="45" precinctsReported="45" precinctsReportingPercent="100.00" />
+            <County name="Tama" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Taylor" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Union" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Van Buren" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Wapello" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Warren" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Washington" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Wayne" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Webster" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Winnebago" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+            <County name="Winneshiek" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Woodbury" precinctsParticipating="44" precinctsReported="44" precinctsReportingPercent="100.00" />
+            <County name="Worth" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Wright" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="104" text="Kamala D. Harris and Tim Walz" party="DEM" totalVotes="707278">
+            <VoteType name="Election Day" votes="358827">
+                <County name="Adair" votes="558" />
+                <County name="Adams" votes="266" />
+                <County name="Allamakee" votes="1070" />
+                <County name="Appanoose" votes="787" />
+                <County name="Audubon" votes="501" />
+                <County name="Benton" votes="3208" />
+                <County name="Black Hawk" votes="16937" />
+                <County name="Boone" votes="2738" />
+                <County name="Bremer" votes="2865" />
+                <County name="Buchanan" votes="2081" />
+                <County name="Buena Vista" votes="1240" />
+                <County name="Butler" votes="1309" />
+                <County name="Calhoun" votes="753" />
+                <County name="Carroll" votes="1501" />
+                <County name="Cass" votes="1054" />
+                <County name="Cedar" votes="1979" />
+                <County name="Cerro Gordo" votes="4860" />
+                <County name="Cherokee" votes="718" />
+                <County name="Chickasaw" votes="711" />
+                <County name="Clarke" votes="562" />
+                <County name="Clay" votes="1029" />
+                <County name="Clayton" votes="1776" />
+                <County name="Clinton" votes="3756" />
+                <County name="Crawford" votes="921" />
+                <County name="Dallas" votes="15391" />
+                <County name="Davis" votes="371" />
+                <County name="Decatur" votes="532" />
+                <County name="Delaware" votes="1677" />
+                <County name="Des Moines" votes="3365" />
+                <County name="Dickinson" votes="1212" />
+                <County name="Dubuque" votes="10451" />
+                <County name="Emmet" votes="697" />
+                <County name="Fayette" votes="1934" />
+                <County name="Floyd" votes="1416" />
+                <County name="Franklin" votes="796" />
+                <County name="Fremont" votes="596" />
+                <County name="Greene" votes="635" />
+                <County name="Grundy" votes="1171" />
+                <County name="Guthrie" votes="1002" />
+                <County name="Hamilton" votes="1064" />
+                <County name="Hancock" votes="866" />
+                <County name="Hardin" votes="1418" />
+                <County name="Harrison" votes="1435" />
+                <County name="Henry" votes="1071" />
+                <County name="Howard" votes="844" />
+                <County name="Humboldt" votes="605" />
+                <County name="Ida" votes="492" />
+                <County name="Iowa" votes="1668" />
+                <County name="Jackson" votes="1772" />
+                <County name="Jasper" votes="3488" />
+                <County name="Jefferson" votes="978" />
+                <County name="Johnson" votes="23579" />
+                <County name="Jones" votes="1748" />
+                <County name="Keokuk" votes="690" />
+                <County name="Kossuth" votes="1103" />
+                <County name="Lee" votes="2395" />
+                <County name="Linn" votes="33799" />
+                <County name="Louisa" votes="722" />
+                <County name="Lucas" votes="509" />
+                <County name="Lyon" votes="619" />
+                <County name="Madison" votes="1411" />
+                <County name="Mahaska" votes="1210" />
+                <County name="Marion" votes="3247" />
+                <County name="Marshall" votes="3289" />
+                <County name="Mills" votes="1297" />
+                <County name="Mitchell" votes="937" />
+                <County name="Monona" votes="686" />
+                <County name="Monroe" votes="398" />
+                <County name="Montgomery" votes="768" />
+                <County name="Muscatine" votes="4288" />
+                <County name="O'Brien" votes="911" />
+                <County name="Osceola" votes="352" />
+                <County name="Page" votes="1145" />
+                <County name="Palo Alto" votes="679" />
+                <County name="Plymouth" votes="1637" />
+                <County name="Pocahontas" votes="433" />
+                <County name="Polk" votes="82148" />
+                <County name="Pottawattamie" votes="10075" />
+                <County name="Poweshiek" votes="1871" />
+                <County name="Ringgold" votes="250" />
+                <County name="Sac" votes="802" />
+                <County name="Scott" votes="18994" />
+                <County name="Shelby" votes="836" />
+                <County name="Sioux" votes="1716" />
+                <County name="Story" votes="15061" />
+                <County name="Tama" votes="2157" />
+                <County name="Taylor" votes="395" />
+                <County name="Union" votes="806" />
+                <County name="Van Buren" votes="451" />
+                <County name="Wapello" votes="2246" />
+                <County name="Warren" votes="6408" />
+                <County name="Washington" votes="1913" />
+                <County name="Wayne" votes="317" />
+                <County name="Webster" votes="2856" />
+                <County name="Winnebago" votes="1142" />
+                <County name="Winneshiek" votes="1570" />
+                <County name="Woodbury" votes="6779" />
+                <County name="Worth" votes="1010" />
+                <County name="Wright" votes="1045" />
+            </VoteType>
+            <VoteType name="Absentee" votes="348451">
+                <County name="Adair" votes="528" />
+                <County name="Adams" votes="310" />
+                <County name="Allamakee" votes="1280" />
+                <County name="Appanoose" votes="899" />
+                <County name="Audubon" votes="469" />
+                <County name="Benton" votes="1531" />
+                <County name="Black Hawk" votes="14362" />
+                <County name="Boone" votes="3157" />
+                <County name="Bremer" votes="2706" />
+                <County name="Buchanan" votes="1685" />
+                <County name="Buena Vista" votes="1222" />
+                <County name="Butler" votes="835" />
+                <County name="Calhoun" votes="575" />
+                <County name="Carroll" votes="1652" />
+                <County name="Cass" votes="1023" />
+                <County name="Cedar" votes="2096" />
+                <County name="Cerro Gordo" votes="5095" />
+                <County name="Cherokee" votes="893" />
+                <County name="Chickasaw" votes="1208" />
+                <County name="Clarke" votes="703" />
+                <County name="Clay" votes="1338" />
+                <County name="Clayton" votes="1241" />
+                <County name="Clinton" votes="5716" />
+                <County name="Crawford" votes="891" />
+                <County name="Dallas" votes="14011" />
+                <County name="Davis" votes="507" />
+                <County name="Decatur" votes="425" />
+                <County name="Delaware" votes="1301" />
+                <County name="Des Moines" votes="4570" />
+                <County name="Dickinson" votes="2085" />
+                <County name="Dubuque" votes="13254" />
+                <County name="Emmet" votes="618" />
+                <County name="Fayette" votes="1400" />
+                <County name="Floyd" votes="1366" />
+                <County name="Franklin" votes="597" />
+                <County name="Fremont" votes="427" />
+                <County name="Greene" votes="968" />
+                <County name="Grundy" votes="848" />
+                <County name="Guthrie" votes="972" />
+                <County name="Hamilton" votes="1418" />
+                <County name="Hancock" votes="657" />
+                <County name="Hardin" votes="1135" />
+                <County name="Harrison" votes="810" />
+                <County name="Henry" votes="1924" />
+                <County name="Howard" votes="775" />
+                <County name="Humboldt" votes="631" />
+                <County name="Ida" votes="334" />
+                <County name="Iowa" votes="1732" />
+                <County name="Jackson" votes="1795" />
+                <County name="Jasper" votes="3653" />
+                <County name="Jefferson" votes="2810" />
+                <County name="Johnson" votes="35267" />
+                <County name="Jones" votes="2194" />
+                <County name="Keokuk" votes="529" />
+                <County name="Kossuth" votes="1181" />
+                <County name="Lee" votes="3264" />
+                <County name="Linn" votes="32559" />
+                <County name="Louisa" votes="758" />
+                <County name="Lucas" votes="660" />
+                <County name="Lyon" votes="404" />
+                <County name="Madison" votes="1597" />
+                <County name="Mahaska" votes="1367" />
+                <County name="Marion" votes="2681" />
+                <County name="Marshall" votes="3845" />
+                <County name="Mills" votes="1159" />
+                <County name="Mitchell" votes="1006" />
+                <County name="Monona" votes="550" />
+                <County name="Monroe" votes="604" />
+                <County name="Montgomery" votes="740" />
+                <County name="Muscatine" votes="3924" />
+                <County name="O'Brien" votes="517" />
+                <County name="Osceola" votes="203" />
+                <County name="Page" votes="915" />
+                <County name="Palo Alto" votes="659" />
+                <County name="Plymouth" votes="1467" />
+                <County name="Pocahontas" votes="363" />
+                <County name="Polk" votes="57927" />
+                <County name="Pottawattamie" votes="7393" />
+                <County name="Poweshiek" votes="2196" />
+                <County name="Ringgold" votes="388" />
+                <County name="Sac" votes="487" />
+                <County name="Scott" votes="23485" />
+                <County name="Shelby" votes="975" />
+                <County name="Sioux" votes="910" />
+                <County name="Story" votes="11704" />
+                <County name="Tama" votes="913" />
+                <County name="Taylor" votes="271" />
+                <County name="Union" votes="1068" />
+                <County name="Van Buren" votes="327" />
+                <County name="Wapello" votes="2650" />
+                <County name="Warren" votes="6304" />
+                <County name="Washington" votes="2384" />
+                <County name="Wayne" votes="326" />
+                <County name="Webster" votes="2785" />
+                <County name="Winnebago" votes="767" />
+                <County name="Winneshiek" votes="3751" />
+                <County name="Woodbury" votes="9366" />
+                <County name="Worth" votes="498" />
+                <County name="Wright" votes="725" />
+            </VoteType>
+        </Choice>
+        <Choice key="105" text="Donald J. Trump and JD Vance" party="REP" totalVotes="927019">
+            <VoteType name="Election Day" votes="608357">
+                <County name="Adair" votes="1915" />
+                <County name="Adams" votes="878" />
+                <County name="Allamakee" votes="2893" />
+                <County name="Appanoose" votes="2985" />
+                <County name="Audubon" votes="1289" />
+                <County name="Benton" votes="7167" />
+                <County name="Black Hawk" votes="20464" />
+                <County name="Boone" votes="5473" />
+                <County name="Bremer" votes="5871" />
+                <County name="Buchanan" votes="4730" />
+                <County name="Buena Vista" votes="2886" />
+                <County name="Butler" votes="4063" />
+                <County name="Calhoun" votes="2552" />
+                <County name="Carroll" votes="4968" />
+                <County name="Cass" votes="3125" />
+                <County name="Cedar" votes="4013" />
+                <County name="Cerro Gordo" votes="7948" />
+                <County name="Cherokee" votes="2582" />
+                <County name="Chickasaw" votes="2255" />
+                <County name="Clarke" votes="2069" />
+                <County name="Clay" votes="3436" />
+                <County name="Clayton" votes="4654" />
+                <County name="Clinton" votes="8750" />
+                <County name="Crawford" votes="3027" />
+                <County name="Dallas" votes="21089" />
+                <County name="Davis" votes="1848" />
+                <County name="Decatur" votes="1783" />
+                <County name="Delaware" votes="4843" />
+                <County name="Des Moines" votes="6374" />
+                <County name="Dickinson" votes="3709" />
+                <County name="Dubuque" votes="17603" />
+                <County name="Emmet" votes="2363" />
+                <County name="Fayette" votes="4617" />
+                <County name="Floyd" votes="3212" />
+                <County name="Franklin" votes="2280" />
+                <County name="Fremont" votes="1851" />
+                <County name="Greene" votes="1848" />
+                <County name="Grundy" votes="3450" />
+                <County name="Guthrie" votes="2941" />
+                <County name="Hamilton" votes="3149" />
+                <County name="Hancock" votes="3148" />
+                <County name="Hardin" votes="3947" />
+                <County name="Harrison" votes="4033" />
+                <County name="Henry" votes="3134" />
+                <County name="Howard" votes="2215" />
+                <County name="Humboldt" votes="2346" />
+                <County name="Ida" votes="1995" />
+                <County name="Iowa" votes="3998" />
+                <County name="Jackson" votes="4861" />
+                <County name="Jasper" votes="8360" />
+                <County name="Jefferson" votes="2551" />
+                <County name="Johnson" votes="16525" />
+                <County name="Jones" votes="4281" />
+                <County name="Keokuk" votes="2773" />
+                <County name="Kossuth" votes="3956" />
+                <County name="Lee" votes="6152" />
+                <County name="Linn" votes="35708" />
+                <County name="Louisa" votes="2270" />
+                <County name="Lucas" votes="1917" />
+                <County name="Lyon" votes="4162" />
+                <County name="Madison" votes="4295" />
+                <County name="Mahaska" votes="5030" />
+                <County name="Marion" votes="9023" />
+                <County name="Marshall" votes="5553" />
+                <County name="Mills" votes="3458" />
+                <County name="Mitchell" votes="2452" />
+                <County name="Monona" votes="2366" />
+                <County name="Monroe" votes="1759" />
+                <County name="Montgomery" votes="2174" />
+                <County name="Muscatine" votes="7412" />
+                <County name="O'Brien" votes="4503" />
+                <County name="Osceola" votes="1905" />
+                <County name="Page" votes="3318" />
+                <County name="Palo Alto" votes="2416" />
+                <County name="Plymouth" votes="6547" />
+                <County name="Pocahontas" votes="1797" />
+                <County name="Polk" votes="83216" />
+                <County name="Pottawattamie" votes="18076" />
+                <County name="Poweshiek" votes="3844" />
+                <County name="Ringgold" votes="1206" />
+                <County name="Sac" votes="3010" />
+                <County name="Scott" votes="27360" />
+                <County name="Shelby" votes="2582" />
+                <County name="Sioux" votes="11504" />
+                <County name="Story" votes="15779" />
+                <County name="Tama" votes="4119" />
+                <County name="Taylor" votes="1598" />
+                <County name="Union" votes="2384" />
+                <County name="Van Buren" votes="1980" />
+                <County name="Wapello" votes="6163" />
+                <County name="Warren" votes="12581" />
+                <County name="Washington" votes="3970" />
+                <County name="Wayne" votes="1497" />
+                <County name="Webster" votes="7084" />
+                <County name="Winnebago" votes="2691" />
+                <County name="Winneshiek" votes="2999" />
+                <County name="Woodbury" votes="14762" />
+                <County name="Worth" votes="2154" />
+                <County name="Wright" votes="2505" />
+            </VoteType>
+            <VoteType name="Absentee" votes="318662">
+                <County name="Adair" votes="1001" />
+                <County name="Adams" votes="639" />
+                <County name="Allamakee" votes="1964" />
+                <County name="Appanoose" votes="1719" />
+                <County name="Audubon" votes="925" />
+                <County name="Benton" votes="2382" />
+                <County name="Black Hawk" votes="10108" />
+                <County name="Boone" votes="3726" />
+                <County name="Bremer" votes="2928" />
+                <County name="Buchanan" votes="2060" />
+                <County name="Buena Vista" votes="2076" />
+                <County name="Butler" votes="1721" />
+                <County name="Calhoun" votes="1156" />
+                <County name="Carroll" votes="2846" />
+                <County name="Cass" votes="1882" />
+                <County name="Cedar" votes="2377" />
+                <County name="Cerro Gordo" votes="4679" />
+                <County name="Cherokee" votes="1816" />
+                <County name="Chickasaw" votes="1979" />
+                <County name="Clarke" votes="1071" />
+                <County name="Clay" votes="2611" />
+                <County name="Clayton" votes="1601" />
+                <County name="Clinton" votes="5214" />
+                <County name="Crawford" votes="1624" />
+                <County name="Dallas" votes="11285" />
+                <County name="Davis" votes="1179" />
+                <County name="Decatur" votes="928" />
+                <County name="Delaware" votes="2141" />
+                <County name="Des Moines" votes="4420" />
+                <County name="Dickinson" votes="4066" />
+                <County name="Dubuque" votes="10621" />
+                <County name="Emmet" votes="1059" />
+                <County name="Fayette" votes="1708" />
+                <County name="Floyd" votes="1532" />
+                <County name="Franklin" votes="1151" />
+                <County name="Fremont" votes="860" />
+                <County name="Greene" votes="1363" />
+                <County name="Grundy" votes="1548" />
+                <County name="Guthrie" votes="1505" />
+                <County name="Hamilton" votes="1855" />
+                <County name="Hancock" votes="1188" />
+                <County name="Hardin" votes="1843" />
+                <County name="Harrison" votes="1533" />
+                <County name="Henry" votes="3305" />
+                <County name="Howard" votes="942" />
+                <County name="Humboldt" votes="1424" />
+                <County name="Ida" votes="776" />
+                <County name="Iowa" votes="2070" />
+                <County name="Jackson" votes="2213" />
+                <County name="Jasper" votes="4341" />
+                <County name="Jefferson" votes="1802" />
+                <County name="Johnson" votes="9562" />
+                <County name="Jones" votes="2539" />
+                <County name="Keokuk" votes="1096" />
+                <County name="Kossuth" votes="2027" />
+                <County name="Lee" votes="4000" />
+                <County name="Linn" votes="18529" />
+                <County name="Louisa" votes="1314" />
+                <County name="Lucas" votes="1483" />
+                <County name="Lyon" votes="1737" />
+                <County name="Madison" votes="2569" />
+                <County name="Mahaska" votes="3177" />
+                <County name="Marion" votes="4266" />
+                <County name="Marshall" votes="4262" />
+                <County name="Mills" votes="2213" />
+                <County name="Mitchell" votes="1284" />
+                <County name="Monona" votes="965" />
+                <County name="Monroe" votes="1345" />
+                <County name="Montgomery" votes="1312" />
+                <County name="Muscatine" votes="3740" />
+                <County name="O'Brien" votes="1495" />
+                <County name="Osceola" votes="718" />
+                <County name="Page" votes="1835" />
+                <County name="Palo Alto" votes="1160" />
+                <County name="Plymouth" votes="4114" />
+                <County name="Pocahontas" votes="930" />
+                <County name="Polk" votes="29024" />
+                <County name="Pottawattamie" votes="8259" />
+                <County name="Poweshiek" votes="1914" />
+                <County name="Ringgold" votes="809" />
+                <County name="Sac" votes="1090" />
+                <County name="Scott" votes="18616" />
+                <County name="Shelby" votes="2018" />
+                <County name="Sioux" votes="4549" />
+                <County name="Story" votes="5886" />
+                <County name="Tama" votes="1260" />
+                <County name="Taylor" votes="783" />
+                <County name="Union" votes="1660" />
+                <County name="Van Buren" votes="805" />
+                <County name="Wapello" votes="3316" />
+                <County name="Warren" votes="6905" />
+                <County name="Washington" votes="3149" />
+                <County name="Wayne" votes="929" />
+                <County name="Webster" votes="3766" />
+                <County name="Winnebago" votes="945" />
+                <County name="Winneshiek" votes="3428" />
+                <County name="Woodbury" votes="11207" />
+                <County name="Worth" votes="561" />
+                <County name="Wright" votes="1348" />
+            </VoteType>
+        </Choice>
+        <Choice key="106" text="Chase Oliver and Mike ter Maat" party="LIB" totalVotes="7218">
+            <VoteType name="Election Day" votes="5207">
+                <County name="Adair" votes="14" />
+                <County name="Adams" votes="5" />
+                <County name="Allamakee" votes="23" />
+                <County name="Appanoose" votes="18" />
+                <County name="Audubon" votes="6" />
+                <County name="Benton" votes="53" />
+                <County name="Black Hawk" votes="171" />
+                <County name="Boone" votes="58" />
+                <County name="Bremer" votes="49" />
+                <County name="Buchanan" votes="36" />
+                <County name="Buena Vista" votes="19" />
+                <County name="Butler" votes="20" />
+                <County name="Calhoun" votes="12" />
+                <County name="Carroll" votes="19" />
+                <County name="Cass" votes="21" />
+                <County name="Cedar" votes="30" />
+                <County name="Cerro Gordo" votes="63" />
+                <County name="Cherokee" votes="17" />
+                <County name="Chickasaw" votes="8" />
+                <County name="Clarke" votes="10" />
+                <County name="Clay" votes="24" />
+                <County name="Clayton" votes="26" />
+                <County name="Clinton" votes="62" />
+                <County name="Crawford" votes="7" />
+                <County name="Dallas" votes="223" />
+                <County name="Davis" votes="5" />
+                <County name="Decatur" votes="9" />
+                <County name="Delaware" votes="35" />
+                <County name="Des Moines" votes="54" />
+                <County name="Dickinson" votes="14" />
+                <County name="Dubuque" votes="139" />
+                <County name="Emmet" votes="10" />
+                <County name="Fayette" votes="39" />
+                <County name="Floyd" votes="22" />
+                <County name="Franklin" votes="12" />
+                <County name="Fremont" votes="9" />
+                <County name="Greene" votes="16" />
+                <County name="Grundy" votes="17" />
+                <County name="Guthrie" votes="22" />
+                <County name="Hamilton" votes="22" />
+                <County name="Hancock" votes="13" />
+                <County name="Hardin" votes="19" />
+                <County name="Harrison" votes="31" />
+                <County name="Henry" votes="14" />
+                <County name="Howard" votes="4" />
+                <County name="Humboldt" votes="11" />
+                <County name="Ida" votes="9" />
+                <County name="Iowa" votes="30" />
+                <County name="Jackson" votes="24" />
+                <County name="Jasper" votes="69" />
+                <County name="Jefferson" votes="31" />
+                <County name="Johnson" votes="270" />
+                <County name="Jones" votes="39" />
+                <County name="Keokuk" votes="9" />
+                <County name="Kossuth" votes="21" />
+                <County name="Lee" votes="66" />
+                <County name="Linn" votes="463" />
+                <County name="Louisa" votes="8" />
+                <County name="Lucas" votes="9" />
+                <County name="Lyon" votes="14" />
+                <County name="Madison" votes="30" />
+                <County name="Mahaska" votes="28" />
+                <County name="Marion" votes="74" />
+                <County name="Marshall" votes="52" />
+                <County name="Mills" votes="29" />
+                <County name="Mitchell" votes="19" />
+                <County name="Monona" votes="9" />
+                <County name="Monroe" votes="4" />
+                <County name="Montgomery" votes="10" />
+                <County name="Muscatine" votes="66" />
+                <County name="O'Brien" votes="17" />
+                <County name="Osceola" votes="4" />
+                <County name="Page" votes="19" />
+                <County name="Palo Alto" votes="11" />
+                <County name="Plymouth" votes="31" />
+                <County name="Pocahontas" votes="15" />
+                <County name="Polk" votes="953" />
+                <County name="Pottawattamie" votes="141" />
+                <County name="Poweshiek" votes="25" />
+                <County name="Ringgold" votes="1" />
+                <County name="Sac" votes="7" />
+                <County name="Scott" votes="309" />
+                <County name="Shelby" votes="15" />
+                <County name="Sioux" votes="59" />
+                <County name="Story" votes="241" />
+                <County name="Tama" votes="38" />
+                <County name="Taylor" votes="6" />
+                <County name="Union" votes="13" />
+                <County name="Van Buren" votes="18" />
+                <County name="Wapello" votes="39" />
+                <County name="Warren" votes="127" />
+                <County name="Washington" votes="31" />
+                <County name="Wayne" votes="8" />
+                <County name="Webster" votes="39" />
+                <County name="Winnebago" votes="17" />
+                <County name="Winneshiek" votes="19" />
+                <County name="Woodbury" votes="95" />
+                <County name="Worth" votes="8" />
+                <County name="Wright" votes="7" />
+            </VoteType>
+            <VoteType name="Absentee" votes="2011">
+                <County name="Adair" votes="6" />
+                <County name="Adams" votes="4" />
+                <County name="Allamakee" votes="5" />
+                <County name="Appanoose" votes="4" />
+                <County name="Audubon" votes="2" />
+                <County name="Benton" votes="12" />
+                <County name="Black Hawk" votes="77" />
+                <County name="Boone" votes="22" />
+                <County name="Bremer" votes="16" />
+                <County name="Buchanan" votes="9" />
+                <County name="Buena Vista" votes="3" />
+                <County name="Butler" votes="3" />
+                <County name="Calhoun" votes="3" />
+                <County name="Carroll" votes="10" />
+                <County name="Cass" votes="9" />
+                <County name="Cedar" votes="16" />
+                <County name="Cerro Gordo" votes="40" />
+                <County name="Cherokee" votes="6" />
+                <County name="Chickasaw" votes="3" />
+                <County name="Clarke" votes="0" />
+                <County name="Clay" votes="9" />
+                <County name="Clayton" votes="8" />
+                <County name="Clinton" votes="29" />
+                <County name="Crawford" votes="4" />
+                <County name="Dallas" votes="98" />
+                <County name="Davis" votes="1" />
+                <County name="Decatur" votes="4" />
+                <County name="Delaware" votes="16" />
+                <County name="Des Moines" votes="26" />
+                <County name="Dickinson" votes="20" />
+                <County name="Dubuque" votes="64" />
+                <County name="Emmet" votes="2" />
+                <County name="Fayette" votes="6" />
+                <County name="Floyd" votes="7" />
+                <County name="Franklin" votes="6" />
+                <County name="Fremont" votes="6" />
+                <County name="Greene" votes="8" />
+                <County name="Grundy" votes="6" />
+                <County name="Guthrie" votes="7" />
+                <County name="Hamilton" votes="6" />
+                <County name="Hancock" votes="8" />
+                <County name="Hardin" votes="8" />
+                <County name="Harrison" votes="5" />
+                <County name="Henry" votes="18" />
+                <County name="Howard" votes="4" />
+                <County name="Humboldt" votes="6" />
+                <County name="Ida" votes="2" />
+                <County name="Iowa" votes="18" />
+                <County name="Jackson" votes="13" />
+                <County name="Jasper" votes="31" />
+                <County name="Jefferson" votes="12" />
+                <County name="Johnson" votes="132" />
+                <County name="Jones" votes="13" />
+                <County name="Keokuk" votes="2" />
+                <County name="Kossuth" votes="3" />
+                <County name="Lee" votes="21" />
+                <County name="Linn" votes="204" />
+                <County name="Louisa" votes="8" />
+                <County name="Lucas" votes="2" />
+                <County name="Lyon" votes="6" />
+                <County name="Madison" votes="16" />
+                <County name="Mahaska" votes="13" />
+                <County name="Marion" votes="23" />
+                <County name="Marshall" votes="25" />
+                <County name="Mills" votes="13" />
+                <County name="Mitchell" votes="5" />
+                <County name="Monona" votes="2" />
+                <County name="Monroe" votes="2" />
+                <County name="Montgomery" votes="8" />
+                <County name="Muscatine" votes="21" />
+                <County name="O'Brien" votes="5" />
+                <County name="Osceola" votes="2" />
+                <County name="Page" votes="9" />
+                <County name="Palo Alto" votes="3" />
+                <County name="Plymouth" votes="14" />
+                <County name="Pocahontas" votes="5" />
+                <County name="Polk" votes="258" />
+                <County name="Pottawattamie" votes="49" />
+                <County name="Poweshiek" votes="8" />
+                <County name="Ringgold" votes="2" />
+                <County name="Sac" votes="6" />
+                <County name="Scott" votes="130" />
+                <County name="Shelby" votes="6" />
+                <County name="Sioux" votes="19" />
+                <County name="Story" votes="62" />
+                <County name="Tama" votes="3" />
+                <County name="Taylor" votes="1" />
+                <County name="Union" votes="6" />
+                <County name="Van Buren" votes="2" />
+                <County name="Wapello" votes="13" />
+                <County name="Warren" votes="44" />
+                <County name="Washington" votes="17" />
+                <County name="Wayne" votes="4" />
+                <County name="Webster" votes="14" />
+                <County name="Winnebago" votes="4" />
+                <County name="Winneshiek" votes="27" />
+                <County name="Woodbury" votes="64" />
+                <County name="Worth" votes="5" />
+                <County name="Wright" votes="2" />
+            </VoteType>
+        </Choice>
+        <Choice key="110" text="Shiva Ayyadurai and Crystal Ellis" totalVotes="424">
+            <VoteType name="Election Day" votes="292">
+                <County name="Adair" votes="4" />
+                <County name="Adams" votes="1" />
+                <County name="Allamakee" votes="3" />
+                <County name="Appanoose" votes="0" />
+                <County name="Audubon" votes="1" />
+                <County name="Benton" votes="8" />
+                <County name="Black Hawk" votes="18" />
+                <County name="Boone" votes="3" />
+                <County name="Bremer" votes="3" />
+                <County name="Buchanan" votes="2" />
+                <County name="Buena Vista" votes="0" />
+                <County name="Butler" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="1" />
+                <County name="Cass" votes="1" />
+                <County name="Cedar" votes="5" />
+                <County name="Cerro Gordo" votes="5" />
+                <County name="Cherokee" votes="1" />
+                <County name="Chickasaw" votes="0" />
+                <County name="Clarke" votes="0" />
+                <County name="Clay" votes="2" />
+                <County name="Clayton" votes="2" />
+                <County name="Clinton" votes="2" />
+                <County name="Crawford" votes="1" />
+                <County name="Dallas" votes="5" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="1" />
+                <County name="Delaware" votes="1" />
+                <County name="Des Moines" votes="4" />
+                <County name="Dickinson" votes="2" />
+                <County name="Dubuque" votes="3" />
+                <County name="Emmet" votes="1" />
+                <County name="Fayette" votes="0" />
+                <County name="Floyd" votes="1" />
+                <County name="Franklin" votes="2" />
+                <County name="Fremont" votes="0" />
+                <County name="Greene" votes="0" />
+                <County name="Grundy" votes="2" />
+                <County name="Guthrie" votes="0" />
+                <County name="Hamilton" votes="1" />
+                <County name="Hancock" votes="3" />
+                <County name="Hardin" votes="3" />
+                <County name="Harrison" votes="1" />
+                <County name="Henry" votes="5" />
+                <County name="Howard" votes="0" />
+                <County name="Humboldt" votes="0" />
+                <County name="Ida" votes="0" />
+                <County name="Iowa" votes="3" />
+                <County name="Jackson" votes="1" />
+                <County name="Jasper" votes="5" />
+                <County name="Jefferson" votes="5" />
+                <County name="Johnson" votes="8" />
+                <County name="Jones" votes="4" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="3" />
+                <County name="Lee" votes="10" />
+                <County name="Linn" votes="23" />
+                <County name="Louisa" votes="1" />
+                <County name="Lucas" votes="0" />
+                <County name="Lyon" votes="1" />
+                <County name="Madison" votes="1" />
+                <County name="Mahaska" votes="1" />
+                <County name="Marion" votes="2" />
+                <County name="Marshall" votes="1" />
+                <County name="Mills" votes="0" />
+                <County name="Mitchell" votes="1" />
+                <County name="Monona" votes="0" />
+                <County name="Monroe" votes="0" />
+                <County name="Montgomery" votes="1" />
+                <County name="Muscatine" votes="4" />
+                <County name="O'Brien" votes="0" />
+                <County name="Osceola" votes="1" />
+                <County name="Page" votes="0" />
+                <County name="Palo Alto" votes="0" />
+                <County name="Plymouth" votes="3" />
+                <County name="Pocahontas" votes="0" />
+                <County name="Polk" votes="43" />
+                <County name="Pottawattamie" votes="8" />
+                <County name="Poweshiek" votes="2" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="2" />
+                <County name="Scott" votes="12" />
+                <County name="Shelby" votes="0" />
+                <County name="Sioux" votes="8" />
+                <County name="Story" votes="11" />
+                <County name="Tama" votes="1" />
+                <County name="Taylor" votes="1" />
+                <County name="Union" votes="0" />
+                <County name="Van Buren" votes="0" />
+                <County name="Wapello" votes="3" />
+                <County name="Warren" votes="9" />
+                <County name="Washington" votes="0" />
+                <County name="Wayne" votes="1" />
+                <County name="Webster" votes="3" />
+                <County name="Winnebago" votes="2" />
+                <County name="Winneshiek" votes="3" />
+                <County name="Woodbury" votes="5" />
+                <County name="Worth" votes="0" />
+                <County name="Wright" votes="1" />
+            </VoteType>
+            <VoteType name="Absentee" votes="132">
+                <County name="Adair" votes="1" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="2" />
+                <County name="Appanoose" votes="0" />
+                <County name="Audubon" votes="1" />
+                <County name="Benton" votes="1" />
+                <County name="Black Hawk" votes="7" />
+                <County name="Boone" votes="0" />
+                <County name="Bremer" votes="1" />
+                <County name="Buchanan" votes="0" />
+                <County name="Buena Vista" votes="2" />
+                <County name="Butler" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="1" />
+                <County name="Cass" votes="0" />
+                <County name="Cedar" votes="1" />
+                <County name="Cerro Gordo" votes="1" />
+                <County name="Cherokee" votes="1" />
+                <County name="Chickasaw" votes="0" />
+                <County name="Clarke" votes="0" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="4" />
+                <County name="Clinton" votes="5" />
+                <County name="Crawford" votes="1" />
+                <County name="Dallas" votes="3" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="0" />
+                <County name="Delaware" votes="0" />
+                <County name="Des Moines" votes="2" />
+                <County name="Dickinson" votes="0" />
+                <County name="Dubuque" votes="2" />
+                <County name="Emmet" votes="0" />
+                <County name="Fayette" votes="0" />
+                <County name="Floyd" votes="0" />
+                <County name="Franklin" votes="1" />
+                <County name="Fremont" votes="0" />
+                <County name="Greene" votes="0" />
+                <County name="Grundy" votes="0" />
+                <County name="Guthrie" votes="0" />
+                <County name="Hamilton" votes="2" />
+                <County name="Hancock" votes="0" />
+                <County name="Hardin" votes="0" />
+                <County name="Harrison" votes="0" />
+                <County name="Henry" votes="0" />
+                <County name="Howard" votes="0" />
+                <County name="Humboldt" votes="0" />
+                <County name="Ida" votes="0" />
+                <County name="Iowa" votes="2" />
+                <County name="Jackson" votes="0" />
+                <County name="Jasper" votes="2" />
+                <County name="Jefferson" votes="7" />
+                <County name="Johnson" votes="6" />
+                <County name="Jones" votes="2" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="0" />
+                <County name="Lee" votes="2" />
+                <County name="Linn" votes="17" />
+                <County name="Louisa" votes="1" />
+                <County name="Lucas" votes="1" />
+                <County name="Lyon" votes="0" />
+                <County name="Madison" votes="1" />
+                <County name="Mahaska" votes="0" />
+                <County name="Marion" votes="0" />
+                <County name="Marshall" votes="0" />
+                <County name="Mills" votes="1" />
+                <County name="Mitchell" votes="0" />
+                <County name="Monona" votes="0" />
+                <County name="Monroe" votes="0" />
+                <County name="Montgomery" votes="1" />
+                <County name="Muscatine" votes="2" />
+                <County name="O'Brien" votes="0" />
+                <County name="Osceola" votes="0" />
+                <County name="Page" votes="2" />
+                <County name="Palo Alto" votes="0" />
+                <County name="Plymouth" votes="0" />
+                <County name="Pocahontas" votes="0" />
+                <County name="Polk" votes="19" />
+                <County name="Pottawattamie" votes="5" />
+                <County name="Poweshiek" votes="0" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="0" />
+                <County name="Scott" votes="8" />
+                <County name="Shelby" votes="0" />
+                <County name="Sioux" votes="1" />
+                <County name="Story" votes="5" />
+                <County name="Tama" votes="0" />
+                <County name="Taylor" votes="0" />
+                <County name="Union" votes="0" />
+                <County name="Van Buren" votes="0" />
+                <County name="Wapello" votes="0" />
+                <County name="Warren" votes="2" />
+                <County name="Washington" votes="0" />
+                <County name="Wayne" votes="1" />
+                <County name="Webster" votes="1" />
+                <County name="Winnebago" votes="0" />
+                <County name="Winneshiek" votes="0" />
+                <County name="Woodbury" votes="4" />
+                <County name="Worth" votes="0" />
+                <County name="Wright" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="107" text="Claudia De la Cruz and Karina Garcia" party="PSL" totalVotes="1427">
+            <VoteType name="Election Day" votes="912">
+                <County name="Adair" votes="0" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="6" />
+                <County name="Appanoose" votes="3" />
+                <County name="Audubon" votes="4" />
+                <County name="Benton" votes="3" />
+                <County name="Black Hawk" votes="34" />
+                <County name="Boone" votes="12" />
+                <County name="Bremer" votes="0" />
+                <County name="Buchanan" votes="2" />
+                <County name="Buena Vista" votes="5" />
+                <County name="Butler" votes="3" />
+                <County name="Calhoun" votes="1" />
+                <County name="Carroll" votes="4" />
+                <County name="Cass" votes="0" />
+                <County name="Cedar" votes="7" />
+                <County name="Cerro Gordo" votes="11" />
+                <County name="Cherokee" votes="1" />
+                <County name="Chickasaw" votes="4" />
+                <County name="Clarke" votes="1" />
+                <County name="Clay" votes="3" />
+                <County name="Clayton" votes="5" />
+                <County name="Clinton" votes="11" />
+                <County name="Crawford" votes="3" />
+                <County name="Dallas" votes="35" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="1" />
+                <County name="Delaware" votes="2" />
+                <County name="Des Moines" votes="7" />
+                <County name="Dickinson" votes="3" />
+                <County name="Dubuque" votes="27" />
+                <County name="Emmet" votes="3" />
+                <County name="Fayette" votes="6" />
+                <County name="Floyd" votes="5" />
+                <County name="Franklin" votes="1" />
+                <County name="Fremont" votes="0" />
+                <County name="Greene" votes="1" />
+                <County name="Grundy" votes="1" />
+                <County name="Guthrie" votes="3" />
+                <County name="Hamilton" votes="3" />
+                <County name="Hancock" votes="1" />
+                <County name="Hardin" votes="5" />
+                <County name="Harrison" votes="2" />
+                <County name="Henry" votes="3" />
+                <County name="Howard" votes="3" />
+                <County name="Humboldt" votes="1" />
+                <County name="Ida" votes="2" />
+                <County name="Iowa" votes="4" />
+                <County name="Jackson" votes="4" />
+                <County name="Jasper" votes="3" />
+                <County name="Jefferson" votes="8" />
+                <County name="Johnson" votes="109" />
+                <County name="Jones" votes="4" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="3" />
+                <County name="Lee" votes="4" />
+                <County name="Linn" votes="57" />
+                <County name="Louisa" votes="3" />
+                <County name="Lucas" votes="2" />
+                <County name="Lyon" votes="2" />
+                <County name="Madison" votes="3" />
+                <County name="Mahaska" votes="1" />
+                <County name="Marion" votes="3" />
+                <County name="Marshall" votes="6" />
+                <County name="Mills" votes="1" />
+                <County name="Mitchell" votes="0" />
+                <County name="Monona" votes="1" />
+                <County name="Monroe" votes="0" />
+                <County name="Montgomery" votes="2" />
+                <County name="Muscatine" votes="17" />
+                <County name="O'Brien" votes="2" />
+                <County name="Osceola" votes="0" />
+                <County name="Page" votes="2" />
+                <County name="Palo Alto" votes="1" />
+                <County name="Plymouth" votes="4" />
+                <County name="Pocahontas" votes="2" />
+                <County name="Polk" votes="245" />
+                <County name="Pottawattamie" votes="11" />
+                <County name="Poweshiek" votes="3" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="1" />
+                <County name="Scott" votes="48" />
+                <County name="Shelby" votes="1" />
+                <County name="Sioux" votes="6" />
+                <County name="Story" votes="46" />
+                <County name="Tama" votes="1" />
+                <County name="Taylor" votes="0" />
+                <County name="Union" votes="1" />
+                <County name="Van Buren" votes="2" />
+                <County name="Wapello" votes="8" />
+                <County name="Warren" votes="8" />
+                <County name="Washington" votes="8" />
+                <County name="Wayne" votes="0" />
+                <County name="Webster" votes="5" />
+                <County name="Winnebago" votes="1" />
+                <County name="Winneshiek" votes="5" />
+                <County name="Woodbury" votes="21" />
+                <County name="Worth" votes="0" />
+                <County name="Wright" votes="5" />
+            </VoteType>
+            <VoteType name="Absentee" votes="515">
+                <County name="Adair" votes="1" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="1" />
+                <County name="Appanoose" votes="2" />
+                <County name="Audubon" votes="1" />
+                <County name="Benton" votes="4" />
+                <County name="Black Hawk" votes="15" />
+                <County name="Boone" votes="2" />
+                <County name="Bremer" votes="1" />
+                <County name="Buchanan" votes="2" />
+                <County name="Buena Vista" votes="1" />
+                <County name="Butler" votes="2" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="2" />
+                <County name="Cass" votes="1" />
+                <County name="Cedar" votes="1" />
+                <County name="Cerro Gordo" votes="7" />
+                <County name="Cherokee" votes="1" />
+                <County name="Chickasaw" votes="0" />
+                <County name="Clarke" votes="2" />
+                <County name="Clay" votes="2" />
+                <County name="Clayton" votes="0" />
+                <County name="Clinton" votes="10" />
+                <County name="Crawford" votes="0" />
+                <County name="Dallas" votes="8" />
+                <County name="Davis" votes="1" />
+                <County name="Decatur" votes="0" />
+                <County name="Delaware" votes="2" />
+                <County name="Des Moines" votes="4" />
+                <County name="Dickinson" votes="0" />
+                <County name="Dubuque" votes="13" />
+                <County name="Emmet" votes="1" />
+                <County name="Fayette" votes="1" />
+                <County name="Floyd" votes="0" />
+                <County name="Franklin" votes="0" />
+                <County name="Fremont" votes="1" />
+                <County name="Greene" votes="1" />
+                <County name="Grundy" votes="0" />
+                <County name="Guthrie" votes="0" />
+                <County name="Hamilton" votes="1" />
+                <County name="Hancock" votes="0" />
+                <County name="Hardin" votes="1" />
+                <County name="Harrison" votes="2" />
+                <County name="Henry" votes="10" />
+                <County name="Howard" votes="0" />
+                <County name="Humboldt" votes="2" />
+                <County name="Ida" votes="2" />
+                <County name="Iowa" votes="4" />
+                <County name="Jackson" votes="2" />
+                <County name="Jasper" votes="4" />
+                <County name="Jefferson" votes="4" />
+                <County name="Johnson" votes="109" />
+                <County name="Jones" votes="3" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="0" />
+                <County name="Lee" votes="2" />
+                <County name="Linn" votes="44" />
+                <County name="Louisa" votes="1" />
+                <County name="Lucas" votes="0" />
+                <County name="Lyon" votes="0" />
+                <County name="Madison" votes="1" />
+                <County name="Mahaska" votes="1" />
+                <County name="Marion" votes="4" />
+                <County name="Marshall" votes="10" />
+                <County name="Mills" votes="0" />
+                <County name="Mitchell" votes="1" />
+                <County name="Monona" votes="1" />
+                <County name="Monroe" votes="1" />
+                <County name="Montgomery" votes="1" />
+                <County name="Muscatine" votes="9" />
+                <County name="O'Brien" votes="1" />
+                <County name="Osceola" votes="1" />
+                <County name="Page" votes="0" />
+                <County name="Palo Alto" votes="1" />
+                <County name="Plymouth" votes="3" />
+                <County name="Pocahontas" votes="0" />
+                <County name="Polk" votes="76" />
+                <County name="Pottawattamie" votes="6" />
+                <County name="Poweshiek" votes="7" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="0" />
+                <County name="Scott" votes="38" />
+                <County name="Shelby" votes="2" />
+                <County name="Sioux" votes="1" />
+                <County name="Story" votes="31" />
+                <County name="Tama" votes="1" />
+                <County name="Taylor" votes="0" />
+                <County name="Union" votes="1" />
+                <County name="Van Buren" votes="0" />
+                <County name="Wapello" votes="5" />
+                <County name="Warren" votes="4" />
+                <County name="Washington" votes="5" />
+                <County name="Wayne" votes="0" />
+                <County name="Webster" votes="2" />
+                <County name="Winnebago" votes="0" />
+                <County name="Winneshiek" votes="4" />
+                <County name="Woodbury" votes="13" />
+                <County name="Worth" votes="3" />
+                <County name="Wright" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="108" text="William P. Stodden and Stephanie H. Cholensky" party="SOC" totalVotes="361">
+            <VoteType name="Election Day" votes="239">
+                <County name="Adair" votes="2" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="0" />
+                <County name="Appanoose" votes="1" />
+                <County name="Audubon" votes="0" />
+                <County name="Benton" votes="0" />
+                <County name="Black Hawk" votes="12" />
+                <County name="Boone" votes="3" />
+                <County name="Bremer" votes="2" />
+                <County name="Buchanan" votes="2" />
+                <County name="Buena Vista" votes="5" />
+                <County name="Butler" votes="2" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="0" />
+                <County name="Cass" votes="3" />
+                <County name="Cedar" votes="1" />
+                <County name="Cerro Gordo" votes="1" />
+                <County name="Cherokee" votes="0" />
+                <County name="Chickasaw" votes="2" />
+                <County name="Clarke" votes="1" />
+                <County name="Clay" votes="1" />
+                <County name="Clayton" votes="1" />
+                <County name="Clinton" votes="3" />
+                <County name="Crawford" votes="1" />
+                <County name="Dallas" votes="3" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="2" />
+                <County name="Delaware" votes="3" />
+                <County name="Des Moines" votes="2" />
+                <County name="Dickinson" votes="1" />
+                <County name="Dubuque" votes="6" />
+                <County name="Emmet" votes="0" />
+                <County name="Fayette" votes="1" />
+                <County name="Floyd" votes="1" />
+                <County name="Franklin" votes="1" />
+                <County name="Fremont" votes="0" />
+                <County name="Greene" votes="0" />
+                <County name="Grundy" votes="4" />
+                <County name="Guthrie" votes="0" />
+                <County name="Hamilton" votes="0" />
+                <County name="Hancock" votes="1" />
+                <County name="Hardin" votes="4" />
+                <County name="Harrison" votes="3" />
+                <County name="Henry" votes="2" />
+                <County name="Howard" votes="0" />
+                <County name="Humboldt" votes="0" />
+                <County name="Ida" votes="1" />
+                <County name="Iowa" votes="1" />
+                <County name="Jackson" votes="3" />
+                <County name="Jasper" votes="0" />
+                <County name="Jefferson" votes="2" />
+                <County name="Johnson" votes="10" />
+                <County name="Jones" votes="1" />
+                <County name="Keokuk" votes="1" />
+                <County name="Kossuth" votes="1" />
+                <County name="Lee" votes="1" />
+                <County name="Linn" votes="15" />
+                <County name="Louisa" votes="0" />
+                <County name="Lucas" votes="0" />
+                <County name="Lyon" votes="0" />
+                <County name="Madison" votes="3" />
+                <County name="Mahaska" votes="0" />
+                <County name="Marion" votes="1" />
+                <County name="Marshall" votes="3" />
+                <County name="Mills" votes="1" />
+                <County name="Mitchell" votes="1" />
+                <County name="Monona" votes="1" />
+                <County name="Monroe" votes="0" />
+                <County name="Montgomery" votes="0" />
+                <County name="Muscatine" votes="7" />
+                <County name="O'Brien" votes="2" />
+                <County name="Osceola" votes="1" />
+                <County name="Page" votes="0" />
+                <County name="Palo Alto" votes="1" />
+                <County name="Plymouth" votes="2" />
+                <County name="Pocahontas" votes="0" />
+                <County name="Polk" votes="50" />
+                <County name="Pottawattamie" votes="2" />
+                <County name="Poweshiek" votes="4" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="2" />
+                <County name="Scott" votes="9" />
+                <County name="Shelby" votes="0" />
+                <County name="Sioux" votes="1" />
+                <County name="Story" votes="16" />
+                <County name="Tama" votes="2" />
+                <County name="Taylor" votes="1" />
+                <County name="Union" votes="0" />
+                <County name="Van Buren" votes="0" />
+                <County name="Wapello" votes="1" />
+                <County name="Warren" votes="5" />
+                <County name="Washington" votes="0" />
+                <County name="Wayne" votes="0" />
+                <County name="Webster" votes="0" />
+                <County name="Winnebago" votes="1" />
+                <County name="Winneshiek" votes="1" />
+                <County name="Woodbury" votes="4" />
+                <County name="Worth" votes="1" />
+                <County name="Wright" votes="3" />
+            </VoteType>
+            <VoteType name="Absentee" votes="122">
+                <County name="Adair" votes="0" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="1" />
+                <County name="Appanoose" votes="0" />
+                <County name="Audubon" votes="1" />
+                <County name="Benton" votes="0" />
+                <County name="Black Hawk" votes="5" />
+                <County name="Boone" votes="1" />
+                <County name="Bremer" votes="1" />
+                <County name="Buchanan" votes="1" />
+                <County name="Buena Vista" votes="1" />
+                <County name="Butler" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="2" />
+                <County name="Cass" votes="0" />
+                <County name="Cedar" votes="1" />
+                <County name="Cerro Gordo" votes="3" />
+                <County name="Cherokee" votes="2" />
+                <County name="Chickasaw" votes="0" />
+                <County name="Clarke" votes="0" />
+                <County name="Clay" votes="0" />
+                <County name="Clayton" votes="0" />
+                <County name="Clinton" votes="5" />
+                <County name="Crawford" votes="0" />
+                <County name="Dallas" votes="3" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="0" />
+                <County name="Delaware" votes="0" />
+                <County name="Des Moines" votes="0" />
+                <County name="Dickinson" votes="0" />
+                <County name="Dubuque" votes="6" />
+                <County name="Emmet" votes="1" />
+                <County name="Fayette" votes="1" />
+                <County name="Floyd" votes="0" />
+                <County name="Franklin" votes="0" />
+                <County name="Fremont" votes="0" />
+                <County name="Greene" votes="0" />
+                <County name="Grundy" votes="0" />
+                <County name="Guthrie" votes="0" />
+                <County name="Hamilton" votes="1" />
+                <County name="Hancock" votes="0" />
+                <County name="Hardin" votes="1" />
+                <County name="Harrison" votes="0" />
+                <County name="Henry" votes="0" />
+                <County name="Howard" votes="0" />
+                <County name="Humboldt" votes="1" />
+                <County name="Ida" votes="0" />
+                <County name="Iowa" votes="3" />
+                <County name="Jackson" votes="0" />
+                <County name="Jasper" votes="1" />
+                <County name="Jefferson" votes="1" />
+                <County name="Johnson" votes="7" />
+                <County name="Jones" votes="0" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="0" />
+                <County name="Lee" votes="2" />
+                <County name="Linn" votes="13" />
+                <County name="Louisa" votes="1" />
+                <County name="Lucas" votes="0" />
+                <County name="Lyon" votes="1" />
+                <County name="Madison" votes="0" />
+                <County name="Mahaska" votes="0" />
+                <County name="Marion" votes="3" />
+                <County name="Marshall" votes="1" />
+                <County name="Mills" votes="0" />
+                <County name="Mitchell" votes="1" />
+                <County name="Monona" votes="1" />
+                <County name="Monroe" votes="2" />
+                <County name="Montgomery" votes="2" />
+                <County name="Muscatine" votes="1" />
+                <County name="O'Brien" votes="0" />
+                <County name="Osceola" votes="0" />
+                <County name="Page" votes="1" />
+                <County name="Palo Alto" votes="0" />
+                <County name="Plymouth" votes="2" />
+                <County name="Pocahontas" votes="0" />
+                <County name="Polk" votes="8" />
+                <County name="Pottawattamie" votes="1" />
+                <County name="Poweshiek" votes="0" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="1" />
+                <County name="Scott" votes="11" />
+                <County name="Shelby" votes="2" />
+                <County name="Sioux" votes="0" />
+                <County name="Story" votes="4" />
+                <County name="Tama" votes="0" />
+                <County name="Taylor" votes="1" />
+                <County name="Union" votes="4" />
+                <County name="Van Buren" votes="0" />
+                <County name="Wapello" votes="0" />
+                <County name="Warren" votes="0" />
+                <County name="Washington" votes="2" />
+                <County name="Wayne" votes="0" />
+                <County name="Webster" votes="0" />
+                <County name="Winnebago" votes="1" />
+                <County name="Winneshiek" votes="3" />
+                <County name="Woodbury" votes="3" />
+                <County name="Worth" votes="0" />
+                <County name="Wright" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="109" text="Robert F. Kennedy Jr and Nicole Shanahan" party="WTP" totalVotes="13122">
+            <VoteType name="Election Day" votes="9025">
+                <County name="Adair" votes="21" />
+                <County name="Adams" votes="13" />
+                <County name="Allamakee" votes="27" />
+                <County name="Appanoose" votes="28" />
+                <County name="Audubon" votes="26" />
+                <County name="Benton" votes="92" />
+                <County name="Black Hawk" votes="304" />
+                <County name="Boone" votes="93" />
+                <County name="Bremer" votes="85" />
+                <County name="Buchanan" votes="76" />
+                <County name="Buena Vista" votes="37" />
+                <County name="Butler" votes="54" />
+                <County name="Calhoun" votes="35" />
+                <County name="Carroll" votes="73" />
+                <County name="Cass" votes="54" />
+                <County name="Cedar" votes="65" />
+                <County name="Cerro Gordo" votes="150" />
+                <County name="Cherokee" votes="32" />
+                <County name="Chickasaw" votes="32" />
+                <County name="Clarke" votes="27" />
+                <County name="Clay" votes="33" />
+                <County name="Clayton" votes="42" />
+                <County name="Clinton" votes="147" />
+                <County name="Crawford" votes="31" />
+                <County name="Dallas" votes="330" />
+                <County name="Davis" votes="25" />
+                <County name="Decatur" votes="29" />
+                <County name="Delaware" votes="55" />
+                <County name="Des Moines" votes="99" />
+                <County name="Dickinson" votes="44" />
+                <County name="Dubuque" votes="243" />
+                <County name="Emmet" votes="23" />
+                <County name="Fayette" votes="81" />
+                <County name="Floyd" votes="35" />
+                <County name="Franklin" votes="29" />
+                <County name="Fremont" votes="23" />
+                <County name="Greene" votes="25" />
+                <County name="Grundy" votes="62" />
+                <County name="Guthrie" votes="42" />
+                <County name="Hamilton" votes="35" />
+                <County name="Hancock" votes="36" />
+                <County name="Hardin" votes="31" />
+                <County name="Harrison" votes="55" />
+                <County name="Henry" votes="43" />
+                <County name="Howard" votes="35" />
+                <County name="Humboldt" votes="31" />
+                <County name="Ida" votes="24" />
+                <County name="Iowa" votes="67" />
+                <County name="Jackson" votes="59" />
+                <County name="Jasper" votes="127" />
+                <County name="Jefferson" votes="54" />
+                <County name="Johnson" votes="330" />
+                <County name="Jones" votes="84" />
+                <County name="Keokuk" votes="30" />
+                <County name="Kossuth" votes="53" />
+                <County name="Lee" votes="149" />
+                <County name="Linn" votes="684" />
+                <County name="Louisa" votes="31" />
+                <County name="Lucas" votes="33" />
+                <County name="Lyon" votes="30" />
+                <County name="Madison" votes="52" />
+                <County name="Mahaska" votes="53" />
+                <County name="Marion" votes="117" />
+                <County name="Marshall" votes="94" />
+                <County name="Mills" votes="34" />
+                <County name="Mitchell" votes="35" />
+                <County name="Monona" votes="29" />
+                <County name="Monroe" votes="14" />
+                <County name="Montgomery" votes="32" />
+                <County name="Muscatine" votes="148" />
+                <County name="O'Brien" votes="34" />
+                <County name="Osceola" votes="23" />
+                <County name="Page" votes="33" />
+                <County name="Palo Alto" votes="29" />
+                <County name="Plymouth" votes="74" />
+                <County name="Pocahontas" votes="23" />
+                <County name="Polk" votes="1225" />
+                <County name="Pottawattamie" votes="293" />
+                <County name="Poweshiek" votes="59" />
+                <County name="Ringgold" votes="11" />
+                <County name="Sac" votes="29" />
+                <County name="Scott" votes="482" />
+                <County name="Shelby" votes="33" />
+                <County name="Sioux" votes="77" />
+                <County name="Story" votes="272" />
+                <County name="Tama" votes="85" />
+                <County name="Taylor" votes="15" />
+                <County name="Union" votes="34" />
+                <County name="Van Buren" votes="26" />
+                <County name="Wapello" votes="90" />
+                <County name="Warren" votes="185" />
+                <County name="Washington" votes="38" />
+                <County name="Wayne" votes="25" />
+                <County name="Webster" votes="105" />
+                <County name="Winnebago" votes="42" />
+                <County name="Winneshiek" votes="45" />
+                <County name="Woodbury" votes="211" />
+                <County name="Worth" votes="29" />
+                <County name="Wright" votes="47" />
+            </VoteType>
+            <VoteType name="Absentee" votes="4097">
+                <County name="Adair" votes="13" />
+                <County name="Adams" votes="15" />
+                <County name="Allamakee" votes="28" />
+                <County name="Appanoose" votes="20" />
+                <County name="Audubon" votes="13" />
+                <County name="Benton" votes="9" />
+                <County name="Black Hawk" votes="139" />
+                <County name="Boone" votes="58" />
+                <County name="Bremer" votes="28" />
+                <County name="Buchanan" votes="28" />
+                <County name="Buena Vista" votes="19" />
+                <County name="Butler" votes="15" />
+                <County name="Calhoun" votes="6" />
+                <County name="Carroll" votes="41" />
+                <County name="Cass" votes="22" />
+                <County name="Cedar" votes="32" />
+                <County name="Cerro Gordo" votes="79" />
+                <County name="Cherokee" votes="19" />
+                <County name="Chickasaw" votes="28" />
+                <County name="Clarke" votes="13" />
+                <County name="Clay" votes="26" />
+                <County name="Clayton" votes="21" />
+                <County name="Clinton" votes="103" />
+                <County name="Crawford" votes="14" />
+                <County name="Dallas" votes="149" />
+                <County name="Davis" votes="13" />
+                <County name="Decatur" votes="13" />
+                <County name="Delaware" votes="36" />
+                <County name="Des Moines" votes="71" />
+                <County name="Dickinson" votes="36" />
+                <County name="Dubuque" votes="134" />
+                <County name="Emmet" votes="8" />
+                <County name="Fayette" votes="23" />
+                <County name="Floyd" votes="28" />
+                <County name="Franklin" votes="9" />
+                <County name="Fremont" votes="12" />
+                <County name="Greene" votes="9" />
+                <County name="Grundy" votes="22" />
+                <County name="Guthrie" votes="20" />
+                <County name="Hamilton" votes="16" />
+                <County name="Hancock" votes="12" />
+                <County name="Hardin" votes="19" />
+                <County name="Harrison" votes="28" />
+                <County name="Henry" votes="45" />
+                <County name="Howard" votes="15" />
+                <County name="Humboldt" votes="9" />
+                <County name="Ida" votes="5" />
+                <County name="Iowa" votes="17" />
+                <County name="Jackson" votes="35" />
+                <County name="Jasper" votes="65" />
+                <County name="Jefferson" votes="52" />
+                <County name="Johnson" votes="154" />
+                <County name="Jones" votes="37" />
+                <County name="Keokuk" votes="12" />
+                <County name="Kossuth" votes="25" />
+                <County name="Lee" votes="86" />
+                <County name="Linn" votes="254" />
+                <County name="Louisa" votes="18" />
+                <County name="Lucas" votes="23" />
+                <County name="Lyon" votes="8" />
+                <County name="Madison" votes="16" />
+                <County name="Mahaska" votes="29" />
+                <County name="Marion" votes="46" />
+                <County name="Marshall" votes="76" />
+                <County name="Mills" votes="17" />
+                <County name="Mitchell" votes="15" />
+                <County name="Monona" votes="5" />
+                <County name="Monroe" votes="17" />
+                <County name="Montgomery" votes="10" />
+                <County name="Muscatine" votes="56" />
+                <County name="O'Brien" votes="14" />
+                <County name="Osceola" votes="9" />
+                <County name="Page" votes="18" />
+                <County name="Palo Alto" votes="16" />
+                <County name="Plymouth" votes="33" />
+                <County name="Pocahontas" votes="5" />
+                <County name="Polk" votes="371" />
+                <County name="Pottawattamie" votes="92" />
+                <County name="Poweshiek" votes="38" />
+                <County name="Ringgold" votes="16" />
+                <County name="Sac" votes="11" />
+                <County name="Scott" votes="241" />
+                <County name="Shelby" votes="16" />
+                <County name="Sioux" votes="30" />
+                <County name="Story" votes="82" />
+                <County name="Tama" votes="14" />
+                <County name="Taylor" votes="6" />
+                <County name="Union" votes="19" />
+                <County name="Van Buren" votes="11" />
+                <County name="Wapello" votes="37" />
+                <County name="Warren" votes="80" />
+                <County name="Washington" votes="34" />
+                <County name="Wayne" votes="11" />
+                <County name="Webster" votes="46" />
+                <County name="Winnebago" votes="14" />
+                <County name="Winneshiek" votes="72" />
+                <County name="Woodbury" votes="140" />
+                <County name="Worth" votes="9" />
+                <County name="Wright" votes="18" />
+            </VoteType>
+        </Choice>
+        <Choice key="0" text="Write-in" totalVotes="6657">
+            <VoteType name="Election Day" votes="4317">
+                <County name="Adair" votes="8" />
+                <County name="Adams" votes="4" />
+                <County name="Allamakee" votes="11" />
+                <County name="Appanoose" votes="11" />
+                <County name="Audubon" votes="9" />
+                <County name="Benton" votes="26" />
+                <County name="Black Hawk" votes="163" />
+                <County name="Boone" votes="36" />
+                <County name="Bremer" votes="28" />
+                <County name="Buchanan" votes="20" />
+                <County name="Buena Vista" votes="15" />
+                <County name="Butler" votes="16" />
+                <County name="Calhoun" votes="4" />
+                <County name="Carroll" votes="10" />
+                <County name="Cass" votes="12" />
+                <County name="Cedar" votes="14" />
+                <County name="Cerro Gordo" votes="45" />
+                <County name="Cherokee" votes="12" />
+                <County name="Chickasaw" votes="5" />
+                <County name="Clarke" votes="10" />
+                <County name="Clay" votes="12" />
+                <County name="Clayton" votes="13" />
+                <County name="Clinton" votes="31" />
+                <County name="Crawford" votes="13" />
+                <County name="Dallas" votes="192" />
+                <County name="Davis" votes="4" />
+                <County name="Decatur" votes="6" />
+                <County name="Delaware" votes="13" />
+                <County name="Des Moines" votes="36" />
+                <County name="Dickinson" votes="9" />
+                <County name="Dubuque" votes="125" />
+                <County name="Emmet" votes="8" />
+                <County name="Fayette" votes="25" />
+                <County name="Floyd" votes="17" />
+                <County name="Franklin" votes="12" />
+                <County name="Fremont" votes="7" />
+                <County name="Greene" votes="4" />
+                <County name="Grundy" votes="12" />
+                <County name="Guthrie" votes="16" />
+                <County name="Hamilton" votes="6" />
+                <County name="Hancock" votes="4" />
+                <County name="Hardin" votes="19" />
+                <County name="Harrison" votes="18" />
+                <County name="Henry" votes="11" />
+                <County name="Howard" votes="7" />
+                <County name="Humboldt" votes="14" />
+                <County name="Ida" votes="10" />
+                <County name="Iowa" votes="18" />
+                <County name="Jackson" votes="13" />
+                <County name="Jasper" votes="29" />
+                <County name="Jefferson" votes="17" />
+                <County name="Johnson" votes="348" />
+                <County name="Jones" votes="20" />
+                <County name="Keokuk" votes="8" />
+                <County name="Kossuth" votes="12" />
+                <County name="Lee" votes="28" />
+                <County name="Linn" votes="404" />
+                <County name="Louisa" votes="4" />
+                <County name="Lucas" votes="2" />
+                <County name="Lyon" votes="12" />
+                <County name="Madison" votes="15" />
+                <County name="Mahaska" votes="18" />
+                <County name="Marion" votes="52" />
+                <County name="Marshall" votes="25" />
+                <County name="Mills" votes="18" />
+                <County name="Mitchell" votes="11" />
+                <County name="Monona" votes="16" />
+                <County name="Monroe" votes="6" />
+                <County name="Montgomery" votes="6" />
+                <County name="Muscatine" votes="38" />
+                <County name="O'Brien" votes="19" />
+                <County name="Osceola" votes="7" />
+                <County name="Page" votes="18" />
+                <County name="Palo Alto" votes="5" />
+                <County name="Plymouth" votes="25" />
+                <County name="Pocahontas" votes="6" />
+                <County name="Polk" votes="903" />
+                <County name="Pottawattamie" votes="109" />
+                <County name="Poweshiek" votes="22" />
+                <County name="Ringgold" votes="3" />
+                <County name="Sac" votes="6" />
+                <County name="Scott" votes="246" />
+                <County name="Shelby" votes="13" />
+                <County name="Sioux" votes="87" />
+                <County name="Story" votes="226" />
+                <County name="Tama" votes="19" />
+                <County name="Taylor" votes="3" />
+                <County name="Union" votes="7" />
+                <County name="Van Buren" votes="2" />
+                <County name="Wapello" votes="7" />
+                <County name="Warren" votes="97" />
+                <County name="Washington" votes="20" />
+                <County name="Wayne" votes="4" />
+                <County name="Webster" votes="30" />
+                <County name="Winnebago" votes="12" />
+                <County name="Winneshiek" votes="25" />
+                <County name="Woodbury" votes="155" />
+                <County name="Worth" votes="7" />
+                <County name="Wright" votes="11" />
+            </VoteType>
+            <VoteType name="Absentee" votes="2340">
+                <County name="Adair" votes="8" />
+                <County name="Adams" votes="0" />
+                <County name="Allamakee" votes="4" />
+                <County name="Appanoose" votes="7" />
+                <County name="Audubon" votes="1" />
+                <County name="Benton" votes="13" />
+                <County name="Black Hawk" votes="90" />
+                <County name="Boone" votes="21" />
+                <County name="Bremer" votes="23" />
+                <County name="Buchanan" votes="16" />
+                <County name="Buena Vista" votes="6" />
+                <County name="Butler" votes="3" />
+                <County name="Calhoun" votes="0" />
+                <County name="Carroll" votes="10" />
+                <County name="Cass" votes="10" />
+                <County name="Cedar" votes="6" />
+                <County name="Cerro Gordo" votes="33" />
+                <County name="Cherokee" votes="4" />
+                <County name="Chickasaw" votes="4" />
+                <County name="Clarke" votes="10" />
+                <County name="Clay" votes="15" />
+                <County name="Clayton" votes="6" />
+                <County name="Clinton" votes="34" />
+                <County name="Crawford" votes="7" />
+                <County name="Dallas" votes="136" />
+                <County name="Davis" votes="0" />
+                <County name="Decatur" votes="6" />
+                <County name="Delaware" votes="13" />
+                <County name="Des Moines" votes="20" />
+                <County name="Dickinson" votes="33" />
+                <County name="Dubuque" votes="79" />
+                <County name="Emmet" votes="4" />
+                <County name="Fayette" votes="6" />
+                <County name="Floyd" votes="8" />
+                <County name="Franklin" votes="3" />
+                <County name="Fremont" votes="3" />
+                <County name="Greene" votes="3" />
+                <County name="Grundy" votes="3" />
+                <County name="Guthrie" votes="13" />
+                <County name="Hamilton" votes="18" />
+                <County name="Hancock" votes="2" />
+                <County name="Hardin" votes="7" />
+                <County name="Harrison" votes="3" />
+                <County name="Henry" votes="15" />
+                <County name="Howard" votes="6" />
+                <County name="Humboldt" votes="2" />
+                <County name="Ida" votes="3" />
+                <County name="Iowa" votes="4" />
+                <County name="Jackson" votes="6" />
+                <County name="Jasper" votes="20" />
+                <County name="Jefferson" votes="12" />
+                <County name="Johnson" votes="228" />
+                <County name="Jones" votes="11" />
+                <County name="Keokuk" votes="0" />
+                <County name="Kossuth" votes="9" />
+                <County name="Lee" votes="16" />
+                <County name="Linn" votes="186" />
+                <County name="Louisa" votes="2" />
+                <County name="Lucas" votes="5" />
+                <County name="Lyon" votes="6" />
+                <County name="Madison" votes="18" />
+                <County name="Mahaska" votes="18" />
+                <County name="Marion" votes="24" />
+                <County name="Marshall" votes="28" />
+                <County name="Mills" votes="12" />
+                <County name="Mitchell" votes="3" />
+                <County name="Monona" votes="5" />
+                <County name="Monroe" votes="6" />
+                <County name="Montgomery" votes="7" />
+                <County name="Muscatine" votes="19" />
+                <County name="O'Brien" votes="5" />
+                <County name="Osceola" votes="3" />
+                <County name="Page" votes="7" />
+                <County name="Palo Alto" votes="1" />
+                <County name="Plymouth" votes="15" />
+                <County name="Pocahontas" votes="3" />
+                <County name="Polk" votes="372" />
+                <County name="Pottawattamie" votes="39" />
+                <County name="Poweshiek" votes="20" />
+                <County name="Ringgold" votes="0" />
+                <County name="Sac" votes="6" />
+                <County name="Scott" votes="144" />
+                <County name="Shelby" votes="6" />
+                <County name="Sioux" votes="33" />
+                <County name="Story" votes="100" />
+                <County name="Tama" votes="3" />
+                <County name="Taylor" votes="0" />
+                <County name="Union" votes="10" />
+                <County name="Van Buren" votes="1" />
+                <County name="Wapello" votes="5" />
+                <County name="Warren" votes="45" />
+                <County name="Washington" votes="17" />
+                <County name="Wayne" votes="1" />
+                <County name="Webster" votes="12" />
+                <County name="Winnebago" votes="3" />
+                <County name="Winneshiek" votes="27" />
+                <County name="Woodbury" votes="92" />
+                <County name="Worth" votes="2" />
+                <County name="Wright" votes="6" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="1100" text="United States Representative District 1" voteFor="1" isQuestion="false" countiesParticipating="20" countiesReported="20" precinctsParticipating="406" precinctsReported="406" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Cedar" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Clinton" precinctsParticipating="24" precinctsReported="24" precinctsReportingPercent="100.00" />
+            <County name="Des Moines" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Henry" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Iowa" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Jackson" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Jefferson" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Johnson" precinctsParticipating="65" precinctsReported="65" precinctsReportingPercent="100.00" />
+            <County name="Jones" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Keokuk" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Lee" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Louisa" precinctsParticipating="5" precinctsReported="5" precinctsReportingPercent="100.00" />
+            <County name="Mahaska" precinctsParticipating="9" precinctsReported="9" precinctsReportingPercent="100.00" />
+            <County name="Marion" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Muscatine" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Scott" precinctsParticipating="66" precinctsReported="66" precinctsReportingPercent="100.00" />
+            <County name="Van Buren" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+            <County name="Warren" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Washington" precinctsParticipating="10" precinctsReported="10" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="002" text="Christina Bohannan" party="DEM" totalVotes="206156">
+            <VoteType name="Election Day" votes="96372">
+                <County name="Cedar" votes="2302" />
+                <County name="Clinton" votes="4759" />
+                <County name="Des Moines" votes="4159" />
+                <County name="Henry" votes="1362" />
+                <County name="Iowa" votes="1976" />
+                <County name="Jackson" votes="2375" />
+                <County name="Jasper" votes="4333" />
+                <County name="Jefferson" votes="1247" />
+                <County name="Johnson" votes="24640" />
+                <County name="Jones" votes="2128" />
+                <County name="Keokuk" votes="943" />
+                <County name="Lee" votes="3147" />
+                <County name="Louisa" votes="945" />
+                <County name="Mahaska" votes="1652" />
+                <County name="Marion" votes="3894" />
+                <County name="Muscatine" votes="5054" />
+                <County name="Scott" votes="21145" />
+                <County name="Van Buren" votes="608" />
+                <County name="Warren" votes="7512" />
+                <County name="Washington" votes="2191" />
+            </VoteType>
+            <VoteType name="Absentee" votes="109784">
+                <County name="Cedar" votes="2158" />
+                <County name="Clinton" votes="6028" />
+                <County name="Des Moines" votes="4715" />
+                <County name="Henry" votes="2035" />
+                <County name="Iowa" votes="1807" />
+                <County name="Jackson" votes="1957" />
+                <County name="Jasper" votes="3814" />
+                <County name="Jefferson" votes="2950" />
+                <County name="Johnson" votes="35353" />
+                <County name="Jones" votes="2331" />
+                <County name="Keokuk" votes="590" />
+                <County name="Lee" votes="3540" />
+                <County name="Louisa" votes="853" />
+                <County name="Mahaska" votes="1521" />
+                <County name="Marion" votes="2769" />
+                <County name="Muscatine" votes="4074" />
+                <County name="Scott" votes="23757" />
+                <County name="Van Buren" votes="386" />
+                <County name="Warren" votes="6631" />
+                <County name="Washington" votes="2515" />
+            </VoteType>
+        </Choice>
+        <Choice key="001" text="Mariannette Miller-Meeks" party="REP" totalVotes="206955">
+            <VoteType name="Election Day" votes="126696">
+                <County name="Cedar" votes="3659" />
+                <County name="Clinton" votes="7624" />
+                <County name="Des Moines" votes="5389" />
+                <County name="Henry" votes="2739" />
+                <County name="Iowa" votes="3618" />
+                <County name="Jackson" votes="4054" />
+                <County name="Jasper" votes="7327" />
+                <County name="Jefferson" votes="2285" />
+                <County name="Johnson" votes="15350" />
+                <County name="Jones" votes="3878" />
+                <County name="Keokuk" votes="2439" />
+                <County name="Lee" votes="5425" />
+                <County name="Louisa" votes="1989" />
+                <County name="Mahaska" votes="4471" />
+                <County name="Marion" votes="8288" />
+                <County name="Muscatine" votes="6595" />
+                <County name="Scott" votes="24917" />
+                <County name="Van Buren" votes="1827" />
+                <County name="Warren" votes="11196" />
+                <County name="Washington" votes="3626" />
+            </VoteType>
+            <VoteType name="Absentee" votes="80259">
+                <County name="Cedar" votes="2284" />
+                <County name="Clinton" votes="4836" />
+                <County name="Des Moines" votes="4044" />
+                <County name="Henry" votes="3061" />
+                <County name="Iowa" votes="1932" />
+                <County name="Jackson" votes="1967" />
+                <County name="Jasper" votes="4031" />
+                <County name="Jefferson" votes="1670" />
+                <County name="Johnson" votes="9421" />
+                <County name="Jones" votes="2388" />
+                <County name="Keokuk" votes="980" />
+                <County name="Lee" votes="3673" />
+                <County name="Louisa" votes="1194" />
+                <County name="Mahaska" votes="2932" />
+                <County name="Marion" votes="4089" />
+                <County name="Muscatine" votes="3543" />
+                <County name="Scott" votes="17979" />
+                <County name="Van Buren" votes="735" />
+                <County name="Warren" votes="6510" />
+                <County name="Washington" votes="2990" />
+            </VoteType>
+        </Choice>
+        <Choice key="004" text="Write-in" totalVotes="967">
+            <VoteType name="Election Day" votes="651">
+                <County name="Cedar" votes="8" />
+                <County name="Clinton" votes="34" />
+                <County name="Des Moines" votes="33" />
+                <County name="Henry" votes="16" />
+                <County name="Iowa" votes="16" />
+                <County name="Jackson" votes="14" />
+                <County name="Jasper" votes="28" />
+                <County name="Jefferson" votes="19" />
+                <County name="Johnson" votes="86" />
+                <County name="Jones" votes="13" />
+                <County name="Keokuk" votes="6" />
+                <County name="Lee" votes="17" />
+                <County name="Louisa" votes="11" />
+                <County name="Mahaska" votes="27" />
+                <County name="Marion" votes="42" />
+                <County name="Muscatine" votes="32" />
+                <County name="Scott" votes="150" />
+                <County name="Van Buren" votes="4" />
+                <County name="Warren" votes="68" />
+                <County name="Washington" votes="27" />
+            </VoteType>
+            <VoteType name="Absentee" votes="316">
+                <County name="Cedar" votes="2" />
+                <County name="Clinton" votes="14" />
+                <County name="Des Moines" votes="21" />
+                <County name="Henry" votes="12" />
+                <County name="Iowa" votes="12" />
+                <County name="Jackson" votes="8" />
+                <County name="Jasper" votes="11" />
+                <County name="Jefferson" votes="6" />
+                <County name="Johnson" votes="51" />
+                <County name="Jones" votes="6" />
+                <County name="Keokuk" votes="1" />
+                <County name="Lee" votes="9" />
+                <County name="Louisa" votes="5" />
+                <County name="Mahaska" votes="22" />
+                <County name="Marion" votes="11" />
+                <County name="Muscatine" votes="10" />
+                <County name="Scott" votes="83" />
+                <County name="Van Buren" votes="4" />
+                <County name="Warren" votes="17" />
+                <County name="Washington" votes="11" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    </ElectionResult>

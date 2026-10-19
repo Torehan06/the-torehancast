@@ -1,0 +1,486 @@
+ElectionDate	PartyCode	PartyName	RaceCode	OfficeDesc	CountyCode	CountyName	Juris1num	Juris2num	Precincts	PrecinctsReporting	CanNameLast	CanNameFirst	CanNameMiddle	CanVotes
+11/6/2018	REP	Republican	USS	United States Senator	ALA	Alachua			63	63	Scott	Rick		40599
+11/6/2018	REP	Republican	USS	United States Senator	BAK	Baker			9	9	Scott	Rick		8579
+11/6/2018	REP	Republican	USS	United States Senator	BAY	Bay			44	44	Scott	Rick		46681
+11/6/2018	REP	Republican	USS	United States Senator	BRA	Bradford			14	14	Scott	Rick		7576
+11/6/2018	REP	Republican	USS	United States Senator	BRE	Brevard			174	174	Scott	Rick		160305
+11/6/2018	REP	Republican	USS	United States Senator	BRO	Broward			577	577	Scott	Rick		211397
+11/6/2018	REP	Republican	USS	United States Senator	CAL	Calhoun			11	11	Scott	Rick		3586
+11/6/2018	REP	Republican	USS	United States Senator	CHA	Charlotte			67	67	Scott	Rick		52916
+11/6/2018	REP	Republican	USS	United States Senator	CIT	Citrus			31	31	Scott	Rick		48008
+11/6/2018	REP	Republican	USS	United States Senator	CLA	Clay			47	47	Scott	Rick		65639
+11/6/2018	REP	Republican	USS	United States Senator	CLL	Collier			59	59	Scott	Rick		101266
+11/6/2018	REP	Republican	USS	United States Senator	CLM	Columbia			22	22	Scott	Rick		17234
+11/6/2018	REP	Republican	USS	United States Senator	DES	Desoto			15	15	Scott	Rick		5503
+11/6/2018	REP	Republican	USS	United States Senator	DIX	Dixie			10	10	Scott	Rick		4442
+11/6/2018	REP	Republican	USS	United States Senator	DUV	Duval			199	199	Scott	Rick		185904
+11/6/2018	REP	Republican	USS	United States Senator	ESC	Escambia			79	79	Scott	Rick		75947
+11/6/2018	REP	Republican	USS	United States Senator	FLA	Flagler			26	26	Scott	Rick		31467
+11/6/2018	REP	Republican	USS	United States Senator	FRA	Franklin			8	8	Scott	Rick		3404
+11/6/2018	REP	Republican	USS	United States Senator	GAD	Gadsden			25	25	Scott	Rick		6051
+11/6/2018	REP	Republican	USS	United States Senator	GIL	Gilchrist			10	10	Scott	Rick		5703
+11/6/2018	REP	Republican	USS	United States Senator	GLA	Glades			13	13	Scott	Rick		2666
+11/6/2018	REP	Republican	USS	United States Senator	GUL	Gulf			10	10	Scott	Rick		4321
+11/6/2018	REP	Republican	USS	United States Senator	HAM	Hamilton			8	8	Scott	Rick		2856
+11/6/2018	REP	Republican	USS	United States Senator	HAR	Hardee			12	12	Scott	Rick		4455
+11/6/2018	REP	Republican	USS	United States Senator	HEN	Hendry			10	10	Scott	Rick		5304
+11/6/2018	REP	Republican	USS	United States Senator	HER	Hernando			32	32	Scott	Rick		49501
+11/6/2018	REP	Republican	USS	United States Senator	HIG	Highlands			25	25	Scott	Rick		26282
+11/6/2018	REP	Republican	USS	United States Senator	HIL	Hillsborough			390	390	Scott	Rick		239641
+11/6/2018	REP	Republican	USS	United States Senator	HOL	Holmes			8	8	Scott	Rick		5919
+11/6/2018	REP	Republican	USS	United States Senator	IND	Indian River			36	36	Scott	Rick		44798
+11/6/2018	REP	Republican	USS	United States Senator	JAC	Jackson			14	14	Scott	Rick		10791
+11/6/2018	REP	Republican	USS	United States Senator	JEF	Jefferson			16	16	Scott	Rick		3699
+11/6/2018	REP	Republican	USS	United States Senator	LAF	Lafayette			5	5	Scott	Rick		2195
+11/6/2018	REP	Republican	USS	United States Senator	LAK	Lake			102	102	Scott	Rick		93537
+11/6/2018	REP	Republican	USS	United States Senator	LEE	Lee			127	127	Scott	Rick		174316
+11/6/2018	REP	Republican	USS	United States Senator	LEO	Leon			155	155	Scott	Rick		48767
+11/6/2018	REP	Republican	USS	United States Senator	LEV	Levy			13	13	Scott	Rick		11658
+11/6/2018	REP	Republican	USS	United States Senator	LIB	Liberty			8	8	Scott	Rick		2076
+11/6/2018	REP	Republican	USS	United States Senator	MAD	Madison			11	11	Scott	Rick		4184
+11/6/2018	REP	Republican	USS	United States Senator	MAN	Manatee			70	70	Scott	Rick		94390
+11/6/2018	REP	Republican	USS	United States Senator	MRN	Marion			125	125	Scott	Rick		95592
+11/6/2018	REP	Republican	USS	United States Senator	MRT	Martin			30	30	Scott	Rick		46733
+11/6/2018	REP	Republican	USS	United States Senator	DAD	Miami-Dade			907	907	Scott	Rick		316020
+11/6/2018	REP	Republican	USS	United States Senator	MON	Monroe			33	33	Scott	Rick		18035
+11/6/2018	REP	Republican	USS	United States Senator	NAS	Nassau			15	15	Scott	Rick		31795
+11/6/2018	REP	Republican	USS	United States Senator	OKA	Okaloosa			52	52	Scott	Rick		60924
+11/6/2018	REP	Republican	USS	United States Senator	OKE	Okeechobee			11	11	Scott	Rick		7727
+11/6/2018	REP	Republican	USS	United States Senator	ORA	Orange			247	247	Scott	Rick		180763
+11/6/2018	REP	Republican	USS	United States Senator	OSC	Osceola			87	87	Scott	Rick		47898
+11/6/2018	REP	Republican	USS	United States Senator	PAL	Palm Beach			871	871	Scott	Rick		244850
+11/6/2018	REP	Republican	USS	United States Senator	PAS	Pasco			110	110	Scott	Rick		121212
+11/6/2018	REP	Republican	USS	United States Senator	PIN	Pinellas			299	299	Scott	Rick		205935
+11/6/2018	REP	Republican	USS	United States Senator	POL	Polk			167	167	Scott	Rick		138751
+11/6/2018	REP	Republican	USS	United States Senator	PUT	Putnam			35	35	Scott	Rick		18689
+11/6/2018	REP	Republican	USS	United States Senator	SAN	Santa Rosa			41	41	Scott	Rick		56374
+11/6/2018	REP	Republican	USS	United States Senator	SAR	Sarasota			101	101	Scott	Rick		113585
+11/6/2018	REP	Republican	USS	United States Senator	SEM	Seminole			81	81	Scott	Rick		97457
+11/6/2018	REP	Republican	USS	United States Senator	STJ	St. Johns			46	46	Scott	Rick		85031
+11/6/2018	REP	Republican	USS	United States Senator	STL	St. Lucie			64	64	Scott	Rick		59612
+11/6/2018	REP	Republican	USS	United States Senator	SUM	Sumter			26	26	Scott	Rick		52868
+11/6/2018	REP	Republican	USS	United States Senator	SUW	Suwannee			16	16	Scott	Rick		11842
+11/6/2018	REP	Republican	USS	United States Senator	TAY	Taylor			14	14	Scott	Rick		5638
+11/6/2018	REP	Republican	USS	United States Senator	UNI	Union			8	8	Scott	Rick		3650
+11/6/2018	REP	Republican	USS	United States Senator	VOL	Volusia			125	125	Scott	Rick		125762
+11/6/2018	REP	Republican	USS	United States Senator	WAK	Wakulla			12	12	Scott	Rick		9322
+11/6/2018	REP	Republican	USS	United States Senator	WAL	Walton			21	21	Scott	Rick		22776
+11/6/2018	REP	Republican	USS	United States Senator	WAS	Washington			12	12	Scott	Rick		7101
+11/6/2018	DEM	Democrat	USS	United States Senator	ALA	Alachua			63	63	Nelson	Bill		74493
+11/6/2018	DEM	Democrat	USS	United States Senator	BAK	Baker			9	9	Nelson	Bill		1945
+11/6/2018	DEM	Democrat	USS	United States Senator	BAY	Bay			44	44	Nelson	Bill		16723
+11/6/2018	DEM	Democrat	USS	United States Senator	BRA	Bradford			14	14	Nelson	Bill		2879
+11/6/2018	DEM	Democrat	USS	United States Senator	BRE	Brevard			174	174	Nelson	Bill		121112
+11/6/2018	DEM	Democrat	USS	United States Senator	BRO	Broward			577	577	Nelson	Bill		472239
+11/6/2018	DEM	Democrat	USS	United States Senator	CAL	Calhoun			11	11	Nelson	Bill		1033
+11/6/2018	DEM	Democrat	USS	United States Senator	CHA	Charlotte			67	67	Nelson	Bill		33525
+11/6/2018	DEM	Democrat	USS	United States Senator	CIT	Citrus			31	31	Nelson	Bill		22660
+11/6/2018	DEM	Democrat	USS	United States Senator	CLA	Clay			47	47	Nelson	Bill		27718
+11/6/2018	DEM	Democrat	USS	United States Senator	CLL	Collier			59	59	Nelson	Bill		54390
+11/6/2018	DEM	Democrat	USS	United States Senator	CLM	Columbia			22	22	Nelson	Bill		7505
+11/6/2018	DEM	Democrat	USS	United States Senator	DES	Desoto			15	15	Nelson	Bill		3328
+11/6/2018	DEM	Democrat	USS	United States Senator	DIX	Dixie			10	10	Nelson	Bill		1322
+11/6/2018	DEM	Democrat	USS	United States Senator	DUV	Duval			199	199	Nelson	Bill		192381
+11/6/2018	DEM	Democrat	USS	United States Senator	ESC	Escambia			79	79	Nelson	Bill		52891
+11/6/2018	DEM	Democrat	USS	United States Senator	FLA	Flagler			26	26	Nelson	Bill		21419
+11/6/2018	DEM	Democrat	USS	United States Senator	FRA	Franklin			8	8	Nelson	Bill		2011
+11/6/2018	DEM	Democrat	USS	United States Senator	GAD	Gadsden			25	25	Nelson	Bill		13945
+11/6/2018	DEM	Democrat	USS	United States Senator	GIL	Gilchrist			10	10	Nelson	Bill		1633
+11/6/2018	DEM	Democrat	USS	United States Senator	GLA	Glades			13	13	Nelson	Bill		1156
+11/6/2018	DEM	Democrat	USS	United States Senator	GUL	Gulf			10	10	Nelson	Bill		1580
+11/6/2018	DEM	Democrat	USS	United States Senator	HAM	Hamilton			8	8	Nelson	Bill		1671
+11/6/2018	DEM	Democrat	USS	United States Senator	HAR	Hardee			12	12	Nelson	Bill		1916
+11/6/2018	DEM	Democrat	USS	United States Senator	HEN	Hendry			10	10	Nelson	Bill		3542
+11/6/2018	DEM	Democrat	USS	United States Senator	HER	Hernando			32	32	Nelson	Bill		30798
+11/6/2018	DEM	Democrat	USS	United States Senator	HIG	Highlands			25	25	Nelson	Bill		13398
+11/6/2018	DEM	Democrat	USS	United States Senator	HIL	Hillsborough			390	390	Nelson	Bill		281661
+11/6/2018	DEM	Democrat	USS	United States Senator	HOL	Holmes			8	8	Nelson	Bill		856
+11/6/2018	DEM	Democrat	USS	United States Senator	IND	Indian River			36	36	Nelson	Bill		29195
+11/6/2018	DEM	Democrat	USS	United States Senator	JAC	Jackson			14	14	Nelson	Bill		5182
+11/6/2018	DEM	Democrat	USS	United States Senator	JEF	Jefferson			16	16	Nelson	Bill		3626
+11/6/2018	DEM	Democrat	USS	United States Senator	LAF	Lafayette			5	5	Nelson	Bill		623
+11/6/2018	DEM	Democrat	USS	United States Senator	LAK	Lake			102	102	Nelson	Bill		61402
+11/6/2018	DEM	Democrat	USS	United States Senator	LEE	Lee			127	127	Nelson	Bill		114857
+11/6/2018	DEM	Democrat	USS	United States Senator	LEO	Leon			155	155	Nelson	Bill		91097
+11/6/2018	DEM	Democrat	USS	United States Senator	LEV	Levy			13	13	Nelson	Bill		5319
+11/6/2018	DEM	Democrat	USS	United States Senator	LIB	Liberty			8	8	Nelson	Bill		632
+11/6/2018	DEM	Democrat	USS	United States Senator	MAD	Madison			11	11	Nelson	Bill		3425
+11/6/2018	DEM	Democrat	USS	United States Senator	MAN	Manatee			70	70	Nelson	Bill		68877
+11/6/2018	DEM	Democrat	USS	United States Senator	MRN	Marion			125	125	Nelson	Bill		59025
+11/6/2018	DEM	Democrat	USS	United States Senator	MRT	Martin			30	30	Nelson	Bill		30691
+11/6/2018	DEM	Democrat	USS	United States Senator	DAD	Miami-Dade			907	907	Nelson	Bill		485496
+11/6/2018	DEM	Democrat	USS	United States Senator	MON	Monroe			33	33	Nelson	Bill		18051
+11/6/2018	DEM	Democrat	USS	United States Senator	NAS	Nassau			15	15	Nelson	Bill		11703
+11/6/2018	DEM	Democrat	USS	United States Senator	OKA	Okaloosa			52	52	Nelson	Bill		22902
+11/6/2018	DEM	Democrat	USS	United States Senator	OKE	Okeechobee			11	11	Nelson	Bill		3496
+11/6/2018	DEM	Democrat	USS	United States Senator	ORA	Orange			247	247	Nelson	Bill		294308
+11/6/2018	DEM	Democrat	USS	United States Senator	OSC	Osceola			87	87	Nelson	Bill		67123
+11/6/2018	DEM	Democrat	USS	United States Senator	PAL	Palm Beach			871	871	Nelson	Bill		344008
+11/6/2018	DEM	Democrat	USS	United States Senator	PAS	Pasco			110	110	Nelson	Bill		89447
+11/6/2018	DEM	Democrat	USS	United States Senator	PIN	Pinellas			299	299	Nelson	Bill		228712
+11/6/2018	DEM	Democrat	USS	United States Senator	POL	Polk			167	167	Nelson	Bill		105748
+11/6/2018	DEM	Democrat	USS	United States Senator	PUT	Putnam			35	35	Nelson	Bill		9344
+11/6/2018	DEM	Democrat	USS	United States Senator	SAN	Santa Rosa			41	41	Nelson	Bill		19047
+11/6/2018	DEM	Democrat	USS	United States Senator	SAR	Sarasota			101	101	Nelson	Bill		96973
+11/6/2018	DEM	Democrat	USS	United States Senator	SEM	Seminole			81	81	Nelson	Bill		101504
+11/6/2018	DEM	Democrat	USS	United States Senator	STJ	St. Johns			46	46	Nelson	Bill		45638
+11/6/2018	DEM	Democrat	USS	United States Senator	STL	St. Lucie			64	64	Nelson	Bill		63978
+11/6/2018	DEM	Democrat	USS	United States Senator	SUM	Sumter			26	26	Nelson	Bill		21678
+11/6/2018	DEM	Democrat	USS	United States Senator	SUW	Suwannee			16	16	Nelson	Bill		4044
+11/6/2018	DEM	Democrat	USS	United States Senator	TAY	Taylor			14	14	Nelson	Bill		2263
+11/6/2018	DEM	Democrat	USS	United States Senator	UNI	Union			8	8	Nelson	Bill		1197
+11/6/2018	DEM	Democrat	USS	United States Senator	VOL	Volusia			125	125	Nelson	Bill		102819
+11/6/2018	DEM	Democrat	USS	United States Senator	WAK	Wakulla			12	12	Nelson	Bill		4868
+11/6/2018	DEM	Democrat	USS	United States Senator	WAL	Walton			21	21	Nelson	Bill		7485
+11/6/2018	DEM	Democrat	USS	United States Senator	WAS	Washington			12	12	Nelson	Bill		1959
+11/6/2018	WRI	Write-In	USS	United States Senator	ALA	Alachua			63	63	Jones	Lateresa	L.A.	9
+11/6/2018	WRI	Write-In	USS	United States Senator	BAK	Baker			9	9	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BAY	Bay			44	44	Jones	Lateresa	L.A.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	BRA	Bradford			14	14	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRE	Brevard			174	174	Jones	Lateresa	L.A.	28
+11/6/2018	WRI	Write-In	USS	United States Senator	BRO	Broward			577	577	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CAL	Calhoun			11	11	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CHA	Charlotte			67	67	Jones	Lateresa	L.A.	11
+11/6/2018	WRI	Write-In	USS	United States Senator	CIT	Citrus			31	31	Jones	Lateresa	L.A.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	CLA	Clay			47	47	Jones	Lateresa	L.A.	6
+11/6/2018	WRI	Write-In	USS	United States Senator	CLL	Collier			59	59	Jones	Lateresa	L.A.	4
+11/6/2018	WRI	Write-In	USS	United States Senator	CLM	Columbia			22	22	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	DES	Desoto			15	15	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DIX	Dixie			10	10	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DUV	Duval			199	199	Jones	Lateresa	L.A.	28
+11/6/2018	WRI	Write-In	USS	United States Senator	ESC	Escambia			79	79	Jones	Lateresa	L.A.	6
+11/6/2018	WRI	Write-In	USS	United States Senator	FLA	Flagler			26	26	Jones	Lateresa	L.A.	4
+11/6/2018	WRI	Write-In	USS	United States Senator	FRA	Franklin			8	8	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GAD	Gadsden			25	25	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	GIL	Gilchrist			10	10	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GLA	Glades			13	13	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	GUL	Gulf			10	10	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAM	Hamilton			8	8	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAR	Hardee			12	12	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HEN	Hendry			10	10	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HER	Hernando			32	32	Jones	Lateresa	L.A.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	HIG	Highlands			25	25	Jones	Lateresa	L.A.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	HIL	Hillsborough			390	390	Jones	Lateresa	L.A.	11
+11/6/2018	WRI	Write-In	USS	United States Senator	HOL	Holmes			8	8	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	IND	Indian River			36	36	Jones	Lateresa	L.A.	10
+11/6/2018	WRI	Write-In	USS	United States Senator	JAC	Jackson			14	14	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	JEF	Jefferson			16	16	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAF	Lafayette			5	5	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAK	Lake			102	102	Jones	Lateresa	L.A.	7
+11/6/2018	WRI	Write-In	USS	United States Senator	LEE	Lee			127	127	Jones	Lateresa	L.A.	18
+11/6/2018	WRI	Write-In	USS	United States Senator	LEO	Leon			155	155	Jones	Lateresa	L.A.	11
+11/6/2018	WRI	Write-In	USS	United States Senator	LEV	Levy			13	13	Jones	Lateresa	L.A.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	LIB	Liberty			8	8	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAD	Madison			11	11	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAN	Manatee			70	70	Jones	Lateresa	L.A.	7
+11/6/2018	WRI	Write-In	USS	United States Senator	MRN	Marion			125	125	Jones	Lateresa	L.A.	30
+11/6/2018	WRI	Write-In	USS	United States Senator	MRT	Martin			30	30	Jones	Lateresa	L.A.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	DAD	Miami-Dade			907	907	Jones	Lateresa	L.A.	17
+11/6/2018	WRI	Write-In	USS	United States Senator	MON	Monroe			33	33	Jones	Lateresa	L.A.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	NAS	Nassau			15	15	Jones	Lateresa	L.A.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	OKA	Okaloosa			52	52	Jones	Lateresa	L.A.	9
+11/6/2018	WRI	Write-In	USS	United States Senator	OKE	Okeechobee			11	11	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ORA	Orange			247	247	Jones	Lateresa	L.A.	42
+11/6/2018	WRI	Write-In	USS	United States Senator	OSC	Osceola			87	87	Jones	Lateresa	L.A.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	PAL	Palm Beach			871	871	Jones	Lateresa	L.A.	20
+11/6/2018	WRI	Write-In	USS	United States Senator	PAS	Pasco			110	110	Jones	Lateresa	L.A.	20
+11/6/2018	WRI	Write-In	USS	United States Senator	PIN	Pinellas			299	299	Jones	Lateresa	L.A.	58
+11/6/2018	WRI	Write-In	USS	United States Senator	POL	Polk			167	167	Jones	Lateresa	L.A.	21
+11/6/2018	WRI	Write-In	USS	United States Senator	PUT	Putnam			35	35	Jones	Lateresa	L.A.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	SAN	Santa Rosa			41	41	Jones	Lateresa	L.A.	7
+11/6/2018	WRI	Write-In	USS	United States Senator	SAR	Sarasota			101	101	Jones	Lateresa	L.A.	13
+11/6/2018	WRI	Write-In	USS	United States Senator	SEM	Seminole			81	81	Jones	Lateresa	L.A.	15
+11/6/2018	WRI	Write-In	USS	United States Senator	STJ	St. Johns			46	46	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	STL	St. Lucie			64	64	Jones	Lateresa	L.A.	11
+11/6/2018	WRI	Write-In	USS	United States Senator	SUM	Sumter			26	26	Jones	Lateresa	L.A.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	SUW	Suwannee			16	16	Jones	Lateresa	L.A.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	TAY	Taylor			14	14	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	UNI	Union			8	8	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	VOL	Volusia			125	125	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAK	Wakulla			12	12	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAL	Walton			21	21	Jones	Lateresa	L.A.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	WAS	Washington			12	12	Jones	Lateresa	L.A.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ALA	Alachua			63	63	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	BAK	Baker			9	9	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	BAY	Bay			44	44	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRA	Bradford			14	14	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	BRE	Brevard			174	174	Knepper	Howard		7
+11/6/2018	WRI	Write-In	USS	United States Senator	BRO	Broward			577	577	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	CAL	Calhoun			11	11	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	CHA	Charlotte			67	67	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	CIT	Citrus			31	31	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	CLA	Clay			47	47	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	CLL	Collier			59	59	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	CLM	Columbia			22	22	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DES	Desoto			15	15	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DIX	Dixie			10	10	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DUV	Duval			199	199	Knepper	Howard		4
+11/6/2018	WRI	Write-In	USS	United States Senator	ESC	Escambia			79	79	Knepper	Howard		3
+11/6/2018	WRI	Write-In	USS	United States Senator	FLA	Flagler			26	26	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	FRA	Franklin			8	8	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GAD	Gadsden			25	25	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GIL	Gilchrist			10	10	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GLA	Glades			13	13	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GUL	Gulf			10	10	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAM	Hamilton			8	8	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAR	Hardee			12	12	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HEN	Hendry			10	10	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HER	Hernando			32	32	Knepper	Howard		4
+11/6/2018	WRI	Write-In	USS	United States Senator	HIG	Highlands			25	25	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HIL	Hillsborough			390	390	Knepper	Howard		16
+11/6/2018	WRI	Write-In	USS	United States Senator	HOL	Holmes			8	8	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	IND	Indian River			36	36	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	JAC	Jackson			14	14	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	JEF	Jefferson			16	16	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAF	Lafayette			5	5	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAK	Lake			102	102	Knepper	Howard		3
+11/6/2018	WRI	Write-In	USS	United States Senator	LEE	Lee			127	127	Knepper	Howard		6
+11/6/2018	WRI	Write-In	USS	United States Senator	LEO	Leon			155	155	Knepper	Howard		5
+11/6/2018	WRI	Write-In	USS	United States Senator	LEV	Levy			13	13	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	LIB	Liberty			8	8	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAD	Madison			11	11	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAN	Manatee			70	70	Knepper	Howard		8
+11/6/2018	WRI	Write-In	USS	United States Senator	MRN	Marion			125	125	Knepper	Howard		2
+11/6/2018	WRI	Write-In	USS	United States Senator	MRT	Martin			30	30	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DAD	Miami-Dade			907	907	Knepper	Howard		4
+11/6/2018	WRI	Write-In	USS	United States Senator	MON	Monroe			33	33	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	NAS	Nassau			15	15	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	OKA	Okaloosa			52	52	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	OKE	Okeechobee			11	11	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	ORA	Orange			247	247	Knepper	Howard		5
+11/6/2018	WRI	Write-In	USS	United States Senator	OSC	Osceola			87	87	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	PAL	Palm Beach			871	871	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	PAS	Pasco			110	110	Knepper	Howard		3
+11/6/2018	WRI	Write-In	USS	United States Senator	PIN	Pinellas			299	299	Knepper	Howard		14
+11/6/2018	WRI	Write-In	USS	United States Senator	POL	Polk			167	167	Knepper	Howard		6
+11/6/2018	WRI	Write-In	USS	United States Senator	PUT	Putnam			35	35	Knepper	Howard		2
+11/6/2018	WRI	Write-In	USS	United States Senator	SAN	Santa Rosa			41	41	Knepper	Howard		2
+11/6/2018	WRI	Write-In	USS	United States Senator	SAR	Sarasota			101	101	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	SEM	Seminole			81	81	Knepper	Howard		3
+11/6/2018	WRI	Write-In	USS	United States Senator	STJ	St. Johns			46	46	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	STL	St. Lucie			64	64	Knepper	Howard		3
+11/6/2018	WRI	Write-In	USS	United States Senator	SUM	Sumter			26	26	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	SUW	Suwannee			16	16	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	TAY	Taylor			14	14	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	UNI	Union			8	8	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	VOL	Volusia			125	125	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAK	Wakulla			12	12	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAL	Walton			21	21	Knepper	Howard		1
+11/6/2018	WRI	Write-In	USS	United States Senator	WAS	Washington			12	12	Knepper	Howard		0
+11/6/2018	WRI	Write-In	USS	United States Senator	ALA	Alachua			63	63	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	BAK	Baker			9	9	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	BAY	Bay			44	44	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRA	Bradford			14	14	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRE	Brevard			174	174	Levinson	Michael	S.	7
+11/6/2018	WRI	Write-In	USS	United States Senator	BRO	Broward			577	577	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CAL	Calhoun			11	11	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CHA	Charlotte			67	67	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CIT	Citrus			31	31	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	CLA	Clay			47	47	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	CLL	Collier			59	59	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CLM	Columbia			22	22	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DES	Desoto			15	15	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DIX	Dixie			10	10	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DUV	Duval			199	199	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	ESC	Escambia			79	79	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	FLA	Flagler			26	26	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	FRA	Franklin			8	8	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GAD	Gadsden			25	25	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GIL	Gilchrist			10	10	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GLA	Glades			13	13	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GUL	Gulf			10	10	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAM	Hamilton			8	8	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAR	Hardee			12	12	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HEN	Hendry			10	10	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HER	Hernando			32	32	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	HIG	Highlands			25	25	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HIL	Hillsborough			390	390	Levinson	Michael	S.	9
+11/6/2018	WRI	Write-In	USS	United States Senator	HOL	Holmes			8	8	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	IND	Indian River			36	36	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	JAC	Jackson			14	14	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	JEF	Jefferson			16	16	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAF	Lafayette			5	5	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAK	Lake			102	102	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LEE	Lee			127	127	Levinson	Michael	S.	4
+11/6/2018	WRI	Write-In	USS	United States Senator	LEO	Leon			155	155	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	LEV	Levy			13	13	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LIB	Liberty			8	8	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAD	Madison			11	11	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAN	Manatee			70	70	Levinson	Michael	S.	3
+11/6/2018	WRI	Write-In	USS	United States Senator	MRN	Marion			125	125	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	MRT	Martin			30	30	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	DAD	Miami-Dade			907	907	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	MON	Monroe			33	33	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	NAS	Nassau			15	15	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	OKA	Okaloosa			52	52	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	OKE	Okeechobee			11	11	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ORA	Orange			247	247	Levinson	Michael	S.	7
+11/6/2018	WRI	Write-In	USS	United States Senator	OSC	Osceola			87	87	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	PAL	Palm Beach			871	871	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	PAS	Pasco			110	110	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	PIN	Pinellas			299	299	Levinson	Michael	S.	16
+11/6/2018	WRI	Write-In	USS	United States Senator	POL	Polk			167	167	Levinson	Michael	S.	6
+11/6/2018	WRI	Write-In	USS	United States Senator	PUT	Putnam			35	35	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SAN	Santa Rosa			41	41	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SAR	Sarasota			101	101	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	SEM	Seminole			81	81	Levinson	Michael	S.	2
+11/6/2018	WRI	Write-In	USS	United States Senator	STJ	St. Johns			46	46	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	STL	St. Lucie			64	64	Levinson	Michael	S.	5
+11/6/2018	WRI	Write-In	USS	United States Senator	SUM	Sumter			26	26	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SUW	Suwannee			16	16	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	TAY	Taylor			14	14	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	UNI	Union			8	8	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	VOL	Volusia			125	125	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAK	Wakulla			12	12	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAL	Walton			21	21	Levinson	Michael	S.	1
+11/6/2018	WRI	Write-In	USS	United States Senator	WAS	Washington			12	12	Levinson	Michael	S.	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ALA	Alachua			63	63	Tolbert	Charles	Frederick	2
+11/6/2018	WRI	Write-In	USS	United States Senator	BAK	Baker			9	9	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BAY	Bay			44	44	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRA	Bradford			14	14	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRE	Brevard			174	174	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	BRO	Broward			577	577	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CAL	Calhoun			11	11	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CHA	Charlotte			67	67	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CIT	Citrus			31	31	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	CLA	Clay			47	47	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	CLL	Collier			59	59	Tolbert	Charles	Frederick	1
+11/6/2018	WRI	Write-In	USS	United States Senator	CLM	Columbia			22	22	Tolbert	Charles	Frederick	4
+11/6/2018	WRI	Write-In	USS	United States Senator	DES	Desoto			15	15	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DIX	Dixie			10	10	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	DUV	Duval			199	199	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	ESC	Escambia			79	79	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	FLA	Flagler			26	26	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	FRA	Franklin			8	8	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GAD	Gadsden			25	25	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GIL	Gilchrist			10	10	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GLA	Glades			13	13	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	GUL	Gulf			10	10	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAM	Hamilton			8	8	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAR	Hardee			12	12	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HEN	Hendry			10	10	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	HER	Hernando			32	32	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	HIG	Highlands			25	25	Tolbert	Charles	Frederick	1
+11/6/2018	WRI	Write-In	USS	United States Senator	HIL	Hillsborough			390	390	Tolbert	Charles	Frederick	20
+11/6/2018	WRI	Write-In	USS	United States Senator	HOL	Holmes			8	8	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	IND	Indian River			36	36	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	JAC	Jackson			14	14	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	JEF	Jefferson			16	16	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAF	Lafayette			5	5	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAK	Lake			102	102	Tolbert	Charles	Frederick	2
+11/6/2018	WRI	Write-In	USS	United States Senator	LEE	Lee			127	127	Tolbert	Charles	Frederick	5
+11/6/2018	WRI	Write-In	USS	United States Senator	LEO	Leon			155	155	Tolbert	Charles	Frederick	5
+11/6/2018	WRI	Write-In	USS	United States Senator	LEV	Levy			13	13	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	LIB	Liberty			8	8	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAD	Madison			11	11	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAN	Manatee			70	70	Tolbert	Charles	Frederick	2
+11/6/2018	WRI	Write-In	USS	United States Senator	MRN	Marion			125	125	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MRT	Martin			30	30	Tolbert	Charles	Frederick	2
+11/6/2018	WRI	Write-In	USS	United States Senator	DAD	Miami-Dade			907	907	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	MON	Monroe			33	33	Tolbert	Charles	Frederick	1
+11/6/2018	WRI	Write-In	USS	United States Senator	NAS	Nassau			15	15	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	OKA	Okaloosa			52	52	Tolbert	Charles	Frederick	4
+11/6/2018	WRI	Write-In	USS	United States Senator	OKE	Okeechobee			11	11	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ORA	Orange			247	247	Tolbert	Charles	Frederick	8
+11/6/2018	WRI	Write-In	USS	United States Senator	OSC	Osceola			87	87	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	PAL	Palm Beach			871	871	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	PAS	Pasco			110	110	Tolbert	Charles	Frederick	9
+11/6/2018	WRI	Write-In	USS	United States Senator	PIN	Pinellas			299	299	Tolbert	Charles	Frederick	13
+11/6/2018	WRI	Write-In	USS	United States Senator	POL	Polk			167	167	Tolbert	Charles	Frederick	5
+11/6/2018	WRI	Write-In	USS	United States Senator	PUT	Putnam			35	35	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SAN	Santa Rosa			41	41	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SAR	Sarasota			101	101	Tolbert	Charles	Frederick	3
+11/6/2018	WRI	Write-In	USS	United States Senator	SEM	Seminole			81	81	Tolbert	Charles	Frederick	5
+11/6/2018	WRI	Write-In	USS	United States Senator	STJ	St. Johns			46	46	Tolbert	Charles	Frederick	2
+11/6/2018	WRI	Write-In	USS	United States Senator	STL	St. Lucie			64	64	Tolbert	Charles	Frederick	5
+11/6/2018	WRI	Write-In	USS	United States Senator	SUM	Sumter			26	26	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	SUW	Suwannee			16	16	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	TAY	Taylor			14	14	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	UNI	Union			8	8	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	VOL	Volusia			125	125	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAK	Wakulla			12	12	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAL	Walton			21	21	Tolbert	Charles	Frederick	1
+11/6/2018	WRI	Write-In	USS	United States Senator	WAS	Washington			12	12	Tolbert	Charles	Frederick	0
+11/6/2018	WRI	Write-In	USS	United States Senator	ALA	Alachua			63	63	Weeks	David		3
+11/6/2018	WRI	Write-In	USS	United States Senator	BAK	Baker			9	9	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	BAY	Bay			44	44	Weeks	David		2
+11/6/2018	WRI	Write-In	USS	United States Senator	BRA	Bradford			14	14	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	BRE	Brevard			174	174	Weeks	David		11
+11/6/2018	WRI	Write-In	USS	United States Senator	BRO	Broward			577	577	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	CAL	Calhoun			11	11	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	CHA	Charlotte			67	67	Weeks	David		4
+11/6/2018	WRI	Write-In	USS	United States Senator	CIT	Citrus			31	31	Weeks	David		4
+11/6/2018	WRI	Write-In	USS	United States Senator	CLA	Clay			47	47	Weeks	David		2
+11/6/2018	WRI	Write-In	USS	United States Senator	CLL	Collier			59	59	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	CLM	Columbia			22	22	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	DES	Desoto			15	15	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DIX	Dixie			10	10	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	DUV	Duval			199	199	Weeks	David		5
+11/6/2018	WRI	Write-In	USS	United States Senator	ESC	Escambia			79	79	Weeks	David		4
+11/6/2018	WRI	Write-In	USS	United States Senator	FLA	Flagler			26	26	Weeks	David		3
+11/6/2018	WRI	Write-In	USS	United States Senator	FRA	Franklin			8	8	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GAD	Gadsden			25	25	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GIL	Gilchrist			10	10	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GLA	Glades			13	13	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	GUL	Gulf			10	10	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAM	Hamilton			8	8	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HAR	Hardee			12	12	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HEN	Hendry			10	10	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	HER	Hernando			32	32	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	HIG	Highlands			25	25	Weeks	David		3
+11/6/2018	WRI	Write-In	USS	United States Senator	HIL	Hillsborough			390	390	Weeks	David		16
+11/6/2018	WRI	Write-In	USS	United States Senator	HOL	Holmes			8	8	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	IND	Indian River			36	36	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	JAC	Jackson			14	14	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	JEF	Jefferson			16	16	Weeks	David		2
+11/6/2018	WRI	Write-In	USS	United States Senator	LAF	Lafayette			5	5	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	LAK	Lake			102	102	Weeks	David		3
+11/6/2018	WRI	Write-In	USS	United States Senator	LEE	Lee			127	127	Weeks	David		8
+11/6/2018	WRI	Write-In	USS	United States Senator	LEO	Leon			155	155	Weeks	David		8
+11/6/2018	WRI	Write-In	USS	United States Senator	LEV	Levy			13	13	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	LIB	Liberty			8	8	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAD	Madison			11	11	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	MAN	Manatee			70	70	Weeks	David		8
+11/6/2018	WRI	Write-In	USS	United States Senator	MRN	Marion			125	125	Weeks	David		10
+11/6/2018	WRI	Write-In	USS	United States Senator	MRT	Martin			30	30	Weeks	David		6
+11/6/2018	WRI	Write-In	USS	United States Senator	DAD	Miami-Dade			907	907	Weeks	David		8
+11/6/2018	WRI	Write-In	USS	United States Senator	MON	Monroe			33	33	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	NAS	Nassau			15	15	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	OKA	Okaloosa			52	52	Weeks	David		5
+11/6/2018	WRI	Write-In	USS	United States Senator	OKE	Okeechobee			11	11	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	ORA	Orange			247	247	Weeks	David		8
+11/6/2018	WRI	Write-In	USS	United States Senator	OSC	Osceola			87	87	Weeks	David		2
+11/6/2018	WRI	Write-In	USS	United States Senator	PAL	Palm Beach			871	871	Weeks	David		7
+11/6/2018	WRI	Write-In	USS	United States Senator	PAS	Pasco			110	110	Weeks	David		14
+11/6/2018	WRI	Write-In	USS	United States Senator	PIN	Pinellas			299	299	Weeks	David		26
+11/6/2018	WRI	Write-In	USS	United States Senator	POL	Polk			167	167	Weeks	David		7
+11/6/2018	WRI	Write-In	USS	United States Senator	PUT	Putnam			35	35	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	SAN	Santa Rosa			41	41	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	SAR	Sarasota			101	101	Weeks	David		16
+11/6/2018	WRI	Write-In	USS	United States Senator	SEM	Seminole			81	81	Weeks	David		6
+11/6/2018	WRI	Write-In	USS	United States Senator	STJ	St. Johns			46	46	Weeks	David		3
+11/6/2018	WRI	Write-In	USS	United States Senator	STL	St. Lucie			64	64	Weeks	David		10
+11/6/2018	WRI	Write-In	USS	United States Senator	SUM	Sumter			26	26	Weeks	David		1
+11/6/2018	WRI	Write-In	USS	United States Senator	SUW	Suwannee			16	16	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	TAY	Taylor			14	14	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	UNI	Union			8	8	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	VOL	Volusia			125	125	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAK	Wakulla			12	12	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAL	Walton			21	21	Weeks	David		0
+11/6/2018	WRI	Write-In	USS	United States Senator	WAS	Washington			12	12	Weeks	David		0
+11/6/2018	REP	Republican	GOV	Governor	ALA	Alachua			63	63	DeSantis	Ron		41278
+11/6/2018	REP	Republican	GOV	Governor	DAD	Miami-Dade			902	902	DeSantis	Ron		311581
+11/6/2018	DEM	Democrat	GOV	Governor	ALA	Alachua			63	63	Gillum	Andrew		72711
+11/6/2018	DEM	Democrat	GOV	Governor	DAD	Miami-Dade			902	902	Gillum	Andrew		478958
+11/6/2018	REF	Reform Party of Florida	GOV	Governor	ALA	Alachua			63	63	Richardson	Darcy	G.	538
+11/6/2018	REF	Reform Party of Florida	GOV	Governor	DAD	Miami-Dade			902	902	Richardson	Darcy	G.	3684
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	ALA	Alachua			63	63	Gibson	Kyle	'KC'	333
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	DAD	Miami-Dade			902	902	Gibson	Kyle	'KC'	1907
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	ALA	Alachua			63	63	Foley	Ryan	Christopher	130
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	DAD	Miami-Dade			902	902	Foley	Ryan	Christopher	1240
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	ALA	Alachua			63	63	Stanley	Bruce		202
+11/6/2018	NPA	No Party Affiliation	GOV	Governor	DAD	Miami-Dade			902	902	Stanley	Bruce		1652
+11/6/2018	WRI	Write-In	GOV	Governor	ALA	Alachua			63	63	Blass	Piotr		0
+11/6/2018	WRI	Write-In	GOV	Governor	DAD	Miami-Dade			902	902	Blass	Piotr		0
+11/6/2018	WRI	Write-In	GOV	Governor	ALA	Alachua			63	63	Johnson	Hal		2
+11/6/2018	WRI	Write-In	GOV	Governor	DAD	Miami-Dade			902	902	Johnson	Hal		2

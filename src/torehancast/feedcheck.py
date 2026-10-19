@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import httpx
 
-from .http import USER_AGENT
+from .http import USER_AGENT, ssl_context
 
 CHECKS: dict[str, list[str]] = {
     "GA": [
@@ -23,7 +23,7 @@ CHECKS: dict[str, list[str]] = {
     "FL": ["https://results.elections.myflorida.com/downloadresults.asp?ElectionDate=11/5/2024&DATAMODE="],
     "TX": ["https://results.texas-election.com/static/data/ElectionConstants_404.json"],
     "OH": ["https://liveresults.ohiosos.gov/", "https://www.ohiosos.gov/elections/election-results-and-data/"],
-    "IA": ["https://electionresults.iowa.gov/IA/elections.json"],
+    "IA": ["https://electionresults.iowa.gov/IA/122322/current_ver.txt"],
     "KS": ["https://ent.sos.ks.gov/national.html", "https://sos.ks.gov/elections/election-results.html"],
     "SC": ["https://www.enr-scvotes.org/SC/122436/current_ver.txt"],
     "MI": [
@@ -34,7 +34,12 @@ CHECKS: dict[str, list[str]] = {
     # Directory listings are refused (IIS 403); individual files are served.
     "MN": ["https://electionresultsfiles.sos.mn.gov/20241105/ussenate.txt"],
     "ME": ["https://www.maine.gov/sos/cec/elec/results/index.html"],
-    "AK": ["https://www.elections.alaska.gov/election-results/", "https://www.elections.alaska.gov/results/24GENR/"],
+    # The server sends the wrong intermediate; http.EXTRA_CAS supplies the right one.
+    "AK": [
+        "https://www.elections.alaska.gov/election-results/",
+        "https://www.elections.alaska.gov/results/24GENR/ENRbyPrecinct.csv",
+        "https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv",
+    ],
     # Resolves only from US networks.
     "NE": ["https://electionresults.nebraska.gov/"],
 }
@@ -56,7 +61,7 @@ def check(url: str, client: httpx.Client) -> str:
 
 
 def main() -> None:
-    with httpx.Client(timeout=30, follow_redirects=True, headers={"User-Agent": USER_AGENT}) as client:
+    with httpx.Client(timeout=30, follow_redirects=True, headers={"User-Agent": USER_AGENT}, verify=ssl_context()) as client:
         for state, urls in CHECKS.items():
             for url in urls:
                 print(f"{state}  {check(url, client):45s}  {url}")

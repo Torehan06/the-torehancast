@@ -1,0 +1,109 @@
+"""Results-only races publish observed counts, never model forecasts."""
+
+import json
+from dataclasses import replace
+
+import pandas as pd
+import pytest
+
+from torehancast import public_json, publish
+from torehancast.model.composition import CompositionPrior
+from torehancast.model.simulate import RaceModel, RacePrior
+from torehancast.model.tau import HistoricalParams
+from torehancast.schema import ALL, Cell, Snapshot
+
+
+@pytest.fixture
+def modeled():
+    baseline = pd.DataFrame([{"unit_id": "A", "vote_type": ALL, "D": 490, "R": 450}])
+    params = HistoricalParams(0.04, 0.08, 0.03, 0.05, CompositionPrior(0.2, 0.1, 0.1, 0.05), 1000)
+    model = RaceModel(baseline, RacePrior(0, 0.1, 1, 0.1), params)
+    snapshot = Snapshot("GA", "Senate", "now", [Cell("A", ALL, {"D": 490, "R": 450})])
+    return publish.StateUpdate("GA", "Senate", {"D": "Dem", "R": "Rep"},
+                               model.run(snapshot, n_draws=100, seed=0), model, "now")
+
+
+def results_only(**changes):
+    fields = dict(state="VA", race="Senate", candidates={"D": "Dem", "R": "Rep", "I": "Ind"},
+                  votes={"D": 50, "R": 30, "I": 20}, pct_reporting=0.25, as_of="now")
+    return publish.ResultsOnlyUpdate(**(fields | changes))
+
+
+@pytest.mark.parametrize("state", ["GA", "ME", "AK"])
+@pytest.mark.parametrize("mode", ["live", "replay"])
+def test_every_modeled_output_explicitly_identifies_forecasts(modeled, state, mode):
+    update = replace(modeled, state=state)
+    for render in (publish.state_summary, publish.state_detail):
+        assert render(update, mode)["modeled"] is True
+    waiting = replace(update, result=replace(update.result, reported_votes=0))
+    assert publish.state_summary(waiting, "live") == {
+        "state": state, "race": "Senate", "as_of": "now", "status": "waiting", "modeled": True,
+    }
+
+
+@pytest.mark.parametrize("mode", ["live", "replay"])
+@pytest.mark.parametrize("state", ["VA", "ME", "AK"])
+def test_results_only_summary_and_detail_have_only_observed_data(tmp_path, mode, state):
+    publish.publish([results_only(state=state)], publish.LocalWriter(tmp_path), mode, gate="data_weight")
+    detail = json.loads((tmp_path / f"data/{mode}/{state}.json").read_text())
+    summary = json.loads((tmp_path / f"data/{mode}/summary.json").read_text())["states"][0]
+    expected = {
+        "state": state, "race": "Senate", "as_of": "now", "status": "live", "modeled": False,
+        "candidates": {"D": "Dem", "R": "Rep", "I": "Ind"},
+        "votes": {"D": 50, "R": 30, "I": 20},
+        "vote_share": {"D": 0.5, "R": 0.3, "I": 0.2}, "pct_reporting": 0.25,
+    }
+    assert detail == summary == expected
+
+
+@pytest.mark.parametrize("mode", ["live", "replay"])
+def test_results_only_zero_votes_wait_even_if_feed_reports_completion(mode):
+    update = results_only(votes={"D": 0, "R": 0, "I": 0}, pct_reporting=1.0)
+    for render in (publish.state_summary, publish.state_detail):
+        assert render(update, mode) == {
+            "state": "VA", "race": "Senate", "as_of": "now", "status": "waiting", "modeled": False,
+        }
+
+
+def test_unknown_reporting_is_not_inferred_from_candidate_totals():
+    assert publish.state_summary(results_only(pct_reporting=None), "live")["pct_reporting"] is None
+
+
+@pytest.mark.parametrize("changes", [
+    {"votes": {"D": -1, "R": 30, "I": 20}},
+    {"votes": {"D": True, "R": 30, "I": 20}},
+    {"votes": {"D": 1.5, "R": 30, "I": 20}},
+    {"votes": {"D": 50, "R": 30}},
+    {"votes": {"D": 50, "R": 30, "I": 20, "unknown": 1}},
+    {"candidates": {}, "votes": {}},
+    {"pct_reporting": -0.1}, {"pct_reporting": 1.1},
+    {"pct_reporting": float("nan")}, {"pct_reporting": True},
+])
+def test_invalid_observed_results_are_rejected_before_writing(tmp_path, changes):
+    with pytest.raises(ValueError):
+        publish.publish([results_only(**changes)], publish.LocalWriter(tmp_path), "live")
+    assert not list(tmp_path.rglob("*.json"))
+
+
+def test_mixed_races_pass_the_public_checker(modeled, tmp_path):
+    publish.publish([modeled, results_only()], publish.LocalWriter(tmp_path), "replay")
+    assert public_json.check_tree(tmp_path).files == 3
+
+
+@pytest.mark.parametrize("field", ["p_win", "p_outright", "p_via_rcv", "p_no_rcv_needed",
+                                   "margin", "expected_votes", "share_counted", "counties", "rcv_status"])
+def test_checker_rejects_any_forecast_on_results_only_payload(tmp_path, field):
+    payload = publish.state_summary(results_only(), "replay")
+    payload[field] = None
+    (tmp_path / "VA.json").write_text(json.dumps(payload))
+    with pytest.raises(public_json.PublicJSONError):
+        public_json.check_tree(tmp_path)
+
+
+@pytest.mark.parametrize("flag", [None, 0, 1, "false"])
+def test_checker_requires_a_boolean_modeled_flag(modeled, tmp_path, flag):
+    payload = publish.state_summary(modeled, "replay")
+    payload["modeled"] = flag
+    (tmp_path / "GA.json").write_text(json.dumps(payload))
+    with pytest.raises(public_json.PublicJSONError):
+        public_json.check_tree(tmp_path)

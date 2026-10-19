@@ -16,6 +16,7 @@ Two rules shape every payload:
 from __future__ import annotations
 
 import json
+import math
 import os
 import tempfile
 from dataclasses import dataclass
@@ -24,6 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .model.rcv import RCVResult
 from .model.simulate import RaceModel, Result
 
 WAITING = "waiting"
@@ -41,6 +43,46 @@ class StateUpdate:
     result: Result
     model: RaceModel
     as_of: str | None
+    rcv: RCVResult | None = None
+
+
+@dataclass(frozen=True)
+class ResultsOnlyUpdate:
+    """Observed statewide results; no model, prior, or simulation required.
+
+    Candidate keys must include every reported option (including independents).
+    pct_reporting is the feed's fraction of units reporting, never a turnout
+    projection. Use None when the source does not supply it.
+    """
+
+    state: str
+    race: str
+    candidates: dict[str, str]
+    votes: dict[str, int]
+    pct_reporting: float | None
+    as_of: str | None
+
+    def validate(self) -> None:
+        if not self.candidates or self.votes.keys() != self.candidates.keys():
+            raise ValueError("reported vote keys must match display candidates exactly")
+        if any(not isinstance(k, str) or not k or not isinstance(v, str)
+               for k, v in self.candidates.items()):
+            raise ValueError("candidate identifiers and names must be strings")
+        if any(type(v) is not int or v < 0 for v in self.votes.values()):
+            raise ValueError("reported votes must be nonnegative integers")
+        if self.pct_reporting is not None and (
+            type(self.pct_reporting) not in (int, float)
+            or not math.isfinite(self.pct_reporting) or not 0 <= self.pct_reporting <= 1
+        ):
+            raise ValueError("reporting fraction must be between zero and one or None")
+
+
+Update = StateUpdate | ResultsOnlyUpdate
+
+
+def _is_rcv(update: StateUpdate) -> bool:
+    # Fail closed for the registry's RCV states even before their adapters exist.
+    return update.state in ("ME", "AK") or update.rcv is not None
 
 
 def released(update: StateUpdate, mode: str, gate: str = "first_votes") -> bool:
@@ -57,10 +99,41 @@ def _round(x: float, digits: int = 4) -> float:
     return float(round(x, digits))
 
 
-def state_summary(update: StateUpdate, mode: str, gate: str = "first_votes") -> dict:
-    base = {"state": update.state, "race": update.race, "as_of": update.as_of}
+def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
+    base = {"state": update.state, "race": update.race, "as_of": update.as_of,
+            "modeled": isinstance(update, StateUpdate)}
+    if isinstance(update, ResultsOnlyUpdate):
+        update.validate()
+        total = sum(update.votes.values())
+        if total == 0:
+            return {**base, "status": WAITING}
+        return {
+            **base, "status": LIVE, "candidates": update.candidates,
+            "votes": update.votes,
+            "vote_share": {k: v / total for k, v in update.votes.items()},
+            "pct_reporting": update.pct_reporting,
+        }
     if not released(update, mode, gate):
         return {**base, "status": WAITING}  # nothing derived from the prior, by design
+    if _is_rcv(update):
+        if update.rcv is None:
+            unknown = dict.fromkeys(update.candidates)
+            return {
+                **base, "status": LIVE, "candidates": update.candidates,
+                "rcv_status": "awaiting_first_choices",
+                "p_outright": unknown, "p_via_rcv": unknown, "p_win": unknown,
+                "p_no_rcv_needed": None,
+            }
+        rcv = update.rcv
+        if set(rcv.p_win) != set(update.candidates):
+            raise ValueError("RCV output candidates must match display candidates exactly")
+        # Do not round components independently: P(win) must remain their sum.
+        return {
+            **base, "status": LIVE, "candidates": update.candidates,
+            "rcv_status": rcv.status,
+            "p_outright": rcv.p_outright, "p_via_rcv": rcv.p_via_rcv,
+            "p_win": rcv.p_win, "p_no_rcv_needed": rcv.p_no_rcv_needed,
+        }
     r = update.result
     return {
         **base,
@@ -78,9 +151,9 @@ def state_summary(update: StateUpdate, mode: str, gate: str = "first_votes") -> 
     }
 
 
-def state_detail(update: StateUpdate, mode: str, gate: str = "first_votes") -> dict:
+def state_detail(update: Update, mode: str, gate: str = "first_votes") -> dict:
     summary = state_summary(update, mode, gate)
-    if summary["status"] == WAITING:
+    if isinstance(update, ResultsOnlyUpdate) or summary["status"] == WAITING or _is_rcv(update):
         return summary
     counties = update.model.last_counties
     summary["counties"] = [
@@ -137,7 +210,7 @@ class S3Writer:
         )
 
 
-def publish(updates: list[StateUpdate], writer, mode: str, gate: str = "first_votes") -> None:
+def publish(updates: list[Update], writer, mode: str, gate: str = "first_votes") -> None:
     if mode not in ("live", "replay") or gate not in GATES:
         raise ValueError(f"mode={mode!r} gate={gate!r}")
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")

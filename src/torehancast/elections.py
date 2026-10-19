@@ -52,6 +52,26 @@ def final_snapshot(election: Election) -> Snapshot:
 
         text = fl_dos.load_archive(ARCHIVES / "FL", election.spec["date"])
         snap = fl_dos.parse(text, election.spec["race_code"], election.candidates, election.key)
+    elif election.adapter == "sc_clarity":
+        from .adapters import sc_clarity
+
+        text = sc_clarity.load_archive(ARCHIVES / "SC", election.spec["election_id"])
+        snap = sc_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
+    elif election.adapter == "mn_sos":
+        from .adapters import mn_sos
+
+        text = mn_sos.load_archive(ARCHIVES / "MN", election.spec["date"])
+        snap = mn_sos.parse(text, election.spec["contest"], election.candidates, election.key)
+    elif election.adapter == "ia_clarity":
+        from .adapters import ia_clarity
+
+        text = ia_clarity.load_archive(ARCHIVES / "IA", election.spec["election_id"])
+        snap = ia_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
+    elif election.adapter == "ak_doe":
+        from .adapters import ak_doe
+
+        text = ak_doe.load_archive(ARCHIVES / "AK", election.spec["code"])
+        snap = ak_doe.parse(text, election.spec["contest"], election.candidates, election.key)
     else:
         raise NotImplementedError(election.adapter)
     if not snap.cells:

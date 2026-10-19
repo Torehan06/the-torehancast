@@ -1,0 +1,52 @@
+{
+ "generated_at": "2026-11-04T02:30:00+00:00",
+ "mode": "live",
+ "states": [
+  {
+   "state": "IL",
+   "race": "2026-IL-SEN",
+   "as_of": "21:25 CT",
+   "status": "live",
+   "modeled": false,
+   "candidates": {
+    "D": "IL Fixture A (Dem)",
+    "R": "IL Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 801233,
+    "R": 602118
+   },
+   "vote_share": {
+    "D": 0.5709,
+    "R": 0.4291
+   },
+   "pct_reporting": 0.42
+  },
+  {
+   "state": "VA",
+   "race": "2026-VA-SEN",
+   "as_of": "21:27 ET",
+   "status": "live",
+   "modeled": false,
+   "candidates": {
+    "D": "VA Fixture A (Dem)",
+    "R": "VA Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 322000,
+    "R": 341950
+   },
+   "vote_share": {
+    "D": 0.485,
+    "R": 0.515
+   },
+   "pct_reporting": null
+  },
+  {
+   "state": "GA",
+   "race": "2026-GA-SEN",
+   "as_of": null,
+   "status": "waiting"
+  }
+ ]
+}

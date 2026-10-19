@@ -26,6 +26,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+torehancast = ["certs/*.pem"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = ["replay: end-to-end replay acceptance tests (slower)"]

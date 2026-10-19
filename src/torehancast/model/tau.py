@@ -100,7 +100,33 @@ def _composition_prior(base: pd.DataFrame, target: pd.DataFrame) -> composition.
     types = sorted(set(base.vote_type) & set(target.vote_type))
     units = sorted(set(base.unit_id) & set(target.unit_id))
     if len(types) < 2:
-        return composition.CompositionPrior(0.0, 0.0, 0.0, 0.0)
+        target_types = sorted(set(target.vote_type))
+        if len(target_types) < 2:
+            return composition.CompositionPrior(0.10, 0.05, MIN_GAP_SHIFT_SD, 0.02)
+        # Base was unsplit (e.g. 2016 statewide Clarity files before early/mail were
+        # broken out), while target has vote types. Measure county composition noise
+        # around target's statewide profile, and use target's major-mode spread relative
+        # to an unsplit baseline for the shift prior.
+        tn, td = wide(target, units, target_types)
+        keep = tn.sum(axis=1) > 0
+        ts, tg = composition.baseline(tn[keep], td[keep])
+        w = tn[keep].sum(axis=1)
+        log_ts = np.log(ts)
+        log_ts -= log_ts.mean(axis=1, keepdims=True)
+        alpha = np.average(log_ts, axis=0, weights=w)
+        share_resid = log_ts - alpha
+        g = np.average(tg, axis=0, weights=w)
+        gap_resid = tg - g
+        major = np.average(ts, axis=0, weights=w) >= composition.MAJOR_SHARE
+        log_major = np.log(ts[:, major])
+        log_major -= log_major.mean(axis=1, keepdims=True)
+        alpha_major = np.average(log_major, axis=0, weights=w)
+        return composition.CompositionPrior(
+            shift_sd=max(float(np.sqrt(np.mean(alpha_major**2))), 0.10),
+            share_sd=max(float(np.sqrt(np.average(share_resid**2, weights=ts * w[:, None]))), 0.05),
+            gap_shift_sd=max(float(np.sqrt(np.mean(g[major] ** 2))), MIN_GAP_SHIFT_SD),
+            gap_sd=max(float(np.sqrt(np.average(gap_resid**2, weights=ts * w[:, None]))), 0.02),
+        )
     bn, bd = wide(base, units, types)
     tn, td = wide(target, units, types)
     keep = (bn.sum(axis=1) > 0) & (tn.sum(axis=1) > 0)
