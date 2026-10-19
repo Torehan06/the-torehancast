@@ -24,6 +24,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .model.rcv import RCVResult
 from .model.simulate import RaceModel, Result
 
 WAITING = "waiting"
@@ -41,6 +42,12 @@ class StateUpdate:
     result: Result
     model: RaceModel
     as_of: str | None
+    rcv: RCVResult | None = None
+
+
+def _is_rcv(update: StateUpdate) -> bool:
+    # Fail closed for the registry's RCV states even before their adapters exist.
+    return update.state in ("ME", "AK") or update.rcv is not None
 
 
 def released(update: StateUpdate, mode: str, gate: str = "first_votes") -> bool:
@@ -61,6 +68,25 @@ def state_summary(update: StateUpdate, mode: str, gate: str = "first_votes") -> 
     base = {"state": update.state, "race": update.race, "as_of": update.as_of}
     if not released(update, mode, gate):
         return {**base, "status": WAITING}  # nothing derived from the prior, by design
+    if _is_rcv(update):
+        if update.rcv is None:
+            unknown = dict.fromkeys(update.candidates)
+            return {
+                **base, "status": LIVE, "candidates": update.candidates,
+                "rcv_status": "awaiting_first_choices",
+                "p_outright": unknown, "p_via_rcv": unknown, "p_win": unknown,
+                "p_no_rcv_needed": None,
+            }
+        rcv = update.rcv
+        if set(rcv.p_win) != set(update.candidates):
+            raise ValueError("RCV output candidates must match display candidates exactly")
+        # Do not round components independently: P(win) must remain their sum.
+        return {
+            **base, "status": LIVE, "candidates": update.candidates,
+            "rcv_status": rcv.status,
+            "p_outright": rcv.p_outright, "p_via_rcv": rcv.p_via_rcv,
+            "p_win": rcv.p_win, "p_no_rcv_needed": rcv.p_no_rcv_needed,
+        }
     r = update.result
     return {
         **base,
@@ -80,7 +106,7 @@ def state_summary(update: StateUpdate, mode: str, gate: str = "first_votes") -> 
 
 def state_detail(update: StateUpdate, mode: str, gate: str = "first_votes") -> dict:
     summary = state_summary(update, mode, gate)
-    if summary["status"] == WAITING:
+    if summary["status"] == WAITING or _is_rcv(update):
         return summary
     counties = update.model.last_counties
     summary["counties"] = [
