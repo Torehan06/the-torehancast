@@ -1,6 +1,12 @@
 # Election-night runbook
 
-Poller: Lightsail `torehancast-poller`, static IP **$POLLER_IP**, us-east-1, AWS profile `election`.
+Poller: Lightsail `torehancast-poller` (static IP `torehancast-poller-ip`), us-east-1, AWS profile `election`.
+
+The poller's address isn't written down in this public repo. Look it up when you need it:
+
+```bash
+POLLER_IP=$(aws lightsail get-static-ip --static-ip-name torehancast-poller-ip --profile election --region us-east-1 --query staticIp.ipAddress --output text)
+```
 
 ## SSH stopped working: your home IP changed
 

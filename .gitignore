@@ -6,3 +6,5 @@ data/archives/
 out/
 .DS_Store
 *.egg-info/
+# Unsent correspondence with election offices stays local.
+docs/outreach/
