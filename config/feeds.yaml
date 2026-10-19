@@ -7,20 +7,20 @@
 feeds:
   2026-GA-SEN:
     adapter: ga_enhanced_voting
-    url: null
-    election_id: null
+    url: https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovGen/data
+    election_id: 2026NovGen
     status: pending
     reference_url: https://results.sos.ga.gov/results/public
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: Endpoint exists (204, not published yet, Oct 19). Contest name unverified until
+      results appear.
   2026-NC-SEN:
     adapter: nc_sbe
-    url: null
-    election_id: null
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
     status: pending
     reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: Verified Oct 19 from the poller. Zero-vote file with contest "US SENATE"
+      (Michael Whatley REP, Roy Cooper DEM, Michael Dublin GRE, ...).
   2026-FL-SEN-SPECIAL:
     adapter: fl_dos
     url: https://results.elections.myflorida.com/ResultsExtract.Asp
@@ -51,13 +51,13 @@ feeds:
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
   2026-IA-SEN:
-    adapter: null
+    adapter: ia_clarity
     url: null
     election_id: null
     status: pending
     reference_url: https://electionresults.iowa.gov/IA/elections.json
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: No 2026 general EID in elections.json yet (Oct 19). The statewide EID is
+      followed by 99 county EIDs.
   2026-KS-SEN:
     adapter: null
     url: null
@@ -67,13 +67,12 @@ feeds:
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
   2026-SC-SEN:
-    adapter: null
+    adapter: sc_clarity
     url: null
     election_id: null
     status: pending
     reference_url: https://www.enr-scvotes.org/SC/122436/current_ver.txt
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: No 2026 general EID yet (SC elections.json empty, Oct 19).
   2026-MI-SEN:
     adapter: null
     url: null
@@ -83,13 +82,14 @@ feeds:
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
   2026-MN-SEN:
-    adapter: null
-    url: null
-    election_id: null
+    adapter: mn_sos
+    url: https://electionresultsfiles.sos.mn.gov/20261103/ussenatecty.txt
+    election_id: '2026-11-03'
     status: pending
     reference_url: https://electionresultsfiles.sos.mn.gov/20241105/ussenate.txt
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: Verified Oct 19 (with Cntytbl.txt). These files carry SOS TEST DATA before
+      polls close; the statewide ussenate.txt showed WRITE-IN 29.95%. Never publish
+      MN counts before 8 pm Central on Nov 3.
   2026-ME-SEN:
     adapter: null
     url: null
@@ -99,13 +99,14 @@ feeds:
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
   2026-AK-SEN:
-    adapter: null
-    url: null
+    adapter: ak_doe
+    url: https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv
     election_id: null
     status: pending
     reference_url: https://www.elections.alaska.gov/election-results/
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: URL is where the Aug 2026 primary was published (verified from the poller,
+      ETag supported); confirm it carries the general on Nov 3. Needs the shipped TLS
+      intermediate (http.EXTRA_CAS).
   2026-NE-SEN:
     adapter: null
     url: null

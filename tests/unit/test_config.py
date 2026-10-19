@@ -44,8 +44,8 @@ def test_registry_loads_every_planned_race_and_baseline_exception():
     assert loaded.races["2026-GA-SEN"].baseline == "2022_sen"
     assert loaded.races["2026-ME-SEN"].baseline == "2020_sen"
     assert loaded.races["2026-MN-SEN"].baseline == "2024_pres"
-    assert loaded.races["2026-AK-SEN"].baseline == "2026_primary"
-    assert loaded.races["2026-AK-SEN"].fallback_baseline == "2024_house"
+    assert loaded.races["2026-AK-SEN"].baseline == "2026_prim_sen"
+    assert loaded.races["2026-AK-SEN"].fallback_baseline == "2024_gen_house"
     assert loaded.races["2026-AK-SEN"].unit == "house-district"
     assert loaded.races["2026-ME-SEN"].ranked_choice
     assert loaded.races["2026-AK-SEN"].ranked_choice
@@ -183,3 +183,23 @@ def test_duplicate_yaml_keys_do_not_silently_replace_a_race(config_dir):
     path.write_text(path.read_text() + "\nraces: {}\n")
     with pytest.raises(config.ConfigError, match="duplicate"):
         config.load_config(config_dir)
+
+
+def test_every_named_adapter_is_a_real_module():
+    # The validator only checks the name's shape; a typo like "ia_clarty" must fail here.
+    adapters = {p.stem for p in (ROOT / "src" / "torehancast" / "adapters").glob("*.py")} - {"__init__"}
+    loaded = config.load_config(ROOT / "config")
+    named = {feed.adapter for feed in loaded.feeds.values() if feed.adapter is not None}
+    assert named <= adapters, f"unknown adapters: {sorted(named - adapters)}"
+
+
+def test_done_races_name_baselines_that_exist_in_elections_yaml():
+    elections = yaml.safe_load((ROOT / "config" / "elections.yaml").read_text())
+    loaded = config.load_config(ROOT / "config")
+    for race_id, race in loaded.races.items():
+        if race.status != "done":
+            continue
+        keys = set(elections.get(race.state, {}))
+        assert race.baseline in keys, f"{race_id}: baseline {race.baseline!r} not in elections.yaml"
+        if race.fallback_baseline is not None:
+            assert race.fallback_baseline in keys, f"{race_id}: fallback {race.fallback_baseline!r} missing"

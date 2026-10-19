@@ -55,8 +55,9 @@ races:
     priority: 6
     baseline: 2024_pres
     ranked_choice: false
-    status: todo
-    notes: Clarity; statewide election ID remains unverified.
+    status: done
+    notes: Clarity; replay passes (2024 statewide EID 122322). The 2026 general EID is not
+      published yet (newest on Oct 19 is the 2026 primary, 126082).
   2026-KS-SEN:
     state: KS
     race_type: senate
@@ -73,8 +74,9 @@ races:
     priority: 8
     baseline: 2024_pres
     ranked_choice: false
-    status: todo
-    notes: Clarity detail XML with vote types; reference is the archived 2024 election.
+    status: done
+    notes: Clarity detail XML with vote types; replay passes. No 2026 general EID yet
+      (elections.json was empty on Oct 19).
   2026-MI-SEN:
     state: MI
     race_type: senate
@@ -91,9 +93,10 @@ races:
     priority: 10
     baseline: 2024_pres
     ranked_choice: false
-    status: todo
+    status: done
     notes: President baseline exception. Semicolon text files with no vote types;
-      reference is historical.
+      replay passes. The 2026 files are already up and carry SOS test data before the
+      election (Oct 19 statewide file showed WRITE-IN 29.95%).
   2026-ME-SEN:
     state: ME
     race_type: senate
@@ -109,12 +112,12 @@ races:
     race_type: senate
     unit: house-district
     priority: 12
-    baseline: 2026_primary
+    baseline: 2026_prim_sen
     ranked_choice: true
-    status: todo
-    notes: RCV; 40 House Districts. Verify district boundaries and exact ballot names;
-      retain certificate verification.
-    fallback_baseline: 2024_house
+    status: done
+    notes: RCV; 40 House Districts + 99 (overseas). Replay passes; margin is party blocs.
+      Two Sullivans on the ballot stay separate. RCV candidate draws still TODO.
+    fallback_baseline: 2024_gen_house
   2026-NE-SEN:
     state: NE
     race_type: senate
