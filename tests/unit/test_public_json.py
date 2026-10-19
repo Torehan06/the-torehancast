@@ -151,3 +151,22 @@ def test_empty_private_document_is_not_checked_live_coverage(tmp_path):
     priors.write_text("priors: {}\n")
     with pytest.raises(public_json.PublicJSONError):
         public_json.check_tree(tmp_path / "out", priors=priors)
+
+
+def test_modeled_race_may_carry_observed_votes(tmp_path):
+    write(tmp_path, {**PAYLOAD, "votes": {"D": 600, "R": 560}, "vote_share": {"D": 0.5, "R": 0.4667}})
+    assert public_json.check_tree(tmp_path).files == 1
+
+
+@pytest.mark.parametrize("extra", [
+    {"votes": {"D": 600, "R": 560}},  # votes without shares
+    {"vote_share": {"D": 0.5, "R": 0.5}},  # shares without votes
+    {"votes": {"D": 600, "R": 560, "other": 40}, "vote_share": {"D": 0.5, "R": 0.47}},  # keys ≠ candidates
+    {"votes": {"D": 600, "R": 560}, "vote_share": {"D": 0.6, "R": 0.6}},  # shares sum past 1
+    {"votes": {"D": 0, "R": 0}, "vote_share": {"D": 0.5, "R": 0.5}},  # shares with no votes
+    {"votes": {"D": 600.5, "R": 560}, "vote_share": {"D": 0.5, "R": 0.47}},  # non-integer count
+])
+def test_malformed_observed_votes_are_rejected(tmp_path, extra):
+    write(tmp_path, {**PAYLOAD, **extra})
+    with pytest.raises(public_json.PublicJSONError):
+        public_json.check_tree(tmp_path)

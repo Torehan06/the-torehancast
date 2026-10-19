@@ -107,3 +107,36 @@ def test_checker_requires_a_boolean_modeled_flag(modeled, tmp_path, flag):
     (tmp_path / "GA.json").write_text(json.dumps(payload))
     with pytest.raises(public_json.PublicJSONError):
         public_json.check_tree(tmp_path)
+
+
+def test_modeled_race_publishes_observed_votes_with_other_in_the_denominator(modeled):
+    update = replace(modeled, votes={"D": 490, "R": 450, "other": 60})
+    for render in (publish.state_summary, publish.state_detail):
+        out = render(update, "live")
+        assert out["votes"] == {"D": 490, "R": 450}  # display candidates only
+        assert out["vote_share"] == {"D": 0.49, "R": 0.45}  # ÷ 1,000, not ÷ 940
+        assert "pct_reporting" not in out  # the model's share_counted covers progress
+        assert "p_win" in out  # forecasts are unchanged alongside the counts
+
+
+def test_rcv_races_carry_votes_too(modeled):
+    out = publish.state_summary(replace(modeled, state="AK", votes={"D": 10, "R": 30, "other": 0}), "live")
+    assert out["rcv_status"] == "awaiting_first_choices"
+    assert out["votes"] == {"D": 10, "R": 30} and out["vote_share"] == {"D": 0.25, "R": 0.75}
+
+
+def test_waiting_payload_never_gains_votes(modeled):
+    waiting = replace(modeled, votes={"D": 0, "R": 0}, result=replace(modeled.result, reported_votes=0))
+    assert set(publish.state_summary(waiting, "live")) == {"state", "race", "as_of", "status", "modeled"}
+
+
+def test_empty_count_publishes_zeros_but_a_missing_candidate_with_votes_raises(modeled):
+    assert publish.state_summary(replace(modeled, votes={}), "replay")["vote_share"] == {"D": 0.0, "R": 0.0}
+    with pytest.raises(ValueError, match="lack display candidates"):
+        publish.state_summary(replace(modeled, votes={"D": 5, "other": 1}), "live")
+    with pytest.raises(ValueError, match="nonnegative"):
+        publish.state_summary(replace(modeled, votes={"D": -1, "R": 2}), "live")
+
+
+def test_votes_stay_unpublished_when_the_caller_supplies_none(modeled):
+    assert "votes" not in publish.state_summary(modeled, "live")
