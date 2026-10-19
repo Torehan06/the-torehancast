@@ -39,6 +39,17 @@ link to this page with someone else's numbers behind it.
 | `e2e/` | Playwright specs (map, keyboard, phone width, network, stale, failure) |
 | `scripts/validate-json.ts` | Validates a directory of published JSON; used by `tests/web/` in Python |
 
+## Design
+
+"Ballot stock": the look comes from the official ballot, not the newsroom.
+Cool tinted card-stock paper, blue-black ink, and the filled ballot oval as the
+one recurring mark (wordmark, map key, list markers, probability bars). States
+with a race but no votes are hatched like an unmarked ballot. Type is Public Sans,
+the US government's USWDS typeface (OFL), bundled through `@fontsource-variable`.
+The one animation: a state's colour eases over when a new snapshot changes who
+leads (off under `prefers-reduced-motion`). Stale data is marked in highlighter
+yellow; a failing fetch inverts to ink, so neither can be mistaken for a party colour.
+
 ## Rules the code enforces
 
 - Probabilities appear only when a race's JSON says `modeled: true` **and** votes

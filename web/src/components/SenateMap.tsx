@@ -28,6 +28,13 @@ interface Props {
 export function SenateMap({ summary, selected, onSelect }: Props) {
   return (
     <svg className="map" viewBox="0 0 975 610" role="group" aria-label="Map of 2026 Senate races by state">
+      <defs>
+        {/* Races with no votes yet: hatched, like a ballot oval nobody has marked. */}
+        <pattern id="hatch-waiting" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" className="hatch__bg" />
+          <line x1="0" y1="0" x2="0" y2="6" className="hatch__line" />
+        </pattern>
+      </defs>
       {SHAPES.map(({ state, d }) => {
         if (!HAS_SENATE_RACE.has(state.code)) {
           return (

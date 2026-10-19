@@ -36,8 +36,11 @@ export default function App() {
   return (
     <div className="page">
       <header className="masthead">
-        <h1>The Torehancast</h1>
-        <p className="masthead__sub">2026 U.S. Senate · live results and win probabilities</p>
+        <h1 className="wordmark">
+          <span className="wordmark__oval" aria-hidden="true" />
+          The Torehancast
+        </h1>
+        <p className="masthead__sub">Live results and win chances for the 2026 Senate races, from official state counts.</p>
         <p className="masthead__status" data-testid="freshness" aria-live="polite">
           {status.kind === 'loading' && 'Loading results…'}
           {(status.kind === 'fresh' || status.kind === 'stale' || status.kind === 'failing') &&
@@ -56,11 +59,11 @@ export default function App() {
           {selected ? (
             <RacePanel code={selected} summary={summary} onClose={() => select(null)} />
           ) : (
-            <p className="hint">Select a state on the map or in the list to see its race.</p>
+            <p className="hint">Pick a state on the map or in the list below to see its votes and, for modeled races, each candidate’s chance of winning.</p>
           )}
         </aside>
         <div className="layout__list">
-          <h2 className="list-title">All races</h2>
+          <h2 className="list-title">All 35 races</h2>
           <RaceList summary={summary} selected={selected} onSelect={select} />
         </div>
       </main>

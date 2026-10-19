@@ -1,24 +1,41 @@
 /** The map key. Colour shows who leads; the number is always in the list and panel. */
+const TIERS: [string, string][] = [
+  ['strong', '95% or more'],
+  ['medium', '75–95%'],
+  ['light', 'under 75%'],
+]
+
 export function Legend() {
-  const items: [string, string][] = [
-    ['lead-D strength-strong', 'Democrat ≥95% to win'],
-    ['lead-D strength-medium', 'Democrat 75–95%'],
-    ['lead-D strength-light', 'Democrat favoured <75%, or leads in votes (no forecast)'],
-    ['lead-R strength-strong', 'Republican ≥95% to win'],
-    ['lead-R strength-medium', 'Republican 75–95%'],
-    ['lead-R strength-light', 'Republican favoured <75%, or leads in votes (no forecast)'],
-    ['lead-other strength-medium', 'Other candidate leads'],
-    ['state--waiting', 'Senate race, no votes reported'],
-    ['state--neutral', 'No Senate race in 2026'],
-  ]
   return (
-    <ul className="legend" aria-label="Map key">
-      {items.map(([cls, text]) => (
-        <li key={cls}>
-          <span className={`swatch ${cls}`} aria-hidden="true" />
-          {text}
-        </li>
+    <div className="legend" aria-label="Map key" role="group">
+      {(['D', 'R'] as const).map((side) => (
+        <div className="legend__row" key={side}>
+          <span className="legend__party">{side === 'D' ? 'Democrat' : 'Republican'} favoured</span>
+          <ul>
+            {TIERS.map(([strength, text]) => (
+              <li key={strength}>
+                <span className={`swatch lead-${side} strength-${strength}`} aria-hidden="true" />
+                {text}
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+      <ul className="legend__other">
+        <li>
+          <span className="swatch lead-other strength-medium" aria-hidden="true" />
+          Another candidate leads
+        </li>
+        <li>
+          <span className="swatch state--waiting" aria-hidden="true" />
+          No votes yet
+        </li>
+        <li>
+          <span className="swatch state--neutral" aria-hidden="true" />
+          No Senate race this year
+        </li>
+      </ul>
+      <p className="legend__note">In races we don’t forecast, the lightest shade marks who leads the count.</p>
+    </div>
   )
 }

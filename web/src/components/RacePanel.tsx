@@ -30,7 +30,8 @@ export function RacePanel({ code, summary, onClose }: Props) {
     <section className="panel" aria-labelledby="panel-title" data-testid="race-panel">
       <header className="panel__head">
         <h2 id="panel-title" tabIndex={-1}>
-          {entry.state.name} · U.S. Senate{entry.special && <span className="tag">special election</span>}
+          <span className="panel__state">{entry.state.name}</span>
+          <span className="panel__race">U.S. Senate{entry.special ? ' special election' : ''}</span>
         </h2>
         <button type="button" className="panel__close" onClick={onClose} aria-label="Close race details">
           ×
@@ -143,8 +144,8 @@ function PluralityProbabilities({ race }: { race: PluralityRace }) {
       {showMargin && (
         <p className="panel__meta" data-testid="margin">
           Projected two-party margin {formatMargin(race.margin.median, nonR[0])} (80% range{' '}
-          {formatMargin(race.margin.p80[0], nonR[0])} to {formatMargin(race.margin.p80[1], nonR[0])}) · about{' '}
-          {formatShare(race.share_counted)} of the expected vote counted
+          {formatMargin(race.margin.p80[0], nonR[0])} to {formatMargin(race.margin.p80[1], nonR[0])}). About{' '}
+          {formatShare(race.share_counted)} of the expected vote counted.
         </p>
       )}
     </div>
@@ -216,11 +217,11 @@ function Timestamps({ state, summary, asOf }: { state: UsState; summary: ParsedS
   if (!summary) return null
   return (
     <p className="panel__time" data-testid="snapshot-time">
-      Snapshot <time dateTime={summary.generatedAt.toISOString()}>{formatTime(summary.generatedAt)}</time>
+      Snapshot taken <time dateTime={summary.generatedAt.toISOString()}>{formatTime(summary.generatedAt)}</time>
       {asOf && (
         <>
-          {' '}
-          · {state.name} feed time {asOf}
+          <br />
+          {state.name} feed time {asOf}
         </>
       )}
     </p>

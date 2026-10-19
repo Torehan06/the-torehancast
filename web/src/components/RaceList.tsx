@@ -1,5 +1,5 @@
 import type { ParsedSummary } from '../data/parse'
-import { leader, party } from '../data/display'
+import { formatProbability, formatShare, leader, party } from '../data/display'
 import { SENATE_RACES_2026 } from '../data/states'
 import { raceLabel, raceStatus } from './raceLabel'
 
@@ -21,7 +21,11 @@ export function RaceList({ summary, selected, onSelect }: Props) {
         const race = summary?.races.get(state.code)
         const lead = leader(race)
         const label = raceLabel(state, race, summary)
-        const detail = raceStatus(state, race, summary)
+        // With a leader, the number gets its own column and the text names who and what.
+        const detail = lead
+          ? `${lead.name}, ${lead.basis === 'probability' ? 'chance to win' : 'share of the vote'}`
+          : raceStatus(state, race, summary)
+        const value = lead ? (lead.basis === 'probability' ? formatProbability(lead.value) : formatShare(lead.value)) : null
         return (
           <li key={state.code}>
             <button
@@ -38,6 +42,7 @@ export function RaceList({ summary, selected, onSelect }: Props) {
                 {special && <span className="tag">special</span>}
               </span>
               <span className="race-item__detail">{detail}</span>
+              {value && <span className={`race-item__value lead-${party(lead!.key)}`}>{value}</span>}
             </button>
           </li>
         )

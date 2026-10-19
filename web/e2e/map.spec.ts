@@ -57,7 +57,7 @@ test.describe('F2 Senate map', () => {
     const ga = page.locator('path[data-state="GA"]')
     await ga.focus()
     await page.keyboard.press('Enter')
-    await expect(page.getByRole('heading', { name: /Georgia · U.S. Senate/ })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /Georgia/ })).toBeVisible()
     await expect(page).toHaveURL(/#GA$/)
     // Neutral states are skipped by Tab: walking the whole map never lands on one.
     const focused = new Set<string>()

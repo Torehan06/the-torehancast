@@ -1,62 +1,63 @@
 /*
- * Party colours are Okabe–Ito blue and vermilion: distinguishable under the
+ * "Ballot stock": the page borrows from the official ballot, not the newsroom.
+ * Cool tinted card-stock paper, blue-black printing ink, the filled oval as the
+ * one recurring mark. Public Sans is the US government's (USWDS) typeface,
+ * bundled with the app: nothing is fetched from a third party.
+ *
+ * Party colours are Okabe–Ito blue and vermilion, distinguishable under the
  * common colour-vision deficiencies. Three shades per party show how strong the
- * lead is; the number itself is always printed next to it (list, panel, labels).
- * System fonts only: nothing is fetched from a third party.
+ * lead is; the number itself is always printed next to it.
  */
 :root {
-  --bg: #ffffff;
-  --fg: #1b1b1f;
-  --muted: #5d5d66;
-  --rule: #dcdce0;
-  --surface: #f6f6f8;
-  --focus: #1b1b1f;
+  --paper: #e9eeea;
+  --paper-raised: #f5f7f4;
+  --ink: #1b2633;
+  --ink-soft: #4e5b66;
+  --rule: #c3ccc6;
+  --focus: #1b2633;
 
   --d-strong: #0072b2;
-  --d-medium: #56a0d3;
-  --d-light: #b9d8ee;
+  --d-medium: #5aa3d6;
+  --d-light: #bcd9ee;
   --r-strong: #d55e00;
-  --r-medium: #ee9a5c;
-  --r-light: #f8d2b4;
+  --r-medium: #ec9a5a;
+  --r-light: #f6d3b6;
   --o-strong: #009e73;
-  --o-medium: #5cc4a6;
-  --o-light: #bfe8dc;
-  --waiting: #a9a9b2;
-  --neutral: #ececef;
-  --noleader: #77777f;
+  --o-medium: #4cbf9c;
+  --o-light: #bde7d9;
+  --hatch-bg: #f7f9f6;
+  --hatch-line: #8f9b95;
+  --neutral: #cdd4cf;
+  --noleader: #7d8a84;
 
-  --stale-bg: #fff4cc;
-  --stale-fg: #5c4400;
-  --fail-bg: #fde2e1;
-  --fail-fg: #7a1410;
-  --replay-bg: #e7e1f5;
-  --replay-fg: #3b2a6b;
+  --highlighter: #f3d34a;
 
-  color-scheme: light dark;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.45;
+  --font: 'Public Sans Variable', 'Public Sans', system-ui, sans-serif;
+  color-scheme: light;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {
+  /* The printing plate: the same ink, now the ground. */
   :root {
-    --bg: #131316;
-    --fg: #ececf0;
-    --muted: #a3a3ad;
-    --rule: #34343b;
-    --surface: #1d1d22;
-    --focus: #ffffff;
+    --paper: #18222d;
+    --paper-raised: #1f2b37;
+    --ink: #e4ebe6;
+    --ink-soft: #9fb0a8;
+    --rule: #34424f;
+    --focus: #e4ebe6;
     --d-light: #2f6189;
     --r-light: #8a4a22;
     --o-light: #276b58;
-    --waiting: #55555e;
-    --neutral: #26262c;
-    --noleader: #8c8c96;
-    --stale-bg: #4a3a00;
-    --stale-fg: #ffe9a3;
-    --fail-bg: #5a1512;
-    --fail-fg: #ffd6d3;
-    --replay-bg: #2d2350;
-    --replay-fg: #ddd2ff;
+    --hatch-bg: #263442;
+    --hatch-line: #5d6f7e;
+    --neutral: #212c37;
+    --noleader: #8a9a92;
+    color-scheme: dark;
   }
 }
 
@@ -64,194 +65,328 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--paper);
+  color: var(--ink);
 }
 
-a { color: inherit; }
+a { color: inherit; text-underline-offset: 0.18em; }
 
 .page {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 20px 16px 40px;
+}
+@media (min-width: 900px) {
+  .page { padding: 32px 32px 56px; }
 }
 
-.masthead h1 { margin: 0; font-size: 1.6rem; letter-spacing: -0.01em; }
-.masthead__sub { margin: 2px 0 0; color: var(--muted); }
-.masthead__status { margin: 4px 0 0; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; }
+/* ---- masthead ---- */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 4px 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--ink);
+}
+.wordmark {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.28em;
+  margin: 0;
+  font-size: clamp(2.1rem, 7vw, 3.6rem);
+  font-weight: 860;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+/* The ballot oval, filled half blue, half vermilion. */
+.wordmark__oval {
+  flex: none;
+  width: 0.92em;
+  height: 0.6em;
+  border-radius: 50%;
+  border: 0.07em solid var(--ink);
+  background: linear-gradient(90deg, var(--d-strong) 50%, var(--r-strong) 50%);
+  transform: translateY(0.04em);
+}
+.masthead__sub {
+  margin: 10px 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead__status {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-height: 1.4em;
+}
 
 /* ---- banners (F4) ---- */
 .banner {
-  margin: 12px 0 0;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  font-size: 0.97rem;
+  line-height: 1.45;
 }
-.banner--stale { background: var(--stale-bg); color: var(--stale-fg); border-left: 6px solid currentColor; }
-.banner--failing { background: var(--fail-bg); color: var(--fail-fg); border-left: 6px solid currentColor; }
-.banner--replay { background: var(--replay-bg); color: var(--replay-fg); }
+.banner strong { font-weight: 750; }
+/* Stale: marked with a highlighter, like a line someone flagged on a tally sheet. */
+.banner--stale {
+  background: var(--highlighter);
+  color: #1b2633;
+  border-radius: 2px 10px 4px 12px;
+}
+/* Failing: the inverse plate, so it can't be confused with any race colour. */
+.banner--failing {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 4px;
+}
+.banner--replay {
+  border: 2px dashed var(--ink-soft);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
 
 /* ---- layout ---- */
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 16px;
+  gap: 24px;
+  margin-top: 24px;
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .layout {
-    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
-    grid-template-areas: 'map side' 'list list';
+    grid-template-columns: minmax(0, 1fr) 360px;
+    /* The list stays in the left column so the sticky panel sits beside it. */
+    grid-template-areas: 'map side' 'list side';
+    column-gap: 40px;
   }
   .layout__map { grid-area: map; }
-  .layout__side { grid-area: side; }
-  .layout__list { grid-area: list; }
+  .layout__side { grid-area: side; align-self: start; position: sticky; top: 24px; }
+  .layout__list { grid-area: list; margin-top: 16px; }
 }
 
-/* ---- colour classes, shared by map paths, swatches and bars ---- */
-.lead-D { --fill: var(--d-strong); }
-.lead-R { --fill: var(--r-strong); }
-.lead-other { --fill: var(--o-strong); }
+/* ---- colour classes, shared by map paths, swatches, list values and bars ---- */
+.lead-D { --fill: var(--d-strong); --text: var(--d-strong); }
+.lead-R { --fill: var(--r-strong); --text: var(--r-strong); }
+.lead-other { --fill: var(--o-strong); --text: var(--o-strong); }
 .lead-D.strength-medium { --fill: var(--d-medium); }
 .lead-D.strength-light { --fill: var(--d-light); }
 .lead-R.strength-medium { --fill: var(--r-medium); }
 .lead-R.strength-light { --fill: var(--r-light); }
 .lead-other.strength-medium { --fill: var(--o-medium); }
 .lead-other.strength-light { --fill: var(--o-light); }
-.state--waiting { --fill: var(--waiting); }
 .state--neutral { --fill: var(--neutral); }
 .state--noleader { --fill: var(--noleader); }
+@media (prefers-color-scheme: dark) {
+  .lead-D { --text: #6db7e8; }
+  .lead-R { --text: #f19a57; }
+  .lead-other { --text: #58cfa9; }
+}
 
 /* ---- map (F2) ---- */
-.map { width: 100%; height: auto; display: block; }
+.map { width: 100%; height: auto; display: block; overflow: visible; }
+.hatch__bg { fill: var(--hatch-bg); }
+.hatch__line { stroke: var(--hatch-line); stroke-width: 1.6; }
 .state {
-  fill: var(--fill, var(--waiting));
-  stroke: var(--bg);
-  stroke-width: 1;
+  fill: var(--fill, var(--hatch-bg));
+  stroke: var(--paper);
+  stroke-width: 1.2;
   stroke-linejoin: round;
 }
+.state.state--waiting { fill: url(#hatch-waiting); }
 .state--race { cursor: pointer; }
-.state--race:hover { stroke: var(--fg); stroke-width: 1.5; }
+.state--race:hover { stroke: var(--ink); stroke-width: 1.6; }
 .state--race:focus { outline: none; }
 .state--race:focus-visible,
 .state--selected {
   stroke: var(--focus);
-  stroke-width: 3;
+  stroke-width: 3.5;
   paint-order: stroke;
 }
-
-.legend {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-  font-size: 0.8rem;
-  color: var(--muted);
+/* The one moving thing on the page: a state's colour eases over when a new
+   snapshot changes who leads, so the change is noticed rather than missed. */
+@media (prefers-reduced-motion: no-preference) {
+  .state { transition: fill 900ms ease-in-out; }
 }
-.legend li { display: flex; align-items: center; gap: 6px; }
 
+/* ---- the oval swatch, used by the legend and the race list ---- */
 .swatch {
   display: inline-block;
   flex: none;
-  width: 14px;
+  width: 22px;
   height: 14px;
-  border-radius: 3px;
-  background: var(--fill, var(--waiting));
-  border: 1px solid var(--rule);
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--fill, transparent);
 }
+.swatch.state--waiting,
+.swatch.swatch--none {
+  background: repeating-linear-gradient(45deg, var(--hatch-bg) 0 2px, var(--hatch-line) 2px 3.2px);
+}
+.swatch.state--neutral { border-color: var(--rule); }
 
-/* ---- race list ---- */
-.list-title { font-size: 1rem; margin: 8px 0; }
+/* ---- legend ---- */
+.legend {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+.legend ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.legend li { display: flex; align-items: center; gap: 7px; }
+.legend__row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
+.legend__party { font-weight: 700; min-width: 11ch; }
+.legend .legend__other { padding-top: 4px; }
+.legend__note { margin: 0; color: var(--ink-soft); }
+
+/* ---- race list: a tally sheet, ruled rows with the number on the right ---- */
+.list-title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 820;
+  letter-spacing: -0.02em;
+}
 .race-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  column-gap: 32px;
 }
+.race-list li { border-bottom: 1px solid var(--rule); }
 .race-item {
   width: 100%;
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: 'sw name' 'sw detail';
-  column-gap: 10px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'sw name value' 'sw detail value';
+  column-gap: 12px;
   align-items: center;
   text-align: left;
-  padding: 8px 10px;
-  border: 1px solid var(--rule);
+  padding: 10px 6px;
+  border: 0;
   border-radius: 6px;
-  background: var(--surface);
+  background: none;
   color: inherit;
   font: inherit;
   cursor: pointer;
 }
-.race-item .swatch { grid-area: sw; width: 18px; height: 18px; }
-.race-item__name { grid-area: name; font-weight: 600; }
-.race-item__detail { grid-area: detail; font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
-.race-item:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
-.race-item--selected { border-color: var(--focus); border-width: 2px; }
+.race-item:hover { background: var(--paper-raised); }
+.race-item .swatch { grid-area: sw; }
+.race-item__name { grid-area: name; font-weight: 700; font-size: 1.02rem; }
+.race-item__detail { grid-area: detail; font-size: 0.86rem; color: var(--ink-soft); overflow-wrap: anywhere; }
+.race-item__value {
+  grid-area: value;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.race-item:focus-visible { outline: 3px solid var(--focus); outline-offset: -1px; }
+.race-item--selected { background: var(--paper-raised); box-shadow: inset 4px 0 0 var(--ink); }
 
 .tag {
-  margin-left: 6px;
-  padding: 1px 6px;
+  margin-left: 8px;
+  padding: 0 7px 1px;
   border-radius: 999px;
-  border: 1px solid var(--rule);
-  font-size: 0.7rem;
-  font-weight: 500;
-  vertical-align: middle;
-  color: var(--muted);
+  border: 1px solid var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: 2px;
+  color: var(--ink-soft);
 }
 
 /* ---- panel (F3) ---- */
-.hint { color: var(--muted); margin: 0; }
+.hint {
+  margin: 0;
+  padding: 20px;
+  border: 2px dashed var(--rule);
+  border-radius: 12px;
+  color: var(--ink-soft);
+  max-width: 38ch;
+}
 .panel {
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 14px 16px;
-  background: var(--surface);
+  background: var(--paper-raised);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 18px 20px 16px;
 }
 .panel__head { display: flex; justify-content: space-between; align-items: start; gap: 8px; }
-.panel__head h2 { margin: 0; font-size: 1.15rem; }
+.panel__head h2 { margin: 0; display: grid; }
 .panel__head h2:focus { outline: none; }
+.panel__state { font-size: 1.85rem; font-weight: 850; letter-spacing: -0.03em; line-height: 1.05; }
+.panel__race { font-size: 0.92rem; font-weight: 500; color: var(--ink-soft); margin-top: 2px; }
 .panel__close {
-  border: none;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
   background: none;
   color: inherit;
-  font-size: 1.4rem;
+  font: inherit;
+  font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
-  padding: 0 4px;
 }
-.panel__empty { font-size: 1rem; margin: 14px 0; }
-.panel__note { color: var(--muted); font-size: 0.9rem; }
-.panel__meta { color: var(--muted); font-size: 0.85rem; margin: 6px 0; }
-.panel__time { color: var(--muted); font-size: 0.8rem; margin: 12px 0 0; border-top: 1px solid var(--rule); padding-top: 8px; }
+.panel__close:hover { background: var(--ink); color: var(--paper-raised); }
+.panel__close:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.panel__empty {
+  margin: 18px 0 6px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--hatch-line) 22%, transparent) 6px 8px);
+  font-weight: 600;
+}
+.panel__note { color: var(--ink-soft); font-size: 0.9rem; margin: 14px 0 0; }
+.panel__meta { color: var(--ink-soft); font-size: 0.86rem; margin: 8px 0; }
+.panel__time { color: var(--ink-soft); font-size: 0.8rem; margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--rule); }
 
-.results { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.92rem; }
-.results th, .results td { padding: 5px 4px; border-bottom: 1px solid var(--rule); }
-.results thead th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); text-align: right; }
-.results thead th:first-child, .results tbody th { text-align: left; font-weight: 500; }
-.results td { text-align: right; font-variant-numeric: tabular-nums; }
+.results { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.94rem; }
+.results th, .results td { padding: 6px 4px; border-bottom: 1px solid var(--rule); }
+.results thead th { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); text-align: right; border-bottom: 2px solid var(--ink); }
+.results thead th:first-child, .results tbody th { text-align: left; }
+.results tbody th { font-weight: 550; }
+.results td { text-align: right; }
 
-.candidates { margin: 12px 0 0; padding-left: 18px; }
+.candidates { margin: 14px 0 0; padding-left: 18px; }
 
-.forecast { margin-top: 16px; }
-.forecast h3 { margin: 0; font-size: 1rem; }
-.forecast__explain { margin: 4px 0 8px; font-size: 0.85rem; color: var(--muted); }
+.forecast { margin-top: 22px; }
+.forecast h3 { margin: 0; font-size: 1.12rem; font-weight: 800; letter-spacing: -0.01em; }
+.forecast__explain { margin: 4px 0 12px; font-size: 0.86rem; color: var(--ink-soft); max-width: 44ch; }
 
-.prob-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.prob-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .prob-bars li {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas: 'name value' 'track track';
-  gap: 2px 8px;
+  align-items: baseline;
+  gap: 4px 10px;
 }
-.prob-bars__name { grid-area: name; }
-.prob-bars__value { grid-area: value; font-weight: 700; font-variant-numeric: tabular-nums; }
-.prob-bars__track { grid-area: track; height: 8px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+.prob-bars__name { grid-area: name; font-weight: 550; }
+.prob-bars__value { grid-area: value; font-size: 1.7rem; font-weight: 850; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+/* An elongated ballot oval, filled to the probability. */
+.prob-bars__track {
+  grid-area: track;
+  height: 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  overflow: hidden;
+}
 .prob-bars__fill { display: block; height: 100%; background: var(--fill); }
 
-.footer { margin-top: 28px; font-size: 0.8rem; color: var(--muted); }
+.footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 3px solid var(--ink);
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  /* Full-width rule to close the page like the masthead opens it; short lines. */
+  padding-right: max(0px, calc(100% - 80ch));
+}
