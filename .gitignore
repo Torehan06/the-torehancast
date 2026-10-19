@@ -8,3 +8,5 @@ out/
 *.egg-info/
 # Unsent correspondence with election offices stays local.
 docs/outreach/
+# Working notes / checklist stay local only.
+PLAN.md
