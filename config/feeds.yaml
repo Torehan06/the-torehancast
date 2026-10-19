@@ -1,0 +1,117 @@
+# Private poller settings. Never serve config/ from the public site.
+# No 2026 live election IDs have been verified here; null means not configured.
+# Historical/reference URLs are not live feed URLs. No network checks run on validate.
+# GA url: complete API URL for the statewide document (county URLs derived by adapter).
+# NC url: complete precinct-results ZIP URL. FL url: POST endpoint; set ElectionDate
+# in params and election_id to the election date when verified. Reload each poll cycle.
+feeds:
+  2026-GA-SEN:
+    adapter: ga_enhanced_voting
+    url: https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovGen/data
+    election_id: 2026NovGen
+    status: pending
+    reference_url: https://results.sos.ga.gov/results/public
+    notes: Endpoint exists (204, not published yet, Oct 19). Contest name unverified until
+      results appear.
+  2026-NC-SEN:
+    adapter: nc_sbe
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
+    status: pending
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Verified Oct 19 from the poller. Zero-vote file with contest "US SENATE"
+      (Michael Whatley REP, Roy Cooper DEM, Michael Dublin GRE, ...).
+  2026-FL-SEN-SPECIAL:
+    adapter: fl_dos
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
+    election_id: null
+    status: pending
+    reference_url: https://results.elections.myflorida.com/ResultsExtract.Asp
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
+  2026-TX-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://results.texas-election.com/static/data/ElectionConstants_404.json
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-OH-SEN-SPECIAL:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://liveresults.ohiosos.gov/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-IA-SEN:
+    adapter: ia_clarity
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://electionresults.iowa.gov/IA/elections.json
+    notes: No 2026 general EID in elections.json yet (Oct 19). The statewide EID is
+      followed by 99 county EIDs.
+  2026-KS-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://ent.sos.ks.gov/national.html
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-SC-SEN:
+    adapter: sc_clarity
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://www.enr-scvotes.org/SC/122436/current_ver.txt
+    notes: No 2026 general EID yet (SC elections.json empty, Oct 19).
+  2026-MI-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://mielections.us/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-MN-SEN:
+    adapter: mn_sos
+    url: https://electionresultsfiles.sos.mn.gov/20261103/ussenatecty.txt
+    election_id: '2026-11-03'
+    status: pending
+    reference_url: https://electionresultsfiles.sos.mn.gov/20241105/ussenate.txt
+    notes: Verified Oct 19 (with Cntytbl.txt). These files carry SOS TEST DATA before
+      polls close; the statewide ussenate.txt showed WRITE-IN 29.95%. Never publish
+      MN counts before 8 pm Central on Nov 3.
+  2026-ME-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    reference_url: https://www.maine.gov/sos/cec/elec/results/index.html
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.
+  2026-AK-SEN:
+    adapter: ak_doe
+    url: https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv
+    election_id: null
+    status: pending
+    reference_url: https://www.elections.alaska.gov/election-results/
+    notes: URL is where the Aug 2026 primary was published (verified from the poller,
+      ETag supported); confirm it carries the general on Nov 3. Needs the shipped TLS
+      intermediate (http.EXTRA_CAS).
+  2026-NE-SEN:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    reference_url: https://electionresults.nebraska.gov/
+    notes: Set the verified live URL and election ID before marking ready. Reference
+      URL is for discovery only.

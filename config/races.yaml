@@ -1,0 +1,130 @@
+# Live race registry from PLAN.md. Status tracks adapter/replay work, not live readiness.
+# D means the main non-Republican side, including Osborn in Nebraska.
+races:
+  2026-GA-SEN:
+    state: GA
+    race_type: senate
+    unit: county
+    priority: 1
+    baseline: 2022_sen
+    ranked_choice: false
+    status: done
+    notes: 2020 Sen to 2022 Sen primary replay; 2022 Sen to 2024 Pres secondary. Live
+      pipeline is still TODO.
+  2026-NC-SEN:
+    state: NC
+    race_type: senate
+    unit: county
+    priority: 2
+    baseline: 2024_pres
+    ranked_choice: false
+    status: done
+    notes: Replay passes; 2026 endpoint and exact contest still need verification.
+  2026-FL-SEN-SPECIAL:
+    state: FL
+    race_type: senate-special
+    unit: county
+    priority: 3
+    baseline: 2024_sen
+    ranked_choice: false
+    status: done
+    notes: County totals; vote type inferred by BatchTracker. 2026 extract still needs
+      verification.
+  2026-TX-SEN:
+    state: TX
+    race_type: senate
+    unit: county
+    priority: 4
+    baseline: 2024_sen
+    ranked_choice: false
+    status: blocked
+    notes: Cloudflare JS challenge; do not bypass.
+  2026-OH-SEN-SPECIAL:
+    state: OH
+    race_type: senate-special
+    unit: county
+    priority: 5
+    baseline: 2024_sen
+    ranked_choice: false
+    status: blocked
+    notes: Brown 2024 Senate baseline. Cloudflare challenge on SOS and county alternatives.
+  2026-IA-SEN:
+    state: IA
+    race_type: senate
+    unit: county
+    priority: 6
+    baseline: 2024_pres
+    ranked_choice: false
+    status: done
+    notes: Clarity; replay passes (2024 statewide EID 122322). The 2026 general EID is not
+      published yet (newest on Oct 19 is the 2026 primary, 126082).
+  2026-KS-SEN:
+    state: KS
+    race_type: senate
+    unit: county
+    priority: 7
+    baseline: 2024_pres
+    ranked_choice: false
+    status: blocked
+    notes: Strict HTML parser approved, but Cloudflare under-attack mode blocks access.
+  2026-SC-SEN:
+    state: SC
+    race_type: senate
+    unit: county
+    priority: 8
+    baseline: 2024_pres
+    ranked_choice: false
+    status: done
+    notes: Clarity detail XML with vote types; replay passes. No 2026 general EID yet
+      (elections.json was empty on Oct 19).
+  2026-MI-SEN:
+    state: MI
+    race_type: senate
+    unit: county
+    priority: 9
+    baseline: 2024_sen
+    ranked_choice: false
+    status: blocked
+    notes: Times out from the US poller; archive behind Cloudflare.
+  2026-MN-SEN:
+    state: MN
+    race_type: senate
+    unit: county
+    priority: 10
+    baseline: 2024_pres
+    ranked_choice: false
+    status: done
+    notes: President baseline exception. Semicolon text files with no vote types;
+      replay passes. The 2026 files are already up and carry SOS test data before the
+      election (Oct 19 statewide file showed WRITE-IN 29.95%).
+  2026-ME-SEN:
+    state: ME
+    race_type: senate
+    unit: town
+    priority: 11
+    baseline: 2020_sen
+    ranked_choice: true
+    status: blocked
+    notes: RCV; no official live feed known. CloudFront 403; towns report over two
+      days.
+  2026-AK-SEN:
+    state: AK
+    race_type: senate
+    unit: house-district
+    priority: 12
+    baseline: 2026_prim_sen
+    ranked_choice: true
+    status: done
+    notes: RCV; 40 House Districts + 99 (overseas). Replay passes; margin is party blocs.
+      Two Sullivans on the ballot stay separate. RCV candidate draws still TODO.
+    fallback_baseline: 2024_gen_house
+  2026-NE-SEN:
+    state: NE
+    race_type: senate
+    unit: county
+    priority: 13
+    baseline: 2024_sen
+    ranked_choice: false
+    status: todo
+    notes: Fischer-Osborn baseline; Osborn is the non-R side. US network needed; format
+      unverified. Ask before HTML parsing.
