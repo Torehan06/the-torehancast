@@ -140,7 +140,7 @@ def _private_tokens(path: Path) -> set:
     # All failures are deliberately content-free: YAML diagnostics can quote lines.
     try:
         doc = yaml.safe_load(path.read_text())
-        if not isinstance(doc, dict) or set(doc) != {"priors"} or not isinstance(doc["priors"], dict):
+        if not isinstance(doc, dict) or set(doc) != {"priors"} or not isinstance(doc["priors"], dict) or not doc["priors"]:
             raise ValueError
         tokens = set()
         fields = {"margin", "margin_sd", "turnout_ratio", "turnout_sd"}
@@ -164,7 +164,14 @@ def _private_tokens(path: Path) -> set:
 
 def _scan_values(value, tokens: set, where: str) -> None:
     if isinstance(value, dict):
-        for v in value.values():
+        forbidden = {"marginsd", "turnoutratio", "turnoutsd", "baselinemargin", "baselinevotes",
+                     "demographics", "covariates", "feedurl", "electionid", "config", "tauswing",
+                     "tauturnout", "systematicswing", "systematicturnout"}
+        for key, v in value.items():
+            normalized = re.sub(r"[^a-z]", "", key.casefold())
+            if "prior" in normalized or normalized in forbidden:
+                raise PublicJSONError(f"private/config key in {where}; key withheld")
+            _scan_values(key, tokens, where)
             _scan_values(v, tokens, where)
     elif isinstance(value, list):
         for v in value:
@@ -206,9 +213,8 @@ def check_tree(root: Path, *, priors: Path | None = None) -> ScanReport:
         live = "live" in relative.parts or (isinstance(value, dict) and value.get("mode") == "live")
         if live and tokens is None:
             raise PublicJSONError("live output requires private priors for value checks")
+        _scan_values(value, tokens if tokens is not None else set(), where)
         _document(value, where, live)
-        if tokens is not None:
-            _scan_values(value, tokens, where)
         count += 1
     if not count:
         raise PublicJSONError("no public JSON files found")

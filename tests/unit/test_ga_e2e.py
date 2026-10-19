@@ -100,3 +100,14 @@ def test_ga_native_replay_publishes_changing_frames_and_final_truth(pair, tmp_pa
     assert last["reported_votes"] == totals["D"] + totals["R"]
     assert last["margin"]["median"] == pytest.approx((totals["D"] - totals["R"]) / sum(totals.values()), abs=0.00005)
     assert json.loads((root / "index.json").read_text()) == index
+
+
+@pytest.mark.parametrize("broken", ["missing", "duplicate"])
+def test_archive_county_coverage_must_be_complete_and_unique(tmp_path, monkeypatch, broken):
+    target = elections.load("GA", "2022_sen")
+    docs = ga.load_archive(elections.ARCHIVES / "GA" / target.spec["code"])
+    docs = docs[:-1] if broken == "missing" else docs + [copy.deepcopy(docs[0])]
+    monkeypatch.setattr(ga, "load_archive", lambda directory: docs)
+    with pytest.raises(ValueError, match="county"):
+        e2e.run(tmp_path, n_draws=10)
+    assert not (tmp_path / "data/replay").exists()

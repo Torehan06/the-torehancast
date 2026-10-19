@@ -13,6 +13,9 @@ The command uses the locally archived official county files, existing baselines,
 and historical replay configuration. It never reads live private priors or fetches
 results over the network. Missing archives fail rather than trigger a download.
 
+County documents must have unique identities matching the baseline county set;
+incomplete or duplicate archives fail before any publication.
+
 The primary pair is 2020 Senate → 2022 Senate. To run the secondary 2022 Senate →
 2024 presidential pair, use `--pair secondary --out out/secondary/`. Other options
 are `--order`, `--seed`, and `--draws` (4,000 by default).
@@ -65,10 +68,16 @@ python scripts/check_public_json.py out/ --priors /private/config/priors.yaml
 python scripts/check_public_json.py out/ --require-priors
 ```
 
+Empty priors mappings are rejected. This standalone checker validates the file's
+shape and configured scalar values; M0 remains responsible for validating full
+race-registry coverage before live use.
+
 The file follows M0's `priors: {race_id: null | {margin, margin_sd, turnout_ratio,
 turnout_sd}}` schema. The checker compares public scalar values with configured
 private numbers, their 3/4-decimal forms used by the publisher, and corresponding
-strings. Keys are independently constrained by the public schema. Errors never
+strings. Dictionary keys are recursively checked for private identifiers and matching
+private scalar tokens, including inside dynamic candidate maps. Keys are also
+constrained by the public schema. Errors never
 print private values or YAML contents.
 
 Value matching is deliberately conservative: common numbers and coincidental

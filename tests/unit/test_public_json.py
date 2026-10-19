@@ -124,3 +124,30 @@ def test_checker_script_is_runnable_and_reports_partial_coverage(tmp_path):
     assert "unavailable" in result.stdout.lower()
     strict = subprocess.run([sys.executable, str(script), str(tmp_path / "out"), "--require-priors"], capture_output=True, text=True)
     assert strict.returncode != 0
+
+
+def test_private_identifiers_cannot_hide_in_candidate_dictionary_keys(tmp_path):
+    payload = copy.deepcopy(PAYLOAD)
+    payload["candidates"]["prior"] = payload["candidates"].pop("D")
+    payload["p_win"]["prior"] = payload["p_win"].pop("D")
+    write(tmp_path, payload)
+    with pytest.raises(public_json.PublicJSONError):
+        public_json.check_tree(tmp_path)
+
+
+def test_private_value_cannot_hide_in_a_dictionary_key(tmp_path):
+    payload = copy.deepcopy(PAYLOAD)
+    payload["candidates"]["0.0234567"] = payload["candidates"].pop("D")
+    payload["p_win"]["0.0234567"] = payload["p_win"].pop("D")
+    write(tmp_path / "out", payload)
+    with pytest.raises(public_json.PublicJSONError) as caught:
+        public_json.check_tree(tmp_path / "out", priors=private(tmp_path / "priors.yaml"))
+    assert "0.023" not in str(caught.value)
+
+
+def test_empty_private_document_is_not_checked_live_coverage(tmp_path):
+    write(tmp_path / "out", mode="live")
+    priors = tmp_path / "priors.yaml"
+    priors.write_text("priors: {}\n")
+    with pytest.raises(public_json.PublicJSONError):
+        public_json.check_tree(tmp_path / "out", priors=priors)

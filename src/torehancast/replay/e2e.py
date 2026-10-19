@@ -118,6 +118,9 @@ def run(
     model, spec = harness.build_model(state, pair)
     election = elections.load(state, spec["target"])
     templates = ga.load_archive(elections.ARCHIVES / state / election.spec["code"])
+    units = [ga.unit_id(ga._text(doc["jurisdiction"]["name"])) for doc in templates]
+    if len(units) != len(set(units)) or set(units) != set(model.baseline.unit_id):
+        raise ValueError("GA archive county coverage must be complete and unique")
     final = ga.snapshot_from_docs(templates, election.spec["contest"], election.candidates, election.key)
     if not final.cells:
         raise ValueError("target archive is empty")
