@@ -1,0 +1,59 @@
+# Replays: feed a past election through the pipeline as if it were arriving live.
+#
+# Each replay mirrors the state's live setup: `baseline` plays the role 2024 (or
+# 2022) plays on Nov 3, `target` is the election being "called", and `tau_pair`
+# is the preceding pair that tau is learned from (never the replay pair itself).
+#
+# `prior` is what a forecaster could have entered *before* that election night:
+# two-party D−R margin (+0.01 = D+1) ± sd, and expected two-party turnout relative
+# to the baseline. TODO(torehan): these are rough pre-election polling averages
+# from memory; check them against an archived polling average if you care about
+# the exact numbers. The acceptance tests include a deliberately wrong prior too.
+
+GA:
+  primary:
+    baseline: 2020_sen
+    target: 2022_sen
+    tau_pair: [2016_sen, 2020_sen]
+    prior: {margin: 0.010, margin_sd: 0.06, turnout_ratio: 0.80, turnout_sd: 0.12}
+  secondary:
+    baseline: 2022_sen
+    target: 2024_pres
+    tau_pair: [2016_sen, 2020_sen]
+    prior: {margin: -0.010, margin_sd: 0.06, turnout_ratio: 1.30, turnout_sd: 0.12}
+  batch_vote_types: [early, mail]
+
+NC:
+  primary:
+    baseline: 2020_pres
+    target: 2024_pres
+    tau_pair: [2016_pres, 2020_pres]
+    prior: {margin: -0.013, margin_sd: 0.06, turnout_ratio: 1.02, turnout_sd: 0.10}
+  batch_vote_types: [early, mail]
+
+FL:
+  primary:
+    baseline: 2018_sen
+    target: 2024_sen
+    tau_pair: [2012_sen, 2018_sen]
+    prior: {margin: -0.045, margin_sd: 0.06, turnout_ratio: 1.30, turnout_sd: 0.12}
+  # Florida's feed has no vote types; BatchTracker infers pre-Election-Day vs
+  # Election Day from precincts reporting. The baseline has no split either, so it
+  # is split synthetically. TODO(torehan): early_share is roughly Florida's 2024
+  # early + mail share of the vote; the gap prior is deliberately agnostic.
+  vote_split: delta
+  arrival_profile:
+    batch_types: [early]
+    late_types: []
+    # Florida law: early and mail ballots are tabulated and posted before any precinct.
+    batch_before_precincts: true
+    # Real-world hazard: big counties sometimes post more mail ballots after precincts
+    # start. BatchTracker books those as Election Day. TODO(torehan): frequency and size
+    # are a guess (40% of counties, 1–5% of their pre-Election-Day vote).
+    late_mail: {probability: 0.4, share: [0.01, 0.05]}
+    # The Panhandle west of the Apalachicola is on Central time; polls close an hour
+    # later there. (Gulf County is split between zones; treated as Eastern.)
+    late_close:
+      hours: 1.0
+      units: [ESCAMBIA, SANTA ROSA, OKALOOSA, WALTON, HOLMES, WASHINGTON, BAY, JACKSON, CALHOUN]
+  synthetic_split: {early_share: 0.72, gap: 0.0, shift_sd: 0.30, share_sd: 0.15, gap_shift_sd: 0.10, gap_sd: 0.05}

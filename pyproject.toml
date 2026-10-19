@@ -1,0 +1,30 @@
+[project]
+name = "torehancast"
+version = "0.1.0"
+description = "Live election-night win probabilities for the 2026 US Senate races, from official county results."
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "pyyaml>=6.0",
+  "httpx>=0.27",
+  "clarify>=0.6",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "openpyxl>=3.1",
+  "boto3>=1.34",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["replay: end-to-end replay acceptance tests (slower)"]

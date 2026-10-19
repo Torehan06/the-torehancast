@@ -1,0 +1,73 @@
+# Historical elections used as baselines, replay targets and tau estimates.
+#
+# `candidates` maps the EXACT ballot string in the official feed to a side:
+#   R = Republican, D = the main non-Republican candidate (Osborn in NE).
+# Anyone not listed is pooled into "other". Names are never fuzzy-matched.
+
+GA:
+  2014_sen:
+    adapter: ga_enhanced_voting
+    code: 2014NovGen
+    contest: "United States Senator, Chambliss"
+    candidates: {"DAVID A. PERDUE (R)": R, "M. MICHELLE NUNN (D)": D}
+  2016_sen:
+    adapter: ga_enhanced_voting
+    code: 2016NovGen
+    contest: "United States Senator, Isakson"
+    candidates: {"JOHNNY ISAKSON (I) (REP)": R, "JIM BARKSDALE (DEM)": D}
+  2020_sen:
+    adapter: ga_enhanced_voting
+    code: 2020NovGen
+    contest: "US Senate (Perdue)"
+    candidates: {"David A. Perdue (I) (Rep)": R, "Jon Ossoff (Dem)": D}
+  2022_sen:
+    adapter: ga_enhanced_voting
+    code: 2022NovGen
+    contest: "US Senate"
+    candidates: {"Herschel Junior Walker (Rep)": R, "Raphael Warnock (I) (Dem)": D}
+  2024_pres:
+    adapter: ga_enhanced_voting
+    code: 2024NovGen
+    contest: "President of the US"
+    candidates: {"Donald J. Trump (Rep)": R, "Kamala D. Harris (Dem)": D}
+
+NC:
+  2016_pres:
+    adapter: nc_sbe
+    date: "2016-11-08"
+    contest: "US PRESIDENT"
+    candidates: {"Donald J. Trump": R, "Hillary Clinton": D}
+  2020_pres:
+    adapter: nc_sbe
+    date: "2020-11-03"
+    contest: "US PRESIDENT"
+    candidates: {"Donald J. Trump": R, "Joseph R. Biden": D}
+  2024_pres:
+    adapter: nc_sbe
+    date: "2024-11-05"
+    contest: "US PRESIDENT"
+    candidates: {"Donald J. Trump": R, "Kamala D. Harris": D}
+
+# Florida's extract gives first and last names in separate columns; the adapter
+# matches on "Last, First".
+FL:
+  2012_sen:
+    adapter: fl_dos
+    date: "2012-11-06"
+    race_code: USS
+    candidates: {"Mack, Connie": R, "Nelson, Bill": D}
+  2018_sen:
+    adapter: fl_dos
+    date: "2018-11-06"
+    race_code: USS
+    candidates: {"Scott, Rick": R, "Nelson, Bill": D}
+  2020_pres:
+    adapter: fl_dos
+    date: "2020-11-03"
+    race_code: PRE
+    candidates: {"Pence, Trump": R, "Harris, Biden": D}  # running mate is in the last-name column
+  2024_sen:
+    adapter: fl_dos
+    date: "2024-11-05"
+    race_code: USS
+    candidates: {"Scott, Rick": R, "Mucarsel-Powell, Debbie": D}

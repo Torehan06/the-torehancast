@@ -1,0 +1,258 @@
+{
+ "jurisdiction": {
+  "name": [
+   {
+    "languageId": "en",
+    "text": "Appling County"
+   }
+  ],
+  "shortName": "appling-county-ga"
+ },
+ "election": {
+  "asOf": "2025-01-02T19:04:42.0789625Z"
+ },
+ "ballotItems": [
+  {
+   "id": "01000000-39b2-c225-b25a-08dd132698c9",
+   "parentId": "01000000-39b2-c225-ad05-08dd132698c9",
+   "parentJurisdictionName": null,
+   "publishPublicElectionId": null,
+   "relatedIds": null,
+   "name": [
+    {
+     "languageId": "en",
+     "text": "US Senate"
+    }
+   ],
+   "voteFor": [],
+   "referendum": [],
+   "turnout": null,
+   "reportingStatus": {
+    "reportingUnits": 0,
+    "totalUnits": 0,
+    "asOf": "2025-01-02T19:04:42.0789625Z",
+    "reportingStatusDetails": null
+   },
+   "voteTotal": 6669,
+   "underVoteCount": null,
+   "overVoteCount": null,
+   "contestGroupId": null,
+   "contestType": "Candidate",
+   "summaryResults": {
+    "ballotOptions": [
+     {
+      "id": "01000000-39b2-c225-2656-08dd132698ca",
+      "nativeId": "1",
+      "name": [
+       {
+        "languageId": "en",
+        "text": "Herschel Junior Walker (Rep)"
+       }
+      ],
+      "voteCount": 5344,
+      "party": {
+       "id": "01000000-39b2-c225-bdfa-08dd132698a4",
+       "name": [
+        {
+         "languageId": "en",
+         "text": "REP"
+        }
+       ],
+       "abbreviation": "REP",
+       "standardName": null,
+       "color": "#960018",
+       "textColor": "#ffffff"
+      },
+      "groupResults": [
+       {
+        "groupId": "01000000-39b2-c225-98e3-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Election Day Votes"
+         }
+        ],
+        "voteCount": 2569
+       },
+       {
+        "groupId": "01000000-39b2-c225-9e12-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Absentee by Mail Votes"
+         }
+        ],
+        "voteCount": 224
+       },
+       {
+        "groupId": "01000000-39b2-c225-9f6b-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Advance Voting Votes"
+         }
+        ],
+        "voteCount": 2550
+       },
+       {
+        "groupId": "01000000-39b2-c225-a062-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Provisional Votes"
+         }
+        ],
+        "voteCount": 1
+       }
+      ],
+      "isWriteIn": false,
+      "isQualifiedWriteIn": false,
+      "isWinner": null
+     },
+     {
+      "id": "01000000-39b2-c225-ffe1-08dd132698ca",
+      "nativeId": "2",
+      "name": [
+       {
+        "languageId": "en",
+        "text": "Raphael Warnock (I) (Dem)"
+       }
+      ],
+      "voteCount": 1260,
+      "party": {
+       "id": "01000000-39b2-c225-00ac-08dd132698a5",
+       "name": [
+        {
+         "languageId": "en",
+         "text": "DEM"
+        }
+       ],
+       "abbreviation": "DEM",
+       "standardName": null,
+       "color": "#255C99",
+       "textColor": "#ffffff"
+      },
+      "groupResults": [
+       {
+        "groupId": "01000000-39b2-c225-98e3-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Election Day Votes"
+         }
+        ],
+        "voteCount": 411
+       },
+       {
+        "groupId": "01000000-39b2-c225-9e12-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Absentee by Mail Votes"
+         }
+        ],
+        "voteCount": 155
+       },
+       {
+        "groupId": "01000000-39b2-c225-9f6b-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Advance Voting Votes"
+         }
+        ],
+        "voteCount": 694
+       },
+       {
+        "groupId": "01000000-39b2-c225-a062-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Provisional Votes"
+         }
+        ],
+        "voteCount": 0
+       }
+      ],
+      "isWriteIn": false,
+      "isQualifiedWriteIn": false,
+      "isWinner": null
+     },
+     {
+      "id": "01000000-39b2-c225-9a5f-08dd132698cb",
+      "nativeId": "3",
+      "name": [
+       {
+        "languageId": "en",
+        "text": "Chase Oliver (Lib)"
+       }
+      ],
+      "voteCount": 65,
+      "party": {
+       "id": "01000000-39b2-c225-346b-08dd132698a5",
+       "name": [
+        {
+         "languageId": "en",
+         "text": "LIB"
+        }
+       ],
+       "abbreviation": "LIB",
+       "standardName": null,
+       "color": "#fed000",
+       "textColor": "#000000"
+      },
+      "groupResults": [
+       {
+        "groupId": "01000000-39b2-c225-98e3-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Election Day Votes"
+         }
+        ],
+        "voteCount": 28
+       },
+       {
+        "groupId": "01000000-39b2-c225-9e12-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Absentee by Mail Votes"
+         }
+        ],
+        "voteCount": 4
+       },
+       {
+        "groupId": "01000000-39b2-c225-9f6b-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Advance Voting Votes"
+         }
+        ],
+        "voteCount": 33
+       },
+       {
+        "groupId": "01000000-39b2-c225-a062-08dd132698c7",
+        "groupName": [
+         {
+          "languageId": "en",
+          "text": "Provisional Votes"
+         }
+        ],
+        "voteCount": 0
+       }
+      ],
+      "isWriteIn": false,
+      "isQualifiedWriteIn": false,
+      "isWinner": null
+     }
+    ]
+   },
+   "rankedChoiceSummaryResults": null,
+   "crossCounties": null,
+   "isCloseRace": null,
+   "partyName": null
+  }
+ ]
+}
