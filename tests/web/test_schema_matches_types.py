@@ -1,6 +1,6 @@
 """F1 schema drift: the publisher's JSON must match the dashboard's typed contract.
 
-Runs the real publisher on Georgia replay data, writes summary and detail files
+Runs the real publisher on the Georgia replay model, writes summary and detail files
 for the waiting, first-votes and replay cases, then validates them with the
 page's own zod schemas (web/src/data/contract.ts, strict mode) via
 `npm run validate-json`. A renamed, retyped or out-of-range field fails here
@@ -19,7 +19,7 @@ import pytest
 
 from torehancast import publish
 from torehancast.replay import harness
-from torehancast.schema import Snapshot
+from torehancast.schema import Cell, Snapshot
 
 WEB = Path(__file__).resolve().parents[2] / "web"
 
@@ -38,10 +38,11 @@ def _validate(root: Path, *flags: str) -> subprocess.CompletedProcess:
 @pytest.fixture(scope="module")
 def published(tmp_path_factory) -> Path:
     model, _ = harness.build_model("GA", "primary")
-    final = harness.final_result("GA", "2022_sen")
+    # One county's early vote. Made-up counts are enough: this test checks the
+    # output's shape, and it must run without the gitignored archives (CI).
     first = Snapshot(
         "GA", "x", "T+0.25h",
-        [c for c in final.cells if c.unit_id == "APPLING" and c.vote_type == "early"],
+        [Cell("APPLING", "early", {"D": 1210, "R": 3402, "other": 31})],
         cell_complete={("APPLING", "early"): 1.0},
     )
 
