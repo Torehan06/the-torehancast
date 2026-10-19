@@ -1,0 +1,22 @@
+# TEMPLATE ONLY. Copy to config/priors.yaml locally; the real file is gitignored.
+# Fill in by hand; null explicitly means unset. Do not invent live priors.
+# Each non-null entry has exactly four numeric fields, matching RacePrior:
+#   margin: expected two-party (D - R) / (D + R), in [-1, 1]
+#   margin_sd: positive standard deviation in margin fractions
+#   turnout_ratio: positive expected two-party turnout / baseline turnout
+#   turnout_sd: positive relative standard deviation of the turnout ratio
+# Keep the real file only on the poller and in the separate PRIVATE config bucket.
+priors:
+  2026-GA-SEN: null
+  2026-NC-SEN: null
+  2026-FL-SEN-SPECIAL: null
+  2026-TX-SEN: null
+  2026-OH-SEN-SPECIAL: null
+  2026-IA-SEN: null
+  2026-KS-SEN: null
+  2026-SC-SEN: null
+  2026-MI-SEN: null
+  2026-MN-SEN: null
+  2026-ME-SEN: null
+  2026-AK-SEN: null
+  2026-NE-SEN: null
