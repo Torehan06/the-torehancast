@@ -71,3 +71,26 @@ FL:
     date: "2024-11-05"
     race_code: USS
     candidates: {"Scott, Rick": R, "Mucarsel-Powell, Debbie": D}
+
+SC:
+  2016_pres:
+    adapter: sc_clarity
+    election_id: "64658"
+    contest: "President and Vice President"
+    candidates:
+      "Donald J Trump / Michael R Pence": R
+      "Hillary Rodham Clinton / Timothy Michael Kaine": D
+  2020_pres:
+    adapter: sc_clarity
+    election_id: "106502"
+    contest: "President and Vice President"
+    candidates:
+      "REP Donald J Trump | Michael R Pence": R
+      "DEM Joseph R Biden | Kamala D Harris": D
+  2024_pres:
+    adapter: sc_clarity
+    election_id: "122436"
+    contest: "President and Vice President"
+    candidates:
+      "REP Donald J Trump/JD Vance": R
+      "DEM Kamala D Harris/Tim Walz": D

@@ -33,7 +33,9 @@ _VOTE_TYPE_LABELS = {
     # North Carolina
     "early voting": EARLY,
     "one stop": EARLY,
-    # South Carolina (Clarity) — "Provionsal" is a real typo in the 2024 feed.
+    # South Carolina (Clarity) — "Provionsal" is a real typo in the 2024 feed;
+    # 2020 called early voting "In-Person Absentee".
+    "in-person absentee": EARLY,
     "provionsal": PROVISIONAL,
     "failsafe": PROVISIONAL,
     "failsafe provisional": PROVISIONAL,

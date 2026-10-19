@@ -57,3 +57,11 @@ FL:
       hours: 1.0
       units: [ESCAMBIA, SANTA ROSA, OKALOOSA, WALTON, HOLMES, WASHINGTON, BAY, JACKSON, CALHOUN]
   synthetic_split: {early_share: 0.72, gap: 0.0, shift_sd: 0.30, share_sd: 0.15, gap_shift_sd: 0.10, gap_sd: 0.05}
+
+SC:
+  primary:
+    baseline: 2020_pres
+    target: 2024_pres
+    tau_pair: [2016_pres, 2020_pres]
+    prior: {margin: -0.135, margin_sd: 0.06, turnout_ratio: 1.02, turnout_sd: 0.10}
+  batch_vote_types: [early, mail]
