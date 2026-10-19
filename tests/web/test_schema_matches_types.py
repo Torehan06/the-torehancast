@@ -48,7 +48,8 @@ def published(tmp_path_factory) -> Path:
 
     def update(snap):
         result = model.run(snap, 2000, 0)
-        return publish.StateUpdate("GA", "US Senate", {"D": "Dem", "R": "Rep"}, result, model, snap.as_of)
+        return publish.StateUpdate("GA", "US Senate", {"D": "Dem", "R": "Rep"}, result, model, snap.as_of,
+                                   votes=snap.totals())
 
     root = tmp_path_factory.mktemp("publisher")
     publish.publish([update(Snapshot("GA", "x", None, []))], publish.LocalWriter(root / "waiting"), mode="live")
@@ -65,11 +66,6 @@ def test_publisher_output_matches_dashboard_contract(published):
     assert proc.returncode == 0, f"publisher output drifted from web/src/data/contract.ts:\n{proc.stderr}{proc.stdout}"
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="M3 TODO: publisher emits `modeled` but not yet per-candidate `votes`. "
-    "When it does, this xpasses and fails: delete this marker.",
-)
 def test_publisher_emits_contract_v1_fields(published):
     proc = _validate(published, "--require-v1")
     assert proc.returncode == 0, proc.stderr

@@ -7,10 +7,12 @@
  *   XX.json       — one race in detail (adds the county table).
  *   index.json    — replay only: the ordered list of frames.
  *
- * Fields marked "M3" are part of the contract but not yet emitted by the
- * publisher (PLAN.md M3: `modeled` flag and reported results). They are optional
- * here so today's replay output still parses; the page treats a missing
- * `modeled` as "not modeled" and so shows no probability for it.
+ * Fields marked "M3" (`modeled`, reported `votes` / `vote_share`) are emitted by
+ * the publisher for every live race. They stay optional here so older replay
+ * output still parses; the page treats a missing `modeled` as "not modeled" and
+ * so shows no probability for it. Modeled races leave `pct_reporting` out (the
+ * model's `share_counted` covers progress); `vote_share` divides by every
+ * reported vote, pooled "other" included.
  *
  * Schemas are built twice: loose (unknown fields stripped — what the page uses,
  * so a new publisher field never breaks the live site) and strict (unknown

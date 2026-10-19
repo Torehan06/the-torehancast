@@ -52,6 +52,24 @@ def _probabilities(value, candidates: dict, where: str, nullable: bool = False) 
             _number(p, where, 0, 1)
 
 
+def _observed(value: dict, candidates: dict, where: str) -> None:
+    """Optional observed counts on a modeled race: both fields or neither.
+
+    vote_share divides by every reported vote (pooled "other" included), so the
+    displayed candidates' shares may sum to less than one, never more.
+    """
+    _require(("votes" in value) == ("vote_share" in value), where)
+    if "votes" not in value:
+        return
+    votes, shares = value["votes"], value["vote_share"]
+    _require(isinstance(votes, dict) and votes.keys() == candidates.keys(), where)
+    _require(all(type(v) is int and v >= 0 for v in votes.values()), where)
+    _probabilities(shares, candidates, where)
+    _require(sum(shares.values()) <= 1 + 1e-3, where)
+    if sum(votes.values()) == 0:
+        _require(all(p == 0 for p in shares.values()), where)
+
+
 def _state(value: dict, where: str, *, live: bool) -> None:
     base = {"state", "race", "as_of", "status", "modeled"}
     _require(isinstance(value, dict), where)
@@ -78,15 +96,16 @@ def _state(value: dict, where: str, *, live: bool) -> None:
     else:
         common = base | {"candidates", "p_win"}
         if "rcv_status" in value:
-            keys = common | {"rcv_status", "p_outright", "p_via_rcv", "p_no_rcv_needed"}
-            _shape(value, keys, keys, where)
+            required = common | {"rcv_status", "p_outright", "p_via_rcv", "p_no_rcv_needed"}
+            _shape(value, required | {"votes", "vote_share"}, required, where)
         else:
-            keys = common | {"margin", "reported_votes", "expected_votes", "share_counted", "counties"}
-            _shape(value, keys, keys - {"counties"}, where)
+            required = common | {"margin", "reported_votes", "expected_votes", "share_counted"}
+            _shape(value, required | {"counties", "votes", "vote_share"}, required, where)
         _require(value["status"] == "live", where)
         candidates = value["candidates"]
         _require(isinstance(candidates, dict) and bool(candidates) and all(isinstance(v, str) for v in candidates.values()), where)
         _probabilities(value["p_win"], candidates, where, nullable="rcv_status" in value)
+        _observed(value, candidates, where)
         if "rcv_status" in value:
             status = value["rcv_status"]
             _require(status in {"awaiting_first_choices", "awaiting_rcv", "unresolved", "resolved"}, where)

@@ -44,6 +44,10 @@ class StateUpdate:
     model: RaceModel
     as_of: str | None
     rcv: RCVResult | None = None
+    # Observed counts from the feed, every key the adapter produced (pooled "other"
+    # included), e.g. Snapshot.totals(). Published as `votes` for the display
+    # candidates; `vote_share` divides by all of them. None: not published.
+    votes: dict[str, int] | None = None
 
 
 @dataclass(frozen=True)
@@ -99,6 +103,21 @@ def _round(x: float, digits: int = 4) -> float:
     return float(round(x, digits))
 
 
+def _reported(update: StateUpdate) -> dict:
+    """`votes` and `vote_share` for a released modeled race (observed counts only)."""
+    if update.votes is None:
+        return {}
+    if any(type(v) is not int or v < 0 for v in update.votes.values()):
+        raise ValueError("reported votes must be nonnegative integers")
+    total = sum(update.votes.values())
+    # An empty count has no keys at all; once votes exist, a missing display
+    # candidate means the adapter and the race config disagree.
+    if total and (missing := set(update.candidates) - set(update.votes)):
+        raise ValueError(f"reported votes lack display candidates: {sorted(missing)}")
+    votes = {k: update.votes.get(k, 0) for k in update.candidates}
+    return {"votes": votes, "vote_share": {k: _round(v / total) if total else 0.0 for k, v in votes.items()}}
+
+
 def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
     base = {"state": update.state, "race": update.race, "as_of": update.as_of,
             "modeled": isinstance(update, StateUpdate)}
@@ -122,7 +141,7 @@ def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
                 **base, "status": LIVE, "candidates": update.candidates,
                 "rcv_status": "awaiting_first_choices",
                 "p_outright": unknown, "p_via_rcv": unknown, "p_win": unknown,
-                "p_no_rcv_needed": None,
+                "p_no_rcv_needed": None, **_reported(update),
             }
         rcv = update.rcv
         if set(rcv.p_win) != set(update.candidates):
@@ -132,7 +151,7 @@ def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
             **base, "status": LIVE, "candidates": update.candidates,
             "rcv_status": rcv.status,
             "p_outright": rcv.p_outright, "p_via_rcv": rcv.p_via_rcv,
-            "p_win": rcv.p_win, "p_no_rcv_needed": rcv.p_no_rcv_needed,
+            "p_win": rcv.p_win, "p_no_rcv_needed": rcv.p_no_rcv_needed, **_reported(update),
         }
     r = update.result
     return {
@@ -148,6 +167,7 @@ def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
         "reported_votes": r.reported_votes,
         "expected_votes": int(round(r.expected_votes)),
         "share_counted": _round(r.share_counted, 3),
+        **_reported(update),
     }
 
 
