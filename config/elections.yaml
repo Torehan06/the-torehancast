@@ -94,3 +94,26 @@ SC:
     candidates:
       "REP Donald J Trump/JD Vance": R
       "DEM Kamala D Harris/Tim Walz": D
+
+MN:
+  2016_pres:
+    adapter: mn_sos
+    date: "2016-11-08"
+    contest: "U.S. President & Vice President"
+    candidates:
+      "Donald J. Trump and Michael R. Pence": R
+      "Hillary Clinton and Tim Kaine": D
+  2020_pres:
+    adapter: mn_sos
+    date: "2020-11-03"
+    contest: "U.S. President & Vice President"
+    candidates:
+      "Donald J. Trump and Michael R. Pence": R
+      "Joseph R. Biden and Kamala Harris": D
+  2024_pres:
+    adapter: mn_sos
+    date: "2024-11-05"
+    contest: "U.S. President & Vice President"
+    candidates:
+      "Donald J. Trump and JD Vance": R
+      "Kamala D. Harris and Tim Walz": D

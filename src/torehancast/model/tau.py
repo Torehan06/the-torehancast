@@ -102,7 +102,7 @@ def _composition_prior(base: pd.DataFrame, target: pd.DataFrame) -> composition.
     if len(types) < 2:
         target_types = sorted(set(target.vote_type))
         if len(target_types) < 2:
-            return composition.CompositionPrior(0.0, 0.0, 0.0, 0.0)
+            return composition.CompositionPrior(0.10, 0.05, MIN_GAP_SHIFT_SD, 0.02)
         # Base was unsplit (e.g. 2016 statewide Clarity files before early/mail were
         # broken out), while target has vote types. Measure county composition noise
         # around target's statewide profile, and use target's major-mode spread relative

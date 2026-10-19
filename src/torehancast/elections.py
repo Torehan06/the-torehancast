@@ -57,6 +57,11 @@ def final_snapshot(election: Election) -> Snapshot:
 
         text = sc_clarity.load_archive(ARCHIVES / "SC", election.spec["election_id"])
         snap = sc_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
+    elif election.adapter == "mn_sos":
+        from .adapters import mn_sos
+
+        text = mn_sos.load_archive(ARCHIVES / "MN", election.spec["date"])
+        snap = mn_sos.parse(text, election.spec["contest"], election.candidates, election.key)
     else:
         raise NotImplementedError(election.adapter)
     if not snap.cells:
