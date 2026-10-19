@@ -140,3 +140,70 @@ IA:
     candidates:
       "Donald J. Trump and JD Vance": R
       "Kamala D. Harris and Tim Walz": D
+
+# Alaska: top-4 primary, then a ranked-choice general, by state House district.
+# Units are districts, so baselines are primaries (the only earlier election with
+# the same candidates in the same seat type). R and D are party BLOCS: every REP
+# name → R, every DEM name → D. A top-4 general can carry two Republicans (Begich
+# and Palin in 2022), and a primary splits the R vote across several, so a single
+# name per side would make the baseline badly understate R. Everyone else
+# (AIP, LIB, NON, UND, write-ins) is "other".
+# The dashboard margin is therefore "Republican vs Democratic first-choice votes".
+# Chosen over head-to-head names only (the two finalists) by how well each tracked
+# the RCV final round: 2022 bloc −0.3 / head-to-head +31.0 / final +10.0 (D);
+# 2024 bloc −1.05 / head-to-head −2.15 / final −2.44 (R). Head-to-head was closer
+# in 2024 but 21 pts off when two strong Republicans split the vote; the bloc never
+# is. Both pass the replay (80% coverage 0.90 bloc, 0.94 head-to-head).
+# Two "Dan Sullivan"s really are on the 2026 ballot: "Sullivan, Dan S." (REP, the
+# senator) and "Sullivan, Daniel J. Jr." (no party). The second stays "other".
+AK:
+  2022_prim_house:
+    adapter: ak_doe
+    code: 22PRIM
+    contest: "U.S. Representative"
+    candidates:
+      "Palin, Sarah": R
+      "Begich, Nick": R
+      "Sweeney, Tara M.": R
+      "Lyons, Robert \"Bob\"": R
+      "Armstrong, Jay R.": R
+      "Snowden, Brad": R
+      "Purham, Randy": R
+      "Williams, Denise A.": R
+      "Peltola, Mary S.": D
+  2022_gen_house:
+    adapter: ak_doe
+    code: 22GENR
+    contest: "U.S. Representative"
+    candidates: {"Palin, Sarah": R, "Begich, Nick": R, "Peltola, Mary S.": D}
+  2024_prim_house:
+    adapter: ak_doe
+    code: 24PRIM
+    contest: "U.S. Representative"
+    candidates:
+      "Begich, Nick": R
+      "Dahlstrom, Nancy": R
+      "Salisbury, Matthew H.": R
+      "Heikes, Gerald L. \"Jer\"": R
+      "Peltola, Mary S.": D
+      "Hafner, Eric": D
+  2024_gen_house:
+    adapter: ak_doe
+    code: 24GENR
+    contest: "U.S. Representative"
+    candidates: {"Begich, Nick": R, "Peltola, Mary S.": D, "Hafner, Eric": D}
+  # Live baseline for Nov 3 (the Aug 18, 2026 top-4 primary).
+  2026_prim_sen:
+    adapter: ak_doe
+    code: 26PRIM
+    contest: "U.S. Senator"
+    candidates:
+      "Sullivan, Dan S.": R
+      "Heikes, Gerald L.": R
+      "McElwain, Heather": R
+      "Darden, Dustin Thomas House": R
+      "Mayers, Richard B.": R
+      "Grauberger, Fred C.": R
+      "Peltola, Mary": D
+      "Leslie, David B.": D
+      "Hafner, Carol \"Kitty\"": D

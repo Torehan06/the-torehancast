@@ -6,7 +6,7 @@
 from __future__ import annotations
 
 import argparse
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from functools import lru_cache
 
 import yaml
@@ -65,6 +65,9 @@ def build_model(state: str, pair: str = "primary", prior_shift: float = 0.0) -> 
     spec = cfg[pair]
     demo = demographics.load(state)
     params = _params(state, *spec["tau_pair"])
+    if floor := cfg.get("composition_floor"):
+        comp = params.composition
+        params = replace(params, composition=replace(comp, **{k: max(getattr(comp, k), v) for k, v in floor.items()}))
     prior = RacePrior(**spec["prior"])
     if prior_shift:
         prior = RacePrior(prior.margin + prior_shift, prior.margin_sd, prior.turnout_ratio, prior.turnout_sd)
@@ -104,7 +107,7 @@ def run(
     profile = arrival_profile(cfg, profile_overrides)
     delta = cfg.get("vote_split") == "delta"
     if delta:  # Florida: archive has no vote types; invent them, then hide them again
-        final = arrivals.synthesize_modes(final, seed)
+        final = arrivals.synthesize_modes(final, seed, **cfg.get("synthetic_target", {}))
         tracker = BatchTracker()
     events = arrivals.timeline(final, order, seed, profile)
     pending = list(CHECKPOINTS)

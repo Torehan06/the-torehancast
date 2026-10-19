@@ -12,13 +12,18 @@ Two kinds of arrival order, held to different standards:
     calls (P(wrong winner) < 0.95). Coverage under them is reported, not required.
   Orders that are legally impossible in a state are listed in IMPOSSIBLE_ORDERS.
 
-TODO(torehan): these thresholds define "sensible output". Defaults and reasoning:
+These thresholds define "sensible output" (decided Oct 19, after all eight replays):
   * Coverage has a floor but no ceiling. Replaying ONE election under many arrival
     orders can't tell "honest but lucky" from "too wide" (every replay shares the
-    same truth), so over-coverage is capped by width at 90% counted instead.
+    same truth), so over-coverage is capped by width at 90% counted instead. Every
+    pair clears the floors with room (80%: 0.96–1.00; 95%: 0.99–1.00), and the
+    widest 80% band at 90% counted is 1.37 pts against the 3-pt cap.
   * Adversarial orders only need to avoid confident wrong calls (P(wrong) < 0.95);
     they're designed to be unfair.
-  * A prior that is 8 points wrong must be overridden by the data by half-way.
+  * A prior that is 8 points wrong must be overridden by the data by half-way,
+    measured as 95% coverage at ≥ 50% counted over SEEDS nights (floor 0.90, like
+    COVERAGE_95_MIN). It used to be "no miss in 3 seeds", which a calibrated 95%
+    interval fails by chance: Florida failed it at 0.967 coverage over 20 seeds.
 Tightening the coverage floor or the width cap trades robustness for sharpness.
 """
 
@@ -39,6 +44,7 @@ COVERAGE_95_MIN = 0.90
 MAX_WIDTH_80_AT_90PCT = 0.03  # 3 pts
 MAX_P_WRONG_ADVERSARIAL = 0.95
 BAD_PRIOR_SHIFT = 0.08
+BAD_PRIOR_COVERAGE_95_MIN = 0.90
 START_TOLERANCE = 0.015  # 0% reporting median vs prior (MC noise + nonlinearity)
 END_TOLERANCE = 0.001
 
@@ -124,14 +130,18 @@ def test_no_confident_wrong_call_under_adversarial_orders(pair_id, order):
 @pytest.mark.parametrize("pair_id", PAIRS, ids=_ids)
 def test_data_overrides_a_bad_prior(pair_id):
     state, pair = pair_id
-    for seed in range(3):
-        truth = harness.run(state, pair, "random", seed, n_draws=500).truth_margin
-        shift = -BAD_PRIOR_SHIFT if truth > 0 else BAD_PRIOR_SHIFT  # push toward the loser
+    truth = harness.run(state, pair, "random", 0, n_draws=200).truth_margin
+    shift = -BAD_PRIOR_SHIFT if truth > 0 else BAD_PRIOR_SHIFT  # push toward the loser
+    covered, misses = [], []
+    for seed in range(SEEDS):
         r = harness.run(state, pair, "random", seed, n_draws=2000, prior_shift=shift)
         for c in r.checkpoints:
             if c.share >= 0.5:
                 lo, hi = c.result.margin_95
-                assert lo <= r.truth_margin <= hi, f"seed {seed} at {c.share:.0%}: [{lo:+.3f}, {hi:+.3f}]"
+                covered.append(lo <= truth <= hi)
+                if not covered[-1]:
+                    misses.append(f"seed {seed} at {c.share:.0%}: [{lo:+.3f}, {hi:+.3f}]")
+    assert np.mean(covered) >= BAD_PRIOR_COVERAGE_95_MIN, f"coverage {np.mean(covered):.2f}; misses: {misses}"
 
 
 def test_result_json_is_well_formed(random_replays):

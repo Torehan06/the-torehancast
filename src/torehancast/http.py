@@ -7,6 +7,10 @@ a challenge page is reported as an error, not worked around.
 
 from __future__ import annotations
 
+import ssl
+from pathlib import Path
+
+import certifi
 import httpx
 
 USER_AGENT = "torehancast/0.1 (election-night research project; contact: see README)"
@@ -14,6 +18,21 @@ USER_AGENT = "torehancast/0.1 (election-night research project; contact: see REA
 # Markers of interstitial bot-challenge pages. Seeing one means "this feed is
 # unavailable to us", never "try harder".
 _CHALLENGE_MARKERS = ("cf-chl", "Just a moment...", "challenge-platform/h/")
+
+
+# Intermediate CAs that some state servers fail to send. Alaska's server presents
+# GlobalSign's 2018 intermediate, but its certificate was issued by the 2025 one,
+# so a strict client can't build the chain. Trusting the missing intermediate (which
+# itself chains to a root in certifi) fixes that without weakening verification.
+EXTRA_CAS = sorted((Path(__file__).parent / "certs").glob("*.pem"))
+
+
+def ssl_context() -> ssl.SSLContext:
+    """Default verification (hostname + chain) over certifi's roots plus EXTRA_CAS."""
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    for pem in EXTRA_CAS:
+        ctx.load_verify_locations(cafile=pem)
+    return ctx
 
 
 class FeedUnavailable(RuntimeError):
@@ -26,6 +45,7 @@ class PoliteClient:
             timeout=timeout,
             follow_redirects=True,
             headers={"User-Agent": USER_AGENT},
+            verify=ssl_context(),
         )
         self._etags: dict[str, str] = {}
         self._cache: dict[str, bytes] = {}
