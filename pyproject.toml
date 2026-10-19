@@ -3,6 +3,7 @@ name = "torehancast"
 version = "0.1.0"
 description = "Live election-night win probabilities for the 2026 US Senate races, from official county results."
 requires-python = ">=3.12"
+license = {text = "MIT"}
 dependencies = [
   "numpy>=2.0",
   "pandas>=2.2",
