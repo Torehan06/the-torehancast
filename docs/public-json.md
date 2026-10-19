@@ -45,7 +45,7 @@ privacy checks and live private-value coverage requirements still apply.
 - Separate update types prevent results-only publishing from requiring a fake
   model or accidentally retaining probabilities. No feed or race is added here.
 - Existing unit fixtures gain the flag; replay acceptance tests and all model
-  thresholds are unchanged. Broader M3 prior-independence assurance is pending.
+  thresholds are unchanged. Private-input verification is described below.
 
 ## Review follow-up
 
@@ -54,3 +54,63 @@ cleanup: non-dictionary candidates/votes can raise `AttributeError`, and an
 extremely large integer reporting fraction can raise `OverflowError` rather
 than `ValueError`. Both reject publication; adapters should supply the typed
 input contract. Improving these diagnostics does not change forecast isolation.
+
+## Private-input verification
+
+The privacy contract, clarified by Törehan on October 19, preserves Bayesian
+forecasts. Private hand-entered priors and config must not be copied into public
+artifacts. A posterior may depend on priors after the live release gate opens;
+posterior independence is not the requirement. Waiting output contains only
+public identity/timestamp/status/modeled metadata under both release gates.
+
+Run the local verification suite (synthetic canaries, no real priors needed):
+
+```sh
+PYTHONPATH=src .venv/bin/python -m pytest -q tests/unit/test_live_privacy.py tests/unit/test_privacy_verification.py
+```
+
+It exercises the real model, live publisher, written summary/detail JSON and
+checker with two intentionally distinctive synthetic prior sets, including
+GA and the ME/AK RCV paths, no votes, thin data, both release gates and final
+counts. Each scan is also mutation-tested with an embedded private numeric
+copy. These fixtures are never presented as actual live private-file coverage.
+
+Before releasing any live data directory, run the strict artifact check with
+the **actual** private config file outside the public tree:
+
+```sh
+python scripts/check_public_json.py out/ --mode live --priors /private/config/priors.yaml
+```
+
+The default command requires private coverage, using `config/priors.yaml` if
+`--priors` is omitted. Missing, empty, all-unset, duplicate-key or malformed
+private files fail closed. Each live modeled race needs a matching non-null
+private prior; canonical race IDs match exactly. Legacy display labels work
+only when the state has a single unambiguous configured prior. Results-only
+races need no per-race prior. The private priors file is gitignored.
+
+The checker allows only JSON artifacts in the supplied **public data** tree.
+It rejects config/YAML, symlinks, other file types, invalid payloads, private
+keys and exact/common-rounded numeric copies in keys, values, embedded strings
+and relative filenames (including scientific notation). Paths and contents
+are withheld from failure messages. Common numeric values can collide with
+legitimate public data: a match requires investigation, never automatic bypass.
+This is conservative detection of accidental copies, not a proof against
+arbitrary encoding or deliberate exfiltration.
+
+For replay shape checks without private config, opt in explicitly:
+
+```sh
+python scripts/check_public_json.py out/ --structure-only
+```
+
+It prints `STRUCTURE ONLY` and never a privacy pass. Live paths, live summary
+metadata and `--mode live` still require private coverage; the structure-only
+option cannot bypass that requirement. Use `--mode live` for flat exports whose
+paths do not identify their mode. Scan JSON separately from the frontend build;
+HTML/JS files intentionally fail this data-only checker.
+
+Actual private-file verification and hosted access checks require the actual
+private config and approved hosting resources. Neither exists in this local
+checkpoint, so those checks must run at release time. The canary tests and
+strict missing-config failure are verified locally.

@@ -10,3 +10,6 @@ out/
 docs/outreach/
 # Working notes / checklist stay local only.
 PLAN.md
+
+# Hand-entered live priors stay private.
+config/priors.yaml

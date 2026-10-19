@@ -119,7 +119,7 @@ def test_explicit_private_config_errors_do_not_print_contents(tmp_path, missing)
 def test_checker_script_is_runnable_and_reports_partial_coverage(tmp_path):
     write(tmp_path / "out")
     script = Path(__file__).parents[2] / "scripts/check_public_json.py"
-    result = subprocess.run([sys.executable, str(script), str(tmp_path / "out")], capture_output=True, text=True)
+    result = subprocess.run([sys.executable, str(script), str(tmp_path / "out"), "--structure-only"], capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     assert "unavailable" in result.stdout.lower()
     strict = subprocess.run([sys.executable, str(script), str(tmp_path / "out"), "--require-priors"], capture_output=True, text=True)

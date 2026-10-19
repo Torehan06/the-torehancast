@@ -1,6 +1,6 @@
 """Check public artifact shapes and accidental copies of private config values.
 
-This is a conservative artifact check, not a proof of posterior independence.
+This verifies public artifact shapes and private-input copies, not posterior independence.
 Historical replay priors are intentionally public; live private priors are not.
 """
 
@@ -30,7 +30,7 @@ class ScanReport:
 
 def _require(ok: bool, where: str) -> None:
     if not ok:
-        raise PublicJSONError(f"invalid public payload at {where}")
+        raise PublicJSONError("invalid public payload; path and contents withheld")
 
 
 def _shape(value, keys: set[str], required: set[str], where: str) -> None:
@@ -154,19 +154,47 @@ def _document(value, where: str, live: bool) -> None:
         _state(value, where, live=live)
 
 
-def _private_tokens(path: Path) -> set:
+class _UniquePrivateLoader(yaml.SafeLoader):
+    pass
+
+
+def _unique_private_mapping(loader, node):
+    loader.flatten_mapping(node)
+    result = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=True)
+        if not isinstance(key, str) or key in result:
+            raise ValueError("invalid private mapping")
+        result[key] = loader.construct_object(value_node, deep=True)
+    return result
+
+
+_UniquePrivateLoader.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _unique_private_mapping,
+)
+
+
+@dataclass(frozen=True, repr=False)
+class _PrivatePriors:
+    tokens: set
+    races: frozenset[str]
+
+
+def _private_priors(path: Path) -> _PrivatePriors:
     # All failures are deliberately content-free: YAML diagnostics can quote lines.
     try:
-        doc = yaml.safe_load(path.read_text())
+        doc = yaml.load(path.read_text(), Loader=_UniquePrivateLoader)
         if not isinstance(doc, dict) or set(doc) != {"priors"} or not isinstance(doc["priors"], dict) or not doc["priors"]:
             raise ValueError
         tokens = set()
+        races = set()
         fields = {"margin", "margin_sd", "turnout_ratio", "turnout_sd"}
-        for prior in doc["priors"].values():
+        for race, prior in doc["priors"].items():
             if prior is None:
                 continue
             if not isinstance(prior, dict) or set(prior) != fields:
                 raise ValueError
+            races.add(race)
             for key, value in prior.items():
                 if type(value) not in (int, float) or not math.isfinite(value):
                     raise ValueError
@@ -175,7 +203,9 @@ def _private_tokens(path: Path) -> set:
                 for n in (value, round(value, 3), round(value, 4)):
                     tokens.add(n)
                     tokens.add(str(n))
-        return tokens
+        if not tokens:
+            raise ValueError
+        return _PrivatePriors(tokens, frozenset(races))
     except (OSError, ValueError, TypeError, OverflowError, yaml.YAMLError):
         raise PublicJSONError("private priors unavailable or invalid; contents withheld") from None
 
@@ -188,14 +218,24 @@ def _scan_values(value, tokens: set, where: str) -> None:
         for key, v in value.items():
             normalized = re.sub(r"[^a-z]", "", key.casefold())
             if "prior" in normalized or normalized in forbidden:
-                raise PublicJSONError(f"private/config key in {where}; key withheld")
+                raise PublicJSONError("private/config key in public output; path and key withheld")
             _scan_values(key, tokens, where)
             _scan_values(v, tokens, where)
     elif isinstance(value, list):
         for v in value:
             _scan_values(v, tokens, where)
-    elif type(value) in (str, int, float) and value in tokens:
-        raise PublicJSONError(f"possible private-value copy in {where}; value withheld")
+    elif type(value) in (str, int, float):
+        copied = value in tokens
+        if isinstance(value, str):
+            # Includes embedded, signed, decimal and scientific numeric literals.
+            copied = copied or any(
+                float(n) in tokens or float(n.lstrip("+-")) in tokens
+                for n in re.findall(
+                    r"[-+]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][-+]?[0-9]+)?", value,
+                )
+            )
+        if copied:
+            raise PublicJSONError("possible private-value copy; path and value withheld")
 
 
 def _pairs(pairs):
@@ -211,28 +251,58 @@ def _constant(_):
     raise ValueError("nonfinite JSON constant")
 
 
-def check_tree(root: Path, *, priors: Path | None = None) -> ScanReport:
+def _check_live_coverage(value: dict, private: _PrivatePriors) -> None:
+    states = value["states"] if "states" in value else [value]
+    for state in states:
+        if state["modeled"] is False:
+            continue
+        race = state["race"]
+        if re.match(r"^[0-9]{4}-[A-Z]{2}-", race):
+            covered = race in private.races and race.split("-")[1] == state["state"]
+        else:
+            # Legacy display labels identify a race only if this state has one
+            # configured prior. Canonical IDs must always match exactly.
+            covered = sum(k.split("-")[1:2] == [state["state"]]
+                          for k in private.races) == 1
+        if not covered:
+            raise PublicJSONError("live modeled race has no unambiguous configured private prior")
+
+
+def check_tree(root: Path, *, priors: Path | None = None, mode: str | None = None) -> ScanReport:
+    if mode not in (None, "live", "replay"):
+        raise PublicJSONError("invalid publication mode")
     root = Path(root)
     if not root.is_dir() or root.is_symlink():
         raise PublicJSONError("public output directory is missing or unsafe")
-    tokens = _private_tokens(Path(priors)) if priors is not None else None
+    private = _private_priors(Path(priors)) if priors is not None else None
+    tokens = private.tokens if private is not None else None
     count = 0
     for path in sorted(root.rglob("*")):
         relative = path.relative_to(root)
-        if path.is_symlink() or "config" in relative.parts or path.suffix.lower() in {".yaml", ".yml"} or path.name.startswith(".env"):
+        if path.is_symlink() or "config" in {p.casefold() for p in relative.parts} or path.suffix.lower() in {".yaml", ".yml"} or path.name.startswith(".env"):
             raise PublicJSONError("private/config artifact or symlink in public output")
-        if not path.is_file() or path.suffix.lower() != ".json":
-            continue
         where = str(relative)
+        _scan_values(where, tokens if tokens is not None else set(), where)
+        if path.is_dir():
+            continue
+        if not path.is_file() or path.suffix.lower() != ".json":
+            raise PublicJSONError("unexpected non-JSON artifact in public data output; path withheld")
         try:
             value = json.loads(path.read_text(), object_pairs_hook=_pairs, parse_constant=_constant)
         except (OSError, UnicodeError, ValueError):
-            raise PublicJSONError(f"invalid JSON in {where}; contents withheld") from None
-        live = "live" in relative.parts or (isinstance(value, dict) and value.get("mode") == "live")
+            raise PublicJSONError("invalid JSON; path and contents withheld") from None
+        live = (mode == "live" or "live" in {p.casefold() for p in root.parts}
+                or "live" in {p.casefold() for p in relative.parts}
+                or (isinstance(value, dict) and value.get("mode") == "live"))
         if live and tokens is None:
             raise PublicJSONError("live output requires private priors for value checks")
-        _scan_values(value, tokens if tokens is not None else set(), where)
-        _document(value, where, live)
+        try:
+            _scan_values(value, tokens if tokens is not None else set(), where)
+            _document(value, where, live)
+            if live:
+                _check_live_coverage(value, private)
+        except (TypeError, KeyError, AttributeError, OverflowError, RecursionError):
+            raise PublicJSONError("invalid public payload; path and contents withheld") from None
         count += 1
     if not count:
         raise PublicJSONError("no public JSON files found")
@@ -243,18 +313,23 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", type=Path)
     parser.add_argument("--priors", type=Path, help="private prior file; values are never printed")
-    parser.add_argument("--require-priors", action="store_true")
+    coverage = parser.add_mutually_exclusive_group()
+    coverage.add_argument("--require-priors", action="store_true", help="require private coverage (the default)")
+    coverage.add_argument("--structure-only", action="store_true", help="replay shapes only; never a privacy pass")
+    parser.add_argument("--mode", choices=("live", "replay"), help="force live checks for flat export directories")
     args = parser.parse_args(argv)
-    private = args.priors
-    if private is None and ((CONFIG / "priors.yaml").exists() or args.require_priors):
-        private = CONFIG / "priors.yaml"
+    if args.structure_only and args.priors is not None:
+        parser.error("--structure-only cannot be combined with --priors")
+    private = None if args.structure_only else (args.priors or CONFIG / "priors.yaml")
     try:
-        report = check_tree(args.root, priors=private)
+        report = check_tree(args.root, priors=private, mode=args.mode)
     except PublicJSONError as exc:
         print(f"FAIL: {exc}")
         return 1
-    coverage = "checked" if report.private_values_checked else "unavailable (private file not supplied); replay structure only"
-    print(f"PASS: {report.files} JSON files; private-value coverage: {coverage}")
+    if report.private_values_checked:
+        print(f"PASS: {report.files} JSON files; private-input copy checks complete; posterior independence not tested")
+    else:
+        print(f"STRUCTURE ONLY: {report.files} JSON files; private-value coverage unavailable; no privacy pass")
     return 0
 
 

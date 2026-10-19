@@ -4,7 +4,7 @@ From the repo root, with the project environment active:
 
 ```sh
 python -m torehancast.replay.e2e --state GA --out out/
-python scripts/check_public_json.py out/
+python scripts/check_public_json.py out/ --structure-only
 ```
 
 Use a fresh output directory for each run. Existing replay output is refused to
@@ -55,12 +55,12 @@ in memory; raw archives and config are never copied into the public tree.
 ## Public artifact check
 
 The checker accepts only the documented summary, state/detail and replay-index
-JSON shapes. Waiting states may contain only their identity, timestamp and status.
+JSON shapes. Waiting states may contain only identity, timestamp, status and modeled metadata.
 It rejects unknown fields, malformed/nonfinite/duplicate-key JSON, copied config
 paths or YAML files, and symlinks in the public tree. It is an artifact check;
 it does not replace feed, model or hosting verification.
 
-The private file defaults to `config/priors.yaml` if present. Specify another
+Private coverage is required by default, using `config/priors.yaml` unless overridden. Specify another
 private file explicitly when checking poller output:
 
 ```sh
@@ -68,9 +68,9 @@ python scripts/check_public_json.py out/ --priors /private/config/priors.yaml
 python scripts/check_public_json.py out/ --require-priors
 ```
 
-Empty priors mappings are rejected. This standalone checker validates the file's
-shape and configured scalar values; M0 remains responsible for validating full
-race-registry coverage before live use.
+Empty and all-unset priors mappings and duplicate YAML keys are rejected. The
+checker verifies a non-null prior for each live modeled race; M0 remains
+responsible for validating full race-registry coverage before live use.
 
 The file follows M0's `priors: {race_id: null | {margin, margin_sd, turnout_ratio,
 turnout_sd}}` schema. The checker compares public scalar values with configured
@@ -86,9 +86,15 @@ suppress it automatically. A posterior still depends on its prior; this scan
 cannot prove mathematical non-recoverability or detect every transformed/encoded
 secret. The existing live release gate is a separate safeguard.
 
-Without a private file, replay checks report **private-value coverage unavailable**
-and validate structure only. Live output, explicit `--priors` failures, and
-`--require-priors` cannot pass without a readable valid private file. Thus a replay
-check alone does not complete M3's broader live privacy milestone.
+Without a private file, only explicitly opted-in `--structure-only` replay checks
+can succeed; they report **private-value coverage unavailable** and never a
+privacy pass. Live output and the default strict command cannot pass without a
+readable valid private file. Thus replay checks alone do not verify live data.
 
 Verify with `pytest -q tests/unit/test_ga_e2e.py tests/unit/test_public_json.py`.
+
+The checker now requires actual private-value coverage by default. For replay
+shapes without private config, use `--structure-only`; it never reports a privacy
+pass. A live export requires `--mode live --priors /private/config/priors.yaml`.
+Only JSON data files belong in the scanned tree. See `docs/public-json.md` for
+the clarified contract, canary tests, fail-closed cases and release-time checks.
