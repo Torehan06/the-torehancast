@@ -53,10 +53,28 @@ def _probabilities(value, candidates: dict, where: str, nullable: bool = False) 
 
 
 def _state(value: dict, where: str, *, live: bool) -> None:
-    base = {"state", "race", "as_of", "status"}
+    base = {"state", "race", "as_of", "status", "modeled"}
     _require(isinstance(value, dict), where)
+    _require(type(value.get("modeled")) is bool, where)
     if value.get("status") == "waiting":
         _shape(value, base, base, where)
+    elif value["modeled"] is False:
+        keys = base | {"candidates", "votes", "vote_share", "pct_reporting"}
+        _shape(value, keys, keys, where)
+        _require(value["status"] == "live", where)
+        candidates, votes, shares = value["candidates"], value["votes"], value["vote_share"]
+        _require(isinstance(candidates, dict) and bool(candidates)
+                 and all(isinstance(k, str) and bool(k) and isinstance(v, str)
+                         for k, v in candidates.items()), where)
+        _require(isinstance(votes, dict) and votes.keys() == candidates.keys(), where)
+        _require(all(type(v) is int and v >= 0 for v in votes.values()), where)
+        total = sum(votes.values())
+        _require(total > 0, where)
+        _probabilities(shares, candidates, where)
+        for candidate in candidates:
+            _require(math.isclose(shares[candidate], votes[candidate] / total), where)
+        if value["pct_reporting"] is not None:
+            _number(value["pct_reporting"], where, 0, 1)
     else:
         common = base | {"candidates", "p_win"}
         if "rcv_status" in value:

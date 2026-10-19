@@ -11,7 +11,7 @@ import pytest
 from torehancast import public_json
 
 PAYLOAD = {
-    "state": "GA", "race": "2022_sen", "as_of": "T+1.00h", "status": "live",
+    "state": "GA", "race": "2022_sen", "as_of": "T+1.00h", "status": "live", "modeled": True,
     "candidates": {"D": "Dem", "R": "Rep"}, "p_win": {"D": 0.6, "R": 0.4},
     "margin": {"median": 0.02, "p80": [-0.03, 0.04], "p95": [-0.05, 0.07]},
     "reported_votes": 1200, "expected_votes": 2000, "share_counted": 0.6,

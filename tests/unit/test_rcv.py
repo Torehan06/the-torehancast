@@ -147,7 +147,7 @@ def test_rcv_components_reach_both_public_files(update, tmp_path):
 def test_rcv_draws_cannot_bypass_live_waiting_gate(update):
     update = replace(update, result=replace(update.result, reported_votes=0), rcv=rcv.summarize(FIRST))
     for payload in (publish.state_summary(update, "live"), publish.state_detail(update, "live")):
-        assert payload == {"state": "ME", "race": "Senate", "as_of": "T+1h", "status": "waiting"}
+        assert payload == {"state": "ME", "race": "Senate", "as_of": "T+1h", "status": "waiting", "modeled": True}
 
 
 def test_replay_without_rcv_evidence_also_suppresses_two_party_probability(update):

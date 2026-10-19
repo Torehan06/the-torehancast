@@ -9,7 +9,7 @@ from torehancast import publish
 from torehancast.replay import harness
 from torehancast.schema import Snapshot
 
-WAITING_KEYS = {"state", "race", "as_of", "status"}
+WAITING_KEYS = {"state", "race", "as_of", "status", "modeled"}
 
 
 @pytest.fixture(scope="module")
