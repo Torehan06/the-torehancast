@@ -62,6 +62,11 @@ def final_snapshot(election: Election) -> Snapshot:
 
         text = mn_sos.load_archive(ARCHIVES / "MN", election.spec["date"])
         snap = mn_sos.parse(text, election.spec["contest"], election.candidates, election.key)
+    elif election.adapter == "ia_clarity":
+        from .adapters import ia_clarity
+
+        text = ia_clarity.load_archive(ARCHIVES / "IA", election.spec["election_id"])
+        snap = ia_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
     else:
         raise NotImplementedError(election.adapter)
     if not snap.cells:

@@ -117,3 +117,26 @@ MN:
     candidates:
       "Donald J. Trump and JD Vance": R
       "Kamala D. Harris and Tim Walz": D
+
+IA:
+  2016_pres:
+    adapter: ia_clarity
+    election_id: "2016"
+    contest: "President and Vice President"
+    candidates:
+      "Donald J. Trump and Michael R. Pence": R
+      "Hillary Clinton and Tim Kaine": D
+  2020_pres:
+    adapter: ia_clarity
+    election_id: "106279"
+    contest: "President and Vice President"
+    candidates:
+      "Donald J. Trump and Michael R. Pence": R
+      "Joseph R. Biden and Kamala D. Harris": D
+  2024_pres:
+    adapter: ia_clarity
+    election_id: "122322"
+    contest: "President and Vice President"
+    candidates:
+      "Donald J. Trump and JD Vance": R
+      "Kamala D. Harris and Tim Walz": D

@@ -39,6 +39,8 @@ _VOTE_TYPE_LABELS = {
     "provionsal": PROVISIONAL,
     "failsafe": PROVISIONAL,
     "failsafe provisional": PROVISIONAL,
+    # Iowa (Clarity) — early in-person and mail absentee are combined under "Absentee".
+    "absentee": EARLY,
 }
 
 
