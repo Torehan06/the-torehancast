@@ -45,7 +45,8 @@ test.describe('F2 Senate map', () => {
     await serveSummary(page, () => ({ status: 200, body: fixture('demo') }))
     await page.goto('/')
     const coloured = page.locator('svg.map path[class*="lead-"]')
-    expect(await coloured.count()).toBeGreaterThan(0)
+    // Wait for the summary to render: a one-shot count() could run before it does.
+    await expect(coloured.first()).toBeVisible()
     for (const label of await coloured.evaluateAll((els) => els.map((e) => e.getAttribute('aria-label') ?? ''))) {
       expect(label).toMatch(/\d+(\.\d)?%/)
     }
