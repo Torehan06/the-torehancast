@@ -73,6 +73,10 @@ def summarize(
             raise ValueError("terminal rounds cannot create votes")
         if ((final > 0).sum(axis=1) > 2).any():
             raise ValueError("terminal rounds must contain at most two continuing candidates")
+        for j, key in enumerate(final_keys):
+            continuing = needs_rcv & (final[:, j] > 0)
+            if (final[continuing, j] + 1e-8 < first[continuing, keys.index(key)]).any():
+                raise ValueError("continuing candidates cannot lose their first-choice votes")
         winners = final > final_totals[:, None] / 2
         for j, key in enumerate(final_keys):
             via[:, keys.index(key)] = needs_rcv & winners[:, j]

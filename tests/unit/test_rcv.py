@@ -164,3 +164,12 @@ def test_plurality_race_output_still_uses_existing_model(update):
     payload = publish.state_detail(replace(update, state="GA"), "live")
     assert payload["p_win"]["D"] == 1.0
     assert "margin" in payload and "counties" in payload
+
+
+@pytest.mark.parametrize("final", [
+    {"D": [1], "R": [40]},  # continuing D cannot lose its first-choice ballots
+    {"D": [45], "R": [1]},  # the same invariant for the other candidate
+])
+def test_terminal_round_cannot_remove_votes_from_a_continuing_candidate(final):
+    with pytest.raises(ValueError, match="continuing"):
+        rcv.summarize({"D": [45], "R": [40], "ind": [15]}, final_round=final)

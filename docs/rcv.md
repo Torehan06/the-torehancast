@@ -21,10 +21,12 @@ an outright winner. It is independent of which candidate wins.
 Optional `final_round` arrays are terminal continuing-candidate vote totals,
 after ranked transfers and ballot exhaustion. Omitted candidates are eliminated;
 no more than two may have positive totals in any draw, and terminal totals cannot
-exceed first-choice totals. These arrays must come from an RCV-aware model
+exceed first-choice totals. Continuing candidates must retain at least their own
+first-choice votes in draws requiring RCV. These arrays must come from an RCV-aware model
 informed by the ranked count. Supplying first-choice plurality totals as terminal
 counts is invalid use of this interface. A partial intermediate count must not
-be labeled terminal.
+be labeled terminal. Full elimination-path validity and provenance cannot be
+verified from aggregate arrays alone; the producer must establish them.
 
 For resolved draws the output reports, for each candidate:
 
