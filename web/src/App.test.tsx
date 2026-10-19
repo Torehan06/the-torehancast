@@ -4,5 +4,5 @@ import App from './App'
 
 it('renders the masthead', () => {
   render(<App />)
-  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The Torehancast')
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The TörehanCast')
 })

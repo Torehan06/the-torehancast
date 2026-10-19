@@ -4,6 +4,8 @@ import { formatAge, freshness } from './data/freshness'
 import { HAS_SENATE_RACE } from './data/states'
 import { useNow, useSummaryPoll } from './hooks/useSummaryPoll'
 import { Legend } from './components/Legend'
+import { SwingSeats } from './components/SwingSeats'
+import { ThemeToggle } from './components/ThemeToggle'
 import { RaceList } from './components/RaceList'
 import { RacePanel } from './components/RacePanel'
 import { SenateMap } from './components/SenateMap'
@@ -38,8 +40,9 @@ export default function App() {
       <header className="masthead">
         <h1 className="wordmark">
           <span className="wordmark__oval" aria-hidden="true" />
-          The Torehancast
+          The TörehanCast
         </h1>
+        <ThemeToggle />
         <p className="masthead__sub">Live results and win chances for the 2026 Senate races, from official state counts.</p>
         <p className="masthead__status" data-testid="freshness" aria-live="polite">
           {status.kind === 'loading' && 'Loading results…'}
@@ -63,13 +66,14 @@ export default function App() {
           )}
         </aside>
         <div className="layout__list">
-          <h2 className="list-title">All 35 races</h2>
+          <SwingSeats summary={summary} selected={selected} onSelect={select} />
+          <h2 className="list-title">Other 22 races</h2>
           <RaceList summary={summary} selected={selected} onSelect={select} />
         </div>
       </main>
 
       <footer className="footer">
-        Results from official state election websites. Probabilities come from the Torehancast model and are shown only
+        Results from official state election websites. Probabilities come from the TörehanCast model and are shown only
         for modeled races; other races show reported votes with no forecast.{' '}
         <a href="https://github.com/Torehan06/the-torehancast">Method and source code</a>.
       </footer>

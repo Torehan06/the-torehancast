@@ -4,7 +4,8 @@
  * one recurring mark. Public Sans is the US government's (USWDS) typeface,
  * bundled with the app: nothing is fetched from a third party.
  *
- * Party colours are Okabe–Ito blue and vermilion, distinguishable under the
+ * Party colours are Okabe–Ito blue and a vermilion nudged towards red,
+ * distinguishable under the
  * common colour-vision deficiencies. Three shades per party show how strong the
  * lead is; the number itself is always printed next to it.
  */
@@ -19,9 +20,9 @@
   --d-strong: #0072b2;
   --d-medium: #5aa3d6;
   --d-light: #bcd9ee;
-  --r-strong: #d55e00;
-  --r-medium: #ec9a5a;
-  --r-light: #f6d3b6;
+  --r-strong: #d4471a;
+  --r-medium: #ea8460;
+  --r-light: #f6cdbd;
   --o-strong: #009e73;
   --o-medium: #4cbf9c;
   --o-light: #bde7d9;
@@ -41,24 +42,23 @@
   -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* The printing plate: the same ink, now the ground. */
-  :root {
-    --paper: #18222d;
-    --paper-raised: #1f2b37;
-    --ink: #e4ebe6;
-    --ink-soft: #9fb0a8;
-    --rule: #34424f;
-    --focus: #e4ebe6;
-    --d-light: #2f6189;
-    --r-light: #8a4a22;
-    --o-light: #276b58;
-    --hatch-bg: #263442;
-    --hatch-line: #5d6f7e;
-    --neutral: #212c37;
-    --noleader: #8a9a92;
-    color-scheme: dark;
-  }
+/* Dark is the default (index.html sets data-theme before paint); the masthead
+   toggle switches to light. The printing plate: the same ink, now the ground. */
+:root[data-theme='dark'] {
+  --paper: #18222d;
+  --paper-raised: #1f2b37;
+  --ink: #e4ebe6;
+  --ink-soft: #9fb0a8;
+  --rule: #34424f;
+  --focus: #e4ebe6;
+  --d-light: #2f6189;
+  --r-light: #8c3a22;
+  --o-light: #276b58;
+  --hatch-bg: #263442;
+  --hatch-line: #5d6f7e;
+  --neutral: #212c37;
+  --noleader: #8a9a92;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -183,11 +183,9 @@ a { color: inherit; text-underline-offset: 0.18em; }
 .lead-other.strength-light { --fill: var(--o-light); }
 .state--neutral { --fill: var(--neutral); }
 .state--noleader { --fill: var(--noleader); }
-@media (prefers-color-scheme: dark) {
-  .lead-D { --text: #6db7e8; }
-  .lead-R { --text: #f19a57; }
-  .lead-other { --text: #58cfa9; }
-}
+[data-theme='dark'] .lead-D { --text: #62b4ec; }
+[data-theme='dark'] .lead-R { --text: #ff7452; }
+[data-theme='dark'] .lead-other { --text: #58cfa9; }
 
 /* ---- map (F2) ---- */
 .map { width: 100%; height: auto; display: block; overflow: visible; }
@@ -390,3 +388,99 @@ a { color: inherit; text-underline-offset: 0.18em; }
   /* Full-width rule to close the page like the masthead opens it; short lines. */
   padding-right: max(0px, calc(100% - 80ch));
 }
+
+/* ---- theme toggle: a ballot oval with a knob ---- */
+.masthead { grid-template-columns: 1fr auto; }
+.wordmark { grid-column: 1; }
+.theme-toggle {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.theme-toggle__track {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  transition: background-color 200ms;
+}
+.theme-toggle__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.theme-toggle[aria-pressed='true'] .theme-toggle__knob { left: 23px; }
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle__knob { transition: left 180ms ease-out; }
+}
+/* On a phone the switch alone is enough; its name stays for screen readers. */
+@media (max-width: 520px) {
+  .theme-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+.theme-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+
+/* ---- swing seats: the 13 forecast races, number first ---- */
+.swing { margin-bottom: 36px; }
+.swing__intro { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.92rem; max-width: 60ch; }
+.swing__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+  gap: 12px;
+}
+.swing__grid li { border: 0; }
+.race-item.race-item--swing {
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'name' 'prob' 'detail';
+  align-content: start;
+  row-gap: 2px;
+  padding: 14px 16px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--paper-raised);
+}
+/* A band of the favourite's party colour along the top of the tile. */
+.race-item--swing.lead-D,
+.race-item--swing.lead-R,
+.race-item--swing.lead-other { box-shadow: inset 0 6px 0 var(--text); }
+.race-item--swing.race-item--empty { border-style: dashed; border-color: var(--ink-soft); background: none; }
+.race-item--swing .race-item__name { font-size: 1.15rem; font-weight: 850; letter-spacing: -0.02em; }
+.swing__prob {
+  grid-area: prob;
+  font-size: clamp(2.6rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  margin: 6px 0 4px;
+}
+.race-item--swing .race-item__detail { font-size: 0.85rem; }
+.race-item--swing:hover { background: var(--paper); }
+.race-item--swing.race-item--selected { outline: 3px solid var(--focus); outline-offset: 2px; }
+.race-item--swing.race-item--empty.race-item--selected { box-shadow: none; }

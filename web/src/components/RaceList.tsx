@@ -1,6 +1,6 @@
 import type { ParsedSummary } from '../data/parse'
 import { formatProbability, formatShare, leader, party } from '../data/display'
-import { SENATE_RACES_2026 } from '../data/states'
+import { SENATE_RACES_2026, SWING_SEATS } from '../data/states'
 import { raceLabel, raceStatus } from './raceLabel'
 
 interface Props {
@@ -10,14 +10,14 @@ interface Props {
 }
 
 /**
- * Every 2026 Senate race as a plain button. Small states (RI, DE) are hard to
- * tap on a phone map; this list is the reliable way in, and it carries the
- * explicit number behind each state's colour.
+ * The other 22 Senate races as plain buttons (the swing seats have their own
+ * tiles). Small states (RI, DE) are hard to tap on a phone map; this list and
+ * the tiles are the reliable way in, and they carry the number behind each colour.
  */
 export function RaceList({ summary, selected, onSelect }: Props) {
   return (
-    <ul className="race-list" aria-label="All 2026 Senate races">
-      {SENATE_RACES_2026.map(({ state, special }) => {
+    <ul className="race-list" aria-label="Other 2026 Senate races">
+      {SENATE_RACES_2026.filter(({ state }) => !SWING_SEATS.has(state.code)).map(({ state, special }) => {
         const race = summary?.races.get(state.code)
         const lead = leader(race)
         const label = raceLabel(state, race, summary)

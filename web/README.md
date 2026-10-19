@@ -1,4 +1,4 @@
-# web — the Torehancast dashboard
+# web — the TörehanCast dashboard
 
 React + TypeScript on Vite. A US map of every 2026 Senate race, a race panel,
 and loud warnings when the data is stale or unreachable. The page only **reads**
@@ -47,7 +47,14 @@ one recurring mark (wordmark, map key, list markers, probability bars). States
 with a race but no votes are hatched like an unmarked ballot. Type is Public Sans,
 the US government's USWDS typeface (OFL), bundled through `@fontsource-variable`.
 The one animation: a state's colour eases over when a new snapshot changes who
-leads (off under `prefers-reduced-motion`). Stale data is marked in highlighter
+leads (off under `prefers-reduced-motion`).
+
+Dark is the default; the oval switch in the masthead changes to light and the
+choice is saved in `localStorage` (index.html applies it before first paint).
+Below the map, the 13 registry seats (`SWING_SEATS` in `src/data/states.ts`) get
+tiles led by the favourite's win probability in big party-coloured type. The list
+only decides placement: a tile shows a number only when its JSON has
+`modeled: true` with votes in, and never shows a vote share in that slot. Stale data is marked in highlighter
 yellow; a failing fetch inverts to ink, so neither can be mistaken for a party colour.
 
 ## Rules the code enforces
