@@ -36,11 +36,15 @@ jobs:
       # data/archives/, which are gitignored and fetched from state sites:
       #   - tests/replay (replay acceptance suite)
       #   - the two test_publish.py tests that replay real Georgia votes
+      #   - the two test_ga_e2e.py tests that render the full Georgia archive
+      #     (without it, the "missing" coverage case passes for the wrong reason)
       # Run those locally before merging model changes: `pytest -q`.
       - run: >
           pytest -q tests/unit tests/web
           --deselect tests/unit/test_publish.py::test_live_state_with_votes_is_published
           --deselect tests/unit/test_publish.py::test_data_weight_gate_holds_back_thin_data
+          --deselect tests/unit/test_ga_e2e.py::test_ga_native_replay_publishes_changing_frames_and_final_truth
+          --deselect tests/unit/test_ga_e2e.py::test_archive_county_coverage_must_be_complete_and_unique
 
   web:
     name: Web lint, build and tests
