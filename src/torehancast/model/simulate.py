@@ -161,7 +161,10 @@ class RaceModel:
         V = rn.sum(axis=1)  # reported votes
         Dr = rd.sum(axis=1)  # reported D−R
         has_type = bn > 0
-        complete = (V > 0) & np.all((e >= 1.0) | ~has_type, axis=1)
+        # An explicit completed zero tally is final too. Keep unreported counties
+        # distinct, including any whose baseline cells all happen to be zero.
+        has_result = (V > 0) | np.any(measured >= 1.0, axis=1)
+        complete = has_result & np.all((e >= 1.0) | ~has_type, axis=1)
         partial = (V > 0) & ~complete
 
         # 2. Composition, learned from complete counties.
