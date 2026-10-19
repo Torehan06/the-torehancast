@@ -1,0 +1,486 @@
+/*
+ * "Ballot stock": the page borrows from the official ballot, not the newsroom.
+ * Cool tinted card-stock paper, blue-black printing ink, the filled oval as the
+ * one recurring mark. Public Sans is the US government's (USWDS) typeface,
+ * bundled with the app: nothing is fetched from a third party.
+ *
+ * Party colours are Okabe–Ito blue and a vermilion nudged towards red,
+ * distinguishable under the
+ * common colour-vision deficiencies. Three shades per party show how strong the
+ * lead is; the number itself is always printed next to it.
+ */
+:root {
+  --paper: #e9eeea;
+  --paper-raised: #f5f7f4;
+  --ink: #1b2633;
+  --ink-soft: #4e5b66;
+  --rule: #c3ccc6;
+  --focus: #1b2633;
+
+  --d-strong: #0072b2;
+  --d-medium: #5aa3d6;
+  --d-light: #bcd9ee;
+  --r-strong: #d4471a;
+  --r-medium: #ea8460;
+  --r-light: #f6cdbd;
+  --o-strong: #009e73;
+  --o-medium: #4cbf9c;
+  --o-light: #bde7d9;
+  --hatch-bg: #f7f9f6;
+  --hatch-line: #8f9b95;
+  --neutral: #cdd4cf;
+  --noleader: #7d8a84;
+
+  --highlighter: #f3d34a;
+
+  --font: 'Public Sans Variable', 'Public Sans', system-ui, sans-serif;
+  color-scheme: light;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark is the default (index.html sets data-theme before paint); the masthead
+   toggle switches to light. The printing plate: the same ink, now the ground. */
+:root[data-theme='dark'] {
+  --paper: #18222d;
+  --paper-raised: #1f2b37;
+  --ink: #e4ebe6;
+  --ink-soft: #9fb0a8;
+  --rule: #34424f;
+  --focus: #e4ebe6;
+  --d-light: #2f6189;
+  --r-light: #8c3a22;
+  --o-light: #276b58;
+  --hatch-bg: #263442;
+  --hatch-line: #5d6f7e;
+  --neutral: #212c37;
+  --noleader: #8a9a92;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a { color: inherit; text-underline-offset: 0.18em; }
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+@media (min-width: 900px) {
+  .page { padding: 32px 32px 56px; }
+}
+
+/* ---- masthead ---- */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 4px 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--ink);
+}
+.wordmark {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.28em;
+  margin: 0;
+  font-size: clamp(2.1rem, 7vw, 3.6rem);
+  font-weight: 860;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+/* The ballot oval, filled half blue, half vermilion. */
+.wordmark__oval {
+  flex: none;
+  width: 0.92em;
+  height: 0.6em;
+  border-radius: 50%;
+  border: 0.07em solid var(--ink);
+  background: linear-gradient(90deg, var(--d-strong) 50%, var(--r-strong) 50%);
+  transform: translateY(0.04em);
+}
+.masthead__sub {
+  margin: 10px 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead__status {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-height: 1.4em;
+}
+
+/* ---- banners (F4) ---- */
+.banner {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+.banner strong { font-weight: 750; }
+/* Stale: marked with a highlighter, like a line someone flagged on a tally sheet. */
+.banner--stale {
+  background: var(--highlighter);
+  color: #1b2633;
+  border-radius: 2px 10px 4px 12px;
+}
+/* Failing: the inverse plate, so it can't be confused with any race colour. */
+.banner--failing {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 4px;
+}
+.banner--replay {
+  border: 2px dashed var(--ink-soft);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+/* ---- layout ---- */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    /* The list stays in the left column so the sticky panel sits beside it. */
+    grid-template-areas: 'map side' 'list side';
+    column-gap: 40px;
+  }
+  .layout__map { grid-area: map; }
+  .layout__side { grid-area: side; align-self: start; position: sticky; top: 24px; }
+  .layout__list { grid-area: list; margin-top: 16px; }
+}
+
+/* ---- colour classes, shared by map paths, swatches, list values and bars ---- */
+.lead-D { --fill: var(--d-strong); --text: var(--d-strong); }
+.lead-R { --fill: var(--r-strong); --text: var(--r-strong); }
+.lead-other { --fill: var(--o-strong); --text: var(--o-strong); }
+.lead-D.strength-medium { --fill: var(--d-medium); }
+.lead-D.strength-light { --fill: var(--d-light); }
+.lead-R.strength-medium { --fill: var(--r-medium); }
+.lead-R.strength-light { --fill: var(--r-light); }
+.lead-other.strength-medium { --fill: var(--o-medium); }
+.lead-other.strength-light { --fill: var(--o-light); }
+.state--neutral { --fill: var(--neutral); }
+.state--noleader { --fill: var(--noleader); }
+[data-theme='dark'] .lead-D { --text: #62b4ec; }
+[data-theme='dark'] .lead-R { --text: #ff7452; }
+[data-theme='dark'] .lead-other { --text: #58cfa9; }
+
+/* ---- map (F2) ---- */
+.map { width: 100%; height: auto; display: block; overflow: visible; }
+.hatch__bg { fill: var(--hatch-bg); }
+.hatch__line { stroke: var(--hatch-line); stroke-width: 1.6; }
+.state {
+  fill: var(--fill, var(--hatch-bg));
+  stroke: var(--paper);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.state.state--waiting { fill: url(#hatch-waiting); }
+.state--race { cursor: pointer; }
+.state--race:hover { stroke: var(--ink); stroke-width: 1.6; }
+.state--race:focus { outline: none; }
+.state--race:focus-visible,
+.state--selected {
+  stroke: var(--focus);
+  stroke-width: 3.5;
+  paint-order: stroke;
+}
+/* The one moving thing on the page: a state's colour eases over when a new
+   snapshot changes who leads, so the change is noticed rather than missed. */
+@media (prefers-reduced-motion: no-preference) {
+  .state { transition: fill 900ms ease-in-out; }
+}
+
+/* ---- the oval swatch, used by the legend and the race list ---- */
+.swatch {
+  display: inline-block;
+  flex: none;
+  width: 22px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--fill, transparent);
+}
+.swatch.state--waiting,
+.swatch.swatch--none {
+  background: repeating-linear-gradient(45deg, var(--hatch-bg) 0 2px, var(--hatch-line) 2px 3.2px);
+}
+.swatch.state--neutral { border-color: var(--rule); }
+
+/* ---- legend ---- */
+.legend {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+.legend ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.legend li { display: flex; align-items: center; gap: 7px; }
+.legend__row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
+.legend__party { font-weight: 700; min-width: 11ch; }
+.legend .legend__other { padding-top: 4px; }
+.legend__note { margin: 0; color: var(--ink-soft); }
+
+/* ---- race list: a tally sheet, ruled rows with the number on the right ---- */
+.list-title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 820;
+  letter-spacing: -0.02em;
+}
+.race-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  column-gap: 32px;
+}
+.race-list li { border-bottom: 1px solid var(--rule); }
+.race-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'sw name value' 'sw detail value';
+  column-gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 10px 6px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.race-item:hover { background: var(--paper-raised); }
+.race-item .swatch { grid-area: sw; }
+.race-item__name { grid-area: name; font-weight: 700; font-size: 1.02rem; }
+.race-item__detail { grid-area: detail; font-size: 0.86rem; color: var(--ink-soft); overflow-wrap: anywhere; }
+.race-item__value {
+  grid-area: value;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.race-item:focus-visible { outline: 3px solid var(--focus); outline-offset: -1px; }
+.race-item--selected { background: var(--paper-raised); box-shadow: inset 4px 0 0 var(--ink); }
+
+.tag {
+  margin-left: 8px;
+  padding: 0 7px 1px;
+  border-radius: 999px;
+  border: 1px solid var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: 2px;
+  color: var(--ink-soft);
+}
+
+/* ---- panel (F3) ---- */
+.hint {
+  margin: 0;
+  padding: 20px;
+  border: 2px dashed var(--rule);
+  border-radius: 12px;
+  color: var(--ink-soft);
+  max-width: 38ch;
+}
+.panel {
+  background: var(--paper-raised);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 18px 20px 16px;
+}
+.panel__head { display: flex; justify-content: space-between; align-items: start; gap: 8px; }
+.panel__head h2 { margin: 0; display: grid; }
+.panel__head h2:focus { outline: none; }
+.panel__state { font-size: 1.85rem; font-weight: 850; letter-spacing: -0.03em; line-height: 1.05; }
+.panel__race { font-size: 0.92rem; font-weight: 500; color: var(--ink-soft); margin-top: 2px; }
+.panel__close {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.panel__close:hover { background: var(--ink); color: var(--paper-raised); }
+.panel__close:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.panel__empty {
+  margin: 18px 0 6px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--hatch-line) 22%, transparent) 6px 8px);
+  font-weight: 600;
+}
+.panel__note { color: var(--ink-soft); font-size: 0.9rem; margin: 14px 0 0; }
+.panel__meta { color: var(--ink-soft); font-size: 0.86rem; margin: 8px 0; }
+.panel__time { color: var(--ink-soft); font-size: 0.8rem; margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--rule); }
+
+.results { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.94rem; }
+.results th, .results td { padding: 6px 4px; border-bottom: 1px solid var(--rule); }
+.results thead th { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); text-align: right; border-bottom: 2px solid var(--ink); }
+.results thead th:first-child, .results tbody th { text-align: left; }
+.results tbody th { font-weight: 550; }
+.results td { text-align: right; }
+
+.candidates { margin: 14px 0 0; padding-left: 18px; }
+
+.forecast { margin-top: 22px; }
+.forecast h3 { margin: 0; font-size: 1.12rem; font-weight: 800; letter-spacing: -0.01em; }
+.forecast__explain { margin: 4px 0 12px; font-size: 0.86rem; color: var(--ink-soft); max-width: 44ch; }
+
+.prob-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.prob-bars li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: 'name value' 'track track';
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.prob-bars__name { grid-area: name; font-weight: 550; }
+.prob-bars__value { grid-area: value; font-size: 1.7rem; font-weight: 850; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+/* An elongated ballot oval, filled to the probability. */
+.prob-bars__track {
+  grid-area: track;
+  height: 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  overflow: hidden;
+}
+.prob-bars__fill { display: block; height: 100%; background: var(--fill); }
+
+.footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 3px solid var(--ink);
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  /* Full-width rule to close the page like the masthead opens it; short lines. */
+  padding-right: max(0px, calc(100% - 80ch));
+}
+
+/* ---- theme toggle: a ballot oval with a knob ---- */
+.masthead { grid-template-columns: 1fr auto; }
+.wordmark { grid-column: 1; }
+.theme-toggle {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.theme-toggle__track {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  transition: background-color 200ms;
+}
+.theme-toggle__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.theme-toggle[aria-pressed='true'] .theme-toggle__knob { left: 23px; }
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle__knob { transition: left 180ms ease-out; }
+}
+/* On a phone the switch alone is enough; its name stays for screen readers. */
+@media (max-width: 520px) {
+  .theme-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+.theme-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+
+/* ---- swing seats: the 13 forecast races, number first ---- */
+.swing { margin-bottom: 36px; }
+.swing__intro { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.92rem; max-width: 60ch; }
+.swing__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+  gap: 12px;
+}
+.swing__grid li { border: 0; }
+.race-item.race-item--swing {
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'name' 'prob' 'detail';
+  align-content: start;
+  row-gap: 2px;
+  padding: 14px 16px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--paper-raised);
+}
+/* A band of the favourite's party colour along the top of the tile. */
+.race-item--swing.lead-D,
+.race-item--swing.lead-R,
+.race-item--swing.lead-other { box-shadow: inset 0 6px 0 var(--text); }
+.race-item--swing.race-item--empty { border-style: dashed; border-color: var(--ink-soft); background: none; }
+.race-item--swing .race-item__name { font-size: 1.15rem; font-weight: 850; letter-spacing: -0.02em; }
+.swing__prob {
+  grid-area: prob;
+  font-size: clamp(2.6rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  margin: 6px 0 4px;
+}
+.race-item--swing .race-item__detail { font-size: 0.85rem; }
+.race-item--swing:hover { background: var(--paper); }
+.race-item--swing.race-item--selected { outline: 3px solid var(--focus); outline-offset: 2px; }
+.race-item--swing.race-item--empty.race-item--selected { box-shadow: none; }

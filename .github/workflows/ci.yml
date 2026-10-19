@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Read-only token; this workflow needs no secrets and writes nothing.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      # tests/web validates publisher output with the page's own schemas, via Node.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci --prefix web
+      # Not run here, because they need the official results archives under
+      # data/archives/, which are gitignored and fetched from state sites:
+      #   - tests/replay (replay acceptance suite)
+      #   - the two test_publish.py tests that replay real Georgia votes
+      # Run those locally before merging model changes: `pytest -q`.
+      - run: >
+          pytest -q tests/unit tests/web
+          --deselect tests/unit/test_publish.py::test_live_state_with_votes_is_published
+          --deselect tests/unit/test_publish.py::test_data_weight_gate_holds_back_thin_data
+
+  web:
+    name: Web lint, build and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      # Vitest, then Playwright against `vite preview` with the bundled Chromium.
+      - run: npm test
+        env:
+          PLAYWRIGHT_CHANNEL: chromium

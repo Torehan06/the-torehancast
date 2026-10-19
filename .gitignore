@@ -13,3 +13,8 @@ PLAN.md
 
 # Hand-entered live priors stay private.
 config/priors.yaml
+
+# Firebase: local deploy cache; service-account keys never enter the repo.
+.firebase/
+*serviceaccount*.json
+*service-account*.json

@@ -1,0 +1,29 @@
+{
+ "state": "AK",
+ "race": "2026-AK-SEN",
+ "as_of": "21:28 ET",
+ "status": "live",
+ "modeled": true,
+ "candidates": {
+  "D": "AK Fixture A (Dem)",
+  "R": "AK Fixture B (Rep)",
+  "I": "AK Fixture C (Ind)"
+ },
+ "rcv_status": "awaiting_first_choices",
+ "p_outright": {
+  "D": null,
+  "R": null,
+  "I": null
+ },
+ "p_via_rcv": {
+  "D": null,
+  "R": null,
+  "I": null
+ },
+ "p_win": {
+  "D": null,
+  "R": null,
+  "I": null
+ },
+ "p_no_rcv_needed": null
+}

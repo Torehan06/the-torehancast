@@ -1,0 +1,352 @@
+{
+ "generated_at": "2026-11-04T02:30:00+00:00",
+ "mode": "replay",
+ "states": [
+  {
+   "state": "GA",
+   "race": "2026-GA-SEN",
+   "as_of": "21:29 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "GA Fixture A (Dem)",
+    "R": "GA Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.874,
+    "R": 0.126
+   },
+   "margin": {
+    "median": 0.0168,
+    "p80": [
+     -0.0132,
+     0.0468
+    ],
+    "p95": [
+     -0.0332,
+     0.0668
+    ]
+   },
+   "reported_votes": 2342325,
+   "expected_votes": 3916931,
+   "share_counted": 0.598,
+   "votes": {
+    "D": 1210455,
+    "R": 1131870
+   },
+   "vote_share": {
+    "D": 0.5168,
+    "R": 0.4832
+   },
+   "pct_reporting": 0.61
+  },
+  {
+   "state": "NC",
+   "race": "2026-NC-SEN",
+   "as_of": "21:28 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "NC Fixture A (Dem)",
+    "R": "NC Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.318,
+    "R": 0.682
+   },
+   "margin": {
+    "median": -0.012,
+    "p80": [
+     -0.042,
+     0.018
+    ],
+    "p95": [
+     -0.062,
+     0.038
+    ]
+   },
+   "reported_votes": 2890000,
+   "expected_votes": 5557692,
+   "share_counted": 0.52,
+   "votes": {
+    "D": 1402000,
+    "R": 1488000
+   },
+   "vote_share": {
+    "D": 0.4851,
+    "R": 0.5149
+   },
+   "pct_reporting": 0.55
+  },
+  {
+   "state": "FL",
+   "race": "2026-FL-SEN-SPECIAL",
+   "as_of": "21:29 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "FL Fixture A (Dem)",
+    "R": "FL Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.031,
+    "R": 0.969
+   },
+   "margin": {
+    "median": -0.071,
+    "p80": [
+     -0.101,
+     -0.041
+    ],
+    "p95": [
+     -0.121,
+     -0.021
+    ]
+   },
+   "reported_votes": 6450000,
+   "expected_votes": 8269230,
+   "share_counted": 0.78,
+   "votes": {
+    "D": 2900000,
+    "R": 3550000
+   },
+   "vote_share": {
+    "D": 0.4496,
+    "R": 0.5504
+   },
+   "pct_reporting": 0.81
+  },
+  {
+   "state": "NE",
+   "race": "2026-NE-SEN",
+   "as_of": "20:28 CT",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "I": "NE Fixture A (Ind)",
+    "R": "NE Fixture B (Rep)"
+   },
+   "p_win": {
+    "I": 0.412,
+    "R": 0.588
+   },
+   "margin": {
+    "median": -0.008,
+    "p80": [
+     -0.038,
+     0.022
+    ],
+    "p95": [
+     -0.058,
+     0.042
+    ]
+   },
+   "reported_votes": 415000,
+   "expected_votes": 943181,
+   "share_counted": 0.44,
+   "votes": {
+    "I": 201000,
+    "R": 214000
+   },
+   "vote_share": {
+    "I": 0.4843,
+    "R": 0.5157
+   },
+   "pct_reporting": 0.47
+  },
+  {
+   "state": "MI",
+   "race": "2026-MI-SEN",
+   "as_of": "21:26 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "MI Fixture A (Dem)",
+    "R": "MI Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.962,
+    "R": 0.038
+   },
+   "margin": {
+    "median": 0.062,
+    "p80": [
+     0.032,
+     0.092
+    ],
+    "p95": [
+     0.012,
+     0.112
+    ]
+   },
+   "reported_votes": 1603000,
+   "expected_votes": 5170967,
+   "share_counted": 0.31,
+   "votes": {
+    "D": 901000,
+    "R": 702000
+   },
+   "vote_share": {
+    "D": 0.5621,
+    "R": 0.4379
+   },
+   "pct_reporting": 0.33
+  },
+  {
+   "state": "ME",
+   "race": "2026-ME-SEN",
+   "as_of": "21:28 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "ME Fixture A (Dem)",
+    "R": "ME Fixture B (Rep)",
+    "I": "ME Fixture C (Ind)"
+   },
+   "rcv_status": "awaiting_rcv",
+   "p_outright": {
+    "D": 0.21,
+    "R": 0.12,
+    "I": 0.0
+   },
+   "p_via_rcv": {
+    "D": null,
+    "R": null,
+    "I": null
+   },
+   "p_win": {
+    "D": null,
+    "R": null,
+    "I": null
+   },
+   "p_no_rcv_needed": 0.33,
+   "votes": {
+    "D": 40100,
+    "R": 38900,
+    "I": 9800
+   },
+   "vote_share": {
+    "D": 0.4516,
+    "R": 0.4381,
+    "I": 0.1104
+   },
+   "pct_reporting": 0.18
+  },
+  {
+   "state": "AK",
+   "race": "2026-AK-SEN",
+   "as_of": "21:28 ET",
+   "status": "live",
+   "modeled": true,
+   "candidates": {
+    "D": "AK Fixture A (Dem)",
+    "R": "AK Fixture B (Rep)",
+    "I": "AK Fixture C (Ind)"
+   },
+   "rcv_status": "awaiting_first_choices",
+   "p_outright": {
+    "D": null,
+    "R": null,
+    "I": null
+   },
+   "p_via_rcv": {
+    "D": null,
+    "R": null,
+    "I": null
+   },
+   "p_win": {
+    "D": null,
+    "R": null,
+    "I": null
+   },
+   "p_no_rcv_needed": null,
+   "votes": {
+    "D": 31200,
+    "R": 38400,
+    "I": 12100
+   },
+   "vote_share": {
+    "D": 0.3819,
+    "R": 0.47,
+    "I": 0.1481
+   },
+   "pct_reporting": 0.27
+  },
+  {
+   "state": "IL",
+   "race": "2026-IL-SEN",
+   "as_of": "21:25 CT",
+   "status": "live",
+   "modeled": false,
+   "candidates": {
+    "D": "IL Fixture A (Dem)",
+    "R": "IL Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 801233,
+    "R": 602118
+   },
+   "vote_share": {
+    "D": 0.5709,
+    "R": 0.4291
+   },
+   "pct_reporting": 0.42
+  },
+  {
+   "state": "VA",
+   "race": "2026-VA-SEN",
+   "as_of": "21:27 ET",
+   "status": "live",
+   "modeled": false,
+   "candidates": {
+    "D": "VA Fixture A (Dem)",
+    "R": "VA Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 322000,
+    "R": 341950
+   },
+   "vote_share": {
+    "D": 0.485,
+    "R": 0.515
+   },
+   "pct_reporting": null
+  },
+  {
+   "state": "TX",
+   "race": "2026-TX-SEN",
+   "as_of": null,
+   "status": "waiting"
+  },
+  {
+   "state": "OH",
+   "race": "2026-OH-SEN-SPECIAL",
+   "as_of": null,
+   "status": "waiting"
+  },
+  {
+   "state": "IA",
+   "race": "2026-IA-SEN",
+   "as_of": null,
+   "status": "waiting"
+  },
+  {
+   "state": "SC",
+   "race": "2026-SC-SEN",
+   "as_of": null,
+   "status": "waiting"
+  },
+  {
+   "state": "MN",
+   "race": "2026-MN-SEN",
+   "as_of": null,
+   "status": "waiting"
+  },
+  {
+   "state": "KS",
+   "race": "2026-KS-SEN",
+   "as_of": null,
+   "status": "waiting"
+  }
+ ]
+}
