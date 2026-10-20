@@ -1,5 +1,7 @@
 # Live race registry from PLAN.md. Status tracks adapter/replay work, not live readiness.
 # D means the main non-Republican side, including Osborn in Nebraska.
+# tau_pair: the historical pair the live county scatter is measured on — the most recent
+# analogous pair ending at the baseline (for AK, the 2024 House primary → general).
 races:
   2026-GA-SEN:
     state: GA
@@ -7,6 +9,7 @@ races:
     unit: county
     priority: 1
     baseline: 2022_sen
+    tau_pair: [2020_sen, 2022_sen]
     ranked_choice: false
     status: done
     notes: 2020 Sen to 2022 Sen primary replay; 2022 Sen to 2024 Pres secondary. Live
@@ -17,6 +20,7 @@ races:
     unit: county
     priority: 2
     baseline: 2024_pres
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: done
     notes: Replay passes; 2026 endpoint and exact contest still need verification.
@@ -26,6 +30,7 @@ races:
     unit: county
     priority: 3
     baseline: 2024_sen
+    tau_pair: [2018_sen, 2024_sen]
     ranked_choice: false
     status: done
     notes: County totals; vote type inferred by BatchTracker. 2026 extract still needs
@@ -54,6 +59,7 @@ races:
     unit: county
     priority: 6
     baseline: 2024_pres
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: done
     notes: Clarity; replay passes (2024 statewide EID 122322). The 2026 general EID is not
@@ -73,6 +79,7 @@ races:
     unit: county
     priority: 8
     baseline: 2024_pres
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: done
     notes: Clarity detail XML with vote types; replay passes. No 2026 general EID yet
@@ -92,6 +99,7 @@ races:
     unit: county
     priority: 10
     baseline: 2024_pres
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: done
     notes: President baseline exception. Semicolon text files with no vote types;
@@ -113,6 +121,7 @@ races:
     unit: house-district
     priority: 12
     baseline: 2026_prim_sen
+    tau_pair: [2024_prim_house, 2024_gen_house]
     ranked_choice: true
     status: done
     notes: RCV; 40 House Districts + 99 (overseas). Replay passes; margin is party blocs.
