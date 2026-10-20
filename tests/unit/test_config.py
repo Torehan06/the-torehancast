@@ -9,7 +9,7 @@ import sys
 import pytest
 import yaml
 
-from torehancast import config
+from torehancast import config, elections
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -135,6 +135,7 @@ def test_ready_feed_needs_url_adapter_and_election_id(config_dir):
 def test_feed_settings_can_be_swapped_without_changing_code(config_dir):
     edit(config_dir, "feeds.yaml", lambda doc: doc["feeds"]["2026-GA-SEN"].update(
         status="ready", url="https://results.sos.ga.gov/replacement", election_id="replacement",
+        contest="US Senate", candidates={"Jon Ossoff": "D", "Mike Collins": "R"},
     ))
     loaded = config.load_config(config_dir)
     assert loaded.feeds["2026-GA-SEN"].url == "https://results.sos.ga.gov/replacement"
@@ -203,3 +204,41 @@ def test_done_races_name_baselines_that_exist_in_elections_yaml():
         assert race.baseline in keys, f"{race_id}: baseline {race.baseline!r} not in elections.yaml"
         if race.fallback_baseline is not None:
             assert race.fallback_baseline in keys, f"{race_id}: fallback {race.fallback_baseline!r} missing"
+
+
+def _ready(document, **changes):
+    document["feeds"]["2026-NC-SEN"].update(status="ready", **changes)
+
+
+@pytest.mark.parametrize("change", [
+    lambda d: _ready(d, contest=None),
+    lambda d: _ready(d, polls_close=None),
+    lambda d: _ready(d, polls_close="2026-11-03T19:30:00"),  # no UTC offset
+    lambda d: _ready(d, display={"D": "Roy Cooper"}),
+    lambda d: _ready(d, candidates={"Roy Cooper": "D", "Michael Whatley": "other"}),
+    lambda d: _ready(d, display={"D": "Roy Cooper", "R": "Michael Whatley", "G": "Michael Dublin"}),
+])
+def test_ready_feed_needs_contest_candidates_display_and_close(config_dir, change):
+    edit(config_dir, "feeds.yaml", change)
+    with pytest.raises(config.ConfigError):
+        config.load_config(config_dir)
+
+
+def test_ready_feed_needs_race_tau_pair(config_dir):
+    edit(config_dir, "feeds.yaml", _ready)
+    config.load_config(config_dir)
+    edit(config_dir, "races.yaml", lambda d: d["races"]["2026-NC-SEN"].pop("tau_pair"))
+    with pytest.raises(config.ConfigError):
+        config.load_config(config_dir)
+
+
+def test_live_fields_load():
+    loaded = config.load_config(ROOT / "config")
+    nc = loaded.feeds["2026-NC-SEN"]
+    assert nc.candidates["Roy Cooper"] == "D" and nc.display["R"] == "Michael Whatley"
+    assert nc.polls_close_at.isoformat() == "2026-11-03T19:30:00-05:00"
+    assert loaded.races["2026-AK-SEN"].tau_pair == ("2024_prim_house", "2024_gen_house")
+    for race in loaded.races.values():
+        if race.tau_pair:
+            for key in race.tau_pair + (race.baseline,):
+                assert elections.baseline_path(race.state, key).exists(), (race.state, key)

@@ -60,25 +60,43 @@ def arrival_profile(cfg: dict, overrides: dict | None = None) -> arrivals.Profil
     return arrivals.Profile(**spec)
 
 
-def build_model(state: str, pair: str = "primary", prior_shift: float = 0.0) -> tuple[RaceModel, dict]:
+def make_model(state: str, baseline: str, tau_pair: tuple[str, str], prior: RacePrior,
+               synthetic_split: dict | None = None) -> RaceModel:
+    """The one place a RaceModel is assembled, for replays and for the live poller.
+
+    State traits (batch vote types, composition floor) come from replay.yaml, so a
+    floor tuned on replays is applied live too.
+    """
     cfg = replay_config(state)
-    spec = cfg[pair]
-    demo = demographics.load(state)
-    params = _params(state, *spec["tau_pair"])
+    params = _params(state, *tau_pair)
     if floor := cfg.get("composition_floor"):
         comp = params.composition
         params = replace(params, composition=replace(comp, **{k: max(getattr(comp, k), v) for k, v in floor.items()}))
-    prior = RacePrior(**spec["prior"])
-    if prior_shift:
-        prior = RacePrior(prior.margin + prior_shift, prior.margin_sd, prior.turnout_ratio, prior.turnout_sd)
-    model = RaceModel(
-        elections.read_baseline(state, spec["baseline"]),
+    return RaceModel(
+        elections.read_baseline(state, baseline),
         prior,
         params,
         batch_vote_types=tuple(cfg.get("batch_vote_types", ())),
-        demographics=demo,
-        synthetic_split=cfg.get("synthetic_split"),
+        demographics=demographics.load(state),
+        synthetic_split=synthetic_split,
     )
+
+
+def live_synthetic_split(state: str) -> dict | None:
+    """The live baseline is the replay target year, so its pre-Election-Day share applies."""
+    cfg = replay_config(state)
+    if split := cfg.get("synthetic_split"):
+        return {**split, **cfg.get("synthetic_target", {})}
+    return None
+
+
+def build_model(state: str, pair: str = "primary", prior_shift: float = 0.0) -> tuple[RaceModel, dict]:
+    cfg = replay_config(state)
+    spec = cfg[pair]
+    prior = RacePrior(**spec["prior"])
+    if prior_shift:
+        prior = RacePrior(prior.margin + prior_shift, prior.margin_sd, prior.turnout_ratio, prior.turnout_sd)
+    model = make_model(state, spec["baseline"], tuple(spec["tau_pair"]), prior, cfg.get("synthetic_split"))
     return model, spec
 
 

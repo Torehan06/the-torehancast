@@ -82,9 +82,57 @@ Some states publish test numbers in their live files before election day.
 Minnesota's 2026 statewide file showed WRITE-IN at 29.95% on Oct 19. Counts seen
 before a state's polls close are not results: never publish them.
 
+The poller enforces this: each feed in `config/feeds.yaml` has a `polls_close`
+(the state's earliest close, with its UTC offset). Before it, the race is published
+as `waiting` whatever the file says, the log shows
+`N votes before polls close: treated as test data`, and Florida's BatchTracker is
+not fed. Check `polls_close` before marking a feed `ready`.
+
+## Running the poller
+
+`python -m torehancast.poller` polls every `ready` feed every 20 s and writes
+`data/live/` to the data bucket. It needs the private `config/priors.yaml` on the
+VM (gitignored, so a redeploy never overwrites it) and the GCS key at
+`~/torehancast/.gcp/poller-key.json`, mode 600.
+
+1. One cycle into a scratch directory first, then the privacy check:
+
+   ```bash
+   ssh -i ~/.ssh/id_ed25519 ubuntu@$POLLER_IP 'cd ~/torehancast && .venv/bin/python -m torehancast.poller --out /tmp/poll --once && .venv/bin/python scripts/check_public_json.py /tmp/poll --mode live --priors config/priors.yaml'
+   ```
+
+2. Install and start the service:
+
+   ```bash
+   ssh -i ~/.ssh/id_ed25519 ubuntu@$POLLER_IP 'sudo cp ~/torehancast/deploy/poller/torehancast.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now torehancast'
+   ```
+
+3. Watch it: `ssh … journalctl -u torehancast -f`. Restart: `sudo systemctl restart torehancast`.
+
+## Swapping a feed URL or contest on the night
+
+Edit `~/torehancast/config/feeds.yaml` on the VM. The poller re-reads config every
+cycle, so the change applies within 20 s, with no restart and no redeploy. Then
+copy the edited file to the private config bucket so it isn't lost on the next
+redeploy (which overwrites the tracked `feeds.yaml`), and commit it afterwards.
+
+If the edited config is invalid, the poller logs `config invalid, keeping the
+previous one` and carries on with the last good config. Fix the file; nothing else
+is needed.
+
+## A feed fails or names the wrong candidates
+
+One race failing never stops the others. The failing race keeps its last good
+numbers and its own `as_of`, so the page can show how old they are. The log says why:
+
+- a timeout or HTTP error: usually transient; if it persists, check the URL from
+  the VM with `python -m torehancast.feedcheck`.
+- `feed has votes but no ['D'] ballot name`: the feed spells a candidate differently
+  from `candidates` in `feeds.yaml`. Copy the exact string from the feed (the
+  `unmatched ballot name pooled into 'other'` warning prints it) and save the file.
+
 ## Still to write (before Nov 1)
 
-- Swapping a feed URL (`config/feeds.yaml` in the private config bucket, picked up next cycle)
-- Rolling back a bad config, and what the poller does with an invalid one
 - Stale data: what the page shows, and how to restart the poller
 - Daily feed-check log: `~/torehancast/logs/feedcheck.log` on the poller
+- GCS and Hosting recovery

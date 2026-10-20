@@ -1,0 +1,23 @@
+# Live poller. Install on the VM (see docs/runbook.md, "Running the poller"):
+#   sudo cp deploy/poller/torehancast.service /etc/systemd/system/ && sudo systemctl daemon-reload
+[Unit]
+Description=Torehancast live poller (official feeds -> model -> public data bucket)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/torehancast
+# Write access to data/ in the data bucket only; the key never leaves the VM (mode 600).
+Environment=GOOGLE_APPLICATION_CREDENTIALS=/home/ubuntu/torehancast/.gcp/poller-key.json
+ExecStart=/home/ubuntu/torehancast/.venv/bin/python -m torehancast.poller --gcs-bucket torehancast-2026-data
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/torehancast/logs
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
