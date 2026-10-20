@@ -1,10 +1,10 @@
 # The TörehanCast
 
-Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026).
+Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026). House coverage is being added: forecasts for 63 selected districts and vote totals for every other district (in progress; see `PLAN.md`).
 
 As county and district results arrive from official state election feeds, the model estimates statewide swing and turnout relative to a comparable historical baseline, accounts for within-county vote-type composition (early in-person, mail, Election Day, provisional), extrapolates to partially reported and unreported units, and runs Monte Carlo simulations to estimate each candidate's win probability and two-party margin intervals.
 
-Non-modeled Senate races on the national map show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
+Non-modeled Senate and House races show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
 
 ---
 

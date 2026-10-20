@@ -131,8 +131,10 @@ numbers and its own `as_of`, so the page can show how old they are. The log says
   from `candidates` in `feeds.yaml`. Copy the exact string from the feed (the
   `unmatched ballot name pooled into 'other'` warning prints it) and save the file.
 
-## Still to write (before Nov 1)
+## Still to write (before the Nov 2 freeze)
 
 - Stale data: what the page shows, and how to restart the poller
 - Daily feed-check log: `~/torehancast/logs/feedcheck.log` on the poller
 - GCS and Hosting recovery
+- Adding a modeled race: put its null prior in the VM's and the bucket's `priors.yaml` before deploying the code that registers it (see `docs/config.md`)
+- House and results-only sources: fixing a wrong contest template on the night
