@@ -21,7 +21,7 @@ feeds:
     adapter: nc_sbe
     url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
     election_id: '2026-11-03'
-    status: pending
+    status: ready
     contest: US SENATE
     candidates:
       Roy Cooper: D
@@ -111,7 +111,7 @@ feeds:
     adapter: mn_sos
     url: https://electionresultsfiles.sos.mn.gov/20261103/ussenatecty.txt
     election_id: '2026-11-03'
-    status: pending
+    status: ready
     contest: U.S. Senator
     candidates:
       Peggy Flanagan: D

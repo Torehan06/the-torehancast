@@ -134,7 +134,7 @@ def test_only_ready_feeds_are_polled(config_dir, tmp_path):
     p, _ = make(config_dir, tmp_path / "out", fetch, AFTER)
     p.cycle()
     assert fetch.calls == []
-    assert summary(tmp_path / "out") == {}
+    assert not (tmp_path / "out/data/live/summary.json").exists()  # never an empty summary
 
 
 def test_ready_feed_without_prior_is_not_modeled(config_dir, tmp_path, caplog):
@@ -142,7 +142,7 @@ def test_ready_feed_without_prior_is_not_modeled(config_dir, tmp_path, caplog):
     p, _ = make(config_dir, tmp_path / "out", FakeFeed(nc_counts()), AFTER)
     with caplog.at_level(logging.ERROR):
         p.cycle()
-    assert RACE not in summary(tmp_path / "out")
+    assert not (tmp_path / "out/data/live/summary.json").exists()
     assert "no private prior" in caplog.text
 
 

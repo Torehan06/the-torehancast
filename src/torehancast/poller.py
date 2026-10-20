@@ -118,6 +118,10 @@ class Poller:
                 log.error("%s: %s: %s", race_id, type(exc).__name__, exc)
         updates = [r.last for rid, r in self._races.items()
                    if r.last is not None and cfg.feeds.get(rid) and cfg.feeds[rid].status == "ready"]
+        if not updates:
+            # A summary with no races is invalid public JSON; leave the last one in place.
+            log.warning("no ready feed has produced an update; nothing published")
+            return
         publish.publish(updates, self.writer, mode="live", gate=self.gate)
 
     def _race(self, race_id: str, race: RaceConfig, prior: RacePrior, adapter: str) -> _Race:
