@@ -19,6 +19,7 @@ from urllib.parse import urlsplit
 
 import yaml
 
+from . import districts
 from .model.simulate import RacePrior
 
 DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
@@ -141,6 +142,8 @@ def _race(race_id: str, raw) -> RaceConfig:
     if not isinstance(data["state"], str) or data["state"] not in STATES or race_id.split("-")[1] != data["state"]:
         raise ConfigError("races entry: state must match race ID")
     _choice(data["race_type"], ("senate", "senate-special", "house", "governor"), where)
+    if (data["race_type"] == "house") != (districts.parse_house_race_id(race_id) is not None):
+        raise ConfigError("races entry: house races need a 2026-XX-HNN (or -HAL) ID for a real district")
     _choice(data["unit"], ("county", "county-part", "town", "house-district"), where)
     _choice(data["status"], ("todo", "done", "blocked", "dropped"), where)
     if type(data["priority"]) is not int or data["priority"] < 1:

@@ -37,10 +37,12 @@ def cli(directory):
 
 def test_registry_loads_every_planned_race_and_baseline_exception():
     loaded = config.load_config(ROOT / "config")
-    assert {race.state for race in loaded.races.values()} == {
+    senate = {k: r for k, r in loaded.races.items() if r.race_type != "house"}
+    assert {race.state for race in senate.values()} == {
         "GA", "NC", "FL", "TX", "OH", "IA", "KS", "SC", "MI", "MN", "ME", "AK", "NE",
     }
-    assert len(loaded.races) == 13
+    assert len(senate) == 13
+    assert len(loaded.races) == 13 + 63
     assert loaded.races["2026-GA-SEN"].baseline == "2022_sen"
     assert loaded.races["2026-ME-SEN"].baseline == "2020_sen"
     assert loaded.races["2026-MN-SEN"].baseline == "2024_pres"
@@ -56,8 +58,8 @@ def test_registry_loads_every_planned_race_and_baseline_exception():
 def test_fresh_checkout_validates_with_unset_priors(config_dir):
     result = cli(config_dir)
     assert result.returncode == 0, result.stderr
-    assert "13 races" in result.stdout
-    assert "13 priors unset" in result.stdout
+    assert "76 races" in result.stdout
+    assert "76 priors unset" in result.stdout
     assert not (config_dir / "priors.yaml").exists()
 
 
@@ -72,7 +74,7 @@ def test_private_prior_is_loaded_without_printing_values(config_dir):
     assert "0.123456789" not in repr(loaded)
     result = cli(config_dir)
     assert result.returncode == 0
-    assert "12 priors unset" in result.stdout
+    assert "75 priors unset" in result.stdout
     assert "0.123456789" not in result.stdout + result.stderr
 
 
@@ -242,3 +244,25 @@ def test_live_fields_load():
         if race.tau_pair:
             for key in race.tau_pair + (race.baseline,):
                 assert elections.baseline_path(race.state, key).exists(), (race.state, key)
+
+
+def test_house_race_ids_must_name_a_real_district(config_dir):
+    def rename(doc, old, new):
+        doc["races"][new] = doc["races"].pop(old)
+    for name in ("races.yaml", "feeds.yaml", "priors.example.yaml"):
+        section = name.split(".")[0]
+        edit(config_dir, name, lambda d, s=section: d[s].__setitem__("2026-NC-H15", d[s].pop("2026-NC-H01")))
+    with pytest.raises(config.ConfigError, match="real district"):
+        config.load_config(config_dir)
+
+
+def test_a_senate_race_cannot_borrow_a_house_id(config_dir):
+    edit(config_dir, "races.yaml", lambda d: d["races"]["2026-NC-H01"].update(race_type="senate"))
+    with pytest.raises(config.ConfigError, match="real district"):
+        config.load_config(config_dir)
+
+
+def test_ranked_choice_house_races_match_state_law():
+    loaded = config.load_config(ROOT / "config")
+    house = {k: r for k, r in loaded.races.items() if r.race_type == "house"}
+    assert {k for k, r in house.items() if r.ranked_choice} == {"2026-AK-HAL", "2026-ME-H02"}

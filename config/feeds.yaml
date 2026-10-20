@@ -156,3 +156,382 @@ feeds:
     reference_url: https://electionresults.nebraska.gov/
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
+  # House districts with a forecast. url/election_id are set when the state's 2026 file is verified.
+  2026-AK-HAL:
+    adapter: ak_doe
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-AL-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-AZ-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-AZ-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-AZ-H06:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CA-H13:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CA-H22:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CA-H48:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CO-H03:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CO-H05:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-CO-H08:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-FL-H09:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-FL-H13:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-FL-H14:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-FL-H22:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-FL-H25:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-FL-H27:
+    adapter: fl_dos
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-IA-H01:
+    adapter: ia_clarity
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-IA-H02:
+    adapter: ia_clarity
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-IA-H03:
+    adapter: ia_clarity
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-IN-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-KY-H06:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-MD-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-ME-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-MI-H04:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-MI-H07:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-MI-H08:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-MI-H10:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-MT-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NC-H01:
+    adapter: nc_sbe
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-NC-H11:
+    adapter: nc_sbe
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-NE-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NH-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NJ-H07:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NJ-H09:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NM-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NV-H03:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NY-H03:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NY-H04:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-NY-H17:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-OH-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-OH-H07:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-OH-H09:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-OH-H10:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-OH-H13:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-OH-H15:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-PA-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-PA-H07:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-PA-H08:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-PA-H10:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-SC-H01:
+    adapter: sc_clarity
+    url: null
+    election_id: null
+    status: pending
+    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+  2026-TX-H09:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-TX-H15:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-TX-H23:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-TX-H28:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-TX-H34:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-TX-H35:
+    adapter: null
+    url: null
+    election_id: null
+    status: blocked
+    notes: State feed blocked by bot protection; never bypassed.
+  2026-VA-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-VA-H02:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-VA-H05:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-WA-H03:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-WI-H01:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).
+  2026-WI-H03:
+    adapter: null
+    url: null
+    election_id: null
+    status: pending
+    notes: No adapter yet; added with the state's results-only source (W4).

@@ -16,8 +16,9 @@ Invalid files return exit code 1 without printing prior values or YAML source.
 
 ## Files
 
-- `races.yaml`: the 13 races in PLAN.md, baseline exceptions, RCV flags,
-  geographic units and implementation status. The `done` status tracks
+- `races.yaml`: the modeled races in PLAN.md (13 Senate races and 63 House
+  districts), baseline exceptions, RCV flags, geographic units and
+  implementation status. The `done` status tracks
   adapter/replay work; it does not mean the live pipeline is ready.
 - `feeds.yaml`: one entry per race. Each contains an adapter name, complete
   feed URL, election ID, status, and optional string-valued request `params`.
@@ -26,7 +27,7 @@ Invalid files return exit code 1 without printing prior values or YAML source.
   The URLs must use HTTPS without embedded credentials. Null fields explicitly
   represent settings that remain unverified. Do not use a historical reference
   URL as the live feed.
-- `priors.example.yaml`: the shared template. All 13 priors are initially null.
+- `priors.example.yaml`: the shared template. Every prior is initially null.
 - `priors.yaml`: the optional private file, ignored by Git. Copy the template
   locally and fill in values by hand. Each prior is null or a mapping with
   `margin`, `margin_sd`, `turnout_ratio`, and `turnout_sd`, using the same units
@@ -39,6 +40,15 @@ The example is checked but never supplies runtime priors. Without a private
 file, every runtime prior is unset. The private file must list every race;
 missing entries do not silently inherit an example prior. Invalid private
 config, including a broken file symlink, fails validation.
+
+House race IDs are `2026-XX-HNN`, or `2026-XX-HAL` for an at-large seat. A
+`house` race must name a real district under the 2020-census apportionment in
+`src/torehancast/districts.py`, and only `house` races may use that ID form.
+
+Adding a modeled race means adding its ID to the private `priors.yaml` too
+(null until set), on the poller and in the private bucket, **before** deploying
+the code that registers it. Otherwise the poller can't load its config at
+startup.
 
 ## Loading and privacy
 

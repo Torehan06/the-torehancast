@@ -137,3 +137,571 @@ races:
     status: todo
     notes: Fischer-Osborn baseline; Osborn is the non-R side. US network needed; format
       unverified. Ask before HTML parsing.
+  # House districts with a forecast (Törehan, Oct 20). Results-only districts live in config/results/.
+  2026-AK-HAL:
+    state: AK
+    race_type: house
+    unit: house-district
+    priority: 14
+    baseline: 2026_prim_house
+    ranked_choice: true
+    status: todo
+    notes: RCV; at-large; Aug 2026 primary baseline by House District, like 2026-AK-SEN.
+  2026-AL-H02:
+    state: AL
+    race_type: house
+    unit: county-part
+    priority: 15
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-AZ-H01:
+    state: AZ
+    race_type: house
+    unit: county-part
+    priority: 16
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-AZ-H02:
+    state: AZ
+    race_type: house
+    unit: county-part
+    priority: 17
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-AZ-H06:
+    state: AZ
+    race_type: house
+    unit: county-part
+    priority: 18
+    baseline: 2024_house_06
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-CA-H13:
+    state: CA
+    race_type: house
+    unit: county-part
+    priority: 19
+    baseline: 2024_pres_2026lines_13
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-CA-H22:
+    state: CA
+    race_type: house
+    unit: county-part
+    priority: 20
+    baseline: 2024_pres_2026lines_22
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-CA-H48:
+    state: CA
+    race_type: house
+    unit: county-part
+    priority: 21
+    baseline: 2024_pres_2026lines_48
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-CO-H03:
+    state: CO
+    race_type: house
+    unit: county-part
+    priority: 22
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-CO-H05:
+    state: CO
+    race_type: house
+    unit: county-part
+    priority: 23
+    baseline: 2024_house_05
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-CO-H08:
+    state: CO
+    race_type: house
+    unit: county-part
+    priority: 24
+    baseline: 2024_house_08
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-FL-H09:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 25
+    baseline: 2024_pres_2026lines_09
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-FL-H13:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 26
+    baseline: 2024_pres_2026lines_13
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-FL-H14:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 27
+    baseline: 2024_pres_2026lines_14
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-FL-H22:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 28
+    baseline: 2024_pres_2026lines_22
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-FL-H25:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 29
+    baseline: 2024_pres_2026lines_25
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-FL-H27:
+    state: FL
+    race_type: house
+    unit: county-part
+    priority: 30
+    baseline: 2024_pres_2026lines_27
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-IA-H01:
+    state: IA
+    race_type: house
+    unit: county-part
+    priority: 31
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-IA-H02:
+    state: IA
+    race_type: house
+    unit: county-part
+    priority: 32
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-IA-H03:
+    state: IA
+    race_type: house
+    unit: county-part
+    priority: 33
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-IN-H01:
+    state: IN
+    race_type: house
+    unit: county-part
+    priority: 34
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-KY-H06:
+    state: KY
+    race_type: house
+    unit: county-part
+    priority: 35
+    baseline: 2024_house_06
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-MD-H01:
+    state: MD
+    race_type: house
+    unit: county-part
+    priority: 36
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-ME-H02:
+    state: ME
+    race_type: house
+    unit: county-part
+    priority: 37
+    baseline: 2024_house_02
+    ranked_choice: true
+    status: blocked
+    notes: RCV. No official live feed known; maine.gov CloudFront 403. Dropped Oct 30 if still blocked.
+  2026-MI-H04:
+    state: MI
+    race_type: house
+    unit: county-part
+    priority: 38
+    baseline: 2024_house_04
+    ranked_choice: false
+    status: blocked
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-MI-H07:
+    state: MI
+    race_type: house
+    unit: county-part
+    priority: 39
+    baseline: 2024_house_07
+    ranked_choice: false
+    status: blocked
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-MI-H08:
+    state: MI
+    race_type: house
+    unit: county-part
+    priority: 40
+    baseline: 2024_house_08
+    ranked_choice: false
+    status: blocked
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-MI-H10:
+    state: MI
+    race_type: house
+    unit: county-part
+    priority: 41
+    baseline: 2024_house_10
+    ranked_choice: false
+    status: blocked
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-MT-H01:
+    state: MT
+    race_type: house
+    unit: county-part
+    priority: 42
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NC-H01:
+    state: NC
+    race_type: house
+    unit: county-part
+    priority: 43
+    baseline: 2024_pres_2026lines_01
+    ranked_choice: false
+    status: todo
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+  2026-NC-H11:
+    state: NC
+    race_type: house
+    unit: county-part
+    priority: 44
+    baseline: 2024_house_11
+    ranked_choice: false
+    status: todo
+    notes: Check the lines against the 2026 primary file before using the 2024 House baseline (W7).
+  2026-NE-H02:
+    state: NE
+    race_type: house
+    unit: county-part
+    priority: 45
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NH-H01:
+    state: NH
+    race_type: house
+    unit: county-part
+    priority: 46
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NJ-H07:
+    state: NJ
+    race_type: house
+    unit: county-part
+    priority: 47
+    baseline: 2024_house_07
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NJ-H09:
+    state: NJ
+    race_type: house
+    unit: county-part
+    priority: 48
+    baseline: 2024_house_09
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NM-H02:
+    state: NM
+    race_type: house
+    unit: county-part
+    priority: 49
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NV-H03:
+    state: NV
+    race_type: house
+    unit: county-part
+    priority: 50
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NY-H03:
+    state: NY
+    race_type: house
+    unit: county-part
+    priority: 51
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NY-H04:
+    state: NY
+    race_type: house
+    unit: county-part
+    priority: 52
+    baseline: 2024_house_04
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-NY-H17:
+    state: NY
+    race_type: house
+    unit: county-part
+    priority: 53
+    baseline: 2024_house_17
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-OH-H01:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 54
+    baseline: 2024_pres_2026lines_01
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-OH-H07:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 55
+    baseline: 2024_pres_2026lines_07
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-OH-H09:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 56
+    baseline: 2024_pres_2026lines_09
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-OH-H10:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 57
+    baseline: 2024_pres_2026lines_10
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-OH-H13:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 58
+    baseline: 2024_pres_2026lines_13
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-OH-H15:
+    state: OH
+    race_type: house
+    unit: county-part
+    priority: 59
+    baseline: 2024_pres_2026lines_15
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-PA-H01:
+    state: PA
+    race_type: house
+    unit: county-part
+    priority: 60
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-PA-H07:
+    state: PA
+    race_type: house
+    unit: county-part
+    priority: 61
+    baseline: 2024_house_07
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-PA-H08:
+    state: PA
+    race_type: house
+    unit: county-part
+    priority: 62
+    baseline: 2024_house_08
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-PA-H10:
+    state: PA
+    race_type: house
+    unit: county-part
+    priority: 63
+    baseline: 2024_house_10
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-SC-H01:
+    state: SC
+    race_type: house
+    unit: county-part
+    priority: 64
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-TX-H09:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 65
+    baseline: 2024_pres_2026lines_09
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-TX-H15:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 66
+    baseline: 2024_pres_2026lines_15
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-TX-H23:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 67
+    baseline: 2024_pres_2026lines_23
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-TX-H28:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 68
+    baseline: 2024_pres_2026lines_28
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-TX-H34:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 69
+    baseline: 2024_pres_2026lines_34
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-TX-H35:
+    state: TX
+    race_type: house
+    unit: county-part
+    priority: 70
+    baseline: 2024_pres_2026lines_35
+    ranked_choice: false
+    status: blocked
+    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+  2026-VA-H01:
+    state: VA
+    race_type: house
+    unit: county-part
+    priority: 71
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-VA-H02:
+    state: VA
+    race_type: house
+    unit: county-part
+    priority: 72
+    baseline: 2024_house_02
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-VA-H05:
+    state: VA
+    race_type: house
+    unit: county-part
+    priority: 73
+    baseline: 2024_house_05
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-WA-H03:
+    state: WA
+    race_type: house
+    unit: county-part
+    priority: 74
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-WI-H01:
+    state: WI
+    race_type: house
+    unit: county-part
+    priority: 75
+    baseline: 2024_house_01
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+  2026-WI-H03:
+    state: WI
+    race_type: house
+    unit: county-part
+    priority: 76
+    baseline: 2024_house_03
+    ranked_choice: false
+    status: todo
+    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
