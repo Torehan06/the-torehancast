@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Callable
 
 from . import config as configuration
-from . import publish
+from . import districts, publish
 from .adapters.fl_dos import BatchTracker
 from .candidates import CandidateMap
 from .config import Config, FeedConfig, RaceConfig
@@ -159,7 +159,9 @@ class Poller:
         result = state.model.run(snap, self.n_draws, SEED)
         as_of = snap.as_of or now.isoformat(timespec="seconds")
         state.last = publish.StateUpdate(race.state, race_id, dict(feed.display), result, state.model, as_of,
-                                         votes=snap.totals())
+                                         votes=snap.totals(), race_type=race.race_type,
+                                         district=districts.district_of(race_id),
+                                         ranked_choice=race.ranked_choice)
 
     def run_forever(self, interval: float = DEFAULT_INTERVAL) -> None:
         stopping = False

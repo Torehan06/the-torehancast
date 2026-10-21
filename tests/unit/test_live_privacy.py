@@ -56,18 +56,20 @@ def test_live_pipeline_keeps_canary_inputs_private(tmp_path, prior, state, gate,
     elif stage == "final":
         assert m.last_data_weight >= publish.DATA_WEIGHT_RELEASE
     race = f"2026-{state}-SEN"
-    update = publish.StateUpdate(state, race, {"D": "Dem", "R": "Rep"}, result, m, snap.as_of)
+    update = publish.StateUpdate(state, race, {"D": "Dem", "R": "Rep"}, result, m, snap.as_of,
+                                 race_type="senate", district=None, ranked_choice=state in ("ME", "AK"))
     out = tmp_path / "public"
     publish.publish([update], publish.LocalWriter(out), mode="live", gate=gate)
     private = tmp_path / "canary-private.yaml"
     private.write_text(yaml.safe_dump({"priors": {race: asdict(prior)}}))
-    detail = json.loads((out / f"data/live/{state}.json").read_text())
+    detail_path = out / f"data/live/races/{race}.json"
+    detail = json.loads(detail_path.read_text())
     summary = json.loads((out / "data/live/summary.json").read_text())["states"][0]
     for payload in (detail, summary):
         assert payload["status"] == status
         if status == "waiting":
-            assert payload == {"state": state, "race": race, "as_of": snap.as_of,
-                               "status": "waiting", "modeled": True}
+            assert payload == {"state": state, "race": race, "race_type": "senate", "district": None,
+                               "as_of": snap.as_of, "status": "waiting", "modeled": True}
     report = public_json.check_tree(out, priors=private, mode="live")
     assert report.files == 2 and report.private_values_checked
     assert public_json.main([str(out), "--mode", "live", "--priors", str(private)]) == 0
@@ -75,12 +77,19 @@ def test_live_pipeline_keeps_canary_inputs_private(tmp_path, prior, state, gate,
     assert "PASS" in output
     for value in asdict(prior).values():
         assert str(value) not in output
-    # Mutation proves that this integration check detects a copied private input.
-    detail["as_of"] = f"private value = {prior.margin}"
-    (out / f"data/live/{state}.json").write_text(json.dumps(detail))
-    assert public_json.main([str(out), "--mode", "live", "--priors", str(private)]) == 1
-    output = capsys.readouterr().out
-    assert str(prior.margin) not in output
+    # Mutations prove that this integration check detects a copied private input,
+    # written into text or (where the model publishes a margin) into a number.
+    mutations = [lambda d: d.update(as_of=f"private value = {prior.margin}")]
+    if "margin" in detail:
+        mutations.append(lambda d: d["margin"].update(median=round(prior.margin, 4)))
+    original = json.dumps(detail)
+    for mutate in mutations:
+        copied = json.loads(original)
+        mutate(copied)
+        detail_path.write_text(json.dumps(copied))
+        assert public_json.main([str(out), "--mode", "live", "--priors", str(private)]) == 1
+        output = capsys.readouterr().out
+        assert str(prior.margin) not in output
 
 
 def test_waiting_public_payload_is_identical_under_changed_private_priors(tmp_path):
@@ -89,10 +98,12 @@ def test_waiting_public_payload_is_identical_under_changed_private_priors(tmp_pa
         m = model(prior)
         snap = snapshot("GA", "empty")
         update = publish.StateUpdate("GA", "2026-GA-SEN", {"D": "Dem", "R": "Rep"},
-                                     m.run(snap, n_draws=100, seed=7), m, None)
+                                     m.run(snap, n_draws=100, seed=7), m, None,
+                                     race_type="senate", district=None, ranked_choice=False)
         out = tmp_path / str(n)
         publish.publish([update], publish.LocalWriter(out), mode="live")
-        payloads.append(json.loads((out / "data/live/GA.json").read_text()))
+        payloads.append(json.loads((out / "data/live/races/2026-GA-SEN.json").read_text()))
     assert payloads[0] == payloads[1] == {
-        "state": "GA", "race": "2026-GA-SEN", "as_of": None, "status": "waiting", "modeled": True,
+        "state": "GA", "race": "2026-GA-SEN", "race_type": "senate", "district": None,
+        "as_of": None, "status": "waiting", "modeled": True,
     }

@@ -2,6 +2,23 @@
 
 This verifies public artifact shapes and private-input copies, not posterior independence.
 Historical replay priors are intentionally public; live private priors are not.
+
+Value scan, decided with Törehan on Oct 21 (the release gate):
+
+- Numbers inside a race entry are compared only with its own race's prior values that
+  have 4 or more decimals. Hand-entered priors have 1-3 (0.1, 0.07, -0.045), and a
+  night's thousands of published probabilities, margins and county shares match such
+  values by chance: simulated election nights raised a false alarm ~100% of the time
+  (80% even with county tables skipped). A copied 0.1 can't be told from a chance 0.1,
+  so the check looks only where a match means a copy. The CI canary priors (7 decimals)
+  run through the real publisher and prove the code never copies a prior.
+- Text anywhere (names, timestamps, file names) is compared with every non-integer
+  prior value; numbers outside race entries with every prior value and rounding.
+- Skipped, because they can't carry a prior: identity fields (`state`, `race`,
+  `race_type`, `district`) once shown to agree, raw vote counts, and `vote_share`
+  values equal to the share recomputed from those counts.
+
+Key names, file names and types, the waiting shape and live prior coverage are always checked.
 """
 
 from __future__ import annotations
@@ -11,11 +28,16 @@ import json
 import math
 import re
 from dataclasses import dataclass
+from decimal import Decimal
 from pathlib import Path
 
 import yaml
 
+from . import districts
 from .elections import CONFIG
+
+RACE_TYPES = {"senate", "senate-special", "house"}
+PRECISE_DECIMALS = 4  # a prior value this precise can't match a published number by chance
 
 
 class PublicJSONError(ValueError):
@@ -71,7 +93,7 @@ def _observed(value: dict, candidates: dict, where: str) -> None:
 
 
 def _state(value: dict, where: str, *, live: bool) -> None:
-    base = {"state", "race", "as_of", "status", "modeled"}
+    base = {"state", "race", "race_type", "district", "as_of", "status", "modeled"}
     _require(isinstance(value, dict), where)
     _require(type(value.get("modeled")) is bool, where)
     if value.get("status") == "waiting":
@@ -143,20 +165,46 @@ def _state(value: dict, where: str, *, live: bool) -> None:
                         if county[key] is not None:
                             _number(county[key], where, -1, 1)
                     _number(county["counted_share"], where, 0, 1)
-    _require(all(isinstance(value[k], str) and bool(value[k]) for k in ("state", "race")), where)
+    _require(all(isinstance(value[k], str) and bool(value[k]) for k in ("state", "race", "race_type")), where)
+    _require(value["district"] is None or type(value["district"]) is int, where)
+    _require(districts.race_identity(value["race"])
+             == (value["state"], value["race_type"], value["district"]), where)
     _require(value["as_of"] is None or isinstance(value["as_of"], str), where)
 
 
-def _document(value, where: str, live: bool) -> None:
+_RACE_FILE = re.compile(r"(?:.*/)?races/([^/]+)\.json")
+
+
+def _file_kind(relative: str) -> str:
+    """summary, house, index or race; anything else isn't a public file."""
+    name = relative.rsplit("/", 1)[-1]
+    if name in ("summary.json", "house.json", "index.json"):
+        return name.removesuffix(".json")
+    match = _RACE_FILE.fullmatch(relative)
+    _require(match is not None and districts.race_identity(match[1]) is not None, relative)
+    return "race"
+
+
+def _entries(value: dict, kind: str) -> list:
+    if kind in ("summary", "house"):
+        return value["states" if kind == "summary" else "races"]
+    return [value] if kind == "race" else []
+
+
+def _document(value, where: str, live: bool, kind: str) -> None:
     _require(isinstance(value, dict), where)
-    if "states" in value:
-        keys = {"generated_at", "mode", "states"}
+    if kind in ("summary", "house"):
+        # summary.json holds Senate races, house.json House races; one entry per race.
+        listed = "states" if kind == "summary" else "races"
+        keys = {"generated_at", "mode", listed}
         _shape(value, keys, keys, where)
         _require(value["mode"] in {"live", "replay"} and isinstance(value["generated_at"], str), where)
-        _require(isinstance(value["states"], list) and bool(value["states"]), where)
-        for state in value["states"]:
-            _state(state, where, live=live or value["mode"] == "live")
-    elif "frames" in value:
+        _require(isinstance(value[listed], list) and bool(value[listed]), where)
+        for race in value[listed]:
+            _state(race, where, live=live or value["mode"] == "live")
+            _require((race["race_type"] == "house") == (kind == "house"), where)
+        _require(len({race["race"] for race in value[listed]}) == len(value[listed]), where)
+    elif kind == "index":
         keys = {"state", "pair", "order", "seed", "frames"}
         _shape(value, keys, keys, where)
         _require(value["state"] == "GA" and value["pair"] in {"primary", "secondary"}, where)
@@ -170,7 +218,9 @@ def _document(value, where: str, live: bool) -> None:
                      and re.fullmatch(r"frames/\d{6}/summary\.json", frame["summary"]) is not None, where)
             previous = frame["time"]
     else:
+        # races/{race_id}.json: one modeled race, named by its own ID.
         _state(value, where, live=live)
+        _require(value["modeled"] is True and _RACE_FILE.fullmatch(where)[1] == value["race"], where)
 
 
 class _UniquePrivateLoader(yaml.SafeLoader):
@@ -195,8 +245,18 @@ _UniquePrivateLoader.add_constructor(
 
 @dataclass(frozen=True, repr=False)
 class _PrivatePriors:
-    tokens: set
-    races: frozenset[str]
+    tokens: set  # every prior value and rounding: numbers outside race entries
+    text: set  # the non-integer ones: numbers written inside any text
+    precise: dict[str, set]  # per race, values with PRECISE_DECIMALS+: numbers in its entry
+    own_text: dict[str, set]  # per race, its non-integer values: text in its entry
+
+    @property
+    def races(self) -> frozenset[str]:
+        return frozenset(self.precise)
+
+
+def _decimals(x: float) -> int:
+    return max(0, -Decimal(repr(float(x))).normalize().as_tuple().exponent)
 
 
 def _private_priors(path: Path) -> _PrivatePriors:
@@ -205,31 +265,37 @@ def _private_priors(path: Path) -> _PrivatePriors:
         doc = yaml.load(path.read_text(), Loader=_UniquePrivateLoader)
         if not isinstance(doc, dict) or set(doc) != {"priors"} or not isinstance(doc["priors"], dict) or not doc["priors"]:
             raise ValueError
-        tokens = set()
-        races = set()
+        tokens, text = set(), set()
+        precise, own_text = {}, {}
         fields = {"margin", "margin_sd", "turnout_ratio", "turnout_sd"}
         for race, prior in doc["priors"].items():
             if prior is None:
                 continue
             if not isinstance(prior, dict) or set(prior) != fields:
                 raise ValueError
-            races.add(race)
+            exact, written = precise[race], own_text[race] = set(), set()
             for key, value in prior.items():
                 if type(value) not in (int, float) or not math.isfinite(value):
                     raise ValueError
                 if (key == "margin" and not -1 <= value <= 1) or (key != "margin" and value <= 0):
                     raise ValueError
                 for n in (value, round(value, 3), round(value, 4)):
-                    tokens.add(n)
-                    tokens.add(str(n))
+                    tokens.update((n, str(n)))
+                    if _decimals(n) > 0:
+                        written.update((n, str(n)))
+                    if _decimals(n) >= PRECISE_DECIMALS:
+                        exact.update((n, str(n)))
+            text |= written
         if not tokens:
             raise ValueError
-        return _PrivatePriors(tokens, frozenset(races))
+        return _PrivatePriors(tokens, text, precise, own_text)
     except (OSError, ValueError, TypeError, OverflowError, yaml.YAMLError):
         raise PublicJSONError("private priors unavailable or invalid; contents withheld") from None
 
 
-def _scan_values(value, tokens: set, where: str) -> None:
+def _scan_values(value, tokens: set, where: str, text: set | None = None) -> None:
+    """Numbers are compared with `tokens`; text (and numbers inside it) with `text`."""
+    text = tokens if text is None else text
     if isinstance(value, dict):
         forbidden = {"marginsd", "turnoutratio", "turnoutsd", "baselinemargin", "baselinevotes",
                      "demographics", "covariates", "feedurl", "electionid", "config", "tauswing",
@@ -238,23 +304,57 @@ def _scan_values(value, tokens: set, where: str) -> None:
             normalized = re.sub(r"[^a-z]", "", key.casefold())
             if "prior" in normalized or normalized in forbidden:
                 raise PublicJSONError("private/config key in public output; path and key withheld")
-            _scan_values(key, tokens, where)
-            _scan_values(v, tokens, where)
+            _scan_values(key, tokens, where, text)
+            _scan_values(v, tokens, where, text)
     elif isinstance(value, list):
         for v in value:
-            _scan_values(v, tokens, where)
+            _scan_values(v, tokens, where, text)
     elif type(value) in (str, int, float):
-        copied = value in tokens
+        copied = value in (text if isinstance(value, str) else tokens)
         if isinstance(value, str):
             # Includes embedded, signed, decimal and scientific numeric literals.
             copied = copied or any(
-                float(n) in tokens or float(n.lstrip("+-")) in tokens
+                float(n) in text or float(n.lstrip("+-")) in text
                 for n in re.findall(
                     r"[-+]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][-+]?[0-9]+)?", value,
                 )
             )
         if copied:
             raise PublicJSONError("possible private-value copy; path and value withheld")
+
+
+def _scannable(entry: dict) -> dict:
+    """A copy of a validated race entry without the fields that can't carry a prior."""
+    entry = {k: v for k, v in entry.items() if k not in ("state", "race", "race_type", "district")}
+    votes = entry.pop("votes", None)
+    shares = entry.pop("vote_share", None)
+    if votes is not None:
+        total = sum(votes.values())
+        # Shares are rounded to 4 places on modeled races and exact on results-only ones.
+        kept = {k: p for k, p in shares.items()
+                if not math.isclose(p, votes[k] / total if total else 0.0, abs_tol=5e-5)}
+        if kept:
+            entry["vote_share"] = kept
+    entry.pop("reported_votes", None)
+    if "counties" in entry:
+        entry["counties"] = [{k: v for k, v in c.items() if k != "reported_votes"} for c in entry["counties"]]
+    return entry
+
+
+def _scan_document(value: dict, kind: str, private: _PrivatePriors | None, where: str) -> None:
+    """Race entries against their own race's prior (module docstring); the rest against all."""
+    if private is None:
+        _scan_values(value, set(), where)  # key names only
+        return
+    for entry in _entries(value, kind):
+        race = entry["race"]
+        _scan_values(_scannable(entry), private.precise.get(race, set()), where,
+                     private.own_text.get(race, set()))
+    if kind in ("summary", "house"):
+        rest = {k: v for k, v in value.items() if k not in ("states", "races")}
+    else:
+        rest = {} if kind == "race" else value
+    _scan_values(rest, private.tokens, where, private.text)
 
 
 def _pairs(pairs):
@@ -270,21 +370,10 @@ def _constant(_):
     raise ValueError("nonfinite JSON constant")
 
 
-def _check_live_coverage(value: dict, private: _PrivatePriors) -> None:
-    states = value["states"] if "states" in value else [value]
-    for state in states:
-        if state["modeled"] is False:
-            continue
-        race = state["race"]
-        if re.match(r"^[0-9]{4}-[A-Z]{2}-", race):
-            covered = race in private.races and race.split("-")[1] == state["state"]
-        else:
-            # Legacy display labels identify a race only if this state has one
-            # configured prior. Canonical IDs must always match exactly.
-            covered = sum(k.split("-")[1:2] == [state["state"]]
-                          for k in private.races) == 1
-        if not covered:
-            raise PublicJSONError("live modeled race has no unambiguous configured private prior")
+def _check_live_coverage(value: dict, kind: str, private: _PrivatePriors) -> None:
+    for entry in _entries(value, kind):
+        if entry["modeled"] is not False and entry["race"] not in private.races:
+            raise PublicJSONError("live modeled race has no configured private prior")
 
 
 def check_tree(root: Path, *, priors: Path | None = None, mode: str | None = None) -> ScanReport:
@@ -300,8 +389,11 @@ def check_tree(root: Path, *, priors: Path | None = None, mode: str | None = Non
         relative = path.relative_to(root)
         if path.is_symlink() or "config" in {p.casefold() for p in relative.parts} or path.suffix.lower() in {".yaml", ".yml"} or path.name.startswith(".env"):
             raise PublicJSONError("private/config artifact or symlink in public output")
-        where = str(relative)
-        _scan_values(where, tokens if tokens is not None else set(), where)
+        where = relative.as_posix()
+        # A race file's name is its race ID, which the file's own entry must match.
+        named = _RACE_FILE.fullmatch(where)
+        _scan_values(where.replace(named[1], "") if named else where, set(),
+                     where, private.text if private is not None else set())
         if path.is_dir():
             continue
         if not path.is_file() or path.suffix.lower() != ".json":
@@ -316,10 +408,11 @@ def check_tree(root: Path, *, priors: Path | None = None, mode: str | None = Non
         if live and tokens is None:
             raise PublicJSONError("live output requires private priors for value checks")
         try:
-            _scan_values(value, tokens if tokens is not None else set(), where)
-            _document(value, where, live)
+            kind = _file_kind(where)
+            _document(value, where, live, kind)
+            _scan_document(value, kind, private, where)
             if live:
-                _check_live_coverage(value, private)
+                _check_live_coverage(value, kind, private)
         except (TypeError, KeyError, AttributeError, OverflowError, RecursionError):
             raise PublicJSONError("invalid public payload; path and contents withheld") from None
         count += 1

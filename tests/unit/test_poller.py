@@ -80,7 +80,7 @@ def test_counts_before_polls_close_are_test_data(config_dir, tmp_path, caplog):
         p.cycle()
     assert summary(tmp_path / "out")[RACE]["status"] == "waiting"
     assert "before polls close" in caplog.text
-    detail = json.loads((tmp_path / "out/data/live/NC.json").read_text())
+    detail = json.loads((tmp_path / "out/data/live/races/2026-NC-SEN.json").read_text())
     assert "votes" not in detail and "p_win" not in detail
 
 

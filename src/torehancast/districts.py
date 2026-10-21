@@ -54,6 +54,12 @@ def parse_house_race_id(race_id: str) -> tuple[str, int] | None:
     return (state, number) if 1 <= number <= APPORTIONMENT[state] else None
 
 
+def district_of(race_id: str) -> int | None:
+    """The district number of a House race ID (1 for at-large), None for anything else."""
+    parsed = parse_house_race_id(race_id)
+    return parsed[1] if parsed else None
+
+
 def house_race_ids() -> list[str]:
     return [house_race_id(state, n) for state in sorted(APPORTIONMENT)
             for n in range(1, APPORTIONMENT[state] + 1)]
@@ -65,6 +71,22 @@ def senate_race_id(state: str) -> str:
     if state in SENATE_CLASS_2:
         return f"{YEAR}-{state}-SEN"
     raise ValueError(f"{state} has no {YEAR} Senate race")
+
+
+_SENATE_ID = re.compile(rf"{YEAR}-([A-Z]{{2}})-SEN(-SPECIAL)?")
+
+
+def race_identity(race_id: str) -> tuple[str, str, int | None] | None:
+    """(state, race_type, district) for a canonical 2026 federal race ID, else None."""
+    if house := parse_house_race_id(race_id):
+        return house[0], "house", house[1]
+    match = _SENATE_ID.fullmatch(race_id)
+    if not match:
+        return None
+    state, special = match[1], bool(match[2])
+    if special != (state in SENATE_SPECIALS) or state not in SENATE_CLASS_2 | SENATE_SPECIALS:
+        return None
+    return state, "senate-special" if special else "senate", None
 
 
 def senate_race_ids() -> list[str]:

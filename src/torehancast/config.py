@@ -23,6 +23,7 @@ from . import districts
 from .model.simulate import RacePrior
 
 DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
+RCV_STATES = frozenset({"ME", "AK"})  # ranked-choice federal general elections
 STATES = frozenset("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split())
 
 
@@ -150,6 +151,9 @@ def _race(race_id: str, raw) -> RaceConfig:
         raise ConfigError("races entry: priority must be a positive integer")
     if type(data["ranked_choice"]) is not bool:
         raise ConfigError("races entry: ranked_choice must be a boolean")
+    if data["state"] in RCV_STATES and data["race_type"] != "governor" and not data["ranked_choice"]:
+        # The publisher's RCV fail-closed path keys on this flag.
+        raise ConfigError("races entry: ME and AK federal races are ranked-choice")
     _text(data["baseline"], "races entry: baseline")
     for key in ("fallback_baseline", "notes"):
         if key in data:
