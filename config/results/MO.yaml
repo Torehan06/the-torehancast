@@ -1,0 +1,6 @@
+# Results-only races in Missouri: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources: {}
+  none:
+    house: 'W4: no verified official feed yet.'

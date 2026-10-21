@@ -1,0 +1,12 @@
+# Results-only races in North Carolina: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources:
+    sbe:
+      same_as: 2026-NC-SEN
+      status: pending
+      contests:
+      - office: house
+        districts: all
+        template: US HOUSE OF REPRESENTATIVES DISTRICT {n:02d}
+      notes: Contest name from the 2024 precinct file; recheck against the 2026 file.

@@ -1,0 +1,14 @@
+# Results-only races in Minnesota: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources:
+    sos_house:
+      adapter: mn_sos
+      url: null
+      election_id: null
+      status: pending
+      contests:
+      - office: house
+        districts: all
+        template: null
+      notes: House results are a separate per-office file from the Senate one; W4a finds its URL.

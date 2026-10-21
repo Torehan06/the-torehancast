@@ -52,3 +52,13 @@ def test_web_senate_list_matches(tmp_path):
     specials = set(re.findall(r"'([A-Z]{2})'", source.split("const SPECIALS = [")[1].split("]")[0]))
     assert class_2 == districts.SENATE_CLASS_2
     assert specials == districts.SENATE_SPECIALS
+
+
+def test_web_apportionment_matches():
+    from pathlib import Path
+    import re
+    source = (Path(__file__).resolve().parents[2] / "web/src/data/districts.ts").read_text()
+    block = source.split("APPORTIONMENT: Record<string, number> = {")[1].split("}")[0]
+    web = {state: int(n) for state, n in re.findall(r"([A-Z]{2}): (\d+)", block)}
+    assert web == districts.APPORTIONMENT
+    assert f"export const YEAR = {districts.YEAR}" in source
