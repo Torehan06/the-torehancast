@@ -217,12 +217,28 @@ def parse(document, contest, cmap, race):
     raise NotImplementedError("fl_precinct is archive-only; the live feed is fl_dos")
 
 
+def county_snapshot(year: pd.DataFrame, contest: str, cmap: CandidateMap, names: dict[str, str],
+                    race: str) -> Snapshot:
+    """Whole-county totals of one contest: no crosswalk involved."""
+    rows = year[year.contest == contest]
+    if rows.empty:
+        raise ValueError(f"no {contest!r} rows in the precinct file")
+    rows = rows.assign(side=rows.candidate.map(cmap.key_for))
+    totals = rows.groupby(["county_code", "side"]).votes.sum()
+    cells = [Cell(names[code], ALL, {s: int(v) for s, v in g.droplevel(0).items()})
+             for code, g in sorted(totals.groupby(level=0), key=lambda kv: names[kv[0]])]
+    return Snapshot("FL", race, None, cells, {c.unit_id: 1.0 for c in cells}, warnings=cmap.warnings())
+
+
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
-    """spec: `file` (this election's precinct archive), `crosswalk` (the 2026 primary's),
-    `names` (an extract that spells the counties), `contest`, `district`."""
+    """spec: `file` (this election's precinct archive), `names` (an extract that spells
+    the counties), `contest`; plus `district` and `crosswalk` (the 2026 primary's
+    precinct archive) for a district on the 2026 lines. Without `district`: county totals."""
     year = _read(archives / spec["file"])
-    assign = assignment(_read(archives / spec["crosswalk"]))
     names = county_names((archives / spec["names"]).read_text(encoding="latin-1"))
+    if "district" not in spec:
+        return county_snapshot(year, spec["contest"], cmap, names, key)
+    assign = assignment(_read(archives / spec["crosswalk"]))
     return district_snapshot(year, assign, int(spec["district"]), spec["contest"], cmap, names, key)
 
 

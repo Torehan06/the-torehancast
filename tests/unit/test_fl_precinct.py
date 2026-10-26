@@ -159,3 +159,8 @@ def test_archive_only_adapter_refuses_live_use():
 def test_county_names_come_from_the_extract():
     extract = "CountyCode\tCountyName\nDAD\tMiami-Dade\nPAL\tPalm Beach\n"
     assert fp.county_names(extract) == {"DAD": "MIAMI-DADE", "PAL": "PALM BEACH"}
+
+
+def test_county_totals_need_no_crosswalk():
+    snap = fp.county_snapshot(year_rows(), PRES, CandidateMap(CMAP), NAMES, "2016_pres")
+    assert {c.unit_id: c.votes for c in snap.cells} == {"ALPHA": {"R": 1150, "D": 950}, "BRAVO": {"R": 200, "D": 100}}
