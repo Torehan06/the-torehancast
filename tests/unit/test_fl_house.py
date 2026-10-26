@@ -79,3 +79,20 @@ def test_every_district_row_lands_in_exactly_one_contest(district):
     expected = sum(int(r[14]) for r in rows if int(r[7]) == district)
     snap = fl.parse(TEXT, f"USR:{district:03d}", CandidateMap({}), "h")
     assert sum(sum(c.votes.values()) for c in snap.cells) == expected
+
+
+PLAN = Path(__file__).parents[2] / "data" / "archives" / "FL" / "plan" / "EOGPCRP2026.txt"
+
+
+@pytest.mark.skipif(not PLAN.exists(), reason="enacted-plan block file not archived")
+def test_enacted_plan_counties_of_the_modeled_districts():
+    # EOGPCRP2026.txt from edr.state.fl.us (7,642,857 bytes, sha256 ae520c0a…).
+    from torehancast.adapters import fl_precinct as fp
+    text = PLAN.read_text()
+    assert fp.plan_counties(text, 9) == {"GLADES", "HIGHLANDS", "INDIAN RIVER", "OKEECHOBEE", "ORANGE",
+                                         "OSCEOLA", "POLK"}
+    assert fp.plan_counties(text, 13) == {"PASCO", "PINELLAS"}
+    assert fp.plan_counties(text, 14) == {"HILLSBOROUGH"}
+    assert fp.plan_counties(text, 22) == {"BROWARD", "COLLIER", "HENDRY", "PALM BEACH"}
+    assert fp.plan_counties(text, 25) == {"BROWARD", "MIAMI-DADE", "PALM BEACH"}
+    assert fp.plan_counties(text, 27) == {"MIAMI-DADE"}
