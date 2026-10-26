@@ -157,3 +157,10 @@ def test_empty_count_publishes_zeros_but_a_missing_candidate_with_votes_raises(m
 
 def test_votes_stay_unpublished_when_the_caller_supplies_none(modeled):
     assert "votes" not in publish.state_summary(modeled, "live")
+
+
+def test_a_contest_not_in_the_feed_yet_waits():
+    absent = results_only(candidates={}, votes={}, pct_reporting=None, in_feed=False)
+    assert publish.state_summary(absent, "live") == waiting("VA", False)
+    with pytest.raises(ValueError):
+        publish.state_summary(replace(absent, votes={"D": 1}, candidates={"D": "Dem"}), "live")

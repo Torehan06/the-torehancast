@@ -99,3 +99,13 @@ class BatchTracker:
                 ed = {k: max(v - early.get(k, 0), 0) for k, v in c.votes.items()}
                 cells.append(Cell(c.unit_id, ELECTION_DAY, ed))
         return Snapshot(snap.state, snap.race, snap.as_of, cells, dict(snap.unit_reporting), complete, warnings)
+
+
+# Adapter protocol (see adapters/__init__.py). Florida's contest is its race code ("USS").
+
+def fetch_source(client, feed) -> str:
+    return client.post(feed.url, dict(feed.params)).decode("latin-1")
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["date"]), spec["race_code"], cmap, key)

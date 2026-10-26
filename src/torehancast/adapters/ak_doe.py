@@ -184,3 +184,13 @@ def load_archive(directory: Path, code: str) -> str:
     if csv_path.exists():
         return csv_path.read_text(encoding="utf-8-sig")
     return (directory / f"{code}_Results_per_Precinct.txt").read_text(encoding="utf-16")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> str:
+    return fetch(client, feed.url)
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["code"]), spec["contest"], cmap, key)

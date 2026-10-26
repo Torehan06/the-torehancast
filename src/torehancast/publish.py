@@ -19,11 +19,14 @@ and `district` (null for Senate races).
 
 from __future__ import annotations
 
+import gzip
+import hashlib
 import json
 import math
 import os
 import posixpath
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -39,6 +42,7 @@ LIVE = "live"
 GATES = ("first_votes", "data_weight")
 DATA_WEIGHT_RELEASE = 3.0  # data precision ≥ 3× prior precision
 CACHE_CONTROL = "public, max-age=20"
+UPLOAD_WORKERS = 8
 
 
 @dataclass(frozen=True)
@@ -78,8 +82,15 @@ class ResultsOnlyUpdate:
     as_of: str | None
     race_type: str = field(kw_only=True)
     district: int | None = field(kw_only=True)
+    # False: the contest isn't in the feed yet. It has no candidates or votes and
+    # publishes as waiting; otherwise empty candidates are an error.
+    in_feed: bool = field(default=True, kw_only=True)
 
     def validate(self) -> None:
+        if not self.in_feed:
+            if self.candidates or self.votes or self.pct_reporting is not None:
+                raise ValueError("a contest not in the feed has no candidates, votes or reporting")
+            return
         if not self.candidates or self.votes.keys() != self.candidates.keys():
             raise ValueError("reported vote keys must match display candidates exactly")
         if any(not isinstance(k, str) or not k or not isinstance(v, str)
@@ -257,6 +268,9 @@ class GCSWriter:
 
     The bucket's public role can't be scoped to a prefix, so this check is what keeps
     it holding nothing but data/: any other key is refused before an upload starts.
+    Bodies are gzipped (browsers decompress them; GCS decompresses for clients that
+    don't accept gzip), and a file whose body hasn't changed since this writer last
+    uploaded it is skipped, so an unchanged race costs no upload.
     """
 
     def __init__(self, bucket: str, client=None):
@@ -265,14 +279,38 @@ class GCSWriter:
 
             client = storage.Client()
         self.bucket = client.bucket(bucket)
+        self._uploaded: dict[str, str] = {}  # key → sha256 of the last body uploaded
 
     def write(self, key: str, payload: dict) -> None:
         if not key.startswith("data/") or posixpath.normpath(key) != key:
             raise ValueError(f"refusing to publish outside data/: {key}")
-        body = json.dumps(payload, default=_json_default, separators=(",", ":"))
+        body = json.dumps(payload, default=_json_default, separators=(",", ":")).encode()
+        digest = hashlib.sha256(body).hexdigest()
+        if self._uploaded.get(key) == digest:
+            return
         blob = self.bucket.blob(key)
         blob.cache_control = CACHE_CONTROL
-        blob.upload_from_string(body, content_type="application/json")
+        blob.content_encoding = "gzip"
+        blob.upload_from_string(gzip.compress(body, mtime=0), content_type="application/json")
+        self._uploaded[key] = digest
+
+    def write_many(self, items: list[tuple[str, dict]]) -> None:
+        """Upload in parallel; every item is attempted, then the first failure is raised."""
+        for key, _ in items:  # refuse the whole batch before any upload starts
+            if not key.startswith("data/") or posixpath.normpath(key) != key:
+                raise ValueError(f"refusing to publish outside data/: {key}")
+        with ThreadPoolExecutor(UPLOAD_WORKERS) as pool:
+            futures = [pool.submit(self.write, key, payload) for key, payload in items]
+        for future in futures:
+            future.result()
+
+
+def _write_all(writer, items: list[tuple[str, dict]]) -> None:
+    if hasattr(writer, "write_many"):
+        writer.write_many(items)
+    else:
+        for key, payload in items:
+            writer.write(key, payload)
 
 
 def publish(updates: list[Update], writer, mode: str, gate: str = "first_votes") -> None:
@@ -286,9 +324,8 @@ def publish(updates: list[Update], writer, mode: str, gate: str = "first_votes")
     if len({u.race for u in updates}) != len(updates):
         raise ValueError("one update per race")
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    for u in updates:
-        if isinstance(u, StateUpdate):
-            writer.write(f"data/{mode}/races/{u.race}.json", state_detail(u, mode, gate))
+    _write_all(writer, [(f"data/{mode}/races/{u.race}.json", state_detail(u, mode, gate))
+                        for u in updates if isinstance(u, StateUpdate)])
     senate = [state_summary(u, mode, gate) for u in updates if u.race_type != "house"]
     house = [state_summary(u, mode, gate) for u in updates if u.race_type == "house"]
     if senate:

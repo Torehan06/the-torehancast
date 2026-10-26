@@ -41,3 +41,13 @@ def fetch(client: PoliteClient, election_id: str | int, base: str = BASE) -> str
 
 def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str) -> Snapshot:
     return sc_clarity.parse(xml_text, contest_name, cmap, race, state="IA")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> str:
+    return fetch(client, feed.election_id)
+
+
+def final_snapshot(spec: dict, archives, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["election_id"]), spec["contest"], cmap, key)
