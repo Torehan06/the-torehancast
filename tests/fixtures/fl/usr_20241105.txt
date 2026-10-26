@@ -1,0 +1,217 @@
+ElectionDate	PartyCode	PartyName	RaceCode	OfficeDesc	CountyCode	CountyName	Juris1num	Juris2num	Precincts	PrecinctsReporting	CanNameLast	CanNameFirst	CanNameMiddle	CanVotes
+11/5/2024	REP	Republican	USR	United States Representative	ESC	Escambia	001		80	80	Gaetz	Matt		91609
+11/5/2024	REP	Republican	USR	United States Representative	OKA	Okaloosa	001		52	52	Gaetz	Matt		76839
+11/5/2024	REP	Republican	USR	United States Representative	SAN	Santa Rosa	001		41	41	Gaetz	Matt		80671
+11/5/2024	REP	Republican	USR	United States Representative	WAL	Walton	001		14	14	Gaetz	Matt		24989
+11/5/2024	DEM	Democrat	USR	United States Representative	ESC	Escambia	001		80	80	Valimont	Gay		68741
+11/5/2024	DEM	Democrat	USR	United States Representative	OKA	Okaloosa	001		52	52	Valimont	Gay		34957
+11/5/2024	DEM	Democrat	USR	United States Representative	SAN	Santa Rosa	001		41	41	Valimont	Gay		30140
+11/5/2024	DEM	Democrat	USR	United States Representative	WAL	Walton	001		14	14	Valimont	Gay		7142
+11/5/2024	REP	Republican	USR	United States Representative	BAY	Bay	002		29	29	Dunn	Neal		73885
+11/5/2024	REP	Republican	USR	United States Representative	CAL	Calhoun	002		10	10	Dunn	Neal		5430
+11/5/2024	REP	Republican	USR	United States Representative	FRA	Franklin	002		2	2	Dunn	Neal		4938
+11/5/2024	REP	Republican	USR	United States Representative	GAD	Gadsden	002		25	25	Dunn	Neal		8117
+11/5/2024	REP	Republican	USR	United States Representative	GUL	Gulf	002		10	10	Dunn	Neal		6878
+11/5/2024	REP	Republican	USR	United States Representative	HOL	Holmes	002		8	8	Dunn	Neal		8185
+11/5/2024	REP	Republican	USR	United States Representative	JAC	Jackson	002		14	14	Dunn	Neal		16566
+11/5/2024	REP	Republican	USR	United States Representative	JEF	Jefferson	002		16	16	Dunn	Neal		5176
+11/5/2024	REP	Republican	USR	United States Representative	LAF	Lafayette	002		1	1	Dunn	Neal		137
+11/5/2024	REP	Republican	USR	United States Representative	LEO	Leon	002		0	0	Dunn	Neal		63678
+11/5/2024	REP	Republican	USR	United States Representative	LIB	Liberty	002		0	0	Dunn	Neal		2900
+11/5/2024	REP	Republican	USR	United States Representative	MAD	Madison	002		11	11	Dunn	Neal		5966
+11/5/2024	REP	Republican	USR	United States Representative	TAY	Taylor	002		14	14	Dunn	Neal		8078
+11/5/2024	REP	Republican	USR	United States Representative	WAK	Wakulla	002		0	0	Dunn	Neal		14560
+11/5/2024	REP	Republican	USR	United States Representative	WAL	Walton	002		13	13	Dunn	Neal		12936
+11/5/2024	REP	Republican	USR	United States Representative	WAS	Washington	002		12	12	Dunn	Neal		10527
+11/5/2024	DEM	Democrat	USR	United States Representative	BAY	Bay	002		29	29	Bailey	Yen		22686
+11/5/2024	DEM	Democrat	USR	United States Representative	CAL	Calhoun	002		10	10	Bailey	Yen		921
+11/5/2024	DEM	Democrat	USR	United States Representative	FRA	Franklin	002		2	2	Bailey	Yen		1730
+11/5/2024	DEM	Democrat	USR	United States Representative	GAD	Gadsden	002		25	25	Bailey	Yen		13384
+11/5/2024	DEM	Democrat	USR	United States Representative	GUL	Gulf	002		10	10	Bailey	Yen		1745
+11/5/2024	DEM	Democrat	USR	United States Representative	HOL	Holmes	002		8	8	Bailey	Yen		852
+11/5/2024	DEM	Democrat	USR	United States Representative	JAC	Jackson	002		14	14	Bailey	Yen		5292
+11/5/2024	DEM	Democrat	USR	United States Representative	JEF	Jefferson	002		16	16	Bailey	Yen		3218
+11/5/2024	DEM	Democrat	USR	United States Representative	LAF	Lafayette	002		1	1	Bailey	Yen		15
+11/5/2024	DEM	Democrat	USR	United States Representative	LEO	Leon	002		0	0	Bailey	Yen		88719
+11/5/2024	DEM	Democrat	USR	United States Representative	LIB	Liberty	002		0	0	Bailey	Yen		527
+11/5/2024	DEM	Democrat	USR	United States Representative	MAD	Madison	002		11	11	Bailey	Yen		2967
+11/5/2024	DEM	Democrat	USR	United States Representative	TAY	Taylor	002		14	14	Bailey	Yen		1760
+11/5/2024	DEM	Democrat	USR	United States Representative	WAK	Wakulla	002		0	0	Bailey	Yen		4998
+11/5/2024	DEM	Democrat	USR	United States Representative	WAL	Walton	002		13	13	Bailey	Yen		3552
+11/5/2024	DEM	Democrat	USR	United States Representative	WAS	Washington	002		12	12	Bailey	Yen		1957
+11/5/2024	REP	Republican	USR	United States Representative	ALA	Alachua	003		63	63	Cammack	Kat		54872
+11/5/2024	REP	Republican	USR	United States Representative	BAK	Baker	003		9	9	Cammack	Kat		12680
+11/5/2024	REP	Republican	USR	United States Representative	BRA	Bradford	003		13	13	Cammack	Kat		10682
+11/5/2024	REP	Republican	USR	United States Representative	CLM	Columbia	003		28	28	Cammack	Kat		24929
+11/5/2024	REP	Republican	USR	United States Representative	DIX	Dixie	003		10	10	Cammack	Kat		6917
+11/5/2024	REP	Republican	USR	United States Representative	GIL	Gilchrist	003		10	10	Cammack	Kat		9010
+11/5/2024	REP	Republican	USR	United States Representative	HAM	Hamilton	003		8	8	Cammack	Kat		3909
+11/5/2024	REP	Republican	USR	United States Representative	LAF	Lafayette	003		5	5	Cammack	Kat		3130
+11/5/2024	REP	Republican	USR	United States Representative	LEV	Levy	003		13	13	Cammack	Kat		18297
+11/5/2024	REP	Republican	USR	United States Representative	MRN	Marion	003		62	62	Cammack	Kat		74159
+11/5/2024	REP	Republican	USR	United States Representative	SUW	Suwannee	003		9	9	Cammack	Kat		17367
+11/5/2024	REP	Republican	USR	United States Representative	UNI	Union	003		13	13	Cammack	Kat		5222
+11/5/2024	DEM	Democrat	USR	United States Representative	ALA	Alachua	003		63	63	Wells	Tom		78904
+11/5/2024	DEM	Democrat	USR	United States Representative	BAK	Baker	003		9	9	Wells	Tom		2014
+11/5/2024	DEM	Democrat	USR	United States Representative	BRA	Bradford	003		13	13	Wells	Tom		2805
+11/5/2024	DEM	Democrat	USR	United States Representative	CLM	Columbia	003		28	28	Wells	Tom		8026
+11/5/2024	DEM	Democrat	USR	United States Representative	DIX	Dixie	003		10	10	Wells	Tom		1108
+11/5/2024	DEM	Democrat	USR	United States Representative	GIL	Gilchrist	003		10	10	Wells	Tom		1552
+11/5/2024	DEM	Democrat	USR	United States Representative	HAM	Hamilton	003		8	8	Wells	Tom		1677
+11/5/2024	DEM	Democrat	USR	United States Representative	LAF	Lafayette	003		5	5	Wells	Tom		416
+11/5/2024	DEM	Democrat	USR	United States Representative	LEV	Levy	003		13	13	Wells	Tom		5715
+11/5/2024	DEM	Democrat	USR	United States Representative	MRN	Marion	003		62	62	Wells	Tom		42995
+11/5/2024	DEM	Democrat	USR	United States Representative	SUW	Suwannee	003		9	9	Wells	Tom		4134
+11/5/2024	DEM	Democrat	USR	United States Representative	UNI	Union	003		13	13	Wells	Tom		937
+11/5/2024	REP	Republican	USR	United States Representative	CLA	Clay	004		48	48	Bean	Aaron		89235
+11/5/2024	REP	Republican	USR	United States Representative	DUV	Duval	004		79	79	Bean	Aaron		83618
+11/5/2024	REP	Republican	USR	United States Representative	NAS	Nassau	004		18	18	Bean	Aaron		49511
+11/5/2024	DEM	Democrat	USR	United States Representative	CLA	Clay	004		48	48	Holloway	LaShonda 'L.J.'		35325
+11/5/2024	DEM	Democrat	USR	United States Representative	DUV	Duval	004		79	79	Holloway	LaShonda 'L.J.'		115305
+11/5/2024	DEM	Democrat	USR	United States Representative	NAS	Nassau	004		18	18	Holloway	LaShonda 'L.J.'		15282
+11/5/2024	WRI	Write-In	USR	United States Representative	CLA	Clay	004		48	48	Schaefer	Todd		33
+11/5/2024	WRI	Write-In	USR	United States Representative	DUV	Duval	004		79	79	Schaefer	Todd		31
+11/5/2024	WRI	Write-In	USR	United States Representative	NAS	Nassau	004		18	18	Schaefer	Todd		9
+11/5/2024	REP	Republican	USR	United States Representative	DUV	Duval	005		81	81	Rutherford	John	H.	154586
+11/5/2024	REP	Republican	USR	United States Representative	STJ	St. Johns	005		47	47	Rutherford	John	H.	112885
+11/5/2024	DEM	Democrat	USR	United States Representative	DUV	Duval	005		81	81	McGovern	Jay		103698
+11/5/2024	DEM	Democrat	USR	United States Representative	STJ	St. Johns	005		47	47	McGovern	Jay		52872
+11/5/2024	WRI	Write-In	USR	United States Representative	DUV	Duval	005		81	81	Koniz	Gary	L.	15
+11/5/2024	WRI	Write-In	USR	United States Representative	STJ	St. Johns	005		47	47	Koniz	Gary	L.	8
+11/5/2024	REP	Republican	USR	United States Representative	FLA	Flagler	006		21	21	Waltz	Michael		51079
+11/5/2024	REP	Republican	USR	United States Representative	LAK	Lake	006		30	30	Waltz	Michael		43770
+11/5/2024	REP	Republican	USR	United States Representative	MRN	Marion	006		45	45	Waltz	Michael		64810
+11/5/2024	REP	Republican	USR	United States Representative	PUT	Putnam	006		37	37	Waltz	Michael		26002
+11/5/2024	REP	Republican	USR	United States Representative	STJ	St. Johns	006		11	11	Waltz	Michael		18275
+11/5/2024	REP	Republican	USR	United States Representative	VOL	Volusia	006		69	69	Waltz	Michael		80478
+11/5/2024	DEM	Democrat	USR	United States Representative	FLA	Flagler	006		21	21	Stockton	James	David	26244
+11/5/2024	DEM	Democrat	USR	United States Representative	LAK	Lake	006		30	30	Stockton	James	David	19919
+11/5/2024	DEM	Democrat	USR	United States Representative	MRN	Marion	006		45	45	Stockton	James	David	26374
+11/5/2024	DEM	Democrat	USR	United States Representative	PUT	Putnam	006		37	37	Stockton	James	David	9176
+11/5/2024	DEM	Democrat	USR	United States Representative	STJ	St. Johns	006		11	11	Stockton	James	David	8596
+11/5/2024	DEM	Democrat	USR	United States Representative	VOL	Volusia	006		69	69	Stockton	James	David	52741
+11/5/2024	WRI	Write-In	USR	United States Representative	FLA	Flagler	006		21	21	Dembinsky	Richard	Paul	2
+11/5/2024	WRI	Write-In	USR	United States Representative	LAK	Lake	006		30	30	Dembinsky	Richard	Paul	1
+11/5/2024	WRI	Write-In	USR	United States Representative	MRN	Marion	006		45	45	Dembinsky	Richard	Paul	4
+11/5/2024	WRI	Write-In	USR	United States Representative	PUT	Putnam	006		37	37	Dembinsky	Richard	Paul	0
+11/5/2024	WRI	Write-In	USR	United States Representative	STJ	St. Johns	006		11	11	Dembinsky	Richard	Paul	1
+11/5/2024	WRI	Write-In	USR	United States Representative	VOL	Volusia	006		69	69	Dembinsky	Richard	Paul	2
+11/5/2024	REP	Republican	USR	United States Representative	SEM	Seminole	007		82	82	Mills	Cory	Lee	128206
+11/5/2024	REP	Republican	USR	United States Representative	VOL	Volusia	007		74	74	Mills	Cory	Lee	105731
+11/5/2024	DEM	Democrat	USR	United States Representative	SEM	Seminole	007		82	82	Adams	Jennifer		118162
+11/5/2024	DEM	Democrat	USR	United States Representative	VOL	Volusia	007		74	74	Adams	Jennifer		61755
+11/5/2024	REP	Republican	USR	United States Representative	BRE	Brevard	008		163	163	Haridopolos	Mike		217174
+11/5/2024	REP	Republican	USR	United States Representative	IND	Indian River	008		34	34	Haridopolos	Mike		62110
+11/5/2024	REP	Republican	USR	United States Representative	ORA	Orange	008		3	3	Haridopolos	Mike		1068
+11/5/2024	DEM	Democrat	USR	United States Representative	BRE	Brevard	008		163	163	Kennedy	Sandy		136014
+11/5/2024	DEM	Democrat	USR	United States Representative	IND	Indian River	008		34	34	Kennedy	Sandy		33751
+11/5/2024	DEM	Democrat	USR	United States Representative	ORA	Orange	008		3	3	Kennedy	Sandy		331
+11/5/2024	REP	Republican	USR	United States Representative	ORA	Orange	009		55	55	Chalifoux	Thomas		53598
+11/5/2024	REP	Republican	USR	United States Representative	OSC	Osceola	009		126	126	Chalifoux	Thomas		74399
+11/5/2024	REP	Republican	USR	United States Representative	POL	Polk	009		9	9	Chalifoux	Thomas		10079
+11/5/2024	DEM	Democrat	USR	United States Representative	ORA	Orange	009		55	55	Soto	Darren		73578
+11/5/2024	DEM	Democrat	USR	United States Representative	OSC	Osceola	009		126	126	Soto	Darren		90405
+11/5/2024	DEM	Democrat	USR	United States Representative	POL	Polk	009		9	9	Soto	Darren		14802
+11/5/2024	NPA	No Party Affiliation	USR	United States Representative	ORA	Orange	009		55	55	Carter	Marcus		3026
+11/5/2024	NPA	No Party Affiliation	USR	United States Representative	OSC	Osceola	009		126	126	Carter	Marcus		3928
+11/5/2024	NPA	No Party Affiliation	USR	United States Representative	POL	Polk	009		9	9	Carter	Marcus		458
+11/5/2024	REP	Republican	USR	United States Representative	ORA	Orange	010		144	144	Montague	Willie	J.	109460
+11/5/2024	DEM	Democrat	USR	United States Representative	ORA	Orange	010		144	144	Frost	Maxwell	Alejandro	181455
+11/5/2024	REP	Republican	USR	United States Representative	LAK	Lake	011		62	62	Webster	Daniel		98163
+11/5/2024	REP	Republican	USR	United States Representative	ORA	Orange	011		56	56	Webster	Daniel		84636
+11/5/2024	REP	Republican	USR	United States Representative	POL	Polk	011		11	11	Webster	Daniel		12359
+11/5/2024	REP	Republican	USR	United States Representative	SUM	Sumter	011		30	30	Webster	Daniel		74119
+11/5/2024	DEM	Democrat	USR	United States Representative	LAK	Lake	011		62	62	Harden Hall	Barbie		58511
+11/5/2024	DEM	Democrat	USR	United States Representative	ORA	Orange	011		56	56	Harden Hall	Barbie		81638
+11/5/2024	DEM	Democrat	USR	United States Representative	POL	Polk	011		11	11	Harden Hall	Barbie		7340
+11/5/2024	DEM	Democrat	USR	United States Representative	SUM	Sumter	011		30	30	Harden Hall	Barbie		29237
+11/5/2024	REP	Republican	USR	United States Representative	CIT	Citrus	012		32	32	Bilirakis	Gus	Michael	72535
+11/5/2024	REP	Republican	USR	United States Representative	HER	Hernando	012		32	32	Bilirakis	Gus	Michael	76477
+11/5/2024	REP	Republican	USR	United States Representative	PAS	Pasco	012		87	87	Bilirakis	Gus	Michael	157475
+11/5/2024	DEM	Democrat	USR	United States Representative	CIT	Citrus	012		32	32	Aboujaoude	Rock		22867
+11/5/2024	DEM	Democrat	USR	United States Representative	HER	Hernando	012		32	32	Aboujaoude	Rock		31287
+11/5/2024	DEM	Democrat	USR	United States Representative	PAS	Pasco	012		87	87	Aboujaoude	Rock		70795
+11/5/2024	REP	Republican	USR	United States Representative	PIN	Pinellas	013		229	229	Luna	Anna	Paulina	225636
+11/5/2024	DEM	Democrat	USR	United States Representative	PIN	Pinellas	013		229	229	Fox	Whitney		185930
+11/5/2024	WRI	Write-In	USR	United States Representative	PIN	Pinellas	013		229	229	D'Arrigo	Tony		27
+11/5/2024	REP	Republican	USR	United States Representative	HIL	Hillsborough	014		178	178	Rochford	Robert	'Rocky'	111609
+11/5/2024	REP	Republican	USR	United States Representative	PIN	Pinellas	014		57	57	Rochford	Robert	'Rocky'	34034
+11/5/2024	DEM	Democrat	USR	United States Representative	HIL	Hillsborough	014		178	178	Castor	Kathy		138203
+11/5/2024	DEM	Democrat	USR	United States Representative	PIN	Pinellas	014		57	57	Castor	Kathy		61220
+11/5/2024	LPF	Libertarian Party of Florida	USR	United States Representative	HIL	Hillsborough	014		178	178	Snyder	Nathaniel	T.	1769
+11/5/2024	LPF	Libertarian Party of Florida	USR	United States Representative	PIN	Pinellas	014		57	57	Snyder	Nathaniel	T.	755
+11/5/2024	NPA	No Party Affiliation	USR	United States Representative	HIL	Hillsborough	014		178	178	Bradley	Christopher		1777
+11/5/2024	NPA	No Party Affiliation	USR	United States Representative	PIN	Pinellas	014		57	57	Bradley	Christopher		818
+11/5/2024	REP	Republican	USR	United States Representative	HIL	Hillsborough	015		165	165	Lee	Laurel		113853
+11/5/2024	REP	Republican	USR	United States Representative	PAS	Pasco	015		34	34	Lee	Laurel		47973
+11/5/2024	REP	Republican	USR	United States Representative	POL	Polk	015		27	27	Lee	Laurel		33508
+11/5/2024	DEM	Democrat	USR	United States Representative	HIL	Hillsborough	015		165	165	Kemp	Patricia 'Pat'		98776
+11/5/2024	DEM	Democrat	USR	United States Representative	PAS	Pasco	015		34	34	Kemp	Patricia 'Pat'		33904
+11/5/2024	DEM	Democrat	USR	United States Representative	POL	Polk	015		27	27	Kemp	Patricia 'Pat'		19681
+11/5/2024	REP	Republican	USR	United States Representative	HIL	Hillsborough	016		106	106	Buchanan	Vern		104031
+11/5/2024	REP	Republican	USR	United States Representative	MAN	Manatee	016		71	71	Buchanan	Vern		143485
+11/5/2024	DEM	Democrat	USR	United States Representative	HIL	Hillsborough	016		106	106	Schneider	Jan		87516
+11/5/2024	DEM	Democrat	USR	United States Representative	MAN	Manatee	016		71	71	Schneider	Jan		81109
+11/5/2024	REP	Republican	USR	United States Representative	CHA	Charlotte	017		82	82	Steube	Greg		83705
+11/5/2024	REP	Republican	USR	United States Representative	LEE	Lee	017		21	21	Steube	Greg		41019
+11/5/2024	REP	Republican	USR	United States Representative	SAR	Sarasota	017		103	103	Steube	Greg		166623
+11/5/2024	DEM	Democrat	USR	United States Representative	CHA	Charlotte	017		82	82	Lopez	Manny		37399
+11/5/2024	DEM	Democrat	USR	United States Representative	LEE	Lee	017		21	21	Lopez	Manny		21465
+11/5/2024	DEM	Democrat	USR	United States Representative	SAR	Sarasota	017		103	103	Lopez	Manny		105702
+11/5/2024	WRI	Write-In	USR	United States Representative	CHA	Charlotte	017		82	82	Hartman	Ralph	E.	3
+11/5/2024	WRI	Write-In	USR	United States Representative	LEE	Lee	017		21	21	Hartman	Ralph	E.	1
+11/5/2024	WRI	Write-In	USR	United States Representative	SAR	Sarasota	017		103	103	Hartman	Ralph	E.	4
+11/5/2024	REP	Republican	USR	United States Representative	CLL	Collier	018		1	1	Franklin	Scott		260
+11/5/2024	REP	Republican	USR	United States Representative	DES	Desoto	018		15	15	Franklin	Scott		8574
+11/5/2024	REP	Republican	USR	United States Representative	GLA	Glades	018		13	13	Franklin	Scott		3965
+11/5/2024	REP	Republican	USR	United States Representative	HAR	Hardee	018		12	12	Franklin	Scott		6189
+11/5/2024	REP	Republican	USR	United States Representative	HEN	Hendry	018		10	10	Franklin	Scott		8949
+11/5/2024	REP	Republican	USR	United States Representative	HIG	Highlands	018		25	25	Franklin	Scott		35793
+11/5/2024	REP	Republican	USR	United States Representative	OKE	Okeechobee	018		11	11	Franklin	Scott		11955
+11/5/2024	REP	Republican	USR	United States Representative	POL	Polk	018		125	125	Franklin	Scott		149485
+11/5/2024	DEM	Democrat	USR	United States Representative	CLL	Collier	018		1	1	Kale	Andrea	Doria	405
+11/5/2024	DEM	Democrat	USR	United States Representative	DES	Desoto	018		15	15	Kale	Andrea	Doria	3455
+11/5/2024	DEM	Democrat	USR	United States Representative	GLA	Glades	018		13	13	Kale	Andrea	Doria	1167
+11/5/2024	DEM	Democrat	USR	United States Representative	HAR	Hardee	018		12	12	Kale	Andrea	Doria	1733
+11/5/2024	DEM	Democrat	USR	United States Representative	HEN	Hendry	018		10	10	Kale	Andrea	Doria	4112
+11/5/2024	DEM	Democrat	USR	United States Representative	HIG	Highlands	018		25	25	Kale	Andrea	Doria	14596
+11/5/2024	DEM	Democrat	USR	United States Representative	OKE	Okeechobee	018		11	11	Kale	Andrea	Doria	3597
+11/5/2024	DEM	Democrat	USR	United States Representative	POL	Polk	018		125	125	Kale	Andrea	Doria	90572
+11/5/2024	REP	Republican	USR	United States Representative	CLL	Collier	019		37	37	Donalds	Byron		68749
+11/5/2024	REP	Republican	USR	United States Representative	LEE	Lee	019		85	85	Donalds	Byron		206959
+11/5/2024	DEM	Democrat	USR	United States Representative	CLL	Collier	019		37	37	Lerner	Kari	L.	31297
+11/5/2024	DEM	Democrat	USR	United States Representative	LEE	Lee	019		85	85	Lerner	Kari	L.	108741
+11/5/2024	REP	Republican	USR	United States Representative	MRT	Martin	021		28	28	Mast	Brian		68667
+11/5/2024	REP	Republican	USR	United States Representative	PAL	Palm Beach	021		221	221	Mast	Brian		103928
+11/5/2024	REP	Republican	USR	United States Representative	STL	St. Lucie	021		61	61	Mast	Brian		104840
+11/5/2024	DEM	Democrat	USR	United States Representative	MRT	Martin	021		28	28	Witkop	Thomas		28855
+11/5/2024	DEM	Democrat	USR	United States Representative	PAL	Palm Beach	021		221	221	Witkop	Thomas		64929
+11/5/2024	DEM	Democrat	USR	United States Representative	STL	St. Lucie	021		61	61	Witkop	Thomas		77528
+11/5/2024	WRI	Write-In	USR	United States Representative	MRT	Martin	021		28	28	Felton	Elizabeth		0
+11/5/2024	WRI	Write-In	USR	United States Representative	PAL	Palm Beach	021		221	221	Felton	Elizabeth		12
+11/5/2024	WRI	Write-In	USR	United States Representative	STL	St. Lucie	021		61	61	Felton	Elizabeth		7
+11/5/2024	REP	Republican	USR	United States Representative	PAL	Palm Beach	022		384	384	Franzese	Dan		165248
+11/5/2024	DEM	Democrat	USR	United States Representative	PAL	Palm Beach	022		384	384	Frankel	Lois		201608
+11/5/2024	REP	Republican	USR	United States Representative	BRO	Broward	023		104	104	Kaufman	Joseph 'Joe'		120721
+11/5/2024	REP	Republican	USR	United States Representative	PAL	Palm Beach	023		80	80	Kaufman	Joseph 'Joe'		57285
+11/5/2024	DEM	Democrat	USR	United States Representative	BRO	Broward	023		104	104	Moskowitz	Jared		145091
+11/5/2024	DEM	Democrat	USR	United States Representative	PAL	Palm Beach	023		80	80	Moskowitz	Jared		51220
+11/5/2024	REP	Republican	USR	United States Representative	BRO	Broward	024		12	12	Navarro	Jesus	Gabriel	6461
+11/5/2024	REP	Republican	USR	United States Representative	DAD	Miami-Dade	024		214	214	Navarro	Jesus	Gabriel	84231
+11/5/2024	DEM	Democrat	USR	United States Representative	BRO	Broward	024		12	12	Wilson	Frederica		24182
+11/5/2024	DEM	Democrat	USR	United States Representative	DAD	Miami-Dade	024		214	214	Wilson	Frederica		170692
+11/5/2024	WRI	Write-In	USR	United States Representative	BRO	Broward	024		12	12	Spicer	Lavern		3
+11/5/2024	WRI	Write-In	USR	United States Representative	DAD	Miami-Dade	024		214	214	Spicer	Lavern		19
+11/5/2024	REP	Republican	USR	United States Representative	BRO	Broward	025		142	142	Eddy	Chris		156208
+11/5/2024	DEM	Democrat	USR	United States Representative	BRO	Broward	025		142	142	Wasserman Schultz	Debbie		186942
+11/5/2024	WRI	Write-In	USR	United States Representative	BRO	Broward	025		142	142	Goldfarb	Eddie		41
+11/5/2024	REP	Republican	USR	United States Representative	CLL	Collier	026		39	39	Diaz-Balart	Mario		78732
+11/5/2024	REP	Republican	USR	United States Representative	DAD	Miami-Dade	026		149	149	Diaz-Balart	Mario		138467
+11/5/2024	DEM	Democrat	USR	United States Representative	CLL	Collier	026		39	39	Atkins	Joey		32911
+11/5/2024	DEM	Democrat	USR	United States Representative	DAD	Miami-Dade	026		149	149	Atkins	Joey		56161
+11/5/2024	REP	Republican	USR	United States Representative	DAD	Miami-Dade	027		221	221	Salazar	Maria	Elvira	199159
+11/5/2024	DEM	Democrat	USR	United States Representative	DAD	Miami-Dade	027		221	221	Báez-Geller	Lucia		130708
+11/5/2024	REP	Republican	USR	United States Representative	DAD	Miami-Dade	028		177	177	Gimenez	Carlos	A.	183428
+11/5/2024	REP	Republican	USR	United States Representative	MON	Monroe	028		33	33	Gimenez	Carlos	A.	26629
+11/5/2024	DEM	Democrat	USR	United States Representative	DAD	Miami-Dade	028		177	177	Ehr	Phil		98853
+11/5/2024	DEM	Democrat	USR	United States Representative	MON	Monroe	028		33	33	Ehr	Phil		16427
