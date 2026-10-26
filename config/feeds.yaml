@@ -225,40 +225,100 @@ feeds:
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-FL-H09:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:009
+    display: {D: Darren Soto, R: Dan Green}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 09. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-FL-H13:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:013
+    display: {D: Leela Gray, R: Anna Paulina Luna}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 13. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-FL-H14:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:014
+    display: {D: Kathy Castor, R: Mike Beltran}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 14. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-FL-H22:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:022
+    display: {D: Pia Dandiya, R: Casey Askar}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 22. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-FL-H25:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:025
+    display: {D: Jared Moskowitz, R: Scott Singer}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 25. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-FL-H27:
     adapter: fl_dos
-    url: null
+    url: https://results.elections.myflorida.com/ResultsExtract.Asp
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: USR:027
+    display: {D: Eliott Rodriguez, R: María Elvira Salazar}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    notes: Same DOS extract as 2026-FL-SEN-SPECIAL, filtered to RaceCode USR, Juris1num 27. Ballot
+      names are set once the 2026 file lists them. Oct 26, the host answered this machine
+      with a Cloudflare challenge; recheck from the VM.
+    params:
+      OfficialResults: N
+      PartyRaces: N
+      DataMode: ''
+      FormsButton2: Download
   2026-IA-H01:
     adapter: ia_clarity
     url: null
