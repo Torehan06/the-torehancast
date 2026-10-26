@@ -245,7 +245,8 @@ races:
     baseline: 2024_pres_2026lines_09
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-FL-H13:
     state: FL
     race_type: house
@@ -254,7 +255,8 @@ races:
     baseline: 2024_pres_2026lines_13
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-FL-H14:
     state: FL
     race_type: house
@@ -263,7 +265,8 @@ races:
     baseline: 2024_pres_2026lines_14
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-FL-H22:
     state: FL
     race_type: house
@@ -272,7 +275,8 @@ races:
     baseline: 2024_pres_2026lines_22
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-FL-H25:
     state: FL
     race_type: house
@@ -281,7 +285,8 @@ races:
     baseline: 2024_pres_2026lines_25
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-FL-H27:
     state: FL
     race_type: house
@@ -290,7 +295,8 @@ races:
     baseline: 2024_pres_2026lines_27
     ranked_choice: false
     status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    notes: Lines redrawn for 2026 (EOGPCRP2026); baseline is 2024 Pres rebuilt on the new lines
+      from DOS precinct files (fl_precinct). Waiting on those files (W7).
   2026-IA-H01:
     state: IA
     race_type: house
