@@ -189,6 +189,45 @@ def county_names(extract_text: str) -> dict[str, str]:
             for r in csv.DictReader(io.StringIO(extract_text), delimiter="\t")}
 
 
+# County FIPS (the census block GEOID's characters 3-5) → the live extract's spelling.
+# Dade's old 025 became Miami-Dade's 086 in 1997.
+FIPS = {
+    "001": "ALACHUA", "003": "BAKER", "005": "BAY", "007": "BRADFORD", "009": "BREVARD", "011": "BROWARD",
+    "013": "CALHOUN", "015": "CHARLOTTE", "017": "CITRUS", "019": "CLAY", "021": "COLLIER", "023": "COLUMBIA",
+    "027": "DESOTO", "029": "DIXIE", "031": "DUVAL", "033": "ESCAMBIA", "035": "FLAGLER", "037": "FRANKLIN",
+    "039": "GADSDEN", "041": "GILCHRIST", "043": "GLADES", "045": "GULF", "047": "HAMILTON", "049": "HARDEE",
+    "051": "HENDRY", "053": "HERNANDO", "055": "HIGHLANDS", "057": "HILLSBOROUGH", "059": "HOLMES",
+    "061": "INDIAN RIVER", "063": "JACKSON", "065": "JEFFERSON", "067": "LAFAYETTE", "069": "LAKE", "071": "LEE",
+    "073": "LEON", "075": "LEVY", "077": "LIBERTY", "079": "MADISON", "081": "MANATEE", "083": "MARION",
+    "085": "MARTIN", "086": "MIAMI-DADE", "087": "MONROE", "089": "NASSAU", "091": "OKALOOSA",
+    "093": "OKEECHOBEE", "095": "ORANGE", "097": "OSCEOLA", "099": "PALM BEACH", "101": "PASCO",
+    "103": "PINELLAS", "105": "POLK", "107": "PUTNAM", "109": "ST. JOHNS", "111": "ST. LUCIE",
+    "113": "SANTA ROSA", "115": "SARASOTA", "117": "SEMINOLE", "119": "SUMTER", "121": "SUWANNEE",
+    "123": "TAYLOR", "125": "UNION", "127": "VOLUSIA", "129": "WAKULLA", "131": "WALTON", "133": "WASHINGTON",
+}
+
+
+def plan_counties(block_file_text: str, district: int) -> set[str]:
+    """The counties the enacted plan's block assignment file puts (partly) in `district`.
+
+    Lines are `GEOID,district`, e.g. `120570101011000,14`.
+    """
+    out = set()
+    for line in block_file_text.splitlines():
+        geoid, _, d = line.strip().partition(",")
+        if d and int(d) == district:
+            out.add(FIPS[geoid[2:5]])
+    return out
+
+
+def check_against_plan(snap: Snapshot, block_file_text: str, district: int) -> None:
+    """The crosswalk's county parts must be exactly the plan's counties for the district."""
+    found, plan = {c.unit_id for c in snap.cells}, plan_counties(block_file_text, district)
+    if found != plan:
+        raise CrosswalkError(f"district {district}: precinct join gives counties {sorted(found)}, "
+                             f"the enacted plan {sorted(plan)}")
+
+
 def district_snapshot(year: pd.DataFrame, assign: pd.DataFrame, district: int, contest: str,
                       cmap: CandidateMap, names: dict[str, str], race: str) -> Snapshot:
     rows = year[year.contest == contest]
@@ -233,13 +272,17 @@ def county_snapshot(year: pd.DataFrame, contest: str, cmap: CandidateMap, names:
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
     """spec: `file` (this election's precinct archive), `names` (an extract that spells
     the counties), `contest`; plus `district` and `crosswalk` (the 2026 primary's
-    precinct archive) for a district on the 2026 lines. Without `district`: county totals."""
+    precinct archive) for a district on the 2026 lines, and optionally `plan` (the enacted
+    plan's block assignment file) to check its counties. Without `district`: county totals."""
     year = _read(archives / spec["file"])
     names = county_names((archives / spec["names"]).read_text(encoding="latin-1"))
     if "district" not in spec:
         return county_snapshot(year, spec["contest"], cmap, names, key)
     assign = assignment(_read(archives / spec["crosswalk"]))
-    return district_snapshot(year, assign, int(spec["district"]), spec["contest"], cmap, names, key)
+    snap = district_snapshot(year, assign, int(spec["district"]), spec["contest"], cmap, names, key)
+    if plan := spec.get("plan"):
+        check_against_plan(snap, (archives / plan).read_text(encoding="latin-1"), int(spec["district"]))
+    return snap
 
 
 _CACHE: dict[Path, pd.DataFrame] = {}

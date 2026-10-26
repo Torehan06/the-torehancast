@@ -164,3 +164,30 @@ def test_county_names_come_from_the_extract():
 def test_county_totals_need_no_crosswalk():
     snap = fp.county_snapshot(year_rows(), PRES, CandidateMap(CMAP), NAMES, "2016_pres")
     assert {c.unit_id: c.votes for c in snap.cells} == {"ALPHA": {"R": 1150, "D": 950}, "BRAVO": {"R": 200, "D": 100}}
+
+
+def test_fips_table_spells_every_county_as_the_live_extract_does():
+    names = fp.county_names(fl_extract_text())
+    assert sorted(fp.FIPS.values()) == sorted(names.values())
+
+
+def fl_extract_text():
+    from pathlib import Path
+    return (Path(__file__).parents[1] / "fixtures" / "fl" / "extract_20241105.txt").read_text(encoding="latin-1")
+
+
+def test_plan_counties_read_the_block_assignment_file():
+    blocks = "120570101011000,14\n120990001001000,22\n120110001001000,22\n120860001001000,27\n"
+    assert fp.plan_counties(blocks, 22) == {"PALM BEACH", "BROWARD"}
+    assert fp.plan_counties(blocks, 27) == {"MIAMI-DADE"}
+
+
+def test_crosswalk_counties_must_match_the_plan():
+    snap = snapshot(year_rows())  # district 9 → ALPHA only
+    fp.FIPS.setdefault("990", "ALPHA")
+    try:
+        fp.check_against_plan(snap, "129900001001000,9\n", 9)
+        with pytest.raises(fp.CrosswalkError, match="enacted plan"):
+            fp.check_against_plan(snap, "129900001001000,9\n120110001001000,9\n", 9)
+    finally:
+        del fp.FIPS["990"]
