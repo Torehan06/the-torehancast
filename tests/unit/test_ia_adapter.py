@@ -54,8 +54,9 @@ def test_parses_2020_us_senate_contest():
 def test_partial_precinct_reporting_and_missing_contest():
     text = ia.load_archive(FIX, "122322")
     root = ET.fromstring(text)
+    contest = next(c for c in root.findall("Contest") if c.attrib["text"] == "President and Vice President")
     polk = next(
-        c for c in root.findall("./ElectionVoterTurnout/Counties/County") if c.attrib["name"] == "Polk"
+        c for c in contest.findall("./ParticipatingCounties/County") if c.attrib["name"] == "Polk"
     )
     polk.set("precinctsReported", "88")
     polk.set("precinctsParticipating", "176")
