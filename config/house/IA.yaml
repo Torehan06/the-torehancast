@@ -1,0 +1,58 @@
+# Iowa House elections (W7), read by elections.load() next to elections.yaml, and
+# the House replays, read by replay.harness.
+#
+# All from the statewide Clarity detail.xml on electionresults.iowa.gov. Iowa's
+# districts are whole counties (lines unchanged since the 2022 elections), so each
+# county part is its whole county: IA-1 has 20, IA-2 22, IA-3 21.
+elections:
+  2024_house_01:
+    adapter: ia_clarity
+    election_id: "122322"
+    contest: "United States Representative District 1"
+    candidates: {"Mariannette Miller-Meeks": R, "Christina Bohannan": D}
+  2024_house_02:
+    adapter: ia_clarity
+    election_id: "122322"
+    contest: "United States Representative District 2"
+    candidates: {"Ashley Hinson": R, "Sarah Corkery": D}
+  2024_house_03:
+    adapter: ia_clarity
+    election_id: "122322"
+    contest: "United States Representative District 3"
+    candidates: {"Zach Nunn": R, "Lanon Baccam": D}
+
+# Replays. The analogous House pair (2022 → 2024 House on these lines, τ from 2020 →
+# 2022) needs the 2022 Clarity file, which can't be fetched: on Oct 26 both
+# electionresults.iowa.gov (AWS WAF challenge) and sos.iowa.gov (Cloudflare 403)
+# refuse the project's client. Until it can be, each district replays the plan's
+# fallback: 2020 → 2024 president on the district's own counties, with τ from Iowa's
+# statewide county pair, exactly as the Senate replay.
+#
+# Prior: the district's 2020 two-party presidential margin plus the swing Iowa's
+# pre-election polling average implied (Senate replay prior, R+4.5 → −0.047
+# two-party, against the 2020 statewide result of −0.0837: +0.037). The result was
+# R+13.4 statewide, so like the Senate replay these priors are 8–10 points too D.
+# Turnout as the Senate replay. Two-party margins from the archive (2020 → 2024):
+#   IA-1 −0.0294 → −0.0859    IA-2 −0.0448 → −0.1013    IA-3 −0.0035 → −0.0446
+replay:
+  2026-IA-H01:
+    primary:
+      baseline: 2020_pres
+      target: 2024_pres
+      units: 2024_house_01
+      tau_pair: [2016_pres, 2020_pres]
+      prior: {margin: 0.007, margin_sd: 0.06, turnout_ratio: 1.00, turnout_sd: 0.10}
+  2026-IA-H02:
+    primary:
+      baseline: 2020_pres
+      target: 2024_pres
+      units: 2024_house_02
+      tau_pair: [2016_pres, 2020_pres]
+      prior: {margin: -0.008, margin_sd: 0.06, turnout_ratio: 1.00, turnout_sd: 0.10}
+  2026-IA-H03:
+    primary:
+      baseline: 2020_pres
+      target: 2024_pres
+      units: 2024_house_03
+      tau_pair: [2016_pres, 2020_pres]
+      prior: {margin: 0.033, margin_sd: 0.06, turnout_ratio: 1.00, turnout_sd: 0.10}

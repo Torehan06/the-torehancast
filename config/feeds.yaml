@@ -264,19 +264,34 @@ feeds:
     url: null
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    polls_close: '2026-11-03T20:00:00-06:00'
+    reference_url: https://electionresults.iowa.gov/IA/elections.json
+    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
+      "United States Representative District 1" in 2020 and 2024; set contest and
+      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
+      challenge from this IP.
   2026-IA-H02:
     adapter: ia_clarity
     url: null
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    polls_close: '2026-11-03T20:00:00-06:00'
+    reference_url: https://electionresults.iowa.gov/IA/elections.json
+    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
+      "United States Representative District 2" in 2020 and 2024; set contest and
+      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
+      challenge from this IP.
   2026-IA-H03:
     adapter: ia_clarity
     url: null
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    polls_close: '2026-11-03T20:00:00-06:00'
+    reference_url: https://electionresults.iowa.gov/IA/elections.json
+    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
+      "United States Representative District 3" in 2020 and 2024; set contest and
+      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
+      challenge from this IP.
   2026-IN-H01:
     adapter: null
     url: null

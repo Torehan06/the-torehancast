@@ -297,27 +297,36 @@ races:
     unit: county-part
     priority: 31
     baseline: 2024_house_01
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    notes: Whole counties (lines unchanged since 2022); baseline is the 2024 House result by
+      county (config/house/IA.yaml). Replay is 2020 to 2024 Pres on the district's counties
+      until the 2022 file can be fetched; tau is the statewide pair, as 2026-IA-SEN.
   2026-IA-H02:
     state: IA
     race_type: house
     unit: county-part
     priority: 32
     baseline: 2024_house_02
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    notes: Whole counties (lines unchanged since 2022); baseline is the 2024 House result by
+      county (config/house/IA.yaml). Replay is 2020 to 2024 Pres on the district's counties
+      until the 2022 file can be fetched; tau is the statewide pair, as 2026-IA-SEN.
   2026-IA-H03:
     state: IA
     race_type: house
     unit: county-part
     priority: 33
     baseline: 2024_house_03
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
     status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    notes: Whole counties (lines unchanged since 2022); baseline is the 2024 House result by
+      county (config/house/IA.yaml). Replay is 2020 to 2024 Pres on the district's counties
+      until the 2022 file can be fetched; tau is the statewide pair, as 2026-IA-SEN.
   2026-IN-H01:
     state: IN
     race_type: house
