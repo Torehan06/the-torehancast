@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { loose, strict, type Race } from './contract'
+import { loose, RACE_ID, strict, type Race } from './contract'
 
 export interface ParsedSummary {
   generatedAt: Date
@@ -54,12 +54,14 @@ function explain(issues: Issue[], prefix: PropertyKey[] = []): { path: PropertyK
   })
 }
 
-export type FileKind = 'summary' | 'detail' | 'index'
+export type FileKind = 'summary' | 'house' | 'detail' | 'index'
 
+/** Detail files are named by race ID: races/2026-NC-H01.json. */
 export function fileKind(name: string): FileKind | null {
   if (name === 'summary.json') return 'summary'
+  if (name === 'house.json') return 'house'
   if (name === 'index.json') return 'index'
-  if (/^[A-Z]{2}\.json$/.test(name)) return 'detail'
+  if (name.endsWith('.json') && RACE_ID.test(name.slice(0, -'.json'.length))) return 'detail'
   return null
 }
 
@@ -72,15 +74,18 @@ export function fileKind(name: string): FileKind | null {
 export function validatePublicFile(name: string, raw: unknown, requireV1 = false): string[] {
   const kind = fileKind(name)
   if (kind === null) return [`${name}: not a recognised public file name`]
-  const schema = kind === 'summary' ? strict.summary : kind === 'index' ? strict.replayIndex : strict.anyRace
+  const schema = { summary: strict.summary, house: strict.house, index: strict.replayIndex, detail: strict.anyRace }[kind]
   const parsed = schema.safeParse(raw)
   if (!parsed.success) {
     return explain(parsed.error.issues).map((i) => `${name}: ${i.path.join('.') || '(root)'}: ${i.message}`)
   }
   if (!requireV1 || kind === 'index') return []
-  const races = kind === 'summary' ? (parsed.data as { states: Race[] }).states : [parsed.data as Race]
+  const races =
+    kind === 'summary' ? (parsed.data as { states: Race[] }).states
+    : kind === 'house' ? (parsed.data as { races: Race[] }).races
+    : [parsed.data as Race]
   const problems: string[] = []
-  // Waiting entries stay exactly {state, race, as_of, status}: that minimal shape
+  // Waiting entries stay exactly {state, race, race_type, district, as_of, status, modeled}: that minimal shape
   // is the publisher's privacy guarantee (tests/unit/test_publish.py).
   for (const r of races.filter((r) => r.status === 'live')) {
     if (r.modeled === undefined) problems.push(`${name}: ${r.state}: missing "modeled" (M3)`)

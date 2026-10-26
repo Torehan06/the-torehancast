@@ -9,7 +9,7 @@ from torehancast import publish
 from torehancast.replay import harness
 from torehancast.schema import Snapshot
 
-WAITING_KEYS = {"state", "race", "as_of", "status", "modeled"}
+WAITING_KEYS = {"state", "race", "race_type", "district", "as_of", "status", "modeled"}
 
 
 @pytest.fixture(scope="module")
@@ -20,7 +20,8 @@ def ga():
 
 def _update(model, snap):
     result = model.run(snap, 2000, 0)
-    return publish.StateUpdate("GA", "US Senate", {"D": "Dem", "R": "Rep"}, result, model, snap.as_of)
+    return publish.StateUpdate("GA", "2026-GA-SEN", {"D": "Dem", "R": "Rep"}, result, model, snap.as_of,
+                               race_type="senate", district=None, ranked_choice=False)
 
 
 def _first_county_batch():
@@ -32,13 +33,13 @@ def _first_county_batch():
 def test_live_state_without_votes_publishes_only_waiting(ga, tmp_path):
     update = _update(ga, Snapshot("GA", "x", None, []))
     publish.publish([update], publish.LocalWriter(tmp_path), mode="live")
-    detail = json.loads((tmp_path / "data/live/GA.json").read_text())
+    detail = json.loads((tmp_path / "data/live/races/2026-GA-SEN.json").read_text())
     summary = json.loads((tmp_path / "data/live/summary.json").read_text())
     assert set(detail) == WAITING_KEYS and detail["status"] == "waiting"
     assert set(summary["states"][0]) == WAITING_KEYS
     # Belt and braces: no number anywhere in the state's payloads.
     text = json.dumps(detail) + json.dumps(summary["states"])
-    assert not any(ch.isdigit() for ch in text.replace("GA", "").replace("T+", ""))  # as_of is None here
+    assert not any(ch.isdigit() for ch in text.replace("2026-GA-SEN", ""))  # as_of is None here
 
 
 def test_live_state_with_votes_is_published(ga, tmp_path):

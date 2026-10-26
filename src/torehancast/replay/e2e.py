@@ -11,7 +11,7 @@ import json
 from fractions import Fraction
 from pathlib import Path
 
-from .. import elections, publish
+from .. import districts, elections, publish
 from ..adapters import ga_enhanced_voting as ga
 from ..schema import Snapshot, canonical_vote_type
 from . import arrivals, harness
@@ -134,8 +134,10 @@ def run(
         native = json.loads(json.dumps(render_ga(snap, templates, election)))
         parsed = ga.snapshot_from_docs(native, election.spec["contest"], election.candidates, election.key)
         result = model.run(parsed, n_draws, seed)
-        update = publish.StateUpdate(state, election.key, candidates, result, model, parsed.as_of,
-                                     votes=parsed.totals())
+        # A replay rehearses the live race, so it publishes under that race's ID.
+        update = publish.StateUpdate(state, districts.senate_race_id(state), candidates, result, model,
+                                     parsed.as_of, votes=parsed.totals(), race_type="senate",
+                                     district=None, ranked_choice=False)
         publish.publish([update], _FrameWriter(writer, i), mode="replay")
         publish.publish([update], writer, mode="replay")
         index["frames"].append({"time": time, "summary": f"frames/{i:06d}/summary.json"})

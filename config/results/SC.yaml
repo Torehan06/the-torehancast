@@ -1,0 +1,12 @@
+# Results-only races in South Carolina: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources:
+    clarity:
+      same_as: 2026-SC-SEN
+      status: pending
+      contests:
+      - office: house
+        districts: all
+        template: U.S.  House of Representatives, District  {n}
+      notes: Two spaces after 'U.S.' and after 'District', as in the 2024 detail.xml (EID 122436).

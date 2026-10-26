@@ -16,8 +16,9 @@ Invalid files return exit code 1 without printing prior values or YAML source.
 
 ## Files
 
-- `races.yaml`: the 13 races in PLAN.md, baseline exceptions, RCV flags,
-  geographic units and implementation status. The `done` status tracks
+- `races.yaml`: the modeled races in PLAN.md (13 Senate races and 63 House
+  districts), baseline exceptions, RCV flags, geographic units and
+  implementation status. The `done` status tracks
   adapter/replay work; it does not mean the live pipeline is ready.
 - `feeds.yaml`: one entry per race. Each contains an adapter name, complete
   feed URL, election ID, status, and optional string-valued request `params`.
@@ -26,7 +27,7 @@ Invalid files return exit code 1 without printing prior values or YAML source.
   The URLs must use HTTPS without embedded credentials. Null fields explicitly
   represent settings that remain unverified. Do not use a historical reference
   URL as the live feed.
-- `priors.example.yaml`: the shared template. All 13 priors are initially null.
+- `priors.example.yaml`: the shared template. Every prior is initially null.
 - `priors.yaml`: the optional private file, ignored by Git. Copy the template
   locally and fill in values by hand. Each prior is null or a mapping with
   `margin`, `margin_sd`, `turnout_ratio`, and `turnout_sd`, using the same units
@@ -39,6 +40,57 @@ The example is checked but never supplies runtime priors. Without a private
 file, every runtime prior is unset. The private file must list every race;
 missing entries do not silently inherit an example prior. Invalid private
 config, including a broken file symlink, fails validation.
+
+House race IDs are `2026-XX-HNN`, or `2026-XX-HAL` for an at-large seat. A
+`house` race must name a real district under the 2020-census apportionment in
+`src/torehancast/districts.py`, and only `house` races may use that ID form.
+
+## Results-only races
+
+Every 2026 federal race that isn't modeled (22 Senate races and the other 372 House
+districts) shows vote totals only. Each state has `config/results/<ST>.yaml`, and
+a race may be modeled, results-only, or explicitly `none`, never two of these. The
+coverage test in `tests/unit/test_config.py` fails if any of the 35 Senate or 435
+House race IDs is in none of the three.
+
+```yaml
+results:
+  sources:
+    sbe:                          # one download, many contests
+      same_as: 2026-NC-SEN        # borrow the modeled feed's adapter, url, election_id, polls_close
+      status: pending             # pending | ready | blocked | dropped
+      contests:
+      - office: house             # house | senate
+        districts: all            # every district that isn't modeled, or a list: [2, 3]
+        template: US HOUSE OF REPRESENTATIVES DISTRICT {n:02d}
+        sides: {Jane Doe: D2}     # optional: ballot name -> side key
+  none:
+    senate: 'W4: no verified official feed yet.'
+    house: 'W4: no verified official feed yet.'   # every district not covered above
+```
+
+- A source either sets `same_as` (a modeled race in the same state) or its own
+  `adapter`, `url`, `election_id`, `params`, `reference_url` and `polls_close`.
+- `template` is the contest as the feed names it, with `{n}` for the district
+  number (Python format spec, so `{n:02d}` zero-pads). Null until it's checked
+  against the 2024 archive and the 2026 file.
+- A `ready` source needs an adapter, a URL, `polls_close` and a template for every
+  contest. It doesn't need a D/R mapping: uncontested and same-party top-two
+  races are fine.
+- `none` keys are `senate`, `house` or a single House race ID. An explicit ID
+  takes its own reason over the `house` catch-all.
+
+`load_results(config, directory)` reads these files separately from
+`load_config`, so a broken results file never stops the modeled races from loading.
+
+Historical House elections for a state go in `config/house/<ST>.yaml` under an
+`elections:` key, in the same shape as a state's block in `elections.yaml`.
+`elections.load()` reads both, and a key may be defined in only one of them.
+
+Adding a modeled race means adding its ID to the private `priors.yaml` too
+(null until set), on the poller and in the private bucket, **before** deploying
+the code that registers it. Otherwise the poller can't load its config at
+startup.
 
 ## Loading and privacy
 

@@ -1,0 +1,13 @@
+# Results-only races in Florida: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources:
+    dos:
+      same_as: 2026-FL-SEN-SPECIAL
+      status: pending
+      contests:
+      - office: house
+        districts: all
+        template: null
+      notes: House rows are RaceCode USR with the district in Juris1num (001-028); W4a adds the filter
+        and sets the template. FL-20 was absent from the 2024 file (unopposed).

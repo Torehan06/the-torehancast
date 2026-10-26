@@ -1,10 +1,10 @@
 # The TörehanCast
 
-Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026).
+Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026). House coverage is being added: forecasts for 63 selected districts and vote totals for every other district (in progress; see `PLAN.md`).
 
 As county and district results arrive from official state election feeds, the model estimates statewide swing and turnout relative to a comparable historical baseline, accounts for within-county vote-type composition (early in-person, mail, Election Day, provisional), extrapolates to partially reported and unreported units, and runs Monte Carlo simulations to estimate each candidate's win probability and two-party margin intervals.
 
-Non-modeled Senate races on the national map show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
+Non-modeled Senate and House races show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
 
 ---
 
@@ -107,6 +107,10 @@ Issues caught by the replay harness and synthetic regression suite during develo
   - **Alaska:** Alaska Division of Elections precinct results (`elections.alaska.gov/results`, `ENRbyPrecinct.csv` and the 2022 "Results per Precinct" reports). The server omits its TLS intermediate; the poller supplies GlobalSign's published intermediate and keeps full certificate verification.
 - **Demographics:** U.S. **Census** Bureau, American Community Survey (ACS) 2023 5-Year Summary File (`www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/`, tables `B01002`, `B03002`, `B15003`, `B19013`) and 2020 Census ANSI county lookup (`national_county2020.txt`).
 - **Credits:** Methodological ideas for holdout systematic-error calibration and live county-level reporting models are credited to the Washington Post's [`elex-live-model`](https://github.com/washingtonpost/elex-live-model), along with open-source Clarity election-parsing work in `clarify` and `elex-clarity`.
+
+## Contact
+
+The poller's User-Agent (`torehancast/0.1`) points here. Election offices and anyone else with a question or a request about how the poller reads their site can [open an issue](https://github.com/Torehan06/the-torehancast/issues). The poller runs from one fixed IP, 18.211.31.125, and stops polling after Nov 7, 2026.
 
 ## License
 

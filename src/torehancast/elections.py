@@ -29,8 +29,22 @@ class Election:
         return CandidateMap(self.spec["candidates"])
 
 
+def specs(state: str) -> dict[str, dict]:
+    """A state's historical elections: elections.yaml plus its House file, config/house/<ST>.yaml.
+
+    House files keep one state's House baselines out of the shared file, so per-state
+    sessions don't edit the same YAML. A key may live in only one of the two.
+    """
+    shared = yaml.safe_load((CONFIG / "elections.yaml").read_text()).get(state) or {}
+    house_file = CONFIG / "house" / f"{state}.yaml"
+    house = yaml.safe_load(house_file.read_text())["elections"] if house_file.exists() else {}
+    if clash := shared.keys() & house.keys():
+        raise ValueError(f"{state}: {sorted(clash)} defined in both elections.yaml and house/{state}.yaml")
+    return shared | house
+
+
 def load(state: str, key: str) -> Election:
-    spec = yaml.safe_load((CONFIG / "elections.yaml").read_text())[state][key]
+    spec = specs(state)[key]
     return Election(state, key, spec["adapter"], spec)
 
 

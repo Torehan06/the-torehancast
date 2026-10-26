@@ -60,8 +60,9 @@ def test_a_live_directory_root_still_requires_private_coverage(tmp_path):
 
 
 def test_explicit_live_mode_checks_even_a_flat_directory(tmp_path):
-    (tmp_path / "GA.json").write_text(json.dumps(PAYLOAD))
-    with pytest.raises(public_json.PublicJSONError):
+    (tmp_path / "races").mkdir()
+    (tmp_path / "races/2026-GA-SEN.json").write_text(json.dumps(PAYLOAD))
+    with pytest.raises(public_json.PublicJSONError, match="requires private priors"):
         public_json.check_tree(tmp_path, mode="live")
 
 
@@ -145,7 +146,8 @@ def test_private_positive_value_after_a_hyphen_is_not_hidden_by_a_sign(tmp_path,
     out = tmp_path / "out"
     out.mkdir()
     payload = copy.deepcopy(PAYLOAD)
-    name = "GA.json"
+    (out / "races").mkdir()
+    name = "races/2026-GA-SEN.json"
     if location == "as_of":
         payload["as_of"] = "private-0.0234567"
     elif location == "filename":

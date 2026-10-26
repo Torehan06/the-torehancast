@@ -1,0 +1,40 @@
+{
+ "state": "GA",
+ "race": "2026-GA-SEN",
+ "race_type": "senate",
+ "district": null,
+ "as_of": "21:29 ET",
+ "status": "live",
+ "modeled": true,
+ "candidates": {
+  "D": "GA Fixture A (Dem)",
+  "R": "GA Fixture B (Rep)"
+ },
+ "p_win": {
+  "D": 0.874,
+  "R": 0.126
+ },
+ "margin": {
+  "median": 0.0168,
+  "p80": [
+   -0.0132,
+   0.0468
+  ],
+  "p95": [
+   -0.0332,
+   0.0668
+  ]
+ },
+ "reported_votes": 2342325,
+ "expected_votes": 3916931,
+ "share_counted": 0.598,
+ "votes": {
+  "D": 1210455,
+  "R": 1131870
+ },
+ "vote_share": {
+  "D": 0.5168,
+  "R": 0.4832
+ },
+ "pct_reporting": 0.61
+}

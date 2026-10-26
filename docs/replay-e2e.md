@@ -42,8 +42,8 @@ synthetic; the final frame recovers each option's original archived counts.
 
 All public artifacts are under `data/replay/`:
 
-- `summary.json` and `GA.json`: latest published results (final after completion).
-- `frames/000000/summary.json` and `frames/000000/GA.json`, etc.: successive polls.
+- `summary.json` and `races/2026-GA-SEN.json`: latest published results (final after completion), under the live race ID the replay rehearses.
+- `frames/000000/summary.json` and `frames/000000/races/2026-GA-SEN.json`, etc.: successive polls.
 - `index.json`: replay metadata and ordered frame times/summary paths, relative to
   `data/replay/`, for playback by the dashboard.
 

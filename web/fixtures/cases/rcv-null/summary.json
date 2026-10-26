@@ -5,6 +5,8 @@
   {
    "state": "ME",
    "race": "2026-ME-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:28 ET",
    "status": "live",
    "modeled": true,
@@ -45,6 +47,8 @@
   {
    "state": "AK",
    "race": "2026-AK-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:28 ET",
    "status": "live",
    "modeled": true,

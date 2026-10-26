@@ -18,6 +18,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+# The live poller writes the public data bucket on Google Cloud Storage.
+poller = ["google-cloud-storage>=2.14"]
 
 [build-system]
 requires = ["setuptools>=69"]

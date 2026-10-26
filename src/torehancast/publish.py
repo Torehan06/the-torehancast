@@ -9,8 +9,12 @@ Two rules shape every payload:
    Optionally (`gate: data_weight`), a state is held back until the data carries at
    least 3× the prior's weight on the statewide swing. Replays are published in full;
    their priors are about past elections.
-2. **Small and cacheable.** One summary file for the front page, one detail file per
-   state (county table), written atomically with a short Cache-Control.
+2. **Small and cacheable.** `summary.json` (Senate) and `house.json` for the page, one
+   detail file per modeled race (`races/{race_id}.json`, county table), written
+   atomically with a short Cache-Control.
+
+Every entry names its race (`race`, the canonical ID from districts.py), `race_type`
+and `district` (null for Senate races).
 """
 
 from __future__ import annotations
@@ -18,13 +22,15 @@ from __future__ import annotations
 import json
 import math
 import os
+import posixpath
 import tempfile
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 
+from . import districts
 from .model.rcv import RCVResult
 from .model.simulate import RaceModel, Result
 
@@ -38,7 +44,7 @@ CACHE_CONTROL = "public, max-age=20"
 @dataclass(frozen=True)
 class StateUpdate:
     state: str
-    race: str
+    race: str  # canonical race ID, e.g. "2026-NC-SEN", "2026-AK-HAL"
     candidates: dict[str, str]  # side → display name, e.g. {"D": "Ossoff", "R": "..."}
     result: Result
     model: RaceModel
@@ -48,6 +54,11 @@ class StateUpdate:
     # included), e.g. Snapshot.totals(). Published as `votes` for the display
     # candidates; `vote_share` divides by all of them. None: not published.
     votes: dict[str, int] | None = None
+    # From the race config. Keyword-only and required: an RCV race published without
+    # its flag would show plurality probabilities, so there is no default.
+    race_type: str = field(kw_only=True)
+    district: int | None = field(kw_only=True)
+    ranked_choice: bool = field(kw_only=True)
 
 
 @dataclass(frozen=True)
@@ -65,6 +76,8 @@ class ResultsOnlyUpdate:
     votes: dict[str, int]
     pct_reporting: float | None
     as_of: str | None
+    race_type: str = field(kw_only=True)
+    district: int | None = field(kw_only=True)
 
     def validate(self) -> None:
         if not self.candidates or self.votes.keys() != self.candidates.keys():
@@ -84,9 +97,16 @@ class ResultsOnlyUpdate:
 Update = StateUpdate | ResultsOnlyUpdate
 
 
+def _check_identity(update: Update) -> None:
+    """The race ID, type, district and state must agree, as districts.py defines them."""
+    if districts.race_identity(update.race) != (update.state, update.race_type, update.district):
+        raise ValueError(f"{update.race}: race ID, race_type, district and state disagree")
+
+
 def _is_rcv(update: StateUpdate) -> bool:
-    # Fail closed for the registry's RCV states even before their adapters exist.
-    return update.state in ("ME", "AK") or update.rcv is not None
+    # config.py requires ranked_choice for every ME and AK federal race, so these
+    # fail closed (awaiting_first_choices) before their RCV draws exist.
+    return update.ranked_choice or update.rcv is not None
 
 
 def released(update: StateUpdate, mode: str, gate: str = "first_votes") -> bool:
@@ -119,7 +139,9 @@ def _reported(update: StateUpdate) -> dict:
 
 
 def state_summary(update: Update, mode: str, gate: str = "first_votes") -> dict:
-    base = {"state": update.state, "race": update.race, "as_of": update.as_of,
+    _check_identity(update)
+    base = {"state": update.state, "race": update.race, "race_type": update.race_type,
+            "district": update.district, "as_of": update.as_of,
             "modeled": isinstance(update, StateUpdate)}
     if isinstance(update, ResultsOnlyUpdate):
         update.validate()
@@ -230,13 +252,46 @@ class S3Writer:
         )
 
 
+class GCSWriter:
+    """Writes to the public Google Cloud Storage data bucket, under data/ only.
+
+    The bucket's public role can't be scoped to a prefix, so this check is what keeps
+    it holding nothing but data/: any other key is refused before an upload starts.
+    """
+
+    def __init__(self, bucket: str, client=None):
+        if client is None:
+            from google.cloud import storage
+
+            client = storage.Client()
+        self.bucket = client.bucket(bucket)
+
+    def write(self, key: str, payload: dict) -> None:
+        if not key.startswith("data/") or posixpath.normpath(key) != key:
+            raise ValueError(f"refusing to publish outside data/: {key}")
+        body = json.dumps(payload, default=_json_default, separators=(",", ":"))
+        blob = self.bucket.blob(key)
+        blob.cache_control = CACHE_CONTROL
+        blob.upload_from_string(body, content_type="application/json")
+
+
 def publish(updates: list[Update], writer, mode: str, gate: str = "first_votes") -> None:
+    """Detail files for modeled races, then summary.json (Senate) and house.json.
+
+    A list with no Senate (or no House) races leaves that file untouched: an empty
+    list is invalid public JSON, and the page keeps showing the last good one.
+    """
     if mode not in ("live", "replay") or gate not in GATES:
         raise ValueError(f"mode={mode!r} gate={gate!r}")
+    if len({u.race for u in updates}) != len(updates):
+        raise ValueError("one update per race")
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for u in updates:
-        writer.write(f"data/{mode}/{u.state}.json", state_detail(u, mode, gate))
-    writer.write(
-        f"data/{mode}/summary.json",
-        {"generated_at": now, "mode": mode, "states": [state_summary(u, mode, gate) for u in updates]},
-    )
+        if isinstance(u, StateUpdate):
+            writer.write(f"data/{mode}/races/{u.race}.json", state_detail(u, mode, gate))
+    senate = [state_summary(u, mode, gate) for u in updates if u.race_type != "house"]
+    house = [state_summary(u, mode, gate) for u in updates if u.race_type == "house"]
+    if senate:
+        writer.write(f"data/{mode}/summary.json", {"generated_at": now, "mode": mode, "states": senate})
+    if house:
+        writer.write(f"data/{mode}/house.json", {"generated_at": now, "mode": mode, "races": house})

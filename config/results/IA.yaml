@@ -1,0 +1,12 @@
+# Results-only races in Iowa: vote totals and percent reporting, no model, no prior.
+# Schema: docs/config.md. `none` races render "no votes reported for this race".
+results:
+  sources:
+    clarity:
+      same_as: 2026-IA-SEN
+      status: pending
+      contests:
+      - office: house
+        districts: all
+        template: United States Representative District {n}
+      notes: Contest name from the 2024 statewide detail.xml (EID 122322).

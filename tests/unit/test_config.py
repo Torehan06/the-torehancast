@@ -9,7 +9,7 @@ import sys
 import pytest
 import yaml
 
-from torehancast import config
+from torehancast import config, districts, elections
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -37,10 +37,12 @@ def cli(directory):
 
 def test_registry_loads_every_planned_race_and_baseline_exception():
     loaded = config.load_config(ROOT / "config")
-    assert {race.state for race in loaded.races.values()} == {
+    senate = {k: r for k, r in loaded.races.items() if r.race_type != "house"}
+    assert {race.state for race in senate.values()} == {
         "GA", "NC", "FL", "TX", "OH", "IA", "KS", "SC", "MI", "MN", "ME", "AK", "NE",
     }
-    assert len(loaded.races) == 13
+    assert len(senate) == 13
+    assert len(loaded.races) == 13 + 63
     assert loaded.races["2026-GA-SEN"].baseline == "2022_sen"
     assert loaded.races["2026-ME-SEN"].baseline == "2020_sen"
     assert loaded.races["2026-MN-SEN"].baseline == "2024_pres"
@@ -56,8 +58,8 @@ def test_registry_loads_every_planned_race_and_baseline_exception():
 def test_fresh_checkout_validates_with_unset_priors(config_dir):
     result = cli(config_dir)
     assert result.returncode == 0, result.stderr
-    assert "13 races" in result.stdout
-    assert "13 priors unset" in result.stdout
+    assert "76 races" in result.stdout
+    assert "76 priors unset" in result.stdout
     assert not (config_dir / "priors.yaml").exists()
 
 
@@ -72,7 +74,7 @@ def test_private_prior_is_loaded_without_printing_values(config_dir):
     assert "0.123456789" not in repr(loaded)
     result = cli(config_dir)
     assert result.returncode == 0
-    assert "12 priors unset" in result.stdout
+    assert "75 priors unset" in result.stdout
     assert "0.123456789" not in result.stdout + result.stderr
 
 
@@ -135,6 +137,7 @@ def test_ready_feed_needs_url_adapter_and_election_id(config_dir):
 def test_feed_settings_can_be_swapped_without_changing_code(config_dir):
     edit(config_dir, "feeds.yaml", lambda doc: doc["feeds"]["2026-GA-SEN"].update(
         status="ready", url="https://results.sos.ga.gov/replacement", election_id="replacement",
+        contest="US Senate", candidates={"Jon Ossoff": "D", "Mike Collins": "R"},
     ))
     loaded = config.load_config(config_dir)
     assert loaded.feeds["2026-GA-SEN"].url == "https://results.sos.ga.gov/replacement"
@@ -194,12 +197,194 @@ def test_every_named_adapter_is_a_real_module():
 
 
 def test_done_races_name_baselines_that_exist_in_elections_yaml():
-    elections = yaml.safe_load((ROOT / "config" / "elections.yaml").read_text())
     loaded = config.load_config(ROOT / "config")
     for race_id, race in loaded.races.items():
         if race.status != "done":
             continue
-        keys = set(elections.get(race.state, {}))
+        keys = set(elections.specs(race.state))
         assert race.baseline in keys, f"{race_id}: baseline {race.baseline!r} not in elections.yaml"
         if race.fallback_baseline is not None:
             assert race.fallback_baseline in keys, f"{race_id}: fallback {race.fallback_baseline!r} missing"
+
+
+def _ready(document, **changes):
+    document["feeds"]["2026-NC-SEN"].update(status="ready", **changes)
+
+
+@pytest.mark.parametrize("change", [
+    lambda d: _ready(d, contest=None),
+    lambda d: _ready(d, polls_close=None),
+    lambda d: _ready(d, polls_close="2026-11-03T19:30:00"),  # no UTC offset
+    lambda d: _ready(d, display={"D": "Roy Cooper"}),
+    lambda d: _ready(d, candidates={"Roy Cooper": "D", "Michael Whatley": "other"}),
+    lambda d: _ready(d, display={"D": "Roy Cooper", "R": "Michael Whatley", "G": "Michael Dublin"}),
+])
+def test_ready_feed_needs_contest_candidates_display_and_close(config_dir, change):
+    edit(config_dir, "feeds.yaml", change)
+    with pytest.raises(config.ConfigError):
+        config.load_config(config_dir)
+
+
+def test_ready_feed_needs_race_tau_pair(config_dir):
+    edit(config_dir, "feeds.yaml", _ready)
+    config.load_config(config_dir)
+    edit(config_dir, "races.yaml", lambda d: d["races"]["2026-NC-SEN"].pop("tau_pair"))
+    with pytest.raises(config.ConfigError):
+        config.load_config(config_dir)
+
+
+def test_live_fields_load():
+    loaded = config.load_config(ROOT / "config")
+    nc = loaded.feeds["2026-NC-SEN"]
+    assert nc.candidates["Roy Cooper"] == "D" and nc.display["R"] == "Michael Whatley"
+    assert nc.polls_close_at.isoformat() == "2026-11-03T19:30:00-05:00"
+    assert loaded.races["2026-AK-SEN"].tau_pair == ("2024_prim_house", "2024_gen_house")
+    for race in loaded.races.values():
+        if race.tau_pair:
+            for key in race.tau_pair + (race.baseline,):
+                assert elections.baseline_path(race.state, key).exists(), (race.state, key)
+
+
+def test_house_race_ids_must_name_a_real_district(config_dir):
+    def rename(doc, old, new):
+        doc["races"][new] = doc["races"].pop(old)
+    for name in ("races.yaml", "feeds.yaml", "priors.example.yaml"):
+        section = name.split(".")[0]
+        edit(config_dir, name, lambda d, s=section: d[s].__setitem__("2026-NC-H15", d[s].pop("2026-NC-H01")))
+    with pytest.raises(config.ConfigError, match="real district"):
+        config.load_config(config_dir)
+
+
+def test_a_senate_race_cannot_borrow_a_house_id(config_dir):
+    edit(config_dir, "races.yaml", lambda d: d["races"]["2026-NC-H01"].update(race_type="senate"))
+    with pytest.raises(config.ConfigError, match="real district"):
+        config.load_config(config_dir)
+
+
+def test_ranked_choice_house_races_match_state_law():
+    loaded = config.load_config(ROOT / "config")
+    house = {k: r for k, r in loaded.races.items() if r.race_type == "house"}
+    assert {k for k, r in house.items() if r.ranked_choice} == {"2026-AK-HAL", "2026-ME-H02"}
+
+
+# Results-only registry (config/results/<ST>.yaml)
+
+@pytest.fixture
+def results_dir(config_dir):
+    shutil.copytree(ROOT / "config" / "results", config_dir / "results")
+    return config_dir
+
+
+def results(directory):
+    return config.load_results(config.load_config(directory), directory)
+
+
+def edit_results(directory, state, change):
+    path = directory / "results" / f"{state}.yaml"
+    document = yaml.safe_load(path.read_text())
+    change(document["results"])
+    path.write_text(yaml.safe_dump(document))
+
+
+def test_every_federal_race_is_modeled_results_only_or_none():
+    loaded = config.load_config(ROOT / "config")
+    covered = config.coverage(loaded, config.load_results(loaded, ROOT / "config"))
+    federal = set(districts.senate_race_ids()) | set(districts.house_race_ids())
+    assert covered.keys() == federal, f"unregistered: {sorted(federal - covered.keys())[:10]}"
+    assert sum(kind == "modeled" for kind in covered.values()) == 76
+
+
+def test_validate_reports_results_only_counts(results_dir):
+    result = cli(results_dir)
+    assert result.returncode == 0, result.stderr
+    assert "0 not registered" in result.stdout
+
+
+def test_house_template_fills_in_each_district_and_skips_modeled_ones(results_dir):
+    loaded = results(results_dir)
+    nc = {k: c for k, c in loaded.contests.items() if c.source == "NC/sbe"}
+    assert "2026-NC-H01" not in nc and "2026-NC-H11" not in nc  # modeled
+    assert len(nc) == 14 - 2
+    assert nc["2026-NC-H02"].contest == "US HOUSE OF REPRESENTATIVES DISTRICT 02"
+    assert loaded.contests["2026-SC-H02"].contest == "U.S.  House of Representatives, District  2"
+    assert loaded.sources["NC/sbe"].feed.url == config.load_config(results_dir).feeds["2026-NC-SEN"].url
+
+
+@pytest.mark.parametrize("change, message", [
+    (lambda d: d["sources"]["sbe"]["contests"][0].update(districts=[1]), "modeled"),
+    (lambda d: d["sources"]["sbe"]["contests"][0].update(districts=[15]), "no district"),
+    (lambda d: d["sources"]["sbe"]["contests"][0].update(template="US HOUSE"), "template"),
+    (lambda d: d["sources"]["sbe"]["contests"][0].update(template="DISTRICT {d}"), "template"),
+    (lambda d: d["sources"]["sbe"]["contests"].append({"office": "senate"}), "modeled"),
+    (lambda d: d["sources"]["sbe"].update(url="https://example.org/x"), "inherits"),
+    (lambda d: d["sources"]["sbe"].update(same_as="2026-GA-SEN"), "same_as"),
+    (lambda d: (d["sources"]["sbe"].update(status="ready"),
+                d["sources"]["sbe"]["contests"][0].update(template=None)), "ready"),
+    (lambda d: d.update(none={"senate": "no feed"}), "already has a source"),
+    (lambda d: d.update(none={"2026-NC-H02": "no feed"}), "already has a source"),
+])
+def test_invalid_results_entries_fail(results_dir, change, message):
+    edit_results(results_dir, "NC", change)
+    with pytest.raises(config.ConfigError, match=message):
+        results(results_dir)
+
+
+def test_ready_results_source_needs_no_d_or_r(results_dir):
+    edit_results(results_dir, "PA", lambda d: d.update(none={}, sources={"dos": {
+        "adapter": "pa_dos", "url": "https://www.electionreturns.pa.gov/api", "election_id": None,
+        "polls_close": "2026-11-03T20:00:00-05:00", "status": "ready",
+        "contests": [{"office": "house", "districts": "all", "template": "Representative in Congress {n}"}],
+    }}))
+    loaded = results(results_dir)
+    assert len([c for c in loaded.contests.values() if c.source == "PA/dos"]) == 17 - 4  # 4 modeled
+
+
+def test_ready_results_source_needs_a_template_and_polls_close(results_dir):
+    edit_results(results_dir, "PA", lambda d: d.update(none={}, sources={"dos": {
+        "adapter": "pa_dos", "url": "https://www.electionreturns.pa.gov/api", "election_id": None,
+        "status": "ready", "contests": [{"office": "house", "districts": "all", "template": None}],
+    }}))
+    with pytest.raises(config.ConfigError, match="ready"):
+        results(results_dir)
+
+
+@pytest.mark.parametrize("sides, ok", [
+    ({"Jane Doe": "D", "John Roe": "R"}, True),
+    ({"Jane Doe": "D", "Jim Doe": "D2"}, True),  # same-party top-two
+    ({"Ann Lee": "I", "Ann Other": "other"}, True),
+    ({"Jane Doe": "Democrat"}, False),
+    ({"Jane Doe": "d"}, False),
+    ({"A": "D", "B": "R", "C": "I", "E": "D2", "F": "R2", "G": "L"}, False),  # more than 5 named
+])
+def test_side_keys(results_dir, sides, ok):
+    edit_results(results_dir, "NC", lambda d: d["sources"]["sbe"]["contests"][0].update(sides=sides))
+    if ok:
+        assert results(results_dir).contests["2026-NC-H02"].sides == sides
+    else:
+        with pytest.raises(config.ConfigError, match="sides"):
+            results(results_dir)
+
+
+def test_results_file_names_must_be_states(results_dir):
+    (results_dir / "results" / "DC.yaml").write_text("results:\n  sources: {}\n")
+    with pytest.raises(config.ConfigError, match="state code"):
+        results(results_dir)
+
+
+def test_a_broken_results_file_leaves_the_modeled_config_loadable(results_dir):
+    (results_dir / "results" / "PA.yaml").write_text("results: [")
+    config.load_config(results_dir)
+    with pytest.raises(config.ConfigError, match="PA.yaml"):
+        results(results_dir)
+
+
+def test_house_file_adds_elections_and_refuses_duplicates(tmp_path, monkeypatch):
+    (tmp_path / "house").mkdir()
+    (tmp_path / "elections.yaml").write_text("NC:\n  2024_pres: {adapter: nc_sbe}\n")
+    monkeypatch.setattr(elections, "CONFIG", tmp_path)
+    (tmp_path / "house" / "NC.yaml").write_text("elections:\n  2024_house_02: {adapter: nc_sbe}\n")
+    assert set(elections.specs("NC")) == {"2024_pres", "2024_house_02"}
+    assert elections.load("NC", "2024_house_02").adapter == "nc_sbe"
+    (tmp_path / "house" / "NC.yaml").write_text("elections:\n  2024_pres: {adapter: nc_sbe}\n")
+    with pytest.raises(ValueError, match="both"):
+        elections.specs("NC")
