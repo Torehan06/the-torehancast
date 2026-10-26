@@ -88,3 +88,13 @@ def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str, state
 
 def load_archive(directory: Path, election_id: str | int) -> str:
     return (directory / f"{election_id}_detail.xml").read_text(encoding="utf-8", errors="replace")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> str:
+    return fetch(client, feed.election_id)
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["election_id"]), spec["contest"], cmap, key)

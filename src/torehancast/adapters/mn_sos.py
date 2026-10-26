@@ -113,3 +113,13 @@ def parse(
 def load_archive(directory: Path, election_date: str, prefix: str = "USPresCty") -> str:
     compact = election_date.replace("-", "")
     return (directory / f"{prefix}_{compact}.txt").read_text(encoding="utf-8-sig")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client, feed) -> str:
+    return client.get(feed.url).decode("utf-8-sig")
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["date"]), spec["contest"], cmap, key)

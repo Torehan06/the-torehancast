@@ -67,3 +67,13 @@ def parse(text: str, contest_name: str, cmap: CandidateMap, race: str) -> Snapsh
 def load_archive(directory: Path, election_date: str) -> str:
     compact = election_date.replace("-", "")
     return (directory / f"results_pct_{compact}.txt").read_text(encoding="utf-8", errors="replace")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client, feed) -> str:
+    return read_zip(client.get(feed.url))
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["date"]), spec["contest"], cmap, key)

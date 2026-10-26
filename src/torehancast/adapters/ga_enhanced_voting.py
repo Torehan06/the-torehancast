@@ -131,3 +131,17 @@ def save_archive(docs: list[dict], directory: Path) -> None:
 
 def load_archive(directory: Path) -> list[dict]:
     return [json.loads(p.read_text()) for p in sorted(directory.glob("*.json"))]
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> list[dict]:
+    return fetch_all(client, feed.election_id)
+
+
+def parse(docs: list[dict], contest_name: str, cmap: CandidateMap, race: str) -> Snapshot:
+    return snapshot_from_docs(docs, contest_name, cmap, race)
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return snapshot_from_docs(load_archive(archives / spec["code"]), spec["contest"], cmap, key)
