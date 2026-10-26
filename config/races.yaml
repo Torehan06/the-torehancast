@@ -146,10 +146,10 @@ races:
     baseline: 2026_prim_house
     tau_pair: [2024_prim_house, 2024_gen_house]
     ranked_choice: true
-    status: todo
+    status: done
     notes: RCV; at-large; Aug 2026 primary baseline by House District, like 2026-AK-SEN.
       D is Bill Hill (NON, Democratic-endorsed) plus the Democrats (config/house/AK.yaml).
-      RCV candidate draws still TODO.
+      2024 prim to gen replay passes. RCV candidate draws still TODO.
     fallback_baseline: 2024_gen_house
   2026-AL-H02:
     state: AL

@@ -35,3 +35,24 @@ elections:
       "Hafner, Eric": D
       "Williams, John B.": D
       "Reynoso, Yaquelin": D
+
+# Replay (read by replay.harness; arrival profile, batch vote types and composition
+# floor are inherited from replay.yaml AK, so the live House model gets the same floor).
+# The pair mirrors Nov 3: Aug primary → Nov RCV general, by House District. The only
+# pairs on today's system (top-4 primary, RCV general, the 2022 House District map) are
+# 2022 and 2024, and both are this very seat:
+#   * primary: 2024 House primary → 2024 House general, tau from 2022 primary → general
+#     (the preceding pair, never the replayed one). Same pair as 2026-AK-SEN's replay,
+#     because the House race is the only statewide federal contest in both years.
+#   * No 2022 replay: its only preceding pair would be 2020, with party primaries,
+#     no RCV and the pre-2022 district map; using 2024's tau would leak hindsight.
+# Prior: the pre-election number a forecaster had in 2024 (replay.yaml AK): Cygnal
+# (Begich/NRCC, Oct 14–16) R bloc +2.2 two-party, raters Lean/Tilt D, DDHQ Begich 62%
+# → −0.010 ± 0.06; turnout 2.8 ± 0.15 general ÷ primary (presidential year).
+replay:
+  2026-AK-HAL:
+    primary:
+      baseline: 2024_prim_house
+      target: 2024_gen_house
+      tau_pair: [2022_prim_house, 2022_gen_house]
+      prior: {margin: -0.010, margin_sd: 0.06, turnout_ratio: 2.80, turnout_sd: 0.15}
