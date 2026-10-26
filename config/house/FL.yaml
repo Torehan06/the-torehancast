@@ -1,0 +1,17 @@
+# Florida House elections (W7), read by elections.load() next to elections.yaml, and
+# the House replays, read by replay.harness.
+#
+# FL-9, 13, 14, 22, 25 and 27 were redrawn for 2026 (plan EOGPCRP2026, signed May 4,
+# 2026). Their baselines are President rebuilt on the 2026 lines from DOS precinct
+# files (adapter fl_precinct; see its docstring for the join and its checks):
+#   live    baseline 2024_pres_2026lines_NN,  τ from the statewide county pair 2020 → 2024
+#   replay  2020 → 2024 President on the 2026 lines,  τ from 2016 → 2020 statewide
+# The live feed is the DOS extract, contest "USR:0NN" (fl_dos, district in Juris1num).
+#
+# Statewide county totals for the τ pairs. 2020_pres lives in elections.yaml.
+elections:
+  2024_pres:
+    adapter: fl_dos
+    date: "2024-11-05"
+    race_code: PRE
+    candidates: {"Vance, Trump": R, "Walz, Harris": D}  # running mate is in the last-name column
