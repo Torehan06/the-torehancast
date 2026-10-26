@@ -159,10 +159,27 @@ feeds:
   # House districts with a forecast. url/election_id are set when the state's 2026 file is verified.
   2026-AK-HAL:
     adapter: ak_doe
-    url: null
+    url: https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: U.S. Representative
+    # Party blocs, as in config/house/AK.yaml: Hill (NON) is the D side. Schultz withdrew
+    # but stays on the ballot; mapping primary names that are off the general ballot is
+    # harmless. McDermott (LIB) is "other".
+    candidates:
+      Begich, Nick: R
+      Strickland, Clay: R
+      Goldfarb, Eddie: R
+      Hill, Bill: D
+      Schultz, Matt: D
+      Hafner, Eric: D
+      Williams, John B.: D
+      Reynoso, Yaquelin: D
+    display: {D: Bill Hill, R: Nick Begich}
+    polls_close: '2026-11-03T20:00:00-09:00'
+    reference_url: https://www.elections.alaska.gov/election-results/
+    notes: Same source as 2026-AK-SEN (one fetch serves both). Names are from the Aug 2026
+      primary file; confirm against the general file on Nov 3 before marking ready.
   2026-AL-H02:
     adapter: null
     url: null

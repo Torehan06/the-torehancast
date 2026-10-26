@@ -1,0 +1,37 @@
+# Alaska at-large House seat (2026-AK-HAL): ranked-choice, statewide, by state House
+# district (40 districts plus "99", overseas absentee), the same units as 2026-AK-SEN.
+#
+# The 2022 and 2024 House primaries and generals are shared with the Senate model and
+# live in elections.yaml (AK block), with the party-bloc evidence. This file holds only
+# the live baseline, the Aug 18, 2026 top-4 primary.
+#
+# D is the main non-Republican side, as for Osborn in Nebraska. In 2026 that is Bill
+# Hill, registered nonpartisan (NON), plus every Democrat:
+#   * Hill finished second in the primary (53,008, 32.5%), far ahead of any Democrat.
+#   * The Alaska Democratic Party endorsed Hill after the primary (it had stayed neutral
+#     in the primary), as did the DCCC's Red to Blue program.
+#   * Matt Schultz (DEM, third) suspended his campaign, withdrew after the primary and
+#     endorsed Hill; his name stays on the ballot. John B. Williams (DEM, fifth) withdrew
+#     after talks with Hill and the state party. Eric Hafner (DEM) is still running.
+#   (Wikipedia, "2026 United States House of Representatives election in Alaska",
+#   read Oct 26, 2026.)
+# Leaving Hill in "other" would make the D bloc 26.7k of 163k primary votes against a
+# general where Hill is the finalist, so the baseline would read a 30-point D swing.
+# R is every REP name. Everyone else (LIB, UND, the other NON names, write-ins) is
+# "other": no other nonpartisan candidate was endorsed by either side.
+# Ballot names are copied from data/archives/AK/26PRIM_ENRbyPrecinct.csv, contest
+# "U.S. Representative" (party from its Party_Code column).
+elections:
+  2026_prim_house:
+    adapter: ak_doe
+    code: 26PRIM
+    contest: "U.S. Representative"
+    candidates:
+      "Begich, Nick": R
+      "Strickland, Clay": R
+      "Goldfarb, Eddie": R
+      "Hill, Bill": D
+      "Schultz, Matt": D
+      "Hafner, Eric": D
+      "Williams, John B.": D
+      "Reynoso, Yaquelin": D
