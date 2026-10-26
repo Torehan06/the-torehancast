@@ -192,11 +192,12 @@ class Poller:
             source.document, source.digest = document, digest(document)
 
     def _race(self, race_id: str, race: RaceConfig, prior: RacePrior, adapter: str) -> _Race:
-        key = (race.baseline, race.tau_pair, prior)
+        key = (race.baseline, race.tau_pair, race.unit, prior)
         current = self._races.get(race_id)
         if current is None or current.key != key:
-            model = harness.make_model(race.state, race.baseline, race.tau_pair, prior,
-                                       harness.live_synthetic_split(race.state))
+            # A House race gets its own baseline, units and replay-tuned traits.
+            model = harness.make_model(race_id, race.baseline, race.tau_pair, prior,
+                                       harness.live_synthetic_split(race_id), race.unit)
             tracker = BatchTracker() if adapter == "fl_dos" else None
             last = current.last if current else None
             current = self._races[race_id] = _Race(key, model, tracker, last)
@@ -215,6 +216,7 @@ class Poller:
         if state.last is not None and state.seen == seen:
             return  # nothing changed: the last update stands, and the model isn't rerun
         snap = self.adapter(feed.adapter).parse(source.document, feed.contest, CandidateMap(feed.candidates), race_id)
+        snap = harness.to_race_units(race_id, snap, race.unit)  # county parts for a district contest
         votes = sum(snap.totals().values())
         if not closed:
             if votes:

@@ -29,6 +29,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from ..schema import EARLY, ELECTION_DAY, MAIL, PROVISIONAL, Cell, Snapshot
+from .units import county_of
 
 REALISTIC_ORDERS = ("random", "timezone")
 ADVERSARIAL_ORDERS = ("d_first", "r_first", "ed_first")
@@ -87,8 +88,8 @@ def timeline(final: Snapshot, order: str, seed: int, profile: Profile = Profile(
     rank = np.argsort(np.argsort(size)) / max(len(units) - 1, 1)
     start = rng.uniform(0, 1.0, len(units)) * (0.5 + rank)
     if order == "timezone" and profile.late_close:
-        late = set(profile.late_close["units"])
-        start = start + np.array([profile.late_close["hours"] if u in late else 0.0 for u in units])
+        late = set(profile.late_close["units"])  # county names; a county part closes with its county
+        start = start + np.array([profile.late_close["hours"] if county_of(u) in late else 0.0 for u in units])
     elif order == "d_first":
         start = np.sort(start)[np.argsort(np.argsort(-lean))]
     elif order == "r_first":
