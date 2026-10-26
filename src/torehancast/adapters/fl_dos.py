@@ -42,11 +42,29 @@ def ballot_name(row: dict) -> str:
     return f"{row['CanNameLast'].strip()}, {row['CanNameFirst'].strip()}"
 
 
+def contest_filter(contest: str) -> tuple[str, int | None]:
+    """'USS' → ('USS', None); 'USR:022' → ('USR', 22), a district contest by `Juris1num`.
+
+    In a district contest each county row covers only the county's part of the
+    district, so the units are county-parts.
+    """
+    code, _, district = contest.partition(":")
+    return code, int(district) if district else None
+
+
 def parse(text: str, race_code: str, cmap: CandidateMap, race: str) -> Snapshot:
+    """`race_code` is a contest as `contest_filter` reads it.
+
+    A contest missing from the file has no votes (the extract leaves out unopposed
+    races, e.g. FL-20 in 2024), so it yields an empty snapshot, not an error.
+    """
+    code, district = contest_filter(race_code)
     votes: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     reporting: dict[str, float] = {}
     for row in csv.DictReader(io.StringIO(text), delimiter="\t"):
-        if row["RaceCode"] != race_code:
+        if row["RaceCode"] != code:
+            continue
+        if district is not None and int(row["Juris1num"] or 0) != district:
             continue
         county = row["CountyName"].strip().upper()
         votes[county][cmap.key_for(ballot_name(row))] += int(row["CanVotes"] or 0)
@@ -101,7 +119,8 @@ class BatchTracker:
         return Snapshot(snap.state, snap.race, snap.as_of, cells, dict(snap.unit_reporting), complete, warnings)
 
 
-# Adapter protocol (see adapters/__init__.py). Florida's contest is its race code ("USS").
+# Adapter protocol (see adapters/__init__.py). Florida's contest is its race code ("USS"),
+# plus ":<district>" for a district contest ("USR:022").
 
 def fetch_source(client, feed) -> str:
     return client.post(feed.url, dict(feed.params)).decode("latin-1")
