@@ -596,7 +596,8 @@ races:
     baseline: 2024_house_01
     ranked_choice: false
     status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    notes: Lines unchanged since 2022; baseline is the 2024 House result by county part
+      (6 parts, straight from the statewide Clarity file; W7).
   2026-TX-H09:
     state: TX
     race_type: house

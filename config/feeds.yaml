@@ -462,7 +462,15 @@ feeds:
     url: null
     election_id: null
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: "U.S.  House of Representatives, District  1"
+    display: {D: Nancy Lacore, R: Jenny Costa Honeycutt}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    reference_url: https://www.enr-scvotes.org/SC/122436/current_ver.txt
+    notes: Same statewide Clarity file as 2026-SC-SEN (no 2026 general EID listed on
+      scvotes.gov, Oct 26). The contest string (two double spaces) is the one used in
+      2016, 2020 and 2024; confirm it and the REP/DEM ballot strings in the 2026 file.
+      enr-scvotes.org answered the poller's client with an AWS WAF challenge (HTTP 202,
+      empty body) from Törehan's network on Oct 26; never worked around.
   2026-TX-H09:
     adapter: null
     url: null

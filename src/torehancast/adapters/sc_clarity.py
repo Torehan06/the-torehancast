@@ -7,7 +7,8 @@ South Carolina publishes statewide and county election results on Clarity:
 
 Inside `detailxml.zip` is `detail.xml`, which carries `<ElectionVoterTurnout>`
 with per-county precinct reporting counts and `<Contest>` elements broken down by
-`<Choice>`, `<VoteType>` and `<County>`. Multiple raw vote-type buckets (e.g.
+`<Choice>`, `<VoteType>` and `<County>`. For a district contest each `<County>` is
+the county's part of the district (e.g. SC-1's share of Charleston). Multiple raw vote-type buckets (e.g.
 "Provisional", "Failsafe", "Failsafe Provisional", and the 2024 typo "Provionsal")
 map to canonical `provisional` and are summed per `(unit_id, vote_type)`.
 """
@@ -68,9 +69,13 @@ def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str, state
                 contest_units.add(uid)
                 votes[(uid, vt)][key] += int(county_el.attrib.get("votes") or 0)
 
+    # A district contest (e.g. US House SC-1) covers only part of some counties, so its
+    # own <ParticipatingCounties> precinct counts are the county part's reporting.
+    # For a statewide contest they match the turnout block, which is the fallback.
     reporting: dict[str, float] = {}
     turnout_counties = (
-        root.findall("./ElectionVoterTurnout/Counties/County")
+        contest.findall("./ParticipatingCounties/County")
+        or root.findall("./ElectionVoterTurnout/Counties/County")
         or root.findall("./VoterTurnout/Counties/County")
     )
     for county_el in turnout_counties:

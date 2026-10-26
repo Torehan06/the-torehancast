@@ -1,0 +1,26 @@
+# South Carolina House elections (W7), read by elections.load() next to elections.yaml.
+#
+# All from the statewide Clarity detail.xml on enr-scvotes.org. A district contest
+# lists each county's part of the district, so the units are county parts with no
+# precinct work. Clarity pads the contest name with double spaces.
+#
+# SC-1 lines: the 2022 map (upheld in Alexander v. SC NAACP, 2024) is unchanged for
+# 2026. 2016 and 2020 are on the 2011 lines (5 county parts, no Jasper; Charleston's
+# part was a different area), so they never pair with 2022 or later.
+elections:
+  2016_house_01:
+    adapter: sc_clarity
+    election_id: "64658"
+    contest: "U.S.  House of Representatives, District  1"
+    # Cherny is listed three times (fusion lines); all three are D.
+    candidates: {"Mark Sanford": R, "Dimitri Cherny": D}
+  2020_house_01:
+    adapter: sc_clarity
+    election_id: "106502"
+    contest: "U.S.  House of Representatives, District  1"
+    candidates: {"REP Nancy Mace": R, "DEM Joe Cunningham": D}
+  2024_house_01:
+    adapter: sc_clarity
+    election_id: "122436"
+    contest: "U.S.  House of Representatives, District  1"
+    candidates: {"REP Nancy Mace": R, "DEM Michael B Moore": D}

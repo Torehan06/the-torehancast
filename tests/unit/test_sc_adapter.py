@@ -72,8 +72,9 @@ def test_parses_2020_in_person_absentee_and_2024_provionsal_typo():
 def test_partial_precinct_reporting_and_missing_contest():
     text = sc.load_archive(FIX, "122436")
     root = ET.fromstring(text)
+    contest = next(c for c in root.findall("Contest") if c.attrib["text"] == "President and Vice President")
     abbeville = next(
-        c for c in root.findall("./ElectionVoterTurnout/Counties/County") if c.attrib["name"] == "Abbeville"
+        c for c in contest.findall("./ParticipatingCounties/County") if c.attrib["name"] == "Abbeville"
     )
     abbeville.set("precinctsReported", "9")
     abbeville.set("precinctsParticipating", "15")
