@@ -26,7 +26,9 @@ elections:
 # electionresults.iowa.gov (AWS WAF challenge) and sos.iowa.gov (Cloudflare 403)
 # refuse the project's client. Until it can be, each district replays the plan's
 # fallback: 2020 → 2024 president on the district's own counties, with τ from Iowa's
-# statewide county pair, exactly as the Senate replay.
+# statewide county pair, exactly as the Senate replay (Törehan approved, Oct 26). This
+# is a presidential proxy, not a House replay: it tests each district's geography, not
+# House-specific swings. Switch to 2022 → 2024 House once the 2022 file is fetched.
 #
 # Prior: the district's 2020 two-party presidential margin plus the swing Iowa's
 # pre-election polling average implied (Senate replay prior, R+4.5 → −0.047
