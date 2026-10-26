@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass, field
+from datetime import datetime
 import math
 from pathlib import Path
 import re
@@ -59,6 +60,8 @@ class RaceConfig:
     ranked_choice: bool
     status: str
     fallback_baseline: str | None = None
+    # Historical pair the live county scatter (tau) is measured on, e.g. 2020_sen → 2022_sen.
+    tau_pair: tuple[str, str] | None = None
     notes: str = ""
 
 
@@ -70,7 +73,19 @@ class FeedConfig:
     status: str
     params: dict[str, str] = field(default_factory=dict)
     reference_url: str | None = None
+    # Live contest as the feed names it, and exact feed ballot name → side ("D", "R").
+    contest: str | None = None
+    candidates: dict[str, str] = field(default_factory=dict)
+    # Side → name shown on the dashboard. Every display side must appear in `candidates`.
+    display: dict[str, str] = field(default_factory=dict)
+    # Earliest poll closing in the state (ISO 8601 with offset). Counts seen before it
+    # are treated as test data and never published.
+    polls_close: str | None = None
     notes: str = ""
+
+    @property
+    def polls_close_at(self) -> datetime | None:
+        return datetime.fromisoformat(self.polls_close) if self.polls_close else None
 
 
 @dataclass(frozen=True)
@@ -120,7 +135,7 @@ def _document(path: Path, section: str) -> dict:
 def _race(race_id: str, raw) -> RaceConfig:
     where = "races entry"
     data = _fields(raw, {"state", "race_type", "unit", "priority", "baseline", "ranked_choice", "status"},
-                   {"fallback_baseline", "notes"}, where)
+                   {"fallback_baseline", "tau_pair", "notes"}, where)
     if not re.fullmatch(r"\d{4}-[A-Z]{2}-[A-Z0-9]+(?:-[A-Z0-9]+)*", race_id):
         raise ConfigError("races: invalid race ID")
     if not isinstance(data["state"], str) or data["state"] not in STATES or race_id.split("-")[1] != data["state"]:
@@ -136,6 +151,11 @@ def _race(race_id: str, raw) -> RaceConfig:
     for key in ("fallback_baseline", "notes"):
         if key in data:
             _text(data[key], f"races entry: {key}")
+    if "tau_pair" in data:
+        pair = data["tau_pair"]
+        if not isinstance(pair, list) or len(pair) != 2:
+            raise ConfigError("races entry: tau_pair must list two election keys")
+        data["tau_pair"] = tuple(_text(key, "races entry: tau_pair") for key in pair)
     return RaceConfig(**data)
 
 
@@ -154,8 +174,18 @@ def _url(value, where: str):
         raise ConfigError(f"{where}: expected an HTTPS URL without credentials or fragments")
 
 
+def _names(value, where: str) -> dict[str, str]:
+    value = _mapping(value, where)
+    for key, name in value.items():
+        _text(key, where)
+        _text(name, where)
+    return value
+
+
 def _feed(raw) -> FeedConfig:
-    data = _fields(raw, {"adapter", "url", "election_id", "status"}, {"params", "reference_url", "notes"}, "feeds entry")
+    data = _fields(raw, {"adapter", "url", "election_id", "status"},
+                   {"params", "reference_url", "contest", "candidates", "display", "polls_close", "notes"},
+                   "feeds entry")
     _choice(data["status"], ("pending", "ready", "blocked", "dropped"), "feeds entry: status")
     for key in ("adapter", "election_id", "notes"):
         if data.get(key) is not None:
@@ -167,9 +197,27 @@ def _feed(raw) -> FeedConfig:
     params = _mapping(data.get("params", {}), "feeds entry: params")
     if any(not isinstance(value, str) for value in params.values()):
         raise ConfigError("feeds entry: params values must be strings")
-    if data["status"] == "ready" and any(data[key] is None for key in ("adapter", "url", "election_id")):
-        raise ConfigError("feeds entry: ready feeds require adapter, url and election_id")
-    return FeedConfig(**data)
+    if data.get("contest") is not None:
+        _text(data["contest"], "feeds entry: contest")
+    candidates = _names(data.get("candidates") or {}, "feeds entry: candidates")
+    display = _names(data.get("display") or {}, "feeds entry: display")
+    if set(display) - set(candidates.values()) and candidates:
+        raise ConfigError("feeds entry: every display side must be a side in candidates")
+    if data.get("polls_close") is not None:
+        try:
+            closes = datetime.fromisoformat(_text(data["polls_close"], "feeds entry: polls_close"))
+        except ValueError:
+            closes = None
+        if closes is None or closes.utcoffset() is None:
+            raise ConfigError("feeds entry: polls_close must be ISO 8601 with a UTC offset")
+    if data["status"] == "ready":
+        if any(data[key] is None for key in ("adapter", "url", "election_id")):
+            raise ConfigError("feeds entry: ready feeds require adapter, url and election_id")
+        if data.get("contest") is None or data.get("polls_close") is None or not {"D", "R"} <= set(display):
+            raise ConfigError("feeds entry: ready feeds require contest, polls_close and D/R display names")
+        if not {"D", "R"} <= set(candidates.values()):
+            raise ConfigError("feeds entry: ready feeds must map ballot names to both D and R")
+    return FeedConfig(**{**data, "candidates": candidates, "display": display})
 
 
 def _prior(raw) -> RacePrior | None:
@@ -209,6 +257,8 @@ def load_config(directory: Path = DEFAULT_CONFIG_DIR) -> Config:
     feeds = _document(directory / "feeds.yaml", "feeds")
     _same_races(feeds, races, "feeds.yaml")
     feeds = {key: _feed(value) for key, value in feeds.items()}
+    if any(feeds[key].status == "ready" and races[key].tau_pair is None for key in races):
+        raise ConfigError("races.yaml: a race with a ready feed needs tau_pair")
     example = _document(directory / "priors.example.yaml", "priors")
     _same_races(example, races, "priors.example.yaml")
     for value in example.values():

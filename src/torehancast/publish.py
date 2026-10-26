@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import posixpath
 import tempfile
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -228,6 +229,29 @@ class S3Writer:
         self.s3.put_object(
             Bucket=self.bucket, Key=key, Body=body, ContentType="application/json", CacheControl=CACHE_CONTROL
         )
+
+
+class GCSWriter:
+    """Writes to the public Google Cloud Storage data bucket, under data/ only.
+
+    The bucket's public role can't be scoped to a prefix, so this check is what keeps
+    it holding nothing but data/: any other key is refused before an upload starts.
+    """
+
+    def __init__(self, bucket: str, client=None):
+        if client is None:
+            from google.cloud import storage
+
+            client = storage.Client()
+        self.bucket = client.bucket(bucket)
+
+    def write(self, key: str, payload: dict) -> None:
+        if not key.startswith("data/") or posixpath.normpath(key) != key:
+            raise ValueError(f"refusing to publish outside data/: {key}")
+        body = json.dumps(payload, default=_json_default, separators=(",", ":"))
+        blob = self.bucket.blob(key)
+        blob.cache_control = CACHE_CONTROL
+        blob.upload_from_string(body, content_type="application/json")
 
 
 def publish(updates: list[Update], writer, mode: str, gate: str = "first_votes") -> None:
