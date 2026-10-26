@@ -108,6 +108,10 @@ Issues caught by the replay harness and synthetic regression suite during develo
 - **Demographics:** U.S. **Census** Bureau, American Community Survey (ACS) 2023 5-Year Summary File (`www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/`, tables `B01002`, `B03002`, `B15003`, `B19013`) and 2020 Census ANSI county lookup (`national_county2020.txt`).
 - **Credits:** Methodological ideas for holdout systematic-error calibration and live county-level reporting models are credited to the Washington Post's [`elex-live-model`](https://github.com/washingtonpost/elex-live-model), along with open-source Clarity election-parsing work in `clarify` and `elex-clarity`.
 
+## Contact
+
+The poller's User-Agent (`torehancast/0.1`) points here. Election offices and anyone else with a question or a request about how the poller reads their site can [open an issue](https://github.com/Torehan06/the-torehancast/issues). The poller runs from one fixed IP, 18.211.31.125, and stops polling after Nov 7, 2026.
+
 ## License
 
 Code in this repository is licensed under the **MIT** License (see [`LICENSE`](LICENSE)). Official election results and U.S. Census ACS tables are public records in the public domain.
