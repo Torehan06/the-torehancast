@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { PluralityRace, Race, RcvRace, ResultsOnlyRace } from './contract'
 import { formatMargin, formatProbability, leader, showsProbabilities, voteState } from './display'
 
-const base = { state: 'GA', race: '2026-GA-SEN', as_of: null } as const
+const base = { state: 'GA', race: '2026-GA-SEN', race_type: 'senate', district: null, as_of: null } as const
 
 const modeled: PluralityRace = {
   ...base,
