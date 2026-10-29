@@ -129,7 +129,7 @@ function preview(tiles, width, height) {
         `<text x="${t.x * s + s / 2}" y="${t.y * s + 19}" font-size="7" text-anchor="middle">${label}</text>`
     })
     .join('')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width * s}" height="${height * s}" font-family="sans-serif">` +
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width * s} ${height * s}" width="${width * s}" height="${height * s}" font-family="sans-serif">` +
     `<rect width="100%" height="100%" fill="white"/>${rects}</svg>`
 }
 
