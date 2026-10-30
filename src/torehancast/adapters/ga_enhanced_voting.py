@@ -18,6 +18,7 @@ from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from .. import results_only
 from ..candidates import CandidateMap
 from ..http import PoliteClient
 from ..schema import Cell, Snapshot, canonical_vote_type
@@ -145,3 +146,32 @@ def parse(docs: list[dict], contest_name: str, cmap: CandidateMap, race: str) ->
 
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
     return snapshot_from_docs(load_archive(archives / spec["code"]), spec["contest"], cmap, key)
+
+
+def parse_all_contests(docs: list[dict], contests) -> dict[str, results_only.ContestTotals]:
+    """Every results-only contest in one pass over the county documents.
+
+    Reporting is the sum of each county's own units for the contest (its precincts
+    in the district), over the counties that carry the contest.
+    """
+    wanted = {c.contest: c for c in contests if c.contest}
+    choices: dict[str, list[results_only.Choice]] = {}
+    units: dict[str, list[int]] = {}
+    as_of = None
+    for doc in docs:
+        as_of = max(filter(None, [as_of, doc["election"].get("asOf")]), default=as_of)
+        for item in doc.get("ballotItems") or []:
+            contest = wanted.get(_text(item["name"]))
+            if contest is None:
+                continue
+            for option in item["summaryResults"]["ballotOptions"]:
+                party = (option.get("party") or {}).get("abbreviation")
+                choices.setdefault(contest.race_id, []).append(results_only.Choice(
+                    _text(option["name"]), party, int(option["voteCount"] or 0), bool(option.get("isWriteIn"))))
+            status = item.get("reportingStatus") or {}
+            counted = units.setdefault(contest.race_id, [0, 0])
+            counted[0] += int(status.get("reportingUnits") or 0)
+            counted[1] += int(status.get("totalUnits") or 0)
+    sides = {c.race_id: c.sides for c in wanted.values()}
+    return {race_id: results_only.totals(found, sides[race_id], results_only.fraction(*units[race_id]), as_of)
+            for race_id, found in choices.items()}

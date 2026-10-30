@@ -23,6 +23,7 @@ from . import sc_clarity
 BASE = "https://electionresults.iowa.gov/IA"
 
 read_zip = sc_clarity.read_zip
+parse_all_contests = sc_clarity.parse_all_contests
 unit_id = sc_clarity.unit_id
 load_archive = sc_clarity.load_archive
 

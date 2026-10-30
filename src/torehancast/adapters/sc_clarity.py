@@ -20,6 +20,7 @@ import zipfile
 from collections import defaultdict
 from pathlib import Path
 
+from .. import results_only
 from ..candidates import CandidateMap
 from ..http import PoliteClient
 from ..schema import Cell, Snapshot, canonical_vote_type
@@ -98,3 +99,22 @@ def fetch_source(client: PoliteClient, feed) -> str:
 
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
     return parse(load_archive(archives, spec["election_id"]), spec["contest"], cmap, key)
+
+
+def parse_all_contests(xml_text: str, contests) -> dict[str, results_only.ContestTotals]:
+    """Every results-only contest in one pass, from each `<Contest>`'s own totals and
+    precinct counts (for a district, those cover only its county parts)."""
+    root = ET.fromstring(xml_text)
+    as_of = root.findtext("Timestamp")
+    by_name = {el.attrib.get("text"): el for el in root.findall("Contest")}
+    out = {}
+    for contest in contests:
+        el = by_name.get(contest.contest) if contest.contest else None
+        if el is None:
+            continue
+        choices = [results_only.Choice(ch.attrib["text"], ch.attrib.get("party"), int(ch.attrib.get("totalVotes") or 0))
+                   for ch in el.findall("Choice")]
+        pct = results_only.fraction(int(el.attrib.get("precinctsReported") or 0),
+                                    int(el.attrib.get("precinctsParticipating") or 0))
+        out[contest.race_id] = results_only.totals(choices, contest.sides, pct, as_of)
+    return out

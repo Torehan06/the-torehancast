@@ -17,6 +17,7 @@ import zipfile
 from collections import defaultdict
 from pathlib import Path
 
+from .. import results_only
 from ..candidates import CandidateMap
 from ..schema import Cell, Snapshot, canonical_vote_type
 
@@ -77,3 +78,19 @@ def fetch_source(client, feed) -> str:
 
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
     return parse(load_archive(archives, spec["date"]), spec["contest"], cmap, key)
+
+
+def parse_all_contests(text: str, contests) -> dict[str, results_only.ContestTotals]:
+    """Every results-only contest in one pass.
+
+    The file has no precinct status (`parse` uses a proxy for the model), so the
+    public reporting fraction is None rather than a guess.
+    """
+    wanted = {c.contest: c for c in contests if c.contest}
+    choices: dict[str, list[results_only.Choice]] = defaultdict(list)
+    for row in csv.DictReader(io.StringIO(text), delimiter="\t"):
+        if row["Contest Name"] in wanted:
+            choices[row["Contest Name"]].append(
+                results_only.Choice(row["Choice"], row["Choice Party"], int(row["Total Votes"] or 0)))
+    return {wanted[name].race_id: results_only.totals(found, wanted[name].sides, None)
+            for name, found in choices.items()}

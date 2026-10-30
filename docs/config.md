@@ -77,6 +77,17 @@ results:
 - A `ready` source needs an adapter, a URL, `polls_close` and a template for every
   contest. It doesn't need a D/R mapping: uncontested and same-party top-two
   races are fine.
+- Side keys are automatic (`results_only.totals`): the feed's party label gives
+  the letter (DEM/DFL → D, REP → R, LIB/LPF → L, GRE/GRN → G, CON/CST → C,
+  IND/NPA/UNA → I), D and R come first, and a second candidate of one party gets
+  D2. Keys follow feed order, never vote order, so they don't change during the
+  night. Write-ins, unknown or ambiguous labels (SC's `UNC` is the United Citizens
+  Party; its write-in line is `NON`) and anyone past five named candidates pool
+  into `other`. `sides` overrides this for a named ballot line.
+- Florida's template is the extract's race code plus district, `USR:{n:03d}`.
+- Check a state's templates against its live file with
+  `python -m torehancast.feedcheck --contests ST` (from the VM): it prints
+  expected vs found districts and each contest's candidates and votes.
 - `none` keys are `senate`, `house` or a single House race ID. An explicit ID
   takes its own reason over the `house` catch-all.
 
