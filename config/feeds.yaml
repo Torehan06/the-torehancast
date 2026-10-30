@@ -59,15 +59,24 @@ feeds:
     notes: Set the verified live URL and election ID before marking ready. Reference
       URL is for discovery only.
   2026-OH-SEN-SPECIAL:
-    adapter: null
-    url: null
-    election_id: null
-    status: blocked
+    adapter: oh_sos
+    url: https://liveresults.ohiosos.gov/Api/v1/download?filename=VSSC1622XmlFileBlob
+    election_id: '2026-11-03'
+    status: ready
+    contest: U.S. Senator
+    candidates:
+      Sherrod Brown: D
+      Jon Husted: R
+      Greg Levy: other
+      William Redpath: other
+      Stephen Faris: other
+      Anthony Holliman: other
+      Timothy Telymonde: other
     display: {D: Sherrod Brown, R: Jon Husted}
     polls_close: '2026-11-03T19:30:00-05:00'
     reference_url: https://liveresults.ohiosos.gov/
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: Verified Oct 30 from the VM. Official NIST 1500-100 XML, refreshed every 3 min on the night;
+      marked IsTest with zero counts before the election. www.ohiosos.gov and boe.ohio.gov still challenge.
   2026-IA-SEN:
     adapter: ia_clarity
     url: null
@@ -401,38 +410,38 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-OH-H07:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-OH-H09:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-OH-H10:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-OH-H13:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-OH-H15:
     adapter: null
     url: null
     election_id: null
-    status: blocked
-    notes: State feed blocked by bot protection; never bypassed.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-PA-H01:
     adapter: null
     url: null

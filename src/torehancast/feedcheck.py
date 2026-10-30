@@ -32,7 +32,11 @@ CHECKS: dict[str, list[str]] = {
     "NC": ["https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/results_pct_20241105.zip"],
     "FL": ["https://results.elections.myflorida.com/downloadresults.asp?ElectionDate=11/5/2024&DATAMODE="],
     "TX": ["https://results.texas-election.com/static/data/ElectionConstants_404.json"],
-    "OH": ["https://liveresults.ohiosos.gov/", "https://www.ohiosos.gov/elections/election-results-and-data/"],
+    "OH": [
+        "https://liveresults.ohiosos.gov/",
+        "https://liveresults.ohiosos.gov/Api/v1/download?filename=VSSC1622XmlFileBlob",
+        "https://www.ohiosos.gov/elections/election-results-and-data/",
+    ],
     "IA": ["https://electionresults.iowa.gov/IA/122322/current_ver.txt"],
     "KS": ["https://ent.sos.ks.gov/national.html", "https://sos.ks.gov/elections/election-results.html"],
     "SC": ["https://www.enr-scvotes.org/SC/122436/current_ver.txt"],

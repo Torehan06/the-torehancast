@@ -89,7 +89,7 @@ class _Source:
 class _Race:
     key: tuple  # what the model was built from; a config change rebuilds it
     model: RaceModel
-    tracker: BatchTracker | None  # Florida only: one per race for the whole night
+    tracker: BatchTracker | None  # Florida and Ohio: one per race for the whole night
     last: publish.StateUpdate | None = None
     seen: tuple | None = None  # (document, config, polls closed) behind `last`
 
@@ -197,7 +197,7 @@ class Poller:
         if current is None or current.key != key:
             model = harness.make_model(race.state, race.baseline, race.tau_pair, prior,
                                        harness.live_synthetic_split(race.state))
-            tracker = BatchTracker() if adapter == "fl_dos" else None
+            tracker = BatchTracker() if adapter in ("fl_dos", "oh_sos") else None
             last = current.last if current else None
             current = self._races[race_id] = _Race(key, model, tracker, last)
         return current

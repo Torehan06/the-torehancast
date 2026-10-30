@@ -1,0 +1,2657 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ElectionReport xmlns="http://grouper.ieee.org/groups/1622/groups/2/V1/1622_2-election_results_reporting.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Format="SummaryContest" GeneratedDate="2026-10-30T08:48:15Z" IsTest="true" Issuer="Ohio Secretary of State Frank LaRose" IssuerAbbreviation="OH" Sequence="0" SequenceEnd="0" Status="UnofficialPartial" VendorApplicationId="Ohio-ENR 1.0.02">
+ <Code Type="Fips" Value="39" />
+ <Code OtherType="DisplayedFormat" Type="Other" Value="SummaryContest" />
+ <GpUnitCollection>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504C09A3E0633390EE0AE290" Name="Adams" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="21" Type="County">
+   <Code Type="StateLevel" Value="1" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FEE09A3E0633390EE0AE290" Name="Allen" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="88" Type="County">
+   <Code Type="StateLevel" Value="2" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504E09A3E0633390EE0AE290" Name="Ashland" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="39" Type="County">
+   <Code Type="StateLevel" Value="3" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505009A3E0633390EE0AE290" Name="Ashtabula" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="104" Type="County">
+   <Code Type="StateLevel" Value="4" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505209A3E0633390EE0AE290" Name="Athens" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="50" Type="County">
+   <Code Type="StateLevel" Value="5" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504609A3E0633390EE0AE290" Name="Auglaize" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="42" Type="County">
+   <Code Type="StateLevel" Value="6" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FD809A3E0633390EE0AE290" Name="Belmont" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="69" Type="County">
+   <Code Type="StateLevel" Value="7" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FDA09A3E0633390EE0AE290" Name="Brown" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="33" Type="County">
+   <Code Type="StateLevel" Value="8" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501209A3E0633390EE0AE290" Name="Butler" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="292" Type="County">
+   <Code Type="StateLevel" Value="9" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501409A3E0633390EE0AE290" Name="Carroll" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="23" Type="County">
+   <Code Type="StateLevel" Value="10" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FDC09A3E0633390EE0AE290" Name="Champaign" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="31" Type="County">
+   <Code Type="StateLevel" Value="11" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FDE09A3E0633390EE0AE290" Name="Clark" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="78" Type="County">
+   <Code Type="StateLevel" Value="12" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FE009A3E0633390EE0AE290" Name="Clermont" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="168" Type="County">
+   <Code Type="StateLevel" Value="13" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FE209A3E0633390EE0AE290" Name="Clinton" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="36" Type="County">
+   <Code Type="StateLevel" Value="14" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501809A3E0633390EE0AE290" Name="Columbiana" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="73" Type="County">
+   <Code Type="StateLevel" Value="15" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503809A3E0633390EE0AE290" Name="Coshocton" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="23" Type="County">
+   <Code Type="StateLevel" Value="16" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FD209A3E0633390EE0AE290" Name="Crawford" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="35" Type="County">
+   <Code Type="StateLevel" Value="17" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506409A3E0633390EE0AE290" Name="Cuyahoga" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="897" Type="County">
+   <Code Type="StateLevel" Value="18" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506609A3E0633390EE0AE290" Name="Darke" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="43" Type="County">
+   <Code Type="StateLevel" Value="19" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506809A3E0633390EE0AE290" Name="Defiance" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="33" Type="County">
+   <Code Type="StateLevel" Value="20" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506A09A3E0633390EE0AE290" Name="Delaware" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="180" Type="County">
+   <Code Type="StateLevel" Value="21" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506E09A3E0633390EE0AE290" Name="Erie" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="62" Type="County">
+   <Code Type="StateLevel" Value="22" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FEA09A3E0633390EE0AE290" Name="Fairfield" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="111" Type="County">
+   <Code Type="StateLevel" Value="23" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507009A3E0633390EE0AE290" Name="Fayette" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="25" Type="County">
+   <Code Type="StateLevel" Value="24" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502C09A3E0633390EE0AE290" Name="Franklin" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="889" Type="County">
+   <Code Type="StateLevel" Value="25" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504409A3E0633390EE0AE290" Name="Fulton" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="29" Type="County">
+   <Code Type="StateLevel" Value="26" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501009A3E0633390EE0AE290" Name="Gallia" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="26" Type="County">
+   <Code Type="StateLevel" Value="27" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501609A3E0633390EE0AE290" Name="Geauga" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="79" Type="County">
+   <Code Type="StateLevel" Value="28" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504A09A3E0633390EE0AE290" Name="Greene" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="151" Type="County">
+   <Code Type="StateLevel" Value="29" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507209A3E0633390EE0AE290" Name="Guernsey" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="35" Type="County">
+   <Code Type="StateLevel" Value="30" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507409A3E0633390EE0AE290" Name="Hamilton" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="563" Type="County">
+   <Code Type="StateLevel" Value="31" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507609A3E0633390EE0AE290" Name="Hancock" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="60" Type="County">
+   <Code Type="StateLevel" Value="32" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504809A3E0633390EE0AE290" Name="Hardin" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="21" Type="County">
+   <Code Type="StateLevel" Value="33" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FE809A3E0633390EE0AE290" Name="Harrison" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="16" Type="County">
+   <Code Type="StateLevel" Value="34" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503609A3E0633390EE0AE290" Name="Henry" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="23" Type="County">
+   <Code Type="StateLevel" Value="35" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FF809A3E0633390EE0AE290" Name="Highland" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="31" Type="County">
+   <Code Type="StateLevel" Value="36" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FFA09A3E0633390EE0AE290" Name="Hocking" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="20" Type="County">
+   <Code Type="StateLevel" Value="37" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FFC09A3E0633390EE0AE290" Name="Holmes" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="17" Type="County">
+   <Code Type="StateLevel" Value="38" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FFE09A3E0633390EE0AE290" Name="Huron" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="46" Type="County">
+   <Code Type="StateLevel" Value="39" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500009A3E0633390EE0AE290" Name="Jackson" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="29" Type="County">
+   <Code Type="StateLevel" Value="40" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FF009A3E0633390EE0AE290" Name="Jefferson" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="55" Type="County">
+   <Code Type="StateLevel" Value="41" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500209A3E0633390EE0AE290" Name="Knox" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="53" Type="County">
+   <Code Type="StateLevel" Value="42" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500409A3E0633390EE0AE290" Name="Lake" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="163" Type="County">
+   <Code Type="StateLevel" Value="43" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500609A3E0633390EE0AE290" Name="Lawrence" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="84" Type="County">
+   <Code Type="StateLevel" Value="44" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500809A3E0633390EE0AE290" Name="Licking" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="96" Type="County">
+   <Code Type="StateLevel" Value="45" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500A09A3E0633390EE0AE290" Name="Logan" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="36" Type="County">
+   <Code Type="StateLevel" Value="46" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500C09A3E0633390EE0AE290" Name="Lorain" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="210" Type="County">
+   <Code Type="StateLevel" Value="47" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FF609A3E0633390EE0AE290" Name="Lucas" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="280" Type="County">
+   <Code Type="StateLevel" Value="48" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA500E09A3E0633390EE0AE290" Name="Madison" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="24" Type="County">
+   <Code Type="StateLevel" Value="49" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505409A3E0633390EE0AE290" Name="Mahoning" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="212" Type="County">
+   <Code Type="StateLevel" Value="50" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505609A3E0633390EE0AE290" Name="Marion" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="45" Type="County">
+   <Code Type="StateLevel" Value="51" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505809A3E0633390EE0AE290" Name="Medina" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="124" Type="County">
+   <Code Type="StateLevel" Value="52" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505A09A3E0633390EE0AE290" Name="Meigs" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="27" Type="County">
+   <Code Type="StateLevel" Value="53" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505C09A3E0633390EE0AE290" Name="Mercer" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="36" Type="County">
+   <Code Type="StateLevel" Value="54" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501A09A3E0633390EE0AE290" Name="Miami" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="87" Type="County">
+   <Code Type="StateLevel" Value="55" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501C09A3E0633390EE0AE290" Name="Monroe" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="20" Type="County">
+   <Code Type="StateLevel" Value="56" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FF409A3E0633390EE0AE290" Name="Montgomery" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="381" Type="County">
+   <Code Type="StateLevel" Value="57" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA501E09A3E0633390EE0AE290" Name="Morgan" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="13" Type="County">
+   <Code Type="StateLevel" Value="58" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502009A3E0633390EE0AE290" Name="Morrow" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="33" Type="County">
+   <Code Type="StateLevel" Value="59" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502209A3E0633390EE0AE290" Name="Muskingum" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="68" Type="County">
+   <Code Type="StateLevel" Value="60" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506C09A3E0633390EE0AE290" Name="Noble" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="19" Type="County">
+   <Code Type="StateLevel" Value="61" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502409A3E0633390EE0AE290" Name="Ottawa" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="36" Type="County">
+   <Code Type="StateLevel" Value="62" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502609A3E0633390EE0AE290" Name="Paulding" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="16" Type="County">
+   <Code Type="StateLevel" Value="63" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502809A3E0633390EE0AE290" Name="Perry" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="33" Type="County">
+   <Code Type="StateLevel" Value="64" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507809A3E0633390EE0AE290" Name="Pickaway" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="46" Type="County">
+   <Code Type="StateLevel" Value="65" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507A09A3E0633390EE0AE290" Name="Pike" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="22" Type="County">
+   <Code Type="StateLevel" Value="66" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FCC09A3E0633390EE0AE290" Name="Portage" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="126" Type="County">
+   <Code Type="StateLevel" Value="67" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FCE09A3E0633390EE0AE290" Name="Preble" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="65" Type="County">
+   <Code Type="StateLevel" Value="68" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502E09A3E0633390EE0AE290" Name="Putnam" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="25" Type="County">
+   <Code Type="StateLevel" Value="69" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FEC09A3E0633390EE0AE290" Name="Richland" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="83" Type="County">
+   <Code Type="StateLevel" Value="70" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503009A3E0633390EE0AE290" Name="Ross" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="65" Type="County">
+   <Code Type="StateLevel" Value="71" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503209A3E0633390EE0AE290" Name="Sandusky" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="58" Type="County">
+   <Code Type="StateLevel" Value="72" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503409A3E0633390EE0AE290" Name="Scioto" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="77" Type="County">
+   <Code Type="StateLevel" Value="73" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA502A09A3E0633390EE0AE290" Name="Seneca" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="51" Type="County">
+   <Code Type="StateLevel" Value="74" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA505E09A3E0633390EE0AE290" Name="Shelby" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="36" Type="County">
+   <Code Type="StateLevel" Value="75" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FF209A3E0633390EE0AE290" Name="Stark" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="274" Type="County">
+   <Code Type="StateLevel" Value="76" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506009A3E0633390EE0AE290" Name="Summit" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="371" Type="County">
+   <Code Type="StateLevel" Value="77" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA506209A3E0633390EE0AE290" Name="Trumbull" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="158" Type="County">
+   <Code Type="StateLevel" Value="78" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FD009A3E0633390EE0AE290" Name="Tuscarawas" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="81" Type="County">
+   <Code Type="StateLevel" Value="79" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FD409A3E0633390EE0AE290" Name="Union" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="53" Type="County">
+   <Code Type="StateLevel" Value="80" />
+   <Code Type="LocalLevel" Value="Central" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FD609A3E0633390EE0AE290" Name="Van Wert" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="32" Type="County">
+   <Code Type="StateLevel" Value="81" />
+   <Code Type="LocalLevel" Value="West" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503A09A3E0633390EE0AE290" Name="Vinton" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="20" Type="County">
+   <Code Type="StateLevel" Value="82" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503C09A3E0633390EE0AE290" Name="Warren" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="185" Type="County">
+   <Code Type="StateLevel" Value="83" />
+   <Code Type="LocalLevel" Value="Southwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA503E09A3E0633390EE0AE290" Name="Washington" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="50" Type="County">
+   <Code Type="StateLevel" Value="84" />
+   <Code Type="LocalLevel" Value="Southeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504009A3E0633390EE0AE290" Name="Wayne" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="66" Type="County">
+   <Code Type="StateLevel" Value="85" />
+   <Code Type="LocalLevel" Value="Northeast" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA504209A3E0633390EE0AE290" Name="Williams" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="26" Type="County">
+   <Code Type="StateLevel" Value="86" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FE409A3E0633390EE0AE290" Name="Wood" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="99" Type="County">
+   <Code Type="StateLevel" Value="87" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA4FE609A3E0633390EE0AE290" Name="Wyandot" IsElectoralDistrict="false" SubUnitsReported="0" TotalSubUnits="23" Type="County">
+   <Code Type="StateLevel" Value="88" />
+   <Code Type="LocalLevel" Value="Northwest" />
+  </GpUnit>
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509309A3E0633390EE0AE290" Name="Congressional District 3" IsElectoralDistrict="true" Type="Congressional" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50A109A3E0633390EE0AE290" Name="Congressional District 9" IsElectoralDistrict="true" Type="Congressional" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B809A3E0633390EE0AE290" Name="Adams County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50D009A3E0633390EE0AE290" Name="Allen County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BA09A3E0633390EE0AE290" Name="Ashland County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BB09A3E0633390EE0AE290" Name="Ashtabula County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BC09A3E0633390EE0AE290" Name="Athens County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BD09A3E0633390EE0AE290" Name="Auglaize County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BE09A3E0633390EE0AE290" Name="Belmont County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50AA09A3E0633390EE0AE290" Name="Brown County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50BF09A3E0633390EE0AE290" Name="Butler County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50C009A3E0633390EE0AE290" Name="Carroll County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50C109A3E0633390EE0AE290" Name="Champaign County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50C209A3E0633390EE0AE290" Name="Clark County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA508E09A3E0633390EE0AE290" Name="Clermont County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA508F09A3E0633390EE0AE290" Name="Clinton County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509009A3E0633390EE0AE290" Name="Columbiana County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512509A3E0633390EE0AE290" Name="Coshocton County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512709A3E0633390EE0AE290" Name="Crawford County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512809A3E0633390EE0AE290" Name="Cuyahoga County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512909A3E0633390EE0AE290" Name="Darke County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512609A3E0633390EE0AE290" Name="Defiance County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512A09A3E0633390EE0AE290" Name="Delaware County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512B09A3E0633390EE0AE290" Name="Erie County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512C09A3E0633390EE0AE290" Name="Fairfield County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512D09A3E0633390EE0AE290" Name="Fayette County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512E09A3E0633390EE0AE290" Name="Franklin County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512F09A3E0633390EE0AE290" Name="Fulton County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513009A3E0633390EE0AE290" Name="Gallia County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513109A3E0633390EE0AE290" Name="Geauga County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513209A3E0633390EE0AE290" Name="Greene County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513309A3E0633390EE0AE290" Name="Guernsey County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513409A3E0633390EE0AE290" Name="Hamilton County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513509A3E0633390EE0AE290" Name="Hancock County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513609A3E0633390EE0AE290" Name="Hardin County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513709A3E0633390EE0AE290" Name="Harrison County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513809A3E0633390EE0AE290" Name="Henry County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513909A3E0633390EE0AE290" Name="Highland County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513A09A3E0633390EE0AE290" Name="Hocking County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50A409A3E0633390EE0AE290" Name="Holmes County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515109A3E0633390EE0AE290" Name="Huron County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515209A3E0633390EE0AE290" Name="Jackson County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515309A3E0633390EE0AE290" Name="Jefferson County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515409A3E0633390EE0AE290" Name="Knox County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515509A3E0633390EE0AE290" Name="Lake County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515609A3E0633390EE0AE290" Name="Lawrence County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515709A3E0633390EE0AE290" Name="Licking County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515809A3E0633390EE0AE290" Name="Logan County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515909A3E0633390EE0AE290" Name="Lorain County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515A09A3E0633390EE0AE290" Name="Lucas County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515B09A3E0633390EE0AE290" Name="Madison County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515C09A3E0633390EE0AE290" Name="Mahoning County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515D09A3E0633390EE0AE290" Name="Marion County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA515E09A3E0633390EE0AE290" Name="Medina County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509809A3E0633390EE0AE290" Name="Meigs County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509909A3E0633390EE0AE290" Name="Mercer County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509A09A3E0633390EE0AE290" Name="Miami County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509B09A3E0633390EE0AE290" Name="Monroe County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509C09A3E0633390EE0AE290" Name="Montgomery County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509D09A3E0633390EE0AE290" Name="Morgan County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509E09A3E0633390EE0AE290" Name="Morrow County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA509F09A3E0633390EE0AE290" Name="Muskingum County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA514209A3E0633390EE0AE290" Name="Noble County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA514309A3E0633390EE0AE290" Name="Ottawa County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA511709A3E0633390EE0AE290" Name="Paulding County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA511809A3E0633390EE0AE290" Name="Perry County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50FD09A3E0633390EE0AE290" Name="Pickaway County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50FA09A3E0633390EE0AE290" Name="Pike County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50FB09A3E0633390EE0AE290" Name="Portage County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50FE09A3E0633390EE0AE290" Name="Preble County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50FF09A3E0633390EE0AE290" Name="Putnam County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA510009A3E0633390EE0AE290" Name="Richland County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA510109A3E0633390EE0AE290" Name="Ross County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA510209A3E0633390EE0AE290" Name="Sandusky County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA510309A3E0633390EE0AE290" Name="Scioto County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B209A3E0633390EE0AE290" Name="Seneca County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B309A3E0633390EE0AE290" Name="Shelby County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B409A3E0633390EE0AE290" Name="Stark County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B609A3E0633390EE0AE290" Name="Summit County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B709A3E0633390EE0AE290" Name="Trumbull County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA507D09A3E0633390EE0AE290" Name="Tuscarawas County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA517209A3E0633390EE0AE290" Name="Union County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA512009A3E0633390EE0AE290" Name="Van Wert County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513B09A3E0633390EE0AE290" Name="Vinton County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513C09A3E0633390EE0AE290" Name="Warren County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513D09A3E0633390EE0AE290" Name="Washington County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513E09A3E0633390EE0AE290" Name="Wayne County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA513F09A3E0633390EE0AE290" Name="Williams County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA514009A3E0633390EE0AE290" Name="Wood County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA514109A3E0633390EE0AE290" Name="Wyandot County" IsElectoralDistrict="true" Type="County" />
+  <GpUnit xsi:type="ReportingUnit" ObjectId="_55A742EA50B509A3E0633390EE0AE290" Name="Statewide" IsElectoralDistrict="true" Type="State" />
+ </GpUnitCollection>
+ <PartyCollection>
+  <Party ObjectId="_9BCCB0C4CCBE7EF8E0533390EE0A422D" Abbreviation="None" Color="877f87">
+   <Name>
+    <LanguageString Language="en">Blank (General Election Only)</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="-" />
+  </Party>
+  <Party ObjectId="_AC855AE0DF484A2FA57D6DB3F6BA5CF9" Abbreviation="DEM" Color="0476b0">
+   <Name>
+    <LanguageString Language="en">Democratic</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="D" />
+  </Party>
+  <Party ObjectId="_DD200138729942C6A023B19AF926ADB3" Abbreviation="LIB" Color="663300">
+   <Name>
+    <LanguageString Language="en">Libertarian</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="L" />
+  </Party>
+  <Party ObjectId="_9426C73DBDE6454AA474A38DF95441AF" Abbreviation="Indep" Color="683e92">
+   <Name>
+    <LanguageString Language="en">Independent - NO ballot designation</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="NO" />
+  </Party>
+  <Party ObjectId="_364A85C92D733C97E0530A90EE0A6179" Abbreviation="Nonprtycan" Color="683e92">
+   <Name>
+    <LanguageString Language="en">Nonparty candidate</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="NP" />
+  </Party>
+  <Party ObjectId="_38C7D3223D4A667CE0530E90EE0A990E" Abbreviation="Other-part" Color="683e92">
+   <Name>
+    <LanguageString Language="en">Other-party candidate</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="OP" />
+  </Party>
+  <Party ObjectId="_3756BCE1F95642B48AF39744B9AB0493" Abbreviation="REP" Color="bf452e">
+   <Name>
+    <LanguageString Language="en">Republican</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="R" />
+  </Party>
+  <Party ObjectId="_847766AF01C04E06AF286F44D3F655FE" Abbreviation="Write-in" Color="f5802d">
+   <Name>
+    <LanguageString Language="en">Not Applicable - WI</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="WI" />
+  </Party>
+  <Party ObjectId="_4078798702EA49A79B56B96D97AFB761" Abbreviation="Non-partis" Color="656565">
+   <Name>
+    <LanguageString Language="en">Non-partisan candidate</LanguageString>
+   </Name>
+   <Code Type="StateLevel" Value="XX" />
+  </Party>
+ </PartyCollection>
+ <Election Date="2026-11-03" Type="General">
+  <Name>
+   <LanguageString Language="en">November 3, 2026 General Unofficial Canvass</LanguageString>
+  </Name>
+  <CandidateCollection>
+   <Candidate ObjectId="_55A742EA62A909A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Joyce Beatty</LanguageString>
+    </BallotName>
+    <PartyId>_AC855AE0DF484A2FA57D6DB3F6BA5CF9</PartyId>
+    <PersonId>_29DD68E0B63CB7BEE0530E90EE0AD92D</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA61EF09A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Sherrod Brown</LanguageString>
+    </BallotName>
+    <PartyId>_AC855AE0DF484A2FA57D6DB3F6BA5CF9</PartyId>
+    <PersonId>_0E63190E520B41A8E0633390EE0AAA9F</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA570D09A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Cleophus Dulaney</LanguageString>
+    </BallotName>
+    <PartyId>_3756BCE1F95642B48AF39744B9AB0493</PartyId>
+    <PersonId>_9B31160FE9C50F71E0533390EE0A9D85</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_59F4DEB13FEC0F04E0633390EE0A01BC" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Stephen Faris</LanguageString>
+    </BallotName>
+    <PartyId>_847766AF01C04E06AF286F44D3F655FE</PartyId>
+    <PersonId>_E77833E491053CFEE0533390EE0ACAFD</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_59F4DEB140460F04E0633390EE0A01BC" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Anthony Holliman</LanguageString>
+    </BallotName>
+    <PartyId>_847766AF01C04E06AF286F44D3F655FE</PartyId>
+    <PersonId>_59F4DEB13FEB0F04E0633390EE0A01BC</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA56A809A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Jon Husted</LanguageString>
+    </BallotName>
+    <PartyId>_3756BCE1F95642B48AF39744B9AB0493</PartyId>
+    <PersonId>_4AA30560E5190E39E0633390EE0A3B39</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA62AC09A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Marcy Kaptur</LanguageString>
+    </BallotName>
+    <PartyId>_AC855AE0DF484A2FA57D6DB3F6BA5CF9</PartyId>
+    <PersonId>_294B801C737EDB84E0530E90EE0AA525</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_5993067779935D6FE0633390EE0ADD86" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Greg Levy</LanguageString>
+    </BallotName>
+    <PartyId>_38C7D3223D4A667CE0530E90EE0A990E</PartyId>
+    <PersonId>_59930677798D5D6FE0633390EE0ADD86</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_5A1B6CF22B85CCE5E0633390EE0A89D7" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Kathy McKinstry</LanguageString>
+    </BallotName>
+    <PartyId>_847766AF01C04E06AF286F44D3F655FE</PartyId>
+    <PersonId>_5A1B6CF22B84CCE5E0633390EE0A89D7</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA577909A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Derek Merrin</LanguageString>
+    </BallotName>
+    <PartyId>_3756BCE1F95642B48AF39744B9AB0493</PartyId>
+    <PersonId>_293C9A845F962419E0530E90EE0A294E</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_55A742EA672809A3E0633390EE0AE290" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">William Redpath</LanguageString>
+    </BallotName>
+    <PartyId>_DD200138729942C6A023B19AF926ADB3</PartyId>
+    <PersonId>_4AA30560E5180E39E0633390EE0A3B39</PersonId>
+   </Candidate>
+   <Candidate ObjectId="_576274EE440573A4E0633390EE0A591D" PreElectionStatus="Qualified">
+    <BallotName>
+     <LanguageString Language="en">Timothy Telymonde</LanguageString>
+    </BallotName>
+    <PartyId>_847766AF01C04E06AF286F44D3F655FE</PartyId>
+    <PersonId>_576274EE440473A4E0633390EE0A591D</PersonId>
+   </Candidate>
+  </CandidateCollection>
+  <ContestCollection>
+   <Contest xsi:type="CandidateContest" ObjectId="_55A742EA56A709A3E0633390EE0AE290" Abbreviation="U.S. Senator" Name="U.S. Senator" SequenceOrder="06000000" VoteVariationType="NofM" NumberElected="1" VotesAllowed="1">
+    <Code OtherType="ContestType" Value="U.S. Senator" Type="Other" />
+    <Code Type="Other" OtherType="IsTopRace" Value="false" />
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA61EF09A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA61EF09A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS59F4DEB13FEC0F04E0633390EE0A01BC" IsWriteIn="true">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_59F4DEB13FEC0F04E0633390EE0A01BC</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS59F4DEB140460F04E0633390EE0A01BC" IsWriteIn="true">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_59F4DEB140460F04E0633390EE0A01BC</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA56A809A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA56A809A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS5993067779935D6FE0633390EE0ADD86" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_5993067779935D6FE0633390EE0ADD86</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA672809A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA672809A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS576274EE440573A4E0633390EE0A591D" IsWriteIn="true">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50B509A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FDE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFA09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FFE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA500E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA501E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA507A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FCE09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FEC09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA505E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FD609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503A09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504009A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_576274EE440573A4E0633390EE0A591D</CandidateId>
+    </BallotSelection>
+    <JurisdictionalScopeId>_55A742EA50B509A3E0633390EE0AE290</JurisdictionalScopeId>
+    <OfficeId>_OF55A742EA56A709A3E0633390EE0AE290</OfficeId>
+   </Contest>
+   <Contest xsi:type="CandidateContest" ObjectId="_55A742EA570C09A3E0633390EE0AE290" Abbreviation="Representative to Congress - District 03" Name="Representative to Congress - District 03" SequenceOrder="07000003" VoteVariationType="NofM" NumberElected="1" VotesAllowed="1">
+    <Code OtherType="ContestType" Value="Representative to Congress" Type="Other" />
+    <Code Type="Other" OtherType="IsTopRace" Value="false" />
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA62A909A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA509309A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA62A909A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA570D09A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA509309A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502C09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA570D09A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <JurisdictionalScopeId>_55A742EA509309A3E0633390EE0AE290</JurisdictionalScopeId>
+    <OfficeId>_OF55A742EA570C09A3E0633390EE0AE290</OfficeId>
+   </Contest>
+   <Contest xsi:type="CandidateContest" ObjectId="_55A742EA577809A3E0633390EE0AE290" Abbreviation="Representative to Congress - District 09" Name="Representative to Congress - District 09" SequenceOrder="07000009" VoteVariationType="NofM" NumberElected="1" VotesAllowed="1">
+    <Code OtherType="ContestType" Value="Representative to Congress" Type="Other" />
+    <Code Type="Other" OtherType="IsTopRace" Value="false" />
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA62AC09A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50A109A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA62AC09A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS5A1B6CF22B85CCE5E0633390EE0A89D7" IsWriteIn="true">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50A109A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_5A1B6CF22B85CCE5E0633390EE0A89D7</CandidateId>
+    </BallotSelection>
+    <BallotSelection xsi:type="CandidateSelection" ObjectId="_BS55A742EA577909A3E0633390EE0AE290" IsWriteIn="false">
+     <VoteCountsCollection>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA50A109A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506809A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA506E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA503609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FF609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502609A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA502E09A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA504209A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+      <VoteCounts Type="Total" Count="0">
+       <GpUnitId>_55A742EA4FE409A3E0633390EE0AE290</GpUnitId>
+      </VoteCounts>
+     </VoteCountsCollection>
+     <CandidateId>_55A742EA577909A3E0633390EE0AE290</CandidateId>
+    </BallotSelection>
+    <JurisdictionalScopeId>_55A742EA50A109A3E0633390EE0AE290</JurisdictionalScopeId>
+    <OfficeId>_OF55A742EA577809A3E0633390EE0AE290</OfficeId>
+   </Contest>
+  </ContestCollection>
+ </Election>
+</ElectionReport>
