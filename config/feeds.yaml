@@ -52,7 +52,7 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     display: {D: James Talarico, R: Ken Paxton}
     polls_close: '2026-11-03T19:00:00-06:00'
     reference_url: https://results.texas-election.com/static/data/ElectionConstants_404.json
@@ -82,7 +82,7 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     display: {D: Adam Hamilton, R: Roger Marshall}
     polls_close: '2026-11-03T19:00:00-06:00'
     reference_url: https://ent.sos.ks.gov/national.html
@@ -101,7 +101,7 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     display: {D: Abdul El-Sayed, R: Mike Rogers}
     polls_close: '2026-11-03T20:00:00-05:00'
     reference_url: https://mielections.us/
@@ -129,7 +129,7 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     display: {D: Troy Jackson, R: Susan Collins}
     polls_close: '2026-11-03T20:00:00-05:00'
     reference_url: https://www.maine.gov/sos/cec/elec/results/index.html
@@ -299,31 +299,31 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-MI-H04:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-MI-H07:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-MI-H08:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-MI-H10:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-MT-H01:
     adapter: null
@@ -467,37 +467,37 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-TX-H15:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-TX-H23:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-TX-H28:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-TX-H34:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-TX-H35:
     adapter: null
     url: null
     election_id: null
-    status: blocked
+    status: dropped
     notes: State feed blocked by bot protection; never bypassed.
   2026-VA-H01:
     adapter: null
