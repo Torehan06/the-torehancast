@@ -13,7 +13,9 @@ never branch on a state, and a new adapter never edits a shared file:
         (data/archives/<ST>). `spec` is the election's entry in elections.yaml.
     parse_all_contests(document, contests) -> {race_id: ContestTotals}   (optional)
         Vote totals for every results-only contest in one pass. A contest missing
-        from the result has no votes yet. Adapters gain this in W4.
+        from the result has no votes yet. Side keys come from
+        `results_only.totals`, so every adapter keys candidates the same way.
+        `clarity` is a results-only adapter for any Clarity state (W4b).
 """
 
 from __future__ import annotations

@@ -1,6 +1,14 @@
 # Results-only races in Ohio: vote totals and percent reporting, no model, no prior.
 # Schema: docs/config.md. `none` races render "no votes reported for this race".
 results:
-  sources: {}
-  none:
-    house: 'Blocked: Cloudflare challenge on the state results site (PLAN M7).'
+  sources:
+    sos:
+      same_as: 2026-OH-SEN-SPECIAL
+      status: ready
+      contests:
+      - office: house
+        districts: all
+        template: Representative to Congress - District {n:02d}
+      notes: Contest names from the Nov 3, 2026 feed (Oct 30). All 15 districts; the six modeled ones
+        were dropped as forecasts. No reporting fraction, because the feed's precinct counts are per
+        whole county and districts split counties.

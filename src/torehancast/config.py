@@ -413,7 +413,9 @@ def _results_source(state: str, name: str, raw, config: Config) -> tuple[Results
                      | {key: data[key] for key in ("params", "reference_url", "polls_close") if key in data}
                      | {"status": "pending"})
         feed = replace(feed, status=data["status"])
-    contests = _results_contests(state, name, data["contests"], config.races)
+    # A dropped forecast can still show vote totals; a live forecast can't do both.
+    forecasts = {race_id: race for race_id, race in config.races.items() if race.status != "dropped"}
+    contests = _results_contests(state, name, data["contests"], forecasts)
     if data["status"] == "ready":
         if feed.adapter is None or feed.url is None or feed.polls_close is None:
             raise ConfigError(f"{where}: ready sources require adapter, url and polls_close")
@@ -468,15 +470,15 @@ def load_results(config: Config, directory: Path = DEFAULT_CONFIG_DIR) -> Result
         if len(ids) != len(set(ids)):
             raise ConfigError(f"results/{path.name}: a race is listed by more than one contest")
         contests.update((c.race_id, c) for c in state_contests)
-        none.update(_none(state, data.get("none") or {}, set(ids), config.races))
+        none.update(_none(state, data.get("none") or {}, set(ids), config.races))  # dropped stays out of none
     return Results(sources, contests, none)
 
 
 def coverage(config: Config, results: Results) -> dict[str, str]:
     """Race ID → "modeled", "results" or "none" for every race the config knows about."""
     return ({race_id: "none" for race_id in results.none}
-            | {race_id: "results" for race_id in results.contests}
-            | {race_id: "modeled" for race_id in config.races})
+            | {race_id: "modeled" for race_id in config.races}
+            | {race_id: "results" for race_id in results.contests})  # a dropped forecast shows totals
 
 
 def main(argv: list[str] | None = None) -> int:

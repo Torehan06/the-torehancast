@@ -42,7 +42,7 @@ races:
     priority: 4
     baseline: 2024_sen
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Cloudflare JS challenge; do not bypass.
   2026-OH-SEN-SPECIAL:
     state: OH
@@ -50,9 +50,12 @@ races:
     unit: county
     priority: 5
     baseline: 2024_sen
+    tau_pair: [2018_sen, 2024_sen]
     ranked_choice: false
-    status: blocked
-    notes: Brown 2024 Senate baseline. Cloudflare challenge on SOS and county alternatives.
+    status: done
+    notes: Brown 2024 Senate baseline; the replay passes (2018 Sen to 2024 Sen). NIST XML feed with county
+      totals only, so it runs with BatchTracker as Florida does. History comes from research copies of
+      the canvass, because Ohio's own archive is behind a bot challenge.
   2026-IA-SEN:
     state: IA
     race_type: senate
@@ -71,7 +74,7 @@ races:
     priority: 7
     baseline: 2024_pres
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Strict HTML parser approved, but Cloudflare under-attack mode blocks access.
   2026-SC-SEN:
     state: SC
@@ -91,7 +94,7 @@ races:
     priority: 9
     baseline: 2024_sen
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Times out from the US poller; archive behind Cloudflare.
   2026-MN-SEN:
     state: MN
@@ -112,7 +115,7 @@ races:
     priority: 11
     baseline: 2020_sen
     ranked_choice: true
-    status: blocked
+    status: dropped
     notes: RCV; no official live feed known. CloudFront 403; towns report over two
       days.
   2026-AK-SEN:
@@ -352,7 +355,7 @@ races:
     priority: 37
     baseline: 2024_house_02
     ranked_choice: true
-    status: blocked
+    status: dropped
     notes: RCV. No official live feed known; maine.gov CloudFront 403. Dropped Oct 30 if still blocked.
   2026-MI-H04:
     state: MI
@@ -361,7 +364,7 @@ races:
     priority: 38
     baseline: 2024_house_04
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-MI-H07:
     state: MI
@@ -370,7 +373,7 @@ races:
     priority: 39
     baseline: 2024_house_07
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-MI-H08:
     state: MI
@@ -379,7 +382,7 @@ races:
     priority: 40
     baseline: 2024_house_08
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-MI-H10:
     state: MI
@@ -388,7 +391,7 @@ races:
     priority: 41
     baseline: 2024_house_10
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-MT-H01:
     state: MT
@@ -505,8 +508,8 @@ races:
     priority: 54
     baseline: 2024_pres_2026lines_01
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-OH-H07:
     state: OH
     race_type: house
@@ -514,8 +517,8 @@ races:
     priority: 55
     baseline: 2024_pres_2026lines_07
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-OH-H09:
     state: OH
     race_type: house
@@ -523,8 +526,8 @@ races:
     priority: 56
     baseline: 2024_pres_2026lines_09
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-OH-H10:
     state: OH
     race_type: house
@@ -532,8 +535,8 @@ races:
     priority: 57
     baseline: 2024_pres_2026lines_10
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-OH-H13:
     state: OH
     race_type: house
@@ -541,8 +544,8 @@ races:
     priority: 58
     baseline: 2024_pres_2026lines_13
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-OH-H15:
     state: OH
     race_type: house
@@ -550,8 +553,8 @@ races:
     priority: 59
     baseline: 2024_pres_2026lines_15
     ranked_choice: false
-    status: blocked
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
+    status: dropped
+    notes: Forecast dropped Oct 30; no baseline on the 2026 lines in time. Shows vote totals (config/results/OH.yaml).
   2026-PA-H01:
     state: PA
     race_type: house
@@ -604,7 +607,7 @@ races:
     priority: 65
     baseline: 2024_pres_2026lines_09
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-TX-H15:
     state: TX
@@ -613,7 +616,7 @@ races:
     priority: 66
     baseline: 2024_pres_2026lines_15
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-TX-H23:
     state: TX
@@ -622,7 +625,7 @@ races:
     priority: 67
     baseline: 2024_pres_2026lines_23
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-TX-H28:
     state: TX
@@ -631,7 +634,7 @@ races:
     priority: 68
     baseline: 2024_pres_2026lines_28
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-TX-H34:
     state: TX
@@ -640,7 +643,7 @@ races:
     priority: 69
     baseline: 2024_pres_2026lines_34
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-TX-H35:
     state: TX
@@ -649,7 +652,7 @@ races:
     priority: 70
     baseline: 2024_pres_2026lines_35
     ranked_choice: false
-    status: blocked
+    status: dropped
     notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7). State feed blocked; dropped Oct 30 if still blocked.
   2026-VA-H01:
     state: VA

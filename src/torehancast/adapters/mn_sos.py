@@ -36,6 +36,7 @@ import io
 from collections import defaultdict
 from pathlib import Path
 
+from .. import results_only
 from ..candidates import CandidateMap
 from ..schema import ALL, Cell, Snapshot
 
@@ -123,3 +124,25 @@ def fetch_source(client, feed) -> str:
 
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
     return parse(load_archive(archives, spec["date"]), spec["contest"], cmap, key)
+
+
+def parse_all_contests(text: str, contests) -> dict[str, results_only.ContestTotals]:
+    """Every results-only contest in one pass; a contest matches by office name or ID,
+    as in `parse`. Reporting is counted once per county row group."""
+    choices: dict[str, list[results_only.Choice]] = defaultdict(list)
+    units: dict[str, dict[str, tuple[int, int]]] = defaultdict(dict)
+    for row in csv.reader(io.StringIO(text.lstrip("\ufeff")), delimiter=";"):
+        if len(row) < 14:
+            continue
+        office_id, office_name = row[3].strip(), row[4].strip()
+        contest = next((c for c in contests if c.contest in (office_name, office_id)), None)
+        if contest is None or not contest.contest:
+            continue
+        choices[contest.race_id].append(results_only.Choice(row[7].strip(), row[10].strip(), int(row[13] or 0)))
+        units[contest.race_id][row[1].strip().zfill(2)] = (int(row[11] or 0), int(row[12] or 0))
+    sides = {c.race_id: c.sides for c in contests}
+    return {
+        race_id: results_only.totals(found, sides[race_id], results_only.fraction(
+            sum(r for r, _ in units[race_id].values()), sum(t for _, t in units[race_id].values())))
+        for race_id, found in choices.items()
+    }

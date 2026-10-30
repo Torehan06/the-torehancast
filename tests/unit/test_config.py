@@ -291,7 +291,9 @@ def test_every_federal_race_is_modeled_results_only_or_none():
     covered = config.coverage(loaded, config.load_results(loaded, ROOT / "config"))
     federal = set(districts.senate_race_ids()) | set(districts.house_race_ids())
     assert covered.keys() == federal, f"unregistered: {sorted(federal - covered.keys())[:10]}"
-    assert sum(kind == "modeled" for kind in covered.values()) == 76
+    assert sum(kind == "modeled" for kind in covered.values()) == 70  # 76 minus Ohio's 6 dropped forecasts
+    assert sum(covered[race] == "results" for race in covered if race.startswith("2026-OH-H")) == 15
+    assert covered["2026-OH-SEN-SPECIAL"] == "modeled"
 
 
 def test_validate_reports_results_only_counts(results_dir):
@@ -388,3 +390,22 @@ def test_house_file_adds_elections_and_refuses_duplicates(tmp_path, monkeypatch)
     (tmp_path / "house" / "NC.yaml").write_text("elections:\n  2024_pres: {adapter: nc_sbe}\n")
     with pytest.raises(ValueError, match="both"):
         elections.specs("NC")
+
+
+def test_a_live_forecast_cant_also_be_results_only_but_a_dropped_one_can(results_dir):
+    def set_status(status):
+        path = results_dir / "races.yaml"
+        doc = yaml.safe_load(path.read_text())
+        doc["races"]["2026-NC-H01"]["status"] = status
+        path.write_text(yaml.safe_dump(doc))
+    edit = results_dir / "results" / "NC.yaml"
+    doc = yaml.safe_load(edit.read_text())
+    doc["results"]["sources"]["sbe"]["contests"][0]["districts"] = [1, 2]
+    edit.write_text(yaml.safe_dump(doc))
+    with pytest.raises(config.ConfigError, match="modeled"):
+        results(results_dir)
+    set_status("dropped")
+    loaded = config.load_config(results_dir)
+    found = config.load_results(loaded, results_dir)
+    assert "2026-NC-H01" in found.contests
+    assert config.coverage(loaded, found)["2026-NC-H01"] == "results"
