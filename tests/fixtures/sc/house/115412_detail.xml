@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ElectionResult>
+    <Timestamp>11/17/2022 3:17:28 PM EST</Timestamp>
+    <ElectionName>2022 Statewide General Elections</ElectionName>
+    <ElectionDate>11/8/2022</ElectionDate>
+    <Region>SC</Region>
+    <ElectionVoterTurnout totalVoters="3379089" ballotsCast="1718626" voterTurnout="50.86">
+        <Counties>
+            <County name="Abbeville" totalVoters="15982" ballotsCast="8666" voterTurnout="54.22" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="Aiken" totalVoters="116055" ballotsCast="55366" voterTurnout="47.71" precinctsParticipating="86" precinctsReported="86" precinctsReportingPercent="100.00" />
+            <County name="Allendale" totalVoters="5124" ballotsCast="1893" voterTurnout="36.94" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Anderson" totalVoters="125932" ballotsCast="63886" voterTurnout="50.73" precinctsParticipating="79" precinctsReported="79" precinctsReportingPercent="100.00" />
+            <County name="Bamberg" totalVoters="8448" ballotsCast="4061" voterTurnout="48.07" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Barnwell" totalVoters="13514" ballotsCast="6427" voterTurnout="47.56" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="Beaufort" totalVoters="138812" ballotsCast="72326" voterTurnout="52.10" precinctsParticipating="95" precinctsReported="95" precinctsReportingPercent="100.00" />
+            <County name="Berkeley" totalVoters="149091" ballotsCast="72067" voterTurnout="48.34" precinctsParticipating="94" precinctsReported="94" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" totalVoters="10345" ballotsCast="5707" voterTurnout="55.17" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Charleston" totalVoters="264022" ballotsCast="154386" voterTurnout="58.47" precinctsParticipating="182" precinctsReported="182" precinctsReportingPercent="100.00" />
+            <County name="Cherokee" totalVoters="33504" ballotsCast="16281" voterTurnout="48.59" precinctsParticipating="29" precinctsReported="29" precinctsReportingPercent="100.00" />
+            <County name="Chester" totalVoters="20179" ballotsCast="9719" voterTurnout="48.16" precinctsParticipating="21" precinctsReported="21" precinctsReportingPercent="100.00" />
+            <County name="Chesterfield" totalVoters="26214" ballotsCast="12776" voterTurnout="48.74" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Clarendon" totalVoters="22043" ballotsCast="11635" voterTurnout="52.78" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Colleton" totalVoters="25425" ballotsCast="12775" voterTurnout="50.25" precinctsParticipating="32" precinctsReported="32" precinctsReportingPercent="100.00" />
+            <County name="Darlington" totalVoters="41576" ballotsCast="20313" voterTurnout="48.86" precinctsParticipating="32" precinctsReported="32" precinctsReportingPercent="100.00" />
+            <County name="Dillon" totalVoters="17737" ballotsCast="8072" voterTurnout="45.51" precinctsParticipating="19" precinctsReported="19" precinctsReportingPercent="100.00" />
+            <County name="Dorchester" totalVoters="106797" ballotsCast="50159" voterTurnout="46.97" precinctsParticipating="81" precinctsReported="81" precinctsReportingPercent="100.00" />
+            <County name="Edgefield" totalVoters="17909" ballotsCast="8922" voterTurnout="49.82" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Fairfield" totalVoters="15817" ballotsCast="8569" voterTurnout="54.18" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Florence" totalVoters="82842" ballotsCast="41893" voterTurnout="50.57" precinctsParticipating="63" precinctsReported="63" precinctsReportingPercent="100.00" />
+            <County name="Georgetown" totalVoters="48343" ballotsCast="27750" voterTurnout="57.40" precinctsParticipating="34" precinctsReported="34" precinctsReportingPercent="100.00" />
+            <County name="Greenville" totalVoters="344300" ballotsCast="179296" voterTurnout="52.08" precinctsParticipating="151" precinctsReported="151" precinctsReportingPercent="100.00" />
+            <County name="Greenwood" totalVoters="40336" ballotsCast="22020" voterTurnout="54.59" precinctsParticipating="50" precinctsReported="50" precinctsReportingPercent="100.00" />
+            <County name="Hampton" totalVoters="12067" ballotsCast="5812" voterTurnout="48.16" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Horry" totalVoters="261725" ballotsCast="134795" voterTurnout="51.50" precinctsParticipating="125" precinctsReported="125" precinctsReportingPercent="100.00" />
+            <County name="Jasper" totalVoters="22369" ballotsCast="11278" voterTurnout="50.42" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Kershaw" totalVoters="42777" ballotsCast="22600" voterTurnout="52.83" precinctsParticipating="32" precinctsReported="32" precinctsReportingPercent="100.00" />
+            <County name="Lancaster" totalVoters="69690" ballotsCast="34884" voterTurnout="50.06" precinctsParticipating="36" precinctsReported="36" precinctsReportingPercent="100.00" />
+            <County name="Laurens" totalVoters="39823" ballotsCast="20000" voterTurnout="50.22" precinctsParticipating="33" precinctsReported="33" precinctsReportingPercent="100.00" />
+            <County name="Lee" totalVoters="10578" ballotsCast="5350" voterTurnout="50.58" precinctsParticipating="22" precinctsReported="22" precinctsReportingPercent="100.00" />
+            <County name="Lexington" totalVoters="195197" ballotsCast="100352" voterTurnout="51.41" precinctsParticipating="96" precinctsReported="96" precinctsReportingPercent="100.00" />
+            <County name="Marion" totalVoters="20431" ballotsCast="8588" voterTurnout="42.03" precinctsParticipating="17" precinctsReported="17" precinctsReportingPercent="100.00" />
+            <County name="Marlboro" totalVoters="16254" ballotsCast="6645" voterTurnout="40.88" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="McCormick" totalVoters="7609" ballotsCast="4636" voterTurnout="60.93" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Newberry" totalVoters="23732" ballotsCast="12942" voterTurnout="54.53" precinctsParticipating="30" precinctsReported="30" precinctsReportingPercent="100.00" />
+            <County name="Oconee" totalVoters="54116" ballotsCast="29203" voterTurnout="53.96" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Orangeburg" totalVoters="53536" ballotsCast="26534" voterTurnout="49.56" precinctsParticipating="53" precinctsReported="53" precinctsReportingPercent="100.00" />
+            <County name="Pickens" totalVoters="75940" ballotsCast="40541" voterTurnout="53.39" precinctsParticipating="61" precinctsReported="61" precinctsReportingPercent="100.00" />
+            <County name="Richland" totalVoters="271139" ballotsCast="128524" voterTurnout="47.40" precinctsParticipating="149" precinctsReported="149" precinctsReportingPercent="100.00" />
+            <County name="Saluda" totalVoters="11639" ballotsCast="6664" voterTurnout="57.26" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Spartanburg" totalVoters="202773" ballotsCast="97769" voterTurnout="48.22" precinctsParticipating="98" precinctsReported="98" precinctsReportingPercent="100.00" />
+            <County name="Sumter" totalVoters="66461" ballotsCast="31062" voterTurnout="46.74" precinctsParticipating="58" precinctsReported="58" precinctsReportingPercent="100.00" />
+            <County name="Union" totalVoters="16259" ballotsCast="8783" voterTurnout="54.02" precinctsParticipating="21" precinctsReported="21" precinctsReportingPercent="100.00" />
+            <County name="Williamsburg" totalVoters="20266" ballotsCast="9973" voterTurnout="49.21" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+            <County name="York" totalVoters="194401" ballotsCast="96726" voterTurnout="49.76" precinctsParticipating="98" precinctsReported="98" precinctsReportingPercent="100.00" />
+        </Counties>
+    </ElectionVoterTurnout>
+    <Contest key="27002" text="U.S.  House of Representatives, District  1" voteFor="1" isQuestion="false" countiesParticipating="6" countiesReported="6" precinctsParticipating="335" precinctsReported="335" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Beaufort" precinctsParticipating="95" precinctsReported="95" precinctsReportingPercent="100.00" />
+            <County name="Berkeley" precinctsParticipating="94" precinctsReported="94" precinctsReportingPercent="100.00" />
+            <County name="Charleston" precinctsParticipating="79" precinctsReported="79" precinctsReportingPercent="100.00" />
+            <County name="Colleton" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+            <County name="Dorchester" precinctsParticipating="63" precinctsReported="63" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="2" precinctsReported="2" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="001" text="REP Nancy Mace" party="REP" totalVotes="153757">
+            <VoteType name="Election Day" votes="94699">
+                <County name="Beaufort" votes="26422" />
+                <County name="Berkeley" votes="28764" />
+                <County name="Charleston" votes="24626" />
+                <County name="Colleton" votes="584" />
+                <County name="Dorchester" votes="13498" />
+                <County name="Jasper" votes="805" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="53025">
+                <County name="Beaufort" votes="14375" />
+                <County name="Berkeley" votes="10603" />
+                <County name="Charleston" votes="18039" />
+                <County name="Colleton" votes="102" />
+                <County name="Dorchester" votes="8956" />
+                <County name="Jasper" votes="950" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="5595">
+                <County name="Beaufort" votes="1463" />
+                <County name="Berkeley" votes="1452" />
+                <County name="Charleston" votes="1920" />
+                <County name="Colleton" votes="43" />
+                <County name="Dorchester" votes="582" />
+                <County name="Jasper" votes="135" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="165">
+                <County name="Beaufort" votes="149" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="16" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="135">
+                <County name="Beaufort" votes="48" />
+                <County name="Berkeley" votes="10" />
+                <County name="Charleston" votes="69" />
+                <County name="Colleton" votes="1" />
+                <County name="Dorchester" votes="2" />
+                <County name="Jasper" votes="5" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="138">
+                <County name="Beaufort" votes="67" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="66" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="5" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="002" text="ALN Joseph Oddo" party="ALN" totalVotes="2634">
+            <VoteType name="Election Day" votes="1815">
+                <County name="Beaufort" votes="360" />
+                <County name="Berkeley" votes="715" />
+                <County name="Charleston" votes="383" />
+                <County name="Colleton" votes="5" />
+                <County name="Dorchester" votes="344" />
+                <County name="Jasper" votes="8" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="752">
+                <County name="Beaufort" votes="153" />
+                <County name="Berkeley" votes="202" />
+                <County name="Charleston" votes="230" />
+                <County name="Colleton" votes="2" />
+                <County name="Dorchester" votes="158" />
+                <County name="Jasper" votes="7" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="56">
+                <County name="Beaufort" votes="10" />
+                <County name="Berkeley" votes="19" />
+                <County name="Charleston" votes="21" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="6" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="5">
+                <County name="Beaufort" votes="5" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="2">
+                <County name="Beaufort" votes="1" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="1" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="4">
+                <County name="Beaufort" votes="1" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="3" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="003" text="DEM Annie Andrews" party="DEM" totalVotes="115796">
+            <VoteType name="Election Day" votes="59280">
+                <County name="Beaufort" votes="14376" />
+                <County name="Berkeley" votes="17693" />
+                <County name="Charleston" votes="18849" />
+                <County name="Colleton" votes="340" />
+                <County name="Dorchester" votes="7689" />
+                <County name="Jasper" votes="333" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="49721">
+                <County name="Beaufort" votes="12297" />
+                <County name="Berkeley" votes="10068" />
+                <County name="Charleston" votes="19104" />
+                <County name="Colleton" votes="136" />
+                <County name="Dorchester" votes="7465" />
+                <County name="Jasper" votes="651" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="6462">
+                <County name="Beaufort" votes="1462" />
+                <County name="Berkeley" votes="1458" />
+                <County name="Charleston" votes="2757" />
+                <County name="Colleton" votes="41" />
+                <County name="Dorchester" votes="639" />
+                <County name="Jasper" votes="105" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="111">
+                <County name="Beaufort" votes="95" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="16" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="117">
+                <County name="Beaufort" votes="25" />
+                <County name="Berkeley" votes="16" />
+                <County name="Charleston" votes="73" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="1" />
+                <County name="Jasper" votes="2" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="105">
+                <County name="Beaufort" votes="25" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="77" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="3" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="005" text="Write-In" party="NON" totalVotes="494">
+            <VoteType name="Election Day" votes="340">
+                <County name="Beaufort" votes="82" />
+                <County name="Berkeley" votes="101" />
+                <County name="Charleston" votes="96" />
+                <County name="Colleton" votes="1" />
+                <County name="Dorchester" votes="53" />
+                <County name="Jasper" votes="7" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="123">
+                <County name="Beaufort" votes="47" />
+                <County name="Berkeley" votes="25" />
+                <County name="Charleston" votes="30" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="21" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="28">
+                <County name="Beaufort" votes="13" />
+                <County name="Berkeley" votes="8" />
+                <County name="Charleston" votes="4" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="3" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="2">
+                <County name="Beaufort" votes="2" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="0">
+                <County name="Beaufort" votes="0" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="1">
+                <County name="Beaufort" votes="0" />
+                <County name="Berkeley" votes="0" />
+                <County name="Charleston" votes="1" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Jasper" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    </ElectionResult>

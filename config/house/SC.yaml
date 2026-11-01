@@ -1,26 +1,53 @@
-# South Carolina House elections (W7), read by elections.load() next to elections.yaml.
+# South Carolina House elections (W7), read by elections.load() next to elections.yaml,
+# and the House replay, read by replay.harness.
 #
 # All from the statewide Clarity detail.xml on enr-scvotes.org. A district contest
 # lists each county's part of the district, so the units are county parts with no
 # precinct work. Clarity pads the contest name with double spaces.
 #
 # SC-1 lines: the 2022 map (upheld in Alexander v. SC NAACP, 2024) is unchanged for
-# 2026. 2016 and 2020 are on the 2011 lines (5 county parts, no Jasper; Charleston's
-# part was a different area), so they never pair with 2022 or later.
+# 2026; 2022 and 2024 have the same 6 parts and the same Charleston (79 precincts),
+# Berkeley (94) and Dorchester (63). 2018 and 2020 are on the 2011 lines: 5 parts, no
+# Jasper, 133 Charleston precincts. Beware EID 116259: it is the 2022 recount, not the
+# general (115412).
 elections:
-  2016_house_01:
+  2018_house_01:
     adapter: sc_clarity
-    election_id: "64658"
+    election_id: "92124"
     contest: "U.S.  House of Representatives, District  1"
-    # Cherny is listed three times (fusion lines); all three are D.
-    candidates: {"Mark Sanford": R, "Dimitri Cherny": D}
+    candidates: {"Katie Arrington": R, "Joe Cunningham": D}
   2020_house_01:
     adapter: sc_clarity
     election_id: "106502"
     contest: "U.S.  House of Representatives, District  1"
     candidates: {"REP Nancy Mace": R, "DEM Joe Cunningham": D}
+  2022_house_01:
+    adapter: sc_clarity
+    election_id: "115412"
+    contest: "U.S.  House of Representatives, District  1"
+    candidates: {"REP Nancy Mace": R, "DEM Annie Andrews": D}
   2024_house_01:
     adapter: sc_clarity
     election_id: "122436"
     contest: "U.S.  House of Representatives, District  1"
     candidates: {"REP Nancy Mace": R, "DEM Michael B Moore": D}
+
+# Replay: 2022 → 2024 House on the current lines.
+#
+# τ is 2018 → 2020 House, not the 2020 → 2022 pair the plan first named: that pair
+# crosses the 2022 redistricting, so a "swing" in Charleston's part would mostly be the
+# line moving. 2018 → 2020 keeps one set of lines and is midterm → presidential like
+# the replay. Live τ (races.yaml) is 2022 → 2024, the only pair on the current lines.
+#
+# Prior: the 2022 two-party margin (Mace 153,757, Andrews 115,796 → −0.1408) plus the
+# national shift a forecaster could see: 2022 House vote R+2.7 (R 50.03%, D 47.29%,
+# from Wikipedia's 2024 table and its swing column) → 2024 final RCP generic ballot
+# R+0.03 (as cited by Townhall; RCP's own page refused the fetch) = +0.027. Turnout is
+# the last midterm → presidential ratio in SC-1, 2018 → 2020: 1.49.
+replay:
+  2026-SC-H01:
+    primary:
+      baseline: 2022_house_01
+      target: 2024_house_01
+      tau_pair: [2018_house_01, 2020_house_01]
+      prior: {margin: -0.114, margin_sd: 0.06, turnout_ratio: 1.49, turnout_sd: 0.12}
