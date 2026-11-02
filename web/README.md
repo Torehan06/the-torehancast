@@ -1,7 +1,8 @@
 # web — the TörehanCast dashboard
 
-React + TypeScript on Vite. A US map of every 2026 Senate race, a race panel,
-and loud warnings when the data is stale or unreachable. The page only **reads**
+React + TypeScript on Vite. A US map of every 2026 Senate race, a tile map of the
+435 House districts (`#house`), a race panel, and loud warnings when the data is
+stale or unreachable. The page only **reads**
 the publisher's JSON: it never computes a probability, projection or swing.
 
 ```sh
@@ -18,7 +19,7 @@ npm run build      # → dist/
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `VITE_DATA_BASE` | `data/replay/` | Folder holding `summary.json`. Production: `https://storage.googleapis.com/<bucket>/data/live/` |
+| `VITE_DATA_BASE` | `data/replay/` | Folder holding `summary.json` and `house.json`. Production: `https://storage.googleapis.com/<bucket>/data/live/` |
 | `VITE_POLL_MS` | `20000` | Poll interval (matches the bucket's `max-age=20`) |
 | `VITE_STALE_AFTER_S` | `120` | Snapshot age that triggers the stale banner |
 
@@ -34,7 +35,9 @@ link to this page with someone else's numbers behind it.
 | `src/data/display.ts` | Display rules: when probabilities show, who leads, number formats |
 | `src/data/freshness.ts` | Fresh / stale / failing logic (F4) |
 | `src/data/states.ts` | The 50 states and the 35 with a 2026 Senate race |
-| `src/hooks/useSummaryPoll.ts` | Polling, never going backwards in time |
+| `src/data/districts.ts` | The 435 seats: race IDs, names, tile positions (`houseTiles.json`) |
+| `src/data/route.ts` | URL hash ↔ view and selection: `#GA`, `#house`, `#NC-01`, `#AK-AL` |
+| `src/hooks/usePoll.ts` | Polling, never going backwards in time; `house.json` only while the House view is open |
 | `src/components/` | Map, race list, race panel, banners, legend |
 | `e2e/` | Playwright specs (map, keyboard, phone width, network, stale, failure) |
 | `scripts/validate-json.ts` | Validates a directory of published JSON; used by `tests/web/` in Python |
@@ -68,7 +71,12 @@ yellow; a failing fetch inverts to ink, so neither can be mistaken for a party c
   "no votes reported for this race".
 - Maine and Alaska show P(outright), P(via RCV), P(overall) and P(no RCV needed);
   a `null` shows as "—" (not yet estimated), never as a number.
-- Colour shows only who leads; the number is always printed next to it.
+- Colour shows only who leads; the number is always printed next to it. On the
+  House tiles a square is too small to print it, so it's in the square's accessible
+  name and tooltip, the "Forecast districts with votes in" list and the panel.
+- A missing `house.json` (404) is normal: every tile shows no votes and no banner
+  appears for it alone. `summary.json` still drives the stale and failure banners
+  until `house.json` exists; after that the House view answers for its own file.
   Okabe–Ito blue/vermilion, readable with common colour-vision deficiencies.
 - No analytics, trackers or third-party fonts. The map is us-atlas (US Census
   boundaries, bundled), so the page talks only to its own origin and the data bucket.

@@ -1,4 +1,4 @@
-import type { LiveRace, PluralityRace, RcvRace, RcvStatus } from '../data/contract'
+import type { LiveRace, PluralityRace, Race, RcvRace, RcvStatus } from '../data/contract'
 import {
   formatCount,
   formatMargin,
@@ -7,11 +7,12 @@ import {
   isPlurality,
   isRcv,
   NO_VOTES,
+  party,
   showsProbabilities,
   voteState,
 } from '../data/display'
 import type { ParsedSummary } from '../data/parse'
-import { SENATE_RACES_2026, type UsState } from '../data/states'
+import { SENATE_RACES_2026 } from '../data/states'
 
 interface Props {
   code: string
@@ -22,16 +23,39 @@ interface Props {
 export function RacePanel({ code, summary, onClose }: Props) {
   const entry = SENATE_RACES_2026.find((r) => r.state.code === code)
   if (!entry) return null
-  const race = summary?.races.get(code)
-  const invalid = summary?.invalid.includes(code) ?? false
-  const votes = voteState(race)
+  return (
+    <RaceCard
+      title={entry.state.name}
+      subtitle={`U.S. Senate${entry.special ? ' special election' : ''}`}
+      place={entry.state.name}
+      race={summary?.races.get(code)}
+      invalid={summary?.invalid.includes(code) ?? false}
+      generatedAt={summary?.generatedAt ?? null}
+      onClose={onClose}
+    />
+  )
+}
 
+interface CardProps {
+  title: string
+  subtitle: string
+  /** Named on the feed-time line: "Georgia feed time 21:29 ET". */
+  place: string
+  race: Race | undefined
+  invalid: boolean
+  generatedAt: Date | null
+  onClose: () => void
+}
+
+/** The F3 display rules, the same for a Senate race and a House district. */
+export function RaceCard({ title, subtitle, place, race, invalid, generatedAt, onClose }: CardProps) {
+  const votes = voteState(race)
   return (
     <section className="panel" aria-labelledby="panel-title" data-testid="race-panel">
       <header className="panel__head">
         <h2 id="panel-title" tabIndex={-1}>
-          <span className="panel__state">{entry.state.name}</span>
-          <span className="panel__race">U.S. Senate{entry.special ? ' special election' : ''}</span>
+          <span className="panel__state">{title}</span>
+          <span className="panel__race">{subtitle}</span>
         </h2>
         <button type="button" className="panel__close" onClick={onClose} aria-label="Close race details">
           ×
@@ -48,7 +72,7 @@ export function RacePanel({ code, summary, onClose }: Props) {
         <LiveBody race={race} />
       )}
 
-      <Timestamps state={entry.state} summary={summary} asOf={race?.as_of ?? null} />
+      <Timestamps place={place} generatedAt={generatedAt} asOf={race?.as_of ?? null} />
     </section>
   )
 }
@@ -132,7 +156,7 @@ function PluralityProbabilities({ race }: { race: PluralityRace }) {
       </p>
       <ul className="prob-bars">
         {keys.map((k) => (
-          <li key={k} className={`lead-${k === 'D' || k === 'R' ? k : 'other'}`}>
+          <li key={k} className={`lead-${party(k)}`}>
             <span className="prob-bars__name">{race.candidates[k] ?? k}</span>
             <span className="prob-bars__value">{formatProbability(race.p_win[k])}</span>
             <span className="prob-bars__track" aria-hidden="true">
@@ -213,15 +237,15 @@ function ProbCell({ p }: { p: number | null | undefined }) {
   return <td>{formatProbability(p)}</td>
 }
 
-function Timestamps({ state, summary, asOf }: { state: UsState; summary: ParsedSummary | null; asOf: string | null }) {
-  if (!summary) return null
+function Timestamps({ place, generatedAt, asOf }: { place: string; generatedAt: Date | null; asOf: string | null }) {
+  if (!generatedAt) return null
   return (
     <p className="panel__time" data-testid="snapshot-time">
-      Snapshot taken <time dateTime={summary.generatedAt.toISOString()}>{formatTime(summary.generatedAt)}</time>
+      Snapshot taken <time dateTime={generatedAt.toISOString()}>{formatTime(generatedAt)}</time>
       {asOf && (
         <>
           <br />
-          {state.name} feed time {asOf}
+          {place} feed time {asOf}
         </>
       )}
     </p>

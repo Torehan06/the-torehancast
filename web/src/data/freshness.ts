@@ -39,3 +39,20 @@ export function formatAge(s: number): string {
   const h = Math.floor(m / 60)
   return `${h} h ${m % 60} min`
 }
+
+/**
+ * Which poll speaks for the view on screen. The House view answers for house.json
+ * once there's something to say about it (a snapshot, or a fetch that failed).
+ * While house.json is unpublished (404) it has neither, so summary.json still
+ * tells visitors whether the publisher is alive, and no banner appears for the
+ * missing file alone. The same goes for the moment after returning to the House
+ * view: the snapshot kept from last time is old because nobody was polling, and
+ * a stale banner would flash until the first fetch comes back.
+ */
+export function pollForView<T extends { data: unknown; lastError: string | null; settled: boolean }>(
+  view: 'senate' | 'house',
+  summary: T,
+  house: T,
+): T {
+  return view === 'house' && house.settled && (house.data !== null || house.lastError !== null) ? house : summary
+}

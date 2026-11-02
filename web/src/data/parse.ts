@@ -10,10 +10,25 @@ export interface ParsedSummary {
   invalid: string[]
 }
 
+export interface ParsedHouse {
+  generatedAt: Date
+  mode: 'live' | 'replay'
+  /** Keyed by canonical race ID ("2026-NC-H01"). */
+  races: Map<string, Race>
+  /** Race IDs whose entry didn't match the contract; shown as "data unavailable". */
+  invalid: string[]
+}
+
 const envelope = z.object({
   generated_at: z.iso.datetime({ offset: true }),
   mode: z.enum(['live', 'replay']),
   states: z.array(z.unknown()),
+})
+
+const houseEnvelope = z.object({
+  generated_at: z.iso.datetime({ offset: true }),
+  mode: z.enum(['live', 'replay']),
+  races: z.array(z.unknown()),
 })
 
 /**
@@ -32,6 +47,23 @@ export function parseSummary(raw: unknown): ParsedSummary {
     } else {
       const state = (entry as { state?: unknown })?.state
       invalid.push(typeof state === 'string' ? state : '??')
+    }
+  }
+  return { generatedAt: new Date(env.generated_at), mode: env.mode, races, invalid }
+}
+
+/** Parses house.json the same forgiving way: one bad entry blanks only its own tile. */
+export function parseHouse(raw: unknown): ParsedHouse {
+  const env = houseEnvelope.parse(raw)
+  const races = new Map<string, Race>()
+  const invalid: string[] = []
+  for (const entry of env.races) {
+    const parsed = loose.anyRace.safeParse(entry)
+    if (parsed.success) {
+      races.set(parsed.data.race, parsed.data)
+    } else {
+      const race = (entry as { race?: unknown })?.race
+      invalid.push(typeof race === 'string' ? race : '??')
     }
   }
   return { generatedAt: new Date(env.generated_at), mode: env.mode, races, invalid }

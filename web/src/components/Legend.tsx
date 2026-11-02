@@ -5,7 +5,7 @@ const TIERS: [string, string][] = [
   ['light', 'under 75%'],
 ]
 
-export function Legend() {
+export function Legend({ chamber = 'senate' }: { chamber?: 'senate' | 'house' }) {
   return (
     <div className="legend" aria-label="Map key" role="group">
       {(['D', 'R'] as const).map((side) => (
@@ -30,12 +30,23 @@ export function Legend() {
           <span className="swatch state--waiting" aria-hidden="true" />
           No votes yet
         </li>
-        <li>
-          <span className="swatch state--neutral" aria-hidden="true" />
-          No Senate race this year
-        </li>
+        {chamber === 'senate' && (
+          <li>
+            <span className="swatch state--neutral" aria-hidden="true" />
+            No Senate race this year
+          </li>
+        )}
       </ul>
       <p className="legend__note">In races we don’t forecast, the lightest shade marks who leads the count.</p>
+      {chamber === 'house' && (
+        <p className="legend__note">
+          Each square is one district, placed roughly where it is.{' '}
+          <span className="legend__numbers">
+            A square’s number is its district number, not a result; a state’s code marks its 1st district or its only one.
+          </span>
+          <span className="legend__small">The squares are small on this screen: browse by state below to pick a district.</span>
+        </p>
+      )}
     </div>
   )
 }
