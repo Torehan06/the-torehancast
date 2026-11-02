@@ -5,9 +5,19 @@ import { describe, expect, it } from 'vitest'
 import { parseSummary } from '../data/parse'
 import { SwingSeats } from './SwingSeats'
 
+function raw(name: string) {
+  return JSON.parse(readFileSync(resolve(__dirname, '../../fixtures', name, 'summary.json'), 'utf8'))
+}
+
 function load(name: string) {
-  const path = resolve(__dirname, '../../fixtures', name, 'summary.json')
-  return parseSummary(JSON.parse(readFileSync(path, 'utf8')))
+  return parseSummary(raw(name))
+}
+
+/** Real replay output as a pre-M3 publisher wrote it: no `modeled` flag. */
+function preM3(name: string) {
+  const summary = raw(name)
+  for (const race of summary.states) delete race.modeled
+  return parseSummary(summary)
 }
 
 function tile(code: string) {
@@ -38,7 +48,7 @@ describe('SwingSeats', () => {
   })
 
   it('shows no probability for pre-M3 data without the modeled flag', () => {
-    render(<SwingSeats summary={load('replay-ga')} selected={null} onSelect={() => {}} />)
+    render(<SwingSeats summary={preM3('replay-ga')} selected={null} onSelect={() => {}} />)
     expect(screen.queryByTestId('swing-prob-GA')).toBeNull()
   })
 })

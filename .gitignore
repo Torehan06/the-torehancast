@@ -17,4 +17,7 @@ config/priors.yaml
 # Firebase: local deploy cache; service-account keys never enter the repo.
 .firebase/
 *serviceaccount*.json
+# The poller's GCS key lives in .gcp/ on the VM only.
+.gcp/
+*-key.json
 *service-account*.json

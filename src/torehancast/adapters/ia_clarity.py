@@ -23,6 +23,7 @@ from . import sc_clarity
 BASE = "https://electionresults.iowa.gov/IA"
 
 read_zip = sc_clarity.read_zip
+parse_all_contests = sc_clarity.parse_all_contests
 unit_id = sc_clarity.unit_id
 load_archive = sc_clarity.load_archive
 
@@ -41,3 +42,13 @@ def fetch(client: PoliteClient, election_id: str | int, base: str = BASE) -> str
 
 def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str) -> Snapshot:
     return sc_clarity.parse(xml_text, contest_name, cmap, race, state="IA")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> str:
+    return fetch(client, feed.election_id)
+
+
+def final_snapshot(spec: dict, archives, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["election_id"]), spec["contest"], cmap, key)

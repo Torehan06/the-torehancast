@@ -2,10 +2,16 @@
  * The public JSON contract between the publisher (src/torehancast/publish.py) and
  * this page. Every number the page shows comes from a field defined here.
  *
- * Files under data/<mode>/:
- *   summary.json  — every race, small; the page polls this.
- *   XX.json       — one race in detail (adds the county table).
- *   index.json    — replay only: the ordered list of frames.
+ * Files under data/<mode>/ (contract v2, PLAN.md W1):
+ *   summary.json           — every Senate race, small; the page polls this.
+ *   house.json             — every House race, same entry shapes.
+ *   races/{race_id}.json   — one modeled race in detail (adds the county table).
+ *   index.json             — replay only: the ordered list of frames.
+ *
+ * Every entry names its race: `race` is the canonical ID ("2026-NC-SEN",
+ * "2026-NC-H01", "2026-AK-HAL"), `race_type` and `district` (null for Senate).
+ * They're required in the strict schemas and optional in the loose ones, so
+ * the deployed page keeps reading a poller that predates v2.
  *
  * Fields marked "M3" (`modeled`, reported `votes` / `vote_share`) are emitted by
  * the publisher for every live race. They stay optional here so older replay
@@ -22,6 +28,9 @@
 import { z } from 'zod'
 
 export const RCV_STATUSES = ['awaiting_first_choices', 'awaiting_rcv', 'unresolved', 'resolved'] as const
+export const RACE_TYPES = ['senate', 'senate-special', 'house'] as const
+/** Canonical race ID, as src/torehancast/districts.py builds them. */
+export const RACE_ID = /^\d{4}-[A-Z]{2}-(?:SEN|SEN-SPECIAL|H\d{2}|HAL)$/
 
 function makeSchemas(strict: boolean) {
   const obj = strict ? z.strictObject : z.object
@@ -32,9 +41,13 @@ function makeSchemas(strict: boolean) {
   /** Candidate key → display name, e.g. {"D": "Raphael Warnock (I) (Dem)"}. */
   const candidates = z.record(candidateKey, z.string())
 
+  const identity = <T extends z.ZodType>(schema: T) => (strict ? schema : schema.optional())
   const base = {
     state: z.string().regex(/^[A-Z]{2}$/),
-    race: z.string(),
+    race: strict ? z.string().regex(RACE_ID) : z.string(),
+    race_type: identity(z.enum(RACE_TYPES)),
+    /** District number for House races (1 for at-large seats); null for Senate. */
+    district: identity(z.number().int().positive().nullable()),
     /** The feed's own timestamp for this race. Free text: replays use "T+1.25h". */
     as_of: z.string().nullable(),
   }
@@ -121,6 +134,12 @@ function makeSchemas(strict: boolean) {
     states: z.array(z.union([waiting, race])),
   })
 
+  const house = obj({
+    generated_at: z.iso.datetime({ offset: true }),
+    mode: z.enum(['live', 'replay']),
+    races: z.array(z.union([waiting, race])),
+  })
+
   const replayIndex = obj({
     state: z.string(),
     pair: z.string(),
@@ -129,7 +148,7 @@ function makeSchemas(strict: boolean) {
     frames: z.array(obj({ time: z.number(), summary: z.string() })),
   })
 
-  return { waiting, plurality, rcv, resultsOnly, race, anyRace: z.union([waiting, race]), summary, replayIndex }
+  return { waiting, plurality, rcv, resultsOnly, race, anyRace: z.union([waiting, race]), summary, house, replayIndex }
 }
 
 export const loose = makeSchemas(false)
@@ -142,5 +161,7 @@ export type ResultsOnlyRace = z.infer<typeof loose.resultsOnly>
 export type LiveRace = PluralityRace | RcvRace | ResultsOnlyRace
 export type Race = WaitingRace | LiveRace
 export type Summary = z.infer<typeof loose.summary>
+export type House = z.infer<typeof loose.house>
+export type RaceType = (typeof RACE_TYPES)[number]
 export type ReplayIndex = z.infer<typeof loose.replayIndex>
 export type RcvStatus = (typeof RCV_STATUSES)[number]

@@ -1,11 +1,41 @@
+# Public JSON
+
+## Files and race identity (contract v2, Oct 21)
+
+Under `data/{mode}/`:
+
+| File | Holds |
+|---|---|
+| `summary.json` | `{generated_at, mode, states: [...]}`: every Senate race (regular and special). The page polls this. |
+| `house.json` | `{generated_at, mode, races: [...]}`: every House race, same entry shapes. |
+| `races/{race_id}.json` | One modeled race in detail (adds the county table). Results-only races have none. |
+| `index.json` | Replay only: the ordered frames. |
+
+The per-state `{state}.json` files are gone: a state with a Senate race and House
+districts has many races, and one file per state let the second overwrite the first.
+
+Every entry carries `race`, the canonical ID from `src/torehancast/districts.py`
+(`2026-NC-SEN`, `2026-FL-SEN-SPECIAL`, `2026-NC-H01`, `2026-AK-HAL`), plus `race_type`
+(`senate`, `senate-special`, `house`) and `district` (the House district number, 1 for
+at-large, null for Senate). The publisher and the checker both reject an entry whose
+ID, type, district and state disagree. Replays publish under the ID of the live race
+they rehearse.
+
+A race is published as ranked-choice (`rcv_status`, no plurality probabilities) when
+its config sets `ranked_choice`, which `config.py` requires for every ME and AK federal
+race; until its RCV draws exist it fails closed to `awaiting_first_choices`.
+
+A cycle with no Senate (or no House) updates leaves that file as it was: an empty list
+is invalid, and the page keeps showing the last good one.
+
 # Modeled and results-only races
 
 Every published race, including `waiting` races, has a boolean `modeled`.
 Existing `StateUpdate` inputs publish `modeled: true`; plurality and RCV
 forecast fields retain their existing behavior and privacy gates.
 
-Use `ResultsOnlyUpdate(state, race, candidates, votes, pct_reporting, as_of)`
-for a race without a model. It requires no baseline, private prior, replay or
+Use `ResultsOnlyUpdate(state, race, candidates, votes, pct_reporting, as_of,
+race_type=..., district=...)` for a race without a model. It requires no baseline, private prior, replay or
 simulation. Candidate keys must match vote keys exactly and counts must be
 nonnegative integers. Include every reported option, including independents.
 `pct_reporting` is the official fraction of reporting units (0–1), or `None`
@@ -14,8 +44,8 @@ when unavailable. It must never be inferred from expected turnout.
 A results-only race with positive votes publishes exactly these fields:
 
 ```json
-{"state":"VA","race":"Senate","as_of":"2026-11-04T01:00:00Z",
- "modeled":false,"status":"live","candidates":{"D":"Dem","R":"Rep"},
+{"state":"VA","race":"2026-VA-SEN","race_type":"senate","district":null,
+ "as_of":"2026-11-04T01:00:00Z","modeled":false,"status":"live","candidates":{"D":"Dem","R":"Rep"},
  "votes":{"D":60,"R":40},"vote_share":{"D":0.6,"R":0.4},"pct_reporting":null}
 ```
 
@@ -25,8 +55,8 @@ RCV forecast or projected county table is emitted. This holds in live and
 replay modes, including ME/AK, and under either publication gate. The model's
 data-weight gate does not delay observed results-only counts.
 
-Zero-vote results-only races publish only `state`, `race`, `as_of`, `modeled`
-and `status: waiting`, even if the source reports precincts as complete. A
+Zero-vote results-only races publish only `state`, `race`, `race_type`,
+`district`, `as_of`, `modeled` and `status: waiting`, even if the source reports precincts as complete. A
 missing feed can be represented with zero counts and `pct_reporting=None`.
 
 The public artifact checker requires `modeled` and rejects forecast fields
@@ -85,18 +115,35 @@ python scripts/check_public_json.py out/ --mode live --priors /private/config/pr
 The default command requires private coverage, using `config/priors.yaml` if
 `--priors` is omitted. Missing, empty, all-unset, duplicate-key or malformed
 private files fail closed. Each live modeled race needs a matching non-null
-private prior; canonical race IDs match exactly. Legacy display labels work
-only when the state has a single unambiguous configured prior. Results-only
-races need no per-race prior. The private priors file is gitignored.
+private prior, matched by its canonical race ID. Results-only races need no
+per-race prior. The private priors file is gitignored.
 
 The checker allows only JSON artifacts in the supplied **public data** tree.
-It rejects config/YAML, symlinks, other file types, invalid payloads, private
-keys and exact/common-rounded numeric copies in keys, values, embedded strings
-and relative filenames (including scientific notation). Paths and contents
-are withheld from failure messages. Common numeric values can collide with
-legitimate public data: a match requires investigation, never automatic bypass.
-This is conservative detection of accidental copies, not a proof against
-arbitrary encoding or deliberate exfiltration.
+It rejects config/YAML, symlinks, file names outside the v2 layout, invalid
+payloads, private keys, and copies of private values. Paths and contents are
+withheld from failure messages. This is conservative detection of accidental
+copies, not a proof against arbitrary encoding or deliberate exfiltration.
+
+What counts as a copy (Törehan's decision, Oct 21; the release gate):
+
+- **Numbers inside a race entry** are compared with that race's own prior values
+  that have 4+ decimals, and their 3- and 4-place roundings that keep 4+ decimals.
+  Hand-entered priors have 1-3 decimals, and on a full night thousands of published
+  probabilities, margins and county shares equal such values by chance: simulated
+  76-prior nights raised a false alarm about 100% of the time when every number was
+  compared (80% even without county tables). A copied `0.1` can't be told from a
+  chance `0.1`, so the check looks only where a match means a copy. The canary
+  tests (7-decimal priors through the real publisher) prove the code never copies one.
+- **Text** (candidate names, timestamps, county IDs, file names) is compared with
+  every non-integer prior value, including numbers embedded in it.
+- **Numbers outside race entries** (envelopes, the replay index) are compared with
+  every prior value and its roundings.
+- Never scanned, because they can't carry a prior: the identity fields once shown to
+  agree, raw vote counts, and `vote_share` equal to the share recomputed from them.
+
+`tests/unit/test_public_json_v2.py` publishes all 470 races with 76 hand-style
+priors and checks that the night passes, that a prior written into text is caught,
+and that a precise prior copied into a margin is caught.
 
 For replay shape checks without private config, opt in explicitly:
 

@@ -1,0 +1,69 @@
+ElectionDate	PartyCode	PartyName	RaceCode	OfficeDesc	CountyCode	CountyName	Juris1num	Juris2num	Precincts	PrecinctsReporting	CanNameLast	CanNameFirst	CanNameMiddle	CanVotes
+11/5/2024	REP	Republican	USS	United States Senator	ALA	Alachua			63	63	Scott	Rick		54458
+11/5/2024	REP	Republican	USS	United States Senator	BAK	Baker			9	9	Scott	Rick		12415
+11/5/2024	REP	Republican	USS	United States Senator	BAY	Bay			29	29	Scott	Rick		72045
+11/5/2024	REP	Republican	USS	United States Senator	BRA	Bradford			13	13	Scott	Rick		10363
+11/5/2024	REP	Republican	USS	United States Senator	BRE	Brevard			163	163	Scott	Rick		209204
+11/5/2024	REP	Republican	USS	United States Senator	BRO	Broward			358	358	Scott	Rick		338969
+11/5/2024	REP	Republican	USS	United States Senator	CAL	Calhoun			10	10	Scott	Rick		5280
+11/5/2024	REP	Republican	USS	United States Senator	CHA	Charlotte			82	82	Scott	Rick		82377
+11/5/2024	REP	Republican	USS	United States Senator	CIT	Citrus			32	32	Scott	Rick		66837
+11/5/2024	REP	Republican	USS	United States Senator	CLA	Clay			48	48	Scott	Rick		86368
+11/5/2024	REP	Republican	USS	United States Senator	CLL	Collier			67	67	Scott	Rick		150015
+11/5/2024	REP	Republican	USS	United States Senator	CLM	Columbia			28	28	Scott	Rick		24400
+11/5/2024	REP	Republican	USR	United States Representative	BAY	Bay	002		29	29	Dunn	Neal		73885
+11/5/2024	REP	Republican	USR	United States Representative	CAL	Calhoun	002		10	10	Dunn	Neal		5430
+11/5/2024	REP	Republican	USR	United States Representative	FRA	Franklin	002		2	2	Dunn	Neal		4938
+11/5/2024	REP	Republican	USR	United States Representative	GAD	Gadsden	002		25	25	Dunn	Neal		8117
+11/5/2024	REP	Republican	USR	United States Representative	GUL	Gulf	002		10	10	Dunn	Neal		6878
+11/5/2024	REP	Republican	USR	United States Representative	HOL	Holmes	002		8	8	Dunn	Neal		8185
+11/5/2024	REP	Republican	USR	United States Representative	JAC	Jackson	002		14	14	Dunn	Neal		16566
+11/5/2024	REP	Republican	USR	United States Representative	JEF	Jefferson	002		16	16	Dunn	Neal		5176
+11/5/2024	REP	Republican	USR	United States Representative	LAF	Lafayette	002		1	1	Dunn	Neal		137
+11/5/2024	REP	Republican	USR	United States Representative	LEO	Leon	002		0	0	Dunn	Neal		63678
+11/5/2024	REP	Republican	USR	United States Representative	LIB	Liberty	002		0	0	Dunn	Neal		2900
+11/5/2024	REP	Republican	USR	United States Representative	MAD	Madison	002		11	11	Dunn	Neal		5966
+11/5/2024	REP	Republican	USR	United States Representative	TAY	Taylor	002		14	14	Dunn	Neal		8078
+11/5/2024	REP	Republican	USR	United States Representative	WAK	Wakulla	002		0	0	Dunn	Neal		14560
+11/5/2024	REP	Republican	USR	United States Representative	WAL	Walton	002		13	13	Dunn	Neal		12936
+11/5/2024	REP	Republican	USR	United States Representative	WAS	Washington	002		12	12	Dunn	Neal		10527
+11/5/2024	DEM	Democrat	USR	United States Representative	BAY	Bay	002		29	29	Bailey	Yen		22686
+11/5/2024	DEM	Democrat	USR	United States Representative	CAL	Calhoun	002		10	10	Bailey	Yen		921
+11/5/2024	DEM	Democrat	USR	United States Representative	FRA	Franklin	002		2	2	Bailey	Yen		1730
+11/5/2024	DEM	Democrat	USR	United States Representative	GAD	Gadsden	002		25	25	Bailey	Yen		13384
+11/5/2024	DEM	Democrat	USR	United States Representative	GUL	Gulf	002		10	10	Bailey	Yen		1745
+11/5/2024	DEM	Democrat	USR	United States Representative	HOL	Holmes	002		8	8	Bailey	Yen		852
+11/5/2024	DEM	Democrat	USR	United States Representative	JAC	Jackson	002		14	14	Bailey	Yen		5292
+11/5/2024	DEM	Democrat	USR	United States Representative	JEF	Jefferson	002		16	16	Bailey	Yen		3218
+11/5/2024	DEM	Democrat	USR	United States Representative	LAF	Lafayette	002		1	1	Bailey	Yen		15
+11/5/2024	DEM	Democrat	USR	United States Representative	LEO	Leon	002		0	0	Bailey	Yen		88719
+11/5/2024	DEM	Democrat	USR	United States Representative	LIB	Liberty	002		0	0	Bailey	Yen		527
+11/5/2024	DEM	Democrat	USR	United States Representative	MAD	Madison	002		11	11	Bailey	Yen		2967
+11/5/2024	DEM	Democrat	USR	United States Representative	TAY	Taylor	002		14	14	Bailey	Yen		1760
+11/5/2024	DEM	Democrat	USR	United States Representative	WAK	Wakulla	002		0	0	Bailey	Yen		4998
+11/5/2024	DEM	Democrat	USR	United States Representative	WAL	Walton	002		13	13	Bailey	Yen		3552
+11/5/2024	DEM	Democrat	USR	United States Representative	WAS	Washington	002		12	12	Bailey	Yen		1957
+11/5/2024	REP	Republican	USR	United States Representative	ALA	Alachua	003		63	63	Cammack	Kat		54872
+11/5/2024	REP	Republican	USR	United States Representative	BAK	Baker	003		9	9	Cammack	Kat		12680
+11/5/2024	REP	Republican	USR	United States Representative	BRA	Bradford	003		13	13	Cammack	Kat		10682
+11/5/2024	REP	Republican	USR	United States Representative	CLM	Columbia	003		28	28	Cammack	Kat		24929
+11/5/2024	REP	Republican	USR	United States Representative	DIX	Dixie	003		10	10	Cammack	Kat		6917
+11/5/2024	REP	Republican	USR	United States Representative	GIL	Gilchrist	003		10	10	Cammack	Kat		9010
+11/5/2024	REP	Republican	USR	United States Representative	HAM	Hamilton	003		8	8	Cammack	Kat		3909
+11/5/2024	REP	Republican	USR	United States Representative	LAF	Lafayette	003		5	5	Cammack	Kat		3130
+11/5/2024	REP	Republican	USR	United States Representative	LEV	Levy	003		13	13	Cammack	Kat		18297
+11/5/2024	REP	Republican	USR	United States Representative	MRN	Marion	003		62	62	Cammack	Kat		74159
+11/5/2024	REP	Republican	USR	United States Representative	SUW	Suwannee	003		9	9	Cammack	Kat		17367
+11/5/2024	REP	Republican	USR	United States Representative	UNI	Union	003		13	13	Cammack	Kat		5222
+11/5/2024	DEM	Democrat	USR	United States Representative	ALA	Alachua	003		63	63	Wells	Tom		78904
+11/5/2024	DEM	Democrat	USR	United States Representative	BAK	Baker	003		9	9	Wells	Tom		2014
+11/5/2024	DEM	Democrat	USR	United States Representative	BRA	Bradford	003		13	13	Wells	Tom		2805
+11/5/2024	DEM	Democrat	USR	United States Representative	CLM	Columbia	003		28	28	Wells	Tom		8026
+11/5/2024	DEM	Democrat	USR	United States Representative	DIX	Dixie	003		10	10	Wells	Tom		1108
+11/5/2024	DEM	Democrat	USR	United States Representative	GIL	Gilchrist	003		10	10	Wells	Tom		1552
+11/5/2024	DEM	Democrat	USR	United States Representative	HAM	Hamilton	003		8	8	Wells	Tom		1677
+11/5/2024	DEM	Democrat	USR	United States Representative	LAF	Lafayette	003		5	5	Wells	Tom		416
+11/5/2024	DEM	Democrat	USR	United States Representative	LEV	Levy	003		13	13	Wells	Tom		5715
+11/5/2024	DEM	Democrat	USR	United States Representative	MRN	Marion	003		62	62	Wells	Tom		42995
+11/5/2024	DEM	Democrat	USR	United States Representative	SUW	Suwannee	003		9	9	Wells	Tom		4134
+11/5/2024	DEM	Democrat	USR	United States Representative	UNI	Union	003		13	13	Wells	Tom		937

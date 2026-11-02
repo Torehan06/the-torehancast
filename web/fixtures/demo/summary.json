@@ -5,6 +5,8 @@
   {
    "state": "GA",
    "race": "2026-GA-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:29 ET",
    "status": "live",
    "modeled": true,
@@ -43,6 +45,8 @@
   {
    "state": "NC",
    "race": "2026-NC-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:28 ET",
    "status": "live",
    "modeled": true,
@@ -81,6 +85,8 @@
   {
    "state": "FL",
    "race": "2026-FL-SEN-SPECIAL",
+   "race_type": "senate-special",
+   "district": null,
    "as_of": "21:29 ET",
    "status": "live",
    "modeled": true,
@@ -119,6 +125,8 @@
   {
    "state": "NE",
    "race": "2026-NE-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "20:28 CT",
    "status": "live",
    "modeled": true,
@@ -157,6 +165,8 @@
   {
    "state": "MI",
    "race": "2026-MI-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:26 ET",
    "status": "live",
    "modeled": true,
@@ -195,6 +205,8 @@
   {
    "state": "ME",
    "race": "2026-ME-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:28 ET",
    "status": "live",
    "modeled": true,
@@ -235,6 +247,8 @@
   {
    "state": "AK",
    "race": "2026-AK-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:28 ET",
    "status": "live",
    "modeled": true,
@@ -275,6 +289,8 @@
   {
    "state": "IL",
    "race": "2026-IL-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:25 CT",
    "status": "live",
    "modeled": false,
@@ -295,6 +311,8 @@
   {
    "state": "VA",
    "race": "2026-VA-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:27 ET",
    "status": "live",
    "modeled": false,
@@ -315,36 +333,48 @@
   {
    "state": "TX",
    "race": "2026-TX-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   },
   {
    "state": "OH",
    "race": "2026-OH-SEN-SPECIAL",
+   "race_type": "senate-special",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   },
   {
    "state": "IA",
    "race": "2026-IA-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   },
   {
    "state": "SC",
    "race": "2026-SC-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   },
   {
    "state": "MN",
    "race": "2026-MN-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   },
   {
    "state": "KS",
    "race": "2026-KS-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   }

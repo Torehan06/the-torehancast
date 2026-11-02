@@ -1,7 +1,7 @@
 """F1 schema drift: the publisher's JSON must match the dashboard's typed contract.
 
-Runs the real publisher on the Georgia replay model, writes summary and detail files
-for the waiting, first-votes and replay cases, then validates them with the
+Runs the real publisher on the Georgia replay model, writes summary, house and detail
+files for the waiting, first-votes and replay cases, then validates them with the
 page's own zod schemas (web/src/data/contract.ts, strict mode) via
 `npm run validate-json`. A renamed, retyped or out-of-range field fails here
 before it can blank part of the live page.
@@ -46,22 +46,33 @@ def published(tmp_path_factory) -> Path:
         cell_complete={("APPLING", "early"): 1.0},
     )
 
-    def update(snap):
+    def updates(snap):
+        # The same model stands in for a Senate race and a House district (shape only).
         result = model.run(snap, 2000, 0)
-        return publish.StateUpdate("GA", "US Senate", {"D": "Dem", "R": "Rep"}, result, model, snap.as_of,
-                                   votes=snap.totals())
+        senate = publish.StateUpdate("GA", "2026-GA-SEN", {"D": "Dem", "R": "Rep"}, result, model,
+                                     snap.as_of, votes=snap.totals(), race_type="senate", district=None,
+                                     ranked_choice=False)
+        house = publish.StateUpdate("GA", "2026-GA-H02", {"D": "Dem", "R": "Rep"}, result, model,
+                                    snap.as_of, votes=snap.totals(), race_type="house", district=2,
+                                    ranked_choice=False)
+        counts = {"D": 812, "R": 650, "I": 31} if snap.cells else {"D": 0, "R": 0, "I": 0}
+        results_only = publish.ResultsOnlyUpdate(
+            "GA", "2026-GA-H05", {"D": "Dem", "R": "Rep", "I": "Ind"}, counts, 0.4, snap.as_of,
+            race_type="house", district=5)
+        return [senate, house, results_only]
 
     root = tmp_path_factory.mktemp("publisher")
-    publish.publish([update(Snapshot("GA", "x", None, []))], publish.LocalWriter(root / "waiting"), mode="live")
-    publish.publish([update(first)], publish.LocalWriter(root / "first_votes"), mode="live")
-    publish.publish([update(first)], publish.LocalWriter(root / "replay"), mode="replay")
+    publish.publish(updates(Snapshot("GA", "x", None, [])), publish.LocalWriter(root / "waiting"), mode="live")
+    publish.publish(updates(first), publish.LocalWriter(root / "first_votes"), mode="live")
+    publish.publish(updates(first), publish.LocalWriter(root / "replay"), mode="replay")
     return root
 
 
 def test_publisher_output_matches_dashboard_contract(published):
     files = sorted(p.relative_to(published) for p in published.rglob("*.json"))
-    assert len(files) == 6, files
-    assert json.loads((published / "waiting/data/live/GA.json").read_text())["status"] == "waiting"
+    assert len(files) == 3 * 4, files  # summary, house, and two modeled races per case
+    waiting = json.loads((published / "waiting/data/live/races/2026-GA-SEN.json").read_text())
+    assert waiting["status"] == "waiting"
     proc = _validate(published)
     assert proc.returncode == 0, f"publisher output drifted from web/src/data/contract.ts:\n{proc.stderr}{proc.stdout}"
 

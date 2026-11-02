@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
+from . import adapters
 from .candidates import CandidateMap
 from .schema import Snapshot
 
@@ -29,51 +30,29 @@ class Election:
         return CandidateMap(self.spec["candidates"])
 
 
+def specs(state: str) -> dict[str, dict]:
+    """A state's historical elections: elections.yaml plus its House file, config/house/<ST>.yaml.
+
+    House files keep one state's House baselines out of the shared file, so per-state
+    sessions don't edit the same YAML. A key may live in only one of the two.
+    """
+    shared = yaml.safe_load((CONFIG / "elections.yaml").read_text()).get(state) or {}
+    house_file = CONFIG / "house" / f"{state}.yaml"
+    house = yaml.safe_load(house_file.read_text())["elections"] if house_file.exists() else {}
+    if clash := shared.keys() & house.keys():
+        raise ValueError(f"{state}: {sorted(clash)} defined in both elections.yaml and house/{state}.yaml")
+    return shared | house
+
+
 def load(state: str, key: str) -> Election:
-    spec = yaml.safe_load((CONFIG / "elections.yaml").read_text())[state][key]
+    spec = specs(state)[key]
     return Election(state, key, spec["adapter"], spec)
 
 
 def final_snapshot(election: Election) -> Snapshot:
     """The certified final result, parsed from the archived official files."""
-    if election.adapter == "ga_enhanced_voting":
-        from .adapters import ga_enhanced_voting as ga
-
-        docs = ga.load_archive(ARCHIVES / "GA" / election.spec["code"])
-        cmap = election.candidates
-        snap = ga.snapshot_from_docs(docs, election.spec["contest"], cmap, election.key)
-    elif election.adapter == "nc_sbe":
-        from .adapters import nc_sbe
-
-        text = nc_sbe.load_archive(ARCHIVES / "NC", election.spec["date"])
-        snap = nc_sbe.parse(text, election.spec["contest"], election.candidates, election.key)
-    elif election.adapter == "fl_dos":
-        from .adapters import fl_dos
-
-        text = fl_dos.load_archive(ARCHIVES / "FL", election.spec["date"])
-        snap = fl_dos.parse(text, election.spec["race_code"], election.candidates, election.key)
-    elif election.adapter == "sc_clarity":
-        from .adapters import sc_clarity
-
-        text = sc_clarity.load_archive(ARCHIVES / "SC", election.spec["election_id"])
-        snap = sc_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
-    elif election.adapter == "mn_sos":
-        from .adapters import mn_sos
-
-        text = mn_sos.load_archive(ARCHIVES / "MN", election.spec["date"])
-        snap = mn_sos.parse(text, election.spec["contest"], election.candidates, election.key)
-    elif election.adapter == "ia_clarity":
-        from .adapters import ia_clarity
-
-        text = ia_clarity.load_archive(ARCHIVES / "IA", election.spec["election_id"])
-        snap = ia_clarity.parse(text, election.spec["contest"], election.candidates, election.key)
-    elif election.adapter == "ak_doe":
-        from .adapters import ak_doe
-
-        text = ak_doe.load_archive(ARCHIVES / "AK", election.spec["code"])
-        snap = ak_doe.parse(text, election.spec["contest"], election.candidates, election.key)
-    else:
-        raise NotImplementedError(election.adapter)
+    adapter = adapters.get(election.adapter)
+    snap = adapter.final_snapshot(election.spec, ARCHIVES / election.state, election.candidates, election.key)
     if not snap.cells:
         raise ValueError(f"{election.state} {election.key}: contest not found in archive")
     return snap

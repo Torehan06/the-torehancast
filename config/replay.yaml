@@ -133,3 +133,28 @@ AK:
   # These are replay-tuned. The live model (tau pair 2024 prim→gen, which also
   # measures only the 0.08 floor) must apply the same floor.
   composition_floor: {gap_shift_sd: 0.15, gap_sd: 0.08}
+
+# Ohio: the feed has county totals only, and boards post early + absentee ballots
+# before any precinct reports (the state's results can show 0% of precincts with
+# hundreds of thousands of ballots counted), so it runs the way Florida does.
+OH:
+  primary:
+    baseline: 2018_sen
+    target: 2024_sen
+    tau_pair: [2012_sen, 2018_sen]
+    # RCP final average: Moreno +1.7 (result R+3.6). Turnout from midterm 2018 to a
+    # presidential year; 2020 ran about 1.33× 2018 in ballots, and 2024 two-party less.
+    prior: {margin: -0.017, margin_sd: 0.06, turnout_ratio: 1.28, turnout_sd: 0.12}
+  vote_split: delta
+  arrival_profile:
+    batch_types: [early]
+    late_types: []
+    batch_before_precincts: true
+    # Same stress setting as Florida: some counties add absentee ballots after
+    # precincts start, and BatchTracker books those as Election Day.
+    late_mail: {probability: 0.4, share: [0.01, 0.05]}
+  # 2018: 1,379,020 absentee + early ballots cast of about 4.45M ≈ 0.31 (Husted's
+  # certification). 2024: over 2.2M by the Friday before, of 5.85M; 0.43 is an estimate,
+  # since no final count was found. The gap prior is deliberately agnostic.
+  synthetic_split: {early_share: 0.31, gap: 0.0, shift_sd: 0.30, share_sd: 0.15, gap_shift_sd: 0.10, gap_sd: 0.05}
+  synthetic_target: {early_share: 0.43}

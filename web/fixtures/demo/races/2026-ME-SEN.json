@@ -1,0 +1,42 @@
+{
+ "state": "ME",
+ "race": "2026-ME-SEN",
+ "race_type": "senate",
+ "district": null,
+ "as_of": "21:28 ET",
+ "status": "live",
+ "modeled": true,
+ "candidates": {
+  "D": "ME Fixture A (Dem)",
+  "R": "ME Fixture B (Rep)",
+  "I": "ME Fixture C (Ind)"
+ },
+ "rcv_status": "awaiting_rcv",
+ "p_outright": {
+  "D": 0.21,
+  "R": 0.12,
+  "I": 0.0
+ },
+ "p_via_rcv": {
+  "D": null,
+  "R": null,
+  "I": null
+ },
+ "p_win": {
+  "D": null,
+  "R": null,
+  "I": null
+ },
+ "p_no_rcv_needed": 0.33,
+ "votes": {
+  "D": 40100,
+  "R": 38900,
+  "I": 9800
+ },
+ "vote_share": {
+  "D": 0.4516,
+  "R": 0.4381,
+  "I": 0.1104
+ },
+ "pct_reporting": 0.18
+}

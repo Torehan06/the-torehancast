@@ -94,7 +94,9 @@ describe('RacePanel fixture cases', () => {
 
   it('pre-M3 replay output (no modeled flag) shows no probability', () => {
     const path = resolve(__dirname, '../../fixtures/replay-ga/summary.json')
-    const summary = parseSummary(JSON.parse(readFileSync(path, 'utf8')))
+    const raw = JSON.parse(readFileSync(path, 'utf8'))
+    for (const race of raw.states) delete race.modeled // as a pre-M3 publisher wrote it
+    const summary = parseSummary(raw)
     render(<RacePanel code="GA" summary={summary} onClose={() => {}} />)
     expect(screen.queryByTestId('probabilities')).toBeNull()
     expect(screen.getByTestId('results')).toHaveTextContent('Raphael Warnock')

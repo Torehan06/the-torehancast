@@ -5,6 +5,8 @@
   {
    "state": "IL",
    "race": "2026-IL-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:25 CT",
    "status": "live",
    "modeled": false,
@@ -25,6 +27,8 @@
   {
    "state": "VA",
    "race": "2026-VA-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": "21:27 ET",
    "status": "live",
    "modeled": false,
@@ -45,6 +49,8 @@
   {
    "state": "GA",
    "race": "2026-GA-SEN",
+   "race_type": "senate",
+   "district": null,
    "as_of": null,
    "status": "waiting"
   }

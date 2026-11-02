@@ -114,15 +114,16 @@ def update():
                     cell_complete={("A", ALL): 1.0})
     result = model.run(snap, n_draws=100, seed=1)
     assert result.p_win["D"] == 1.0  # precisely the false confidence RCV must suppress
-    return publish.StateUpdate("ME", "Senate", {"D": "Dem", "R": "Rep", "ind": "Independent"},
-                               result, model, snap.as_of)
+    return publish.StateUpdate("ME", "2026-ME-SEN", {"D": "Dem", "R": "Rep", "ind": "Independent"},
+                               result, model, snap.as_of, race_type="senate", district=None,
+                               ranked_choice=True)
 
 
 @pytest.mark.parametrize("state", ["ME", "AK"])
 def test_rcv_states_fail_closed_without_candidate_draws(update, state, tmp_path):
-    update = replace(update, state=state)
+    update = replace(update, state=state, race=f"2026-{state}-SEN")
     publish.publish([update], publish.LocalWriter(tmp_path), mode="live")
-    detail = json.loads((tmp_path / f"data/live/{state}.json").read_text())
+    detail = json.loads((tmp_path / f"data/live/races/2026-{state}-SEN.json").read_text())
     summary = json.loads((tmp_path / "data/live/summary.json").read_text())["states"][0]
     for payload in (detail, summary):
         assert payload["p_win"] == {"D": None, "R": None, "ind": None}
@@ -134,7 +135,7 @@ def test_rcv_states_fail_closed_without_candidate_draws(update, state, tmp_path)
 def test_rcv_components_reach_both_public_files(update, tmp_path):
     update = replace(update, rcv=rcv.summarize(FIRST, final_round=FINAL))
     publish.publish([update], publish.LocalWriter(tmp_path), mode="live")
-    detail = json.loads((tmp_path / "data/live/ME.json").read_text())
+    detail = json.loads((tmp_path / "data/live/races/2026-ME-SEN.json").read_text())
     summary = json.loads((tmp_path / "data/live/summary.json").read_text())["states"][0]
     for payload in (detail, summary):
         assert payload["p_win"] == {"D": 0.5, "R": 0.5, "ind": 0.0}
@@ -147,7 +148,8 @@ def test_rcv_components_reach_both_public_files(update, tmp_path):
 def test_rcv_draws_cannot_bypass_live_waiting_gate(update):
     update = replace(update, result=replace(update.result, reported_votes=0), rcv=rcv.summarize(FIRST))
     for payload in (publish.state_summary(update, "live"), publish.state_detail(update, "live")):
-        assert payload == {"state": "ME", "race": "Senate", "as_of": "T+1h", "status": "waiting", "modeled": True}
+        assert payload == {"state": "ME", "race": "2026-ME-SEN", "race_type": "senate", "district": None,
+                           "as_of": "T+1h", "status": "waiting", "modeled": True}
 
 
 def test_replay_without_rcv_evidence_also_suppresses_two_party_probability(update):
@@ -161,7 +163,7 @@ def test_publisher_rejects_mismatched_candidate_keys(update):
 
 
 def test_plurality_race_output_still_uses_existing_model(update):
-    payload = publish.state_detail(replace(update, state="GA"), "live")
+    payload = publish.state_detail(replace(update, state="GA", race="2026-GA-SEN", ranked_choice=False), "live")
     assert payload["p_win"]["D"] == 1.0
     assert "margin" in payload and "counties" in payload
 

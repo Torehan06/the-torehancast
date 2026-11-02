@@ -7,7 +7,8 @@ South Carolina publishes statewide and county election results on Clarity:
 
 Inside `detailxml.zip` is `detail.xml`, which carries `<ElectionVoterTurnout>`
 with per-county precinct reporting counts and `<Contest>` elements broken down by
-`<Choice>`, `<VoteType>` and `<County>`. Multiple raw vote-type buckets (e.g.
+`<Choice>`, `<VoteType>` and `<County>`. For a district contest each `<County>` is
+the county's part of the district (e.g. SC-1's share of Charleston). Multiple raw vote-type buckets (e.g.
 "Provisional", "Failsafe", "Failsafe Provisional", and the 2024 typo "Provionsal")
 map to canonical `provisional` and are summed per `(unit_id, vote_type)`.
 """
@@ -20,6 +21,7 @@ import zipfile
 from collections import defaultdict
 from pathlib import Path
 
+from .. import results_only
 from ..candidates import CandidateMap
 from ..http import PoliteClient
 from ..schema import Cell, Snapshot, canonical_vote_type
@@ -68,9 +70,13 @@ def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str, state
                 contest_units.add(uid)
                 votes[(uid, vt)][key] += int(county_el.attrib.get("votes") or 0)
 
+    # A district contest (e.g. US House SC-1) covers only part of some counties, so its
+    # own <ParticipatingCounties> precinct counts are the county part's reporting.
+    # For a statewide contest they match the turnout block, which is the fallback.
     reporting: dict[str, float] = {}
     turnout_counties = (
-        root.findall("./ElectionVoterTurnout/Counties/County")
+        contest.findall("./ParticipatingCounties/County")
+        or root.findall("./ElectionVoterTurnout/Counties/County")
         or root.findall("./VoterTurnout/Counties/County")
     )
     for county_el in turnout_counties:
@@ -88,3 +94,32 @@ def parse(xml_text: str, contest_name: str, cmap: CandidateMap, race: str, state
 
 def load_archive(directory: Path, election_id: str | int) -> str:
     return (directory / f"{election_id}_detail.xml").read_text(encoding="utf-8", errors="replace")
+
+
+# Adapter protocol (see adapters/__init__.py).
+
+def fetch_source(client: PoliteClient, feed) -> str:
+    return fetch(client, feed.election_id)
+
+
+def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
+    return parse(load_archive(archives, spec["election_id"]), spec["contest"], cmap, key)
+
+
+def parse_all_contests(xml_text: str, contests) -> dict[str, results_only.ContestTotals]:
+    """Every results-only contest in one pass, from each `<Contest>`'s own totals and
+    precinct counts (for a district, those cover only its county parts)."""
+    root = ET.fromstring(xml_text)
+    as_of = root.findtext("Timestamp")
+    by_name = {el.attrib.get("text"): el for el in root.findall("Contest")}
+    out = {}
+    for contest in contests:
+        el = by_name.get(contest.contest) if contest.contest else None
+        if el is None:
+            continue
+        choices = [results_only.Choice(ch.attrib["text"], ch.attrib.get("party"), int(ch.attrib.get("totalVotes") or 0))
+                   for ch in el.findall("Choice")]
+        pct = results_only.fraction(int(el.attrib.get("precinctsReported") or 0),
+                                    int(el.attrib.get("precinctsParticipating") or 0))
+        out[contest.race_id] = results_only.totals(choices, contest.sides, pct, as_of)
+    return out

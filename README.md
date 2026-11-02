@@ -1,10 +1,10 @@
 # The TörehanCast
 
-Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026).
+Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026). House coverage is being added: forecasts for 63 selected districts and vote totals for every other district (in progress; see `PLAN.md`).
 
 As county and district results arrive from official state election feeds, the model estimates statewide swing and turnout relative to a comparable historical baseline, accounts for within-county vote-type composition (early in-person, mail, Election Day, provisional), extrapolates to partially reported and unreported units, and runs Monte Carlo simulations to estimate each candidate's win probability and two-party margin intervals.
 
-Non-modeled Senate races on the national map show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
+Non-modeled Senate and House races show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
 
 ---
 
@@ -72,7 +72,10 @@ Before RCV transfer evidence is available, RCV probability fields remain `null` 
 2. **Batch inference hazards in county-total feeds:** In Florida (`BatchTracker`), if a large county posts an additional batch of mail ballots *after* its first Election Day precinct has already reported, the delta tracker books that late mail increment as Election Day votes. The replay suite explicitly models this `late_mail` hazard to verify coverage holds under it.
 3. **Unsplit (`all`-cell) feeds:** In states like Minnesota that report county totals without vote-type breakdowns, early reports from a county mix mail and Election Day precincts in unknown proportions. The model inflates partial-county measurement noise (`ALL_PARTIAL_SD · (1 − P) / P²`) and $\tau$ (`ALL_CELL_TAU_INFLATION = 1.25`), trading slower early convergence for protection against early-batch partisan lean.
 4. **Alaska's baseline is a primary, and its margin is a party bloc:** House districts are not counties, so the only earlier election with comparable units and candidates is the August top-4 primary, which has about a third of general-election turnout and a different electorate by vote type. The modelled margin is the Republican bloc against the Democratic bloc of first-choice votes (top-4 generals can carry two Republicans), not an RCV final round. The RCV layer reports P(outright) only once candidate-level draws exist; until then Alaska shows `awaiting_first_choices`. Most absentee ballots are counted after election night, so the election-night count stops well short of 100%.
-5. **Bot protection on official state sites:** Several state election portals (Texas, Ohio, Kansas, Michigan, Maine) sit behind Cloudflare challenges or geo/IP blocks. By project policy, the poller identifies itself transparently (`torehancast/0.1`) and never spoofs browser headers or bypasses bot protection; states whose official feeds do not grant automated access by October 30 are dropped rather than scraped fragilely.
+5. **Bot protection on official state sites:** Several state election portals (Texas, Kansas, Michigan, Maine) sit behind Cloudflare challenges or geo/IP blocks. By project policy, the poller identifies itself transparently (`torehancast/0.1`) and never spoofs browser headers or bypasses bot protection; states whose official feeds do not grant automated access by October 30 are dropped rather than scraped fragilely.
+6. **Ohio's vote types are inferred:** Ohio's feed has county totals with no early or Election Day split, so, as in Florida, votes posted before a county's precincts report count as its early and absentee batch. Its replay tests that mechanism on an invented split, not on Ohio's real one, and the 2024 pre-Election-Day share (about 43%) is an estimate. Ohio's House forecasts were dropped because no baselines on the 2026 lines were ready, so those districts show vote totals only.
+7. **House districts are modelled on county parts with county demographics:** A county split between districts is its own unit in each district (`COUNTY|NN`), but the ACS covariates exist only per county, so every part of a split county carries its whole county's demographics even when the line divides a city from its suburbs (partisanship and size come from the part's own baseline). Districts with few units (Iowa's have 20–22 whole counties; some have 1–3) give the swing regression little to learn from, so their intervals lean on the prior and on $\tau$ for longer.
+8. **Iowa's House replays are a presidential proxy:** The analogous House pair (2022 → 2024 House, $\tau$ from 2020 → 2022) needs Iowa's 2022 Clarity file, which the state's site refuses to serve to the project's client (an AWS WAF challenge, Oct 26). Until it can be fetched from another machine, IA-1/2/3 replay 2020 → 2024 president on each district's own counties with Iowa's statewide $\tau$ pair. That tests the model on each district's geography but not House-specific swings (incumbency, candidate quality, split tickets). Live, the baseline is still the 2024 House result.
 
 ---
 
@@ -104,9 +107,14 @@ Issues caught by the replay harness and synthetic regression suite during develo
   - **Iowa:** Iowa Secretary of State Clarity ENR (`electionresults.iowa.gov/IA`) and archived precinct tables (`sos.iowa.gov`)
   - **South Carolina:** South Carolina State Election Commission Clarity ENR (`enr-scvotes.org/SC`)
   - **Minnesota:** Minnesota Secretary of State election results files (`electionresultsfiles.sos.mn.gov`)
+  - **Ohio:** Ohio Secretary of State election-night NIST 1500-100 XML feed (`liveresults.ohiosos.gov`). Ohio's results archive is behind a bot challenge, so historical county results come from research copies of the official canvass: the [MIT Election Data + Science Lab](https://github.com/MEDSL) (2018, 2024) and [OpenElections](https://github.com/openelections/openelections-data-oh) (2012), each checked against the published statewide totals.
   - **Alaska:** Alaska Division of Elections precinct results (`elections.alaska.gov/results`, `ENRbyPrecinct.csv` and the 2022 "Results per Precinct" reports). The server omits its TLS intermediate; the poller supplies GlobalSign's published intermediate and keeps full certificate verification.
 - **Demographics:** U.S. **Census** Bureau, American Community Survey (ACS) 2023 5-Year Summary File (`www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/`, tables `B01002`, `B03002`, `B15003`, `B19013`) and 2020 Census ANSI county lookup (`national_county2020.txt`).
 - **Credits:** Methodological ideas for holdout systematic-error calibration and live county-level reporting models are credited to the Washington Post's [`elex-live-model`](https://github.com/washingtonpost/elex-live-model), along with open-source Clarity election-parsing work in `clarify` and `elex-clarity`.
+
+## Contact
+
+The poller's User-Agent (`torehancast/0.1`) points here. Election offices and anyone else with a question or a request about how the poller reads their site can [open an issue](https://github.com/Torehan06/the-torehancast/issues). The poller runs from one fixed IP, 18.211.31.125, and stops polling after Nov 7, 2026.
 
 ## License
 

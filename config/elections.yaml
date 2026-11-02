@@ -207,3 +207,30 @@ AK:
       "Peltola, Mary": D
       "Leslie, David B.": D
       "Hafner, Carol \"Kitty\"": D
+
+# Ohio's own results archive is behind a bot challenge, so these are research copies
+# of the official canvass. Statewide totals checked against the published results.
+OH:
+  2012_sen:
+    adapter: oh_sos
+    format: openelections_county
+    file: 2012_openelections/20121106__oh__general__senate.csv
+    candidates:
+      "Sherrod Brown": D
+      "Josh Mandel": R
+      "Scott Rupert": other
+  2018_sen:
+    adapter: oh_sos
+    format: medsl_precinct
+    file: 2018_medsl/2018-oh-precinct-general.zip
+    candidates:
+      "SHERROD BROWN": D
+      "JIM RENACCI": R
+  2024_sen:
+    adapter: oh_sos
+    format: medsl_county
+    file: 2024_medsl/2024-senate-county.csv
+    candidates:
+      "SHERROD BROWN": D
+      "BERNIE MORENO": R
+      "DON KISSICK": other

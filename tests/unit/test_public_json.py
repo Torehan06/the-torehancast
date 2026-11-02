@@ -11,7 +11,8 @@ import pytest
 from torehancast import public_json
 
 PAYLOAD = {
-    "state": "GA", "race": "2022_sen", "as_of": "T+1.00h", "status": "live", "modeled": True,
+    "state": "GA", "race": "2026-GA-SEN", "race_type": "senate", "district": None,
+    "as_of": "T+1.00h", "status": "live", "modeled": True,
     "candidates": {"D": "Dem", "R": "Rep"}, "p_win": {"D": 0.6, "R": 0.4},
     "margin": {"median": 0.02, "p80": [-0.03, 0.04], "p95": [-0.05, 0.07]},
     "reported_votes": 1200, "expected_votes": 2000, "share_counted": 0.6,
@@ -19,7 +20,8 @@ PAYLOAD = {
 
 
 def write(root, payload=PAYLOAD, mode="replay"):
-    path = root / f"data/{mode}/GA.json"
+    name = "summary.json" if "states" in payload else f"races/{payload.get('race')}.json"
+    path = root / f"data/{mode}/{name}"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload))
     return path

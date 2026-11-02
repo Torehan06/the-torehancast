@@ -1,0 +1,1006 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ElectionResult>
+    <Timestamp>7/30/2025 10:46:52 AM EDT</Timestamp>
+    <ElectionName>2024 Statewide General Election</ElectionName>
+    <ElectionDate>11/5/2024</ElectionDate>
+    <Region>SC</Region>
+    <Contest key="27006" text="U.S.  House of Representatives, District  3" voteFor="1" isQuestion="false" countiesParticipating="11" countiesReported="11" precinctsParticipating="351" precinctsReported="351" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Abbeville" precinctsParticipating="15" precinctsReported="15" precinctsReportingPercent="100.00" />
+            <County name="Anderson" precinctsParticipating="79" precinctsReported="79" precinctsReportingPercent="100.00" />
+            <County name="Edgefield" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Greenville" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Greenwood" precinctsParticipating="50" precinctsReported="50" precinctsReportingPercent="100.00" />
+            <County name="Laurens" precinctsParticipating="33" precinctsReported="33" precinctsReportingPercent="100.00" />
+            <County name="McCormick" precinctsParticipating="11" precinctsReported="11" precinctsReportingPercent="100.00" />
+            <County name="Newberry" precinctsParticipating="30" precinctsReported="30" precinctsReportingPercent="100.00" />
+            <County name="Oconee" precinctsParticipating="31" precinctsReported="31" precinctsReportingPercent="100.00" />
+            <County name="Pickens" precinctsParticipating="61" precinctsReported="61" precinctsReportingPercent="100.00" />
+            <County name="Saluda" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="001" text="REP Sheri Biggs" party="REP" totalVotes="248451">
+            <VoteType name="Election Day" votes="112447">
+                <County name="Abbeville" votes="4040" />
+                <County name="Anderson" votes="36570" />
+                <County name="Edgefield" votes="3263" />
+                <County name="Greenville" votes="10739" />
+                <County name="Greenwood" votes="8158" />
+                <County name="Laurens" votes="10958" />
+                <County name="McCormick" votes="952" />
+                <County name="Newberry" votes="5219" />
+                <County name="Oconee" votes="13348" />
+                <County name="Pickens" votes="16141" />
+                <County name="Saluda" votes="3059" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="129207">
+                <County name="Abbeville" votes="4082" />
+                <County name="Anderson" votes="32737" />
+                <County name="Edgefield" votes="5502" />
+                <County name="Greenville" votes="11094" />
+                <County name="Greenwood" votes="10568" />
+                <County name="Laurens" votes="8999" />
+                <County name="McCormick" votes="2562" />
+                <County name="Newberry" votes="5627" />
+                <County name="Oconee" votes="17251" />
+                <County name="Pickens" votes="27781" />
+                <County name="Saluda" votes="3004" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="6046">
+                <County name="Abbeville" votes="145" />
+                <County name="Anderson" votes="1845" />
+                <County name="Edgefield" votes="175" />
+                <County name="Greenville" votes="542" />
+                <County name="Greenwood" votes="639" />
+                <County name="Laurens" votes="302" />
+                <County name="McCormick" votes="81" />
+                <County name="Newberry" votes="225" />
+                <County name="Oconee" votes="1215" />
+                <County name="Pickens" votes="794" />
+                <County name="Saluda" votes="83" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="176">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="19" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="21" />
+                <County name="Greenwood" votes="24" />
+                <County name="Laurens" votes="17" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="22" />
+                <County name="Pickens" votes="73" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="270">
+                <County name="Abbeville" votes="6" />
+                <County name="Anderson" votes="66" />
+                <County name="Edgefield" votes="4" />
+                <County name="Greenville" votes="25" />
+                <County name="Greenwood" votes="38" />
+                <County name="Laurens" votes="22" />
+                <County name="McCormick" votes="2" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="15" />
+                <County name="Pickens" votes="91" />
+                <County name="Saluda" votes="1" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="305">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="122" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="27" />
+                <County name="Greenwood" votes="25" />
+                <County name="Laurens" votes="38" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="4" />
+                <County name="Oconee" votes="32" />
+                <County name="Pickens" votes="57" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="002" text="ALN Mike Bedenbaugh" party="ALN" totalVotes="9918">
+            <VoteType name="Election Day" votes="4846">
+                <County name="Abbeville" votes="152" />
+                <County name="Anderson" votes="1180" />
+                <County name="Edgefield" votes="133" />
+                <County name="Greenville" votes="356" />
+                <County name="Greenwood" votes="340" />
+                <County name="Laurens" votes="559" />
+                <County name="McCormick" votes="27" />
+                <County name="Newberry" votes="789" />
+                <County name="Oconee" votes="451" />
+                <County name="Pickens" votes="634" />
+                <County name="Saluda" votes="225" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="4834">
+                <County name="Abbeville" votes="183" />
+                <County name="Anderson" votes="1002" />
+                <County name="Edgefield" votes="136" />
+                <County name="Greenville" votes="335" />
+                <County name="Greenwood" votes="344" />
+                <County name="Laurens" votes="444" />
+                <County name="McCormick" votes="51" />
+                <County name="Newberry" votes="813" />
+                <County name="Oconee" votes="408" />
+                <County name="Pickens" votes="961" />
+                <County name="Saluda" votes="157" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="218">
+                <County name="Abbeville" votes="4" />
+                <County name="Anderson" votes="42" />
+                <County name="Edgefield" votes="8" />
+                <County name="Greenville" votes="19" />
+                <County name="Greenwood" votes="28" />
+                <County name="Laurens" votes="21" />
+                <County name="McCormick" votes="1" />
+                <County name="Newberry" votes="43" />
+                <County name="Oconee" votes="21" />
+                <County name="Pickens" votes="25" />
+                <County name="Saluda" votes="6" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="5">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="1" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="1" />
+                <County name="Greenwood" votes="1" />
+                <County name="Laurens" votes="0" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="1" />
+                <County name="Pickens" votes="1" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="11">
+                <County name="Abbeville" votes="1" />
+                <County name="Anderson" votes="2" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="1" />
+                <County name="Greenwood" votes="1" />
+                <County name="Laurens" votes="2" />
+                <County name="McCormick" votes="1" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="3" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="4">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="1" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="0" />
+                <County name="Greenwood" votes="1" />
+                <County name="Laurens" votes="1" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="1" />
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="003" text="DEM Bryon L Best" party="DEM" totalVotes="87735">
+            <VoteType name="Election Day" votes="36790">
+                <County name="Abbeville" votes="1202" />
+                <County name="Anderson" votes="10579" />
+                <County name="Edgefield" votes="1618" />
+                <County name="Greenville" votes="4292" />
+                <County name="Greenwood" votes="3966" />
+                <County name="Laurens" votes="3974" />
+                <County name="McCormick" votes="707" />
+                <County name="Newberry" votes="2288" />
+                <County name="Oconee" votes="3100" />
+                <County name="Pickens" votes="4090" />
+                <County name="Saluda" votes="974" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="45996">
+                <County name="Abbeville" votes="1724" />
+                <County name="Anderson" votes="10174" />
+                <County name="Edgefield" votes="2468" />
+                <County name="Greenville" votes="5780" />
+                <County name="Greenwood" votes="5349" />
+                <County name="Laurens" votes="3553" />
+                <County name="McCormick" votes="1474" />
+                <County name="Newberry" votes="2411" />
+                <County name="Oconee" votes="4546" />
+                <County name="Pickens" votes="7383" />
+                <County name="Saluda" votes="1134" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="4710">
+                <County name="Abbeville" votes="159" />
+                <County name="Anderson" votes="1289" />
+                <County name="Edgefield" votes="258" />
+                <County name="Greenville" votes="534" />
+                <County name="Greenwood" votes="520" />
+                <County name="Laurens" votes="288" />
+                <County name="McCormick" votes="95" />
+                <County name="Newberry" votes="162" />
+                <County name="Oconee" votes="705" />
+                <County name="Pickens" votes="631" />
+                <County name="Saluda" votes="69" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="65">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="10" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="10" />
+                <County name="Greenwood" votes="15" />
+                <County name="Laurens" votes="9" />
+                <County name="McCormick" votes="2" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="3" />
+                <County name="Pickens" votes="16" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="83">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="11" />
+                <County name="Edgefield" votes="1" />
+                <County name="Greenville" votes="14" />
+                <County name="Greenwood" votes="20" />
+                <County name="Laurens" votes="10" />
+                <County name="McCormick" votes="1" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="9" />
+                <County name="Pickens" votes="17" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="91">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="22" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="9" />
+                <County name="Greenwood" votes="20" />
+                <County name="Laurens" votes="18" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="2" />
+                <County name="Oconee" votes="7" />
+                <County name="Pickens" votes="13" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="004" text="Write-In" party="NON" totalVotes="609">
+            <VoteType name="Election Day" votes="267">
+                <County name="Abbeville" votes="8" />
+                <County name="Anderson" votes="73" />
+                <County name="Edgefield" votes="6" />
+                <County name="Greenville" votes="29" />
+                <County name="Greenwood" votes="12" />
+                <County name="Laurens" votes="55" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="7" />
+                <County name="Oconee" votes="36" />
+                <County name="Pickens" votes="40" />
+                <County name="Saluda" votes="1" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="324">
+                <County name="Abbeville" votes="8" />
+                <County name="Anderson" votes="60" />
+                <County name="Edgefield" votes="6" />
+                <County name="Greenville" votes="25" />
+                <County name="Greenwood" votes="18" />
+                <County name="Laurens" votes="69" />
+                <County name="McCormick" votes="1" />
+                <County name="Newberry" votes="3" />
+                <County name="Oconee" votes="52" />
+                <County name="Pickens" votes="82" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="16">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="4" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="4" />
+                <County name="Greenwood" votes="2" />
+                <County name="Laurens" votes="0" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="2" />
+                <County name="Pickens" votes="4" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="0">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="0" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="0" />
+                <County name="Greenwood" votes="0" />
+                <County name="Laurens" votes="0" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="1">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="0" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="0" />
+                <County name="Greenwood" votes="0" />
+                <County name="Laurens" votes="1" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="1">
+                <County name="Abbeville" votes="0" />
+                <County name="Anderson" votes="0" />
+                <County name="Edgefield" votes="0" />
+                <County name="Greenville" votes="0" />
+                <County name="Greenwood" votes="0" />
+                <County name="Laurens" votes="0" />
+                <County name="McCormick" votes="0" />
+                <County name="Newberry" votes="0" />
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="1" />
+                <County name="Saluda" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="27012" text="U.S.  House of Representatives, District  6" voteFor="1" isQuestion="false" countiesParticipating="14" countiesReported="14" precinctsParticipating="422" precinctsReported="422" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Allendale" precinctsParticipating="8" precinctsReported="8" precinctsReportingPercent="100.00" />
+            <County name="Bamberg" precinctsParticipating="13" precinctsReported="13" precinctsReportingPercent="100.00" />
+            <County name="Calhoun" precinctsParticipating="12" precinctsReported="12" precinctsReportingPercent="100.00" />
+            <County name="Charleston" precinctsParticipating="103" precinctsReported="103" precinctsReportingPercent="100.00" />
+            <County name="Clarendon" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Colleton" precinctsParticipating="30" precinctsReported="30" precinctsReportingPercent="100.00" />
+            <County name="Dorchester" precinctsParticipating="25" precinctsReported="25" precinctsReportingPercent="100.00" />
+            <County name="Florence" precinctsParticipating="7" precinctsReported="7" precinctsReportingPercent="100.00" />
+            <County name="Hampton" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00" />
+            <County name="Jasper" precinctsParticipating="16" precinctsReported="16" precinctsReportingPercent="100.00" />
+            <County name="Orangeburg" precinctsParticipating="40" precinctsReported="40" precinctsReportingPercent="100.00" />
+            <County name="Richland" precinctsParticipating="76" precinctsReported="76" precinctsReportingPercent="100.00" />
+            <County name="Sumter" precinctsParticipating="21" precinctsReported="21" precinctsReportingPercent="100.00" />
+            <County name="Williamsburg" precinctsParticipating="28" precinctsReported="28" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="001" text="UNC Gregg Marcel Dixon" party="UNC" totalVotes="4927">
+            <VoteType name="Election Day" votes="2620">
+                <County name="Allendale" votes="48" />
+                <County name="Bamberg" votes="49" />
+                <County name="Calhoun" votes="41" />
+                <County name="Charleston" votes="690" />
+                <County name="Clarendon" votes="108" />
+                <County name="Colleton" votes="111" />
+                <County name="Dorchester" votes="105" />
+                <County name="Florence" votes="40" />
+                <County name="Hampton" votes="84" />
+                <County name="Jasper" votes="168" />
+                <County name="Orangeburg" votes="179" />
+                <County name="Richland" votes="696" />
+                <County name="Sumter" votes="125" />
+                <County name="Williamsburg" votes="176" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="2193">
+                <County name="Allendale" votes="27" />
+                <County name="Bamberg" votes="43" />
+                <County name="Calhoun" votes="34" />
+                <County name="Charleston" votes="608" />
+                <County name="Clarendon" votes="80" />
+                <County name="Colleton" votes="105" />
+                <County name="Dorchester" votes="115" />
+                <County name="Florence" votes="40" />
+                <County name="Hampton" votes="56" />
+                <County name="Jasper" votes="173" />
+                <County name="Orangeburg" votes="94" />
+                <County name="Richland" votes="646" />
+                <County name="Sumter" votes="64" />
+                <County name="Williamsburg" votes="108" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="104">
+                <County name="Allendale" votes="1" />
+                <County name="Bamberg" votes="2" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="45" />
+                <County name="Clarendon" votes="5" />
+                <County name="Colleton" votes="2" />
+                <County name="Dorchester" votes="1" />
+                <County name="Florence" votes="1" />
+                <County name="Hampton" votes="7" />
+                <County name="Jasper" votes="10" />
+                <County name="Orangeburg" votes="2" />
+                <County name="Richland" votes="27" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="3">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="1" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="1" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="1" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="4">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="1" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="1" />
+                <County name="Richland" votes="2" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="3">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="1" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="2" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="002" text="REP Duke Buckner" party="REP" totalVotes="112360">
+            <VoteType name="Election Day" votes="43484">
+                <County name="Allendale" votes="358" />
+                <County name="Bamberg" votes="1059" />
+                <County name="Calhoun" votes="2065" />
+                <County name="Charleston" votes="11676" />
+                <County name="Clarendon" votes="3497" />
+                <County name="Colleton" votes="4293" />
+                <County name="Dorchester" votes="3110" />
+                <County name="Florence" votes="502" />
+                <County name="Hampton" votes="1663" />
+                <County name="Jasper" votes="2416" />
+                <County name="Orangeburg" votes="3411" />
+                <County name="Richland" votes="5391" />
+                <County name="Sumter" votes="1512" />
+                <County name="Williamsburg" votes="2531" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="64858">
+                <County name="Allendale" votes="396" />
+                <County name="Bamberg" votes="1062" />
+                <County name="Calhoun" votes="2046" />
+                <County name="Charleston" votes="23753" />
+                <County name="Clarendon" votes="4785" />
+                <County name="Colleton" votes="5056" />
+                <County name="Dorchester" votes="5299" />
+                <County name="Florence" votes="958" />
+                <County name="Hampton" votes="1667" />
+                <County name="Jasper" votes="4205" />
+                <County name="Orangeburg" votes="4047" />
+                <County name="Richland" votes="6822" />
+                <County name="Sumter" votes="2318" />
+                <County name="Williamsburg" votes="2444" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="3899">
+                <County name="Allendale" votes="19" />
+                <County name="Bamberg" votes="56" />
+                <County name="Calhoun" votes="94" />
+                <County name="Charleston" votes="1757" />
+                <County name="Clarendon" votes="226" />
+                <County name="Colleton" votes="174" />
+                <County name="Dorchester" votes="188" />
+                <County name="Florence" votes="24" />
+                <County name="Hampton" votes="99" />
+                <County name="Jasper" votes="169" />
+                <County name="Orangeburg" votes="231" />
+                <County name="Richland" votes="643" />
+                <County name="Sumter" votes="137" />
+                <County name="Williamsburg" votes="82" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="17">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="12" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="1" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="2" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="1" />
+            </VoteType>
+            <VoteType name="Provisional" votes="70">
+                <County name="Allendale" votes="2" />
+                <County name="Bamberg" votes="2" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="37" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="3" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="2" />
+                <County name="Jasper" votes="6" />
+                <County name="Orangeburg" votes="2" />
+                <County name="Richland" votes="15" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="1" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="32">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="6" />
+                <County name="Charleston" votes="12" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="3" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="1" />
+                <County name="Orangeburg" votes="1" />
+                <County name="Richland" votes="9" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="003" text="ALN Joseph Oddo" party="ALN" totalVotes="1056">
+            <VoteType name="Election Day" votes="512">
+                <County name="Allendale" votes="6" />
+                <County name="Bamberg" votes="12" />
+                <County name="Calhoun" votes="14" />
+                <County name="Charleston" votes="173" />
+                <County name="Clarendon" votes="11" />
+                <County name="Colleton" votes="24" />
+                <County name="Dorchester" votes="23" />
+                <County name="Florence" votes="2" />
+                <County name="Hampton" votes="13" />
+                <County name="Jasper" votes="18" />
+                <County name="Orangeburg" votes="24" />
+                <County name="Richland" votes="162" />
+                <County name="Sumter" votes="13" />
+                <County name="Williamsburg" votes="17" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="515">
+                <County name="Allendale" votes="5" />
+                <County name="Bamberg" votes="5" />
+                <County name="Calhoun" votes="10" />
+                <County name="Charleston" votes="203" />
+                <County name="Clarendon" votes="24" />
+                <County name="Colleton" votes="11" />
+                <County name="Dorchester" votes="29" />
+                <County name="Florence" votes="5" />
+                <County name="Hampton" votes="10" />
+                <County name="Jasper" votes="25" />
+                <County name="Orangeburg" votes="17" />
+                <County name="Richland" votes="144" />
+                <County name="Sumter" votes="13" />
+                <County name="Williamsburg" votes="14" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="26">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="10" />
+                <County name="Clarendon" votes="1" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="9" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="1" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="1" />
+                <County name="Richland" votes="4" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="0">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="1">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="1" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="2">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="1" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="004" text="LIB Michael Simpson" party="LIB" totalVotes="5279">
+            <VoteType name="Election Day" votes="2584">
+                <County name="Allendale" votes="10" />
+                <County name="Bamberg" votes="29" />
+                <County name="Calhoun" votes="48" />
+                <County name="Charleston" votes="1200" />
+                <County name="Clarendon" votes="65" />
+                <County name="Colleton" votes="97" />
+                <County name="Dorchester" votes="162" />
+                <County name="Florence" votes="13" />
+                <County name="Hampton" votes="47" />
+                <County name="Jasper" votes="77" />
+                <County name="Orangeburg" votes="102" />
+                <County name="Richland" votes="589" />
+                <County name="Sumter" votes="74" />
+                <County name="Williamsburg" votes="71" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="2576">
+                <County name="Allendale" votes="6" />
+                <County name="Bamberg" votes="22" />
+                <County name="Calhoun" votes="45" />
+                <County name="Charleston" votes="1206" />
+                <County name="Clarendon" votes="90" />
+                <County name="Colleton" votes="100" />
+                <County name="Dorchester" votes="178" />
+                <County name="Florence" votes="12" />
+                <County name="Hampton" votes="37" />
+                <County name="Jasper" votes="75" />
+                <County name="Orangeburg" votes="104" />
+                <County name="Richland" votes="588" />
+                <County name="Sumter" votes="67" />
+                <County name="Williamsburg" votes="46" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="111">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="5" />
+                <County name="Calhoun" votes="1" />
+                <County name="Charleston" votes="49" />
+                <County name="Clarendon" votes="5" />
+                <County name="Colleton" votes="4" />
+                <County name="Dorchester" votes="6" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="2" />
+                <County name="Jasper" votes="5" />
+                <County name="Orangeburg" votes="9" />
+                <County name="Richland" votes="23" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="1" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="4">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="2" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="2" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="4">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="2" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="1" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="1" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="0">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="005" text="DEM James E Jim Clyburn" party="DEM" totalVotes="182056">
+            <VoteType name="Election Day" votes="64020">
+                <County name="Allendale" votes="749" />
+                <County name="Bamberg" votes="1183" />
+                <County name="Calhoun" votes="1284" />
+                <County name="Charleston" votes="17155" />
+                <County name="Clarendon" votes="2145" />
+                <County name="Colleton" votes="2274" />
+                <County name="Dorchester" votes="2392" />
+                <County name="Florence" votes="894" />
+                <County name="Hampton" votes="1662" />
+                <County name="Jasper" votes="1990" />
+                <County name="Orangeburg" votes="6620" />
+                <County name="Richland" votes="19314" />
+                <County name="Sumter" votes="3041" />
+                <County name="Williamsburg" votes="3317" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="106971">
+                <County name="Allendale" votes="1201" />
+                <County name="Bamberg" votes="1645" />
+                <County name="Calhoun" votes="1852" />
+                <County name="Charleston" votes="34032" />
+                <County name="Clarendon" votes="4415" />
+                <County name="Colleton" votes="3688" />
+                <County name="Dorchester" votes="4756" />
+                <County name="Florence" votes="1494" />
+                <County name="Hampton" votes="2192" />
+                <County name="Jasper" votes="3474" />
+                <County name="Orangeburg" votes="9098" />
+                <County name="Richland" votes="30720" />
+                <County name="Sumter" votes="3566" />
+                <County name="Williamsburg" votes="4838" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="10783">
+                <County name="Allendale" votes="96" />
+                <County name="Bamberg" votes="350" />
+                <County name="Calhoun" votes="194" />
+                <County name="Charleston" votes="3318" />
+                <County name="Clarendon" votes="460" />
+                <County name="Colleton" votes="290" />
+                <County name="Dorchester" votes="321" />
+                <County name="Florence" votes="80" />
+                <County name="Hampton" votes="352" />
+                <County name="Jasper" votes="317" />
+                <County name="Orangeburg" votes="1703" />
+                <County name="Richland" votes="2599" />
+                <County name="Sumter" votes="427" />
+                <County name="Williamsburg" votes="276" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="61">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="18" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="42" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="150">
+                <County name="Allendale" votes="1" />
+                <County name="Bamberg" votes="1" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="54" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="7" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="4" />
+                <County name="Jasper" votes="4" />
+                <County name="Orangeburg" votes="13" />
+                <County name="Richland" votes="64" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="2" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="71">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="4" />
+                <County name="Charleston" votes="23" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="1" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="39" />
+                <County name="Sumter" votes="4" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="006" text="Write-In" party="NON" totalVotes="299">
+            <VoteType name="Election Day" votes="147">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="2" />
+                <County name="Calhoun" votes="1" />
+                <County name="Charleston" votes="40" />
+                <County name="Clarendon" votes="5" />
+                <County name="Colleton" votes="7" />
+                <County name="Dorchester" votes="2" />
+                <County name="Florence" votes="1" />
+                <County name="Hampton" votes="3" />
+                <County name="Jasper" votes="7" />
+                <County name="Orangeburg" votes="10" />
+                <County name="Richland" votes="52" />
+                <County name="Sumter" votes="7" />
+                <County name="Williamsburg" votes="10" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="141">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="4" />
+                <County name="Calhoun" votes="5" />
+                <County name="Charleston" votes="37" />
+                <County name="Clarendon" votes="4" />
+                <County name="Colleton" votes="9" />
+                <County name="Dorchester" votes="9" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="4" />
+                <County name="Jasper" votes="5" />
+                <County name="Orangeburg" votes="10" />
+                <County name="Richland" votes="42" />
+                <County name="Sumter" votes="3" />
+                <County name="Williamsburg" votes="9" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="11">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="3" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="2" />
+                <County name="Richland" votes="5" />
+                <County name="Sumter" votes="1" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="0">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="0">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="0">
+                <County name="Allendale" votes="0" />
+                <County name="Bamberg" votes="0" />
+                <County name="Calhoun" votes="0" />
+                <County name="Charleston" votes="0" />
+                <County name="Clarendon" votes="0" />
+                <County name="Colleton" votes="0" />
+                <County name="Dorchester" votes="0" />
+                <County name="Florence" votes="0" />
+                <County name="Hampton" votes="0" />
+                <County name="Jasper" votes="0" />
+                <County name="Orangeburg" votes="0" />
+                <County name="Richland" votes="0" />
+                <County name="Sumter" votes="0" />
+                <County name="Williamsburg" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    <Contest key="28002" text="State  House of Representatives, District  1" voteFor="1" isQuestion="false" countiesParticipating="2" countiesReported="2" precinctsParticipating="18" precinctsReported="18" precinctsReportingPercent="100.00">
+        <ParticipatingCounties>
+            <County name="Oconee" precinctsParticipating="14" precinctsReported="14" precinctsReportingPercent="100.00" />
+            <County name="Pickens" precinctsParticipating="4" precinctsReported="4" precinctsReportingPercent="100.00" />
+        </ParticipatingCounties>
+        <Choice key="001" text="REP Bill Whitmire" party="REP" totalVotes="20495">
+            <VoteType name="Election Day" votes="7617">
+                <County name="Oconee" votes="6739" />
+                <County name="Pickens" votes="878" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="12098">
+                <County name="Oconee" votes="10423" />
+                <County name="Pickens" votes="1675" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="744">
+                <County name="Oconee" votes="663" />
+                <County name="Pickens" votes="81" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="17">
+                <County name="Oconee" votes="13" />
+                <County name="Pickens" votes="4" />
+            </VoteType>
+            <VoteType name="Provisional" votes="16">
+                <County name="Oconee" votes="6" />
+                <County name="Pickens" votes="10" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="3">
+                <County name="Oconee" votes="3" />
+                <County name="Pickens" votes="0" />
+            </VoteType>
+        </Choice>
+        <Choice key="002" text="Write-In" party="NON" totalVotes="179">
+            <VoteType name="Election Day" votes="67">
+                <County name="Oconee" votes="60" />
+                <County name="Pickens" votes="7" />
+            </VoteType>
+            <VoteType name="Early Voting" votes="96">
+                <County name="Oconee" votes="86" />
+                <County name="Pickens" votes="10" />
+            </VoteType>
+            <VoteType name="Absentee By Mail" votes="16">
+                <County name="Oconee" votes="14" />
+                <County name="Pickens" votes="2" />
+            </VoteType>
+            <VoteType name="Failsafe" votes="0">
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+            </VoteType>
+            <VoteType name="Provisional" votes="0">
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+            </VoteType>
+            <VoteType name="Failsafe Provisional" votes="0">
+                <County name="Oconee" votes="0" />
+                <County name="Pickens" votes="0" />
+            </VoteType>
+        </Choice>
+    </Contest>
+    </ElectionResult>
