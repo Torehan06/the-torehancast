@@ -180,15 +180,23 @@ feeds:
     reference_url: https://www.elections.alaska.gov/election-results/
     notes: "URL UNVERIFIED: on Nov 2 the old enr26/ path began redirecting to enr/26PRIM/, and the primary's file moved under it, so the general is expected at enr/26GENR/ (404 until published). Recheck where enr26/ redirects on Nov 3. Ballot names from the 26genr candidate list."
   2026-NE-SEN:
-    adapter: null
-    url: null
-    election_id: null
-    status: pending
+    adapter: ne_sos
+    url: https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetMapData
+    election_id: '2026-11-03'
+    status: ready
+    contest: SEN
+    candidates:
+      "Dan Osborn": D
+      "Pete Ricketts": R
+      "Chuck Conboy": other
+      "Mike Marvin": other
+      "Robin Richards": other
     display: {D: Dan Osborn, R: Pete Ricketts}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.nebraska.gov/
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: The JSON service the state's results site calls; race IDs and names read from the VM Nov 2. Resolves from US networks.
+    params:
+      races: SEN=SW:13224:102,H1=CG:13165:103,H2=CG:13166:103,H3=CG:13167:103
   # House districts with a forecast. url/election_id are set when the state's 2026 file is verified.
   2026-AK-HAL:
     adapter: ak_doe
@@ -423,8 +431,8 @@ feeds:
     adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: No adapter yet; added with the state's results-only source (W4).
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-NH-H01:
     adapter: null
     url: null

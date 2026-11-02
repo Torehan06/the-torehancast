@@ -1,6 +1,12 @@
 # Results-only races in Nebraska: vote totals and percent reporting, no model, no prior.
 # Schema: docs/config.md. `none` races render "no votes reported for this race".
 results:
-  sources: {}
-  none:
-    house: Feed format unverified (PLAN M15).
+  sources:
+    sos:
+      same_as: 2026-NE-SEN
+      status: ready
+      contests:
+      - office: house
+        districts: all
+        template: H{n}
+      notes: Keys into params.races on 2026-NE-SEN. District 2's forecast was dropped Nov 2.

@@ -136,10 +136,10 @@ races:
     unit: county
     priority: 13
     baseline: 2024_sen
+    tau_pair: [2018_sen, 2024_sen]
     ranked_choice: false
-    status: todo
-    notes: Fischer-Osborn baseline; Osborn is the non-R side. US network needed; format
-      unverified. Ask before HTML parsing.
+    status: done
+    notes: Fischer-Osborn baseline; Osborn is the non-R side. JSON service behind the state's results site.
   # House districts with a forecast (Törehan, Oct 20). Results-only districts live in config/results/.
   2026-AK-HAL:
     state: AK
@@ -440,8 +440,8 @@ races:
     priority: 45
     baseline: 2024_house_02
     ranked_choice: false
-    status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; no House baseline in time. Shows vote totals (config/results/NE.yaml).
   2026-NH-H01:
     state: NH
     race_type: house
