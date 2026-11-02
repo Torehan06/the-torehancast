@@ -42,9 +42,13 @@ export function showsProbabilities(race: Race | undefined): race is PluralityRac
 
 export type Party = 'D' | 'R' | 'other'
 
-/** Party colour for a candidate key. Keys are sides ("D", "R") in the publisher. */
+/**
+ * Party colour for a candidate key. Keys are sides in the publisher: "D", "R", and
+ * "D2" / "R2" for a second candidate of a party (a same-party top-two race).
+ */
 export function party(key: string): Party {
-  return key === 'D' || key === 'R' ? key : 'other'
+  const side = key.replace(/\d+$/, '')
+  return side === 'D' || side === 'R' ? side : 'other'
 }
 
 export type Strength = 'strong' | 'medium' | 'light'
