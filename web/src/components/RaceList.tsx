@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * The other 22 Senate races as plain buttons (the swing seats have their own
+ * The other Senate races as plain buttons (the swing seats have their own
  * tiles). Small states (RI, DE) are hard to tap on a phone map; this list and
  * the tiles are the reliable way in, and they carry the number behind each colour.
  */
