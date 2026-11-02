@@ -421,18 +421,24 @@ races:
     unit: county-part
     priority: 43
     baseline: 2024_pres_2026lines_01
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: done
+    notes: Lines redrawn in Oct 2025; baseline is 2024 Pres rebuilt on them from precincts,
+      with 23 whole counties and Granville and Onslow split (config/house/NC.yaml; W7). tau is
+      the statewide pair, as 2026-NC-SEN.
   2026-NC-H11:
     state: NC
     race_type: house
     unit: county-part
     priority: 44
     baseline: 2024_house_11
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
-    status: todo
-    notes: Check the lines against the 2026 primary file before using the 2024 House baseline (W7).
+    status: done
+    notes: Lines unchanged since 2024, checked against the 2026 primary and general files;
+      baseline is the 2024 House result by county part (16 parts; W7). tau is the statewide
+      pair, as 2026-NC-SEN. The replay runs on the 13 counties whole in 2022 and 2024.
   2026-NE-H02:
     state: NE
     race_type: house

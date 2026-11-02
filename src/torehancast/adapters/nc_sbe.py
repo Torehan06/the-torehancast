@@ -23,6 +23,9 @@ from ..schema import Cell, Snapshot, canonical_vote_type
 
 BASE = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS"
 VOTE_COLUMNS = ("Election Day", "One Stop", "Early Voting", "Absentee by Mail", "Provisional")
+# A statewide contest rebuilt on a district's lines may leave this share of a split
+# county's votes unassigned before the rebuild refuses to run.
+MAX_UNMATCHED_SHARE = 0.01
 
 
 def results_url(election_date: str, base: str = BASE) -> str:
@@ -37,11 +40,57 @@ def read_zip(blob: bytes) -> str:
         return zf.read(name).decode("utf-8", errors="replace")
 
 
-def parse(text: str, contest_name: str, cmap: CandidateMap, race: str) -> Snapshot:
+def _line_share(lines: dict, county: str, precinct: str) -> float | None:
+    """The share of a precinct's votes inside `lines`; None for a name `lines` doesn't know.
+
+    `lines` is {whole: [counties], parts: {county: {in: {precinct: share}, out: [precincts]}}}.
+    A whole county needs no precinct names, so renames and vote-center rows can't lose votes.
+    """
+    if county in lines.get("whole", ()):
+        return 1.0
+    part = lines.get("parts", {}).get(county)
+    if part is None:
+        return 0.0
+    if precinct in part["in"]:
+        return float(part["in"][precinct])
+    return 0.0 if precinct in part["out"] else None
+
+
+def check_lines(text: str, contest_name: str, lines: dict) -> dict[str, float]:
+    """Each split county's unmatched vote share. Raises rather than lose votes.
+
+    Unmatched means a row with votes whose precinct name `lines` doesn't know, such as
+    a renamed precinct or a county-wide early-voting row. A precinct named `in` that
+    the file lacks is an error at any size.
+    """
+    totals: dict[str, int] = defaultdict(int)
+    unmatched: dict[str, int] = defaultdict(int)
+    seen: dict[str, set[str]] = defaultdict(set)
+    for row in csv.DictReader(io.StringIO(text), delimiter="\t"):
+        county = row["County"].strip().upper()
+        if row["Contest Name"] != contest_name or county not in lines.get("parts", {}):
+            continue
+        seen[county].add(row["Precinct"])
+        n = int(row["Total Votes"] or 0)
+        totals[county] += n
+        if _line_share(lines, county, row["Precinct"]) is None:
+            unmatched[county] += n
+    shares = {}
+    for county, part in lines.get("parts", {}).items():
+        if missing := set(part["in"]) - seen[county]:
+            raise ValueError(f"{contest_name}: {county} has no rows for {sorted(missing)}")
+        shares[county] = unmatched[county] / totals[county] if totals[county] else 0.0
+        if shares[county] > MAX_UNMATCHED_SHARE:
+            raise ValueError(f"{contest_name}: {shares[county]:.1%} of {county}'s votes are unmatched")
+    return shares
+
+
+def parse(text: str, contest_name: str, cmap: CandidateMap, race: str, lines: dict | None = None) -> Snapshot:
+    """`lines` rebuilds a statewide contest on a district's lines (see `_line_share`)."""
     reader = csv.DictReader(io.StringIO(text), delimiter="\t")
     vote_columns = [c for c in VOTE_COLUMNS if c in (reader.fieldnames or [])]
 
-    votes: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    votes: dict[tuple[str, str], dict[str, float]] = defaultdict(lambda: defaultdict(float))
     precincts: dict[str, set[str]] = defaultdict(set)
     reporting_precincts: dict[str, set[str]] = defaultdict(set)
 
@@ -50,15 +99,18 @@ def parse(text: str, contest_name: str, cmap: CandidateMap, race: str) -> Snapsh
             continue
         county = row["County"].strip().upper()
         precinct = row["Precinct"]
+        share = 1.0 if lines is None else _line_share(lines, county, precinct)
+        if not share:
+            continue
         key = cmap.key_for(row["Choice"])
         precincts[county].add(precinct)
         for col in vote_columns:
             n = int(row[col] or 0)
-            votes[(county, canonical_vote_type(col))][key] += n
+            votes[(county, canonical_vote_type(col))][key] += n * share
         if int(row["Election Day"] or 0) > 0:
             reporting_precincts[county].add(precinct)
 
-    cells = [Cell(unit, vt, dict(v)) for (unit, vt), v in sorted(votes.items())]
+    cells = [Cell(unit, vt, {k: round(n) for k, n in v.items()}) for (unit, vt), v in sorted(votes.items())]
     # NC's file has no explicit precinct status; "has any Election Day votes" is the
     # best available proxy for a precinct having reported.
     reporting = {c: len(reporting_precincts[c]) / len(p) for c, p in precincts.items() if p}
@@ -77,7 +129,10 @@ def fetch_source(client, feed) -> str:
 
 
 def final_snapshot(spec: dict, archives: Path, cmap: CandidateMap, key: str) -> Snapshot:
-    return parse(load_archive(archives, spec["date"]), spec["contest"], cmap, key)
+    text = load_archive(archives, spec["date"])
+    if lines := spec.get("lines"):
+        check_lines(text, spec["contest"], lines)
+    return parse(text, spec["contest"], cmap, key, lines)
 
 
 def parse_all_contests(text: str, contests) -> dict[str, results_only.ContestTotals]:

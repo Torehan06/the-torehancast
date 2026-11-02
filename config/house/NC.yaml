@@ -1,0 +1,105 @@
+# North Carolina House elections (W7), read by elections.load() next to elections.yaml,
+# and the House replays, read by replay.harness.
+#
+# All from the SBE precinct files (results_pct_YYYYMMDD.txt). The units are county
+# parts: a district contest's rows, summed by county.
+#
+# `lines` rebuilds a contest on a set of lines (adapters/nc_sbe.py). Whole counties are
+# summed by county, so precinct renames and vote-center rows can't lose votes. Each split
+# county lists every precinct, in or out; check_lines raises if over 1% of its votes
+# are in rows with unknown names.
+#
+# NC-1, redrawn in Oct 2025. The precinct → district assignment is read from the Mar 3,
+# 2026 primary and confirmed by the zero-vote Nov 3, 2026 general file: 25 counties, 23
+# of them whole. Granville and Onslow are split, and both report early and mail votes by
+# real precinct in 2020 and 2024, so every vote has a precinct: 0% unmatched in both
+# years. Three split precincts are apportioned, with their votes taken proportionally
+# (D and R alike, so the part's lean is the whole precinct's):
+#   Granville SALM 0.591, WOEL 0.001: 2024 House votes NC-1 ÷ (NC-1 + NC-13), 875/1480
+#     and 1/1101. EAOX's 2 votes in NC-13 are ignored. The 2026 primary and general
+#     list the same Granville precincts in both districts.
+#   Onslow SW19 0.726: no earlier NC-1 vote exists there, so from the 2026 primary, with
+#     both parties' voters: (NC-1 R 489 + Senate D 296 − NC-3 D 93) ÷ (Senate R 657 +
+#     Senate D 296).
+# Apportioned rows are 1% of the part's 2024 vote. The rebuild gives Trump 55.3% of the
+# vote, matching the 55% Sen. Hise, the plan's sponsor, cited for it (press coverage, Oct 2025).
+#
+# NC-11's lines did not change in 2025: the same 16 counties and, in the primary and the
+# general, the same precincts apart from renames and merges (Haywood BE-1 → BE1, Mitchell
+# 01 + 08 → 01-A, Transylvania CC → CC.1, Cherokee ANNW → ANW). But the 2022 → 2024
+# pair does cross a line change: the 2023 plan added Avery and Mitchell, dropped
+# Rutherford's part and cut Polk to 3 precincts. So that replay runs on the 13 counties
+# whole in both years (`common` keys; 95% of the 2024 NC-11 two-party vote).
+lines:
+  nc01_2026: &nc01_2026
+    whole: [BEAUFORT, BERTIE, CAMDEN, CARTERET, CHOWAN, CRAVEN, CURRITUCK, DARE, EDGECOMBE, GATES, HALIFAX,
+            HERTFORD, HYDE, MARTIN, NASH, NORTHAMPTON, PAMLICO, PASQUOTANK, PERQUIMANS, TYRRELL, VANCE,
+            WARREN, WASHINGTON]
+    parts:
+      GRANVILLE:
+        in: {ANTI: 1, CRDL: 1, EAOX: 1, SALM: 0.591, SOOX: 1, WOEL: 0.001}
+        out: [BERE, BTNR, CORI, CRDM, MTEN, OKHL, SASS, TYHO, WILT]
+      ONSLOW:
+        in: {SW19: 0.726}
+        out: [BC21, BM08, CL10, CR07, EN03, FS16, GB12, HM05, HN14, HR17, HU20, JA01, ML23, MT24, NE22A,
+              NE22B, NM13, NR02, RL09, SF18, TL06, VR15, WN04]
+  nc11_common: &nc11_common
+    whole: [BUNCOMBE, CHEROKEE, CLAY, GRAHAM, HAYWOOD, HENDERSON, JACKSON, MACON, MADISON, MCDOWELL, SWAIN,
+            TRANSYLVANIA, YANCEY]
+
+elections:
+  2020_pres_2026lines_01:
+    adapter: nc_sbe
+    date: "2020-11-03"
+    contest: "US PRESIDENT"
+    candidates: {"Donald J. Trump": R, "Joseph R. Biden": D}
+    lines: *nc01_2026
+  2024_pres_2026lines_01:
+    adapter: nc_sbe
+    date: "2024-11-05"
+    contest: "US PRESIDENT"
+    candidates: {"Donald J. Trump": R, "Kamala D. Harris": D}
+    lines: *nc01_2026
+  2024_house_11:
+    adapter: nc_sbe
+    date: "2024-11-05"
+    contest: "US HOUSE OF REPRESENTATIVES DISTRICT 11"
+    candidates: {"Chuck Edwards": R, "Caleb Rudow": D}
+  2022_house_11_common:
+    adapter: nc_sbe
+    date: "2022-11-08"
+    contest: "US HOUSE OF REPRESENTATIVES DISTRICT 11"
+    candidates: {"Chuck Edwards": R, "Jasmine Beach-Ferrara": D}
+    lines: *nc11_common
+  2024_house_11_common:
+    adapter: nc_sbe
+    date: "2024-11-05"
+    contest: "US HOUSE OF REPRESENTATIVES DISTRICT 11"
+    candidates: {"Chuck Edwards": R, "Caleb Rudow": D}
+    lines: *nc11_common
+
+# Replays.
+#
+# NC-1: 2020 → 2024 president on the 2026 lines, τ from the statewide 2016 → 2020 county
+# pair (as the Senate replay). Prior: the 2020 margin on these lines (−0.0698) plus the
+# swing NC's polling average implied (Senate replay prior −0.012 against the 2020
+# statewide −0.0137: +0.002). Turnout as the Senate replay. Result: −0.1167.
+#
+# NC-11: 2022 → 2024 House on the 13 common counties, τ as above. Prior: the 2022 margin
+# on them (−0.0797) plus the national shift, R+2.7 in the 2022 House vote to R+0.03 in
+# RCP's final 2024 generic ballot (+0.027, as SC-1). Turnout: the statewide midterm →
+# presidential ratio of two-party House votes, 2018 3,617,102 → 2020 5,291,871 (Wikipedia):
+# 1.46. Result: −0.1143; Hurricane Helene hit this district five weeks before that vote.
+replay:
+  2026-NC-H01:
+    primary:
+      baseline: 2020_pres_2026lines_01
+      target: 2024_pres_2026lines_01
+      tau_pair: [2016_pres, 2020_pres]
+      prior: {margin: -0.068, margin_sd: 0.06, turnout_ratio: 1.02, turnout_sd: 0.10}
+  2026-NC-H11:
+    primary:
+      baseline: 2022_house_11_common
+      target: 2024_house_11_common
+      tau_pair: [2016_pres, 2020_pres]
+      prior: {margin: -0.053, margin_sd: 0.06, turnout_ratio: 1.46, turnout_sd: 0.12}
