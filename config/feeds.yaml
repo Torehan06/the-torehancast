@@ -180,15 +180,23 @@ feeds:
     reference_url: https://www.elections.alaska.gov/election-results/
     notes: "URL UNVERIFIED: on Nov 2 the old enr26/ path began redirecting to enr/26PRIM/, and the primary's file moved under it, so the general is expected at enr/26GENR/ (404 until published). Recheck where enr26/ redirects on Nov 3. Ballot names from the 26genr candidate list."
   2026-NE-SEN:
-    adapter: null
-    url: null
-    election_id: null
-    status: pending
+    adapter: ne_sos
+    url: https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetMapData
+    election_id: '2026-11-03'
+    status: ready
+    contest: SEN
+    candidates:
+      "Dan Osborn": D
+      "Pete Ricketts": R
+      "Chuck Conboy": other
+      "Mike Marvin": other
+      "Robin Richards": other
     display: {D: Dan Osborn, R: Pete Ricketts}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.nebraska.gov/
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: The JSON service the state's results site calls; race IDs and names read from the VM Nov 2. Resolves from US networks.
+    params:
+      races: SEN=SW:13224:102,H1=CG:13165:103,H2=CG:13166:103,H3=CG:13167:103
   # House districts with a forecast. url/election_id are set when the state's 2026 file is verified.
   2026-AK-HAL:
     adapter: ak_doe
@@ -273,41 +281,41 @@ feeds:
     status: pending
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-FL-H09:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H13:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H14:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H22:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H25:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H27:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-IA-H01:
     adapter: ia_clarity
     url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
@@ -409,22 +417,40 @@ feeds:
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-NC-H01:
     adapter: nc_sbe
-    url: null
-    election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
+    status: ready
+    contest: US HOUSE OF REPRESENTATIVES DISTRICT 01
+    candidates:
+      Don Davis: D
+      Laurie Buckhout: R
+      Tom Bailey: other
+    display: {D: Don Davis, R: Laurie Buckhout}
+    polls_close: '2026-11-03T19:30:00-05:00'
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Same zip as 2026-NC-SEN (one fetch serves both). Contest and ballot names read from
+      the zero-vote 2026 file (Nov 2).
   2026-NC-H11:
     adapter: nc_sbe
-    url: null
-    election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
+    status: ready
+    contest: US HOUSE OF REPRESENTATIVES DISTRICT 11
+    candidates:
+      Jamie Ager: D
+      Jennifer Capps Balkcom: R
+      Travis Groo: other
+    display: {D: Jamie Ager, R: Jennifer Capps Balkcom}
+    polls_close: '2026-11-03T19:30:00-05:00'
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Same zip as 2026-NC-SEN (one fetch serves both). Contest and ballot names read from
+      the zero-vote 2026 file (Nov 2). Edwards withdrew in Aug 2026; Balkcom replaced him on the ballot.
   2026-NE-H02:
     adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: No adapter yet; added with the state's results-only source (W4).
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-NH-H01:
     adapter: null
     url: null

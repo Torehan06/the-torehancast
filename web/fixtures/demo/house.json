@@ -1,0 +1,385 @@
+{
+ "generated_at": "2026-11-04T02:30:00Z",
+ "mode": "replay",
+ "races": [
+  {
+   "state": "AK",
+   "race": "2026-AK-HAL",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "AK-1 Fixture A (Dem)",
+    "R": "AK-1 Fixture B (Rep)"
+   },
+   "rcv_status": "awaiting_first_choices",
+   "p_outright": {
+    "D": null,
+    "R": null
+   },
+   "p_via_rcv": {
+    "D": null,
+    "R": null
+   },
+   "p_win": {
+    "D": null,
+    "R": null
+   },
+   "p_no_rcv_needed": null,
+   "votes": {
+    "D": 40210,
+    "R": 45120
+   },
+   "vote_share": {
+    "D": 0.4712,
+    "R": 0.5288
+   }
+  },
+  {
+   "state": "ME",
+   "race": "2026-ME-H02",
+   "race_type": "house",
+   "district": 2,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "ME-2 Fixture A (Dem)",
+    "R": "ME-2 Fixture B (Rep)"
+   },
+   "rcv_status": "resolved",
+   "p_outright": {
+    "D": 0.31,
+    "R": 0.42
+   },
+   "p_via_rcv": {
+    "D": 0.15,
+    "R": 0.12
+   },
+   "p_win": {
+    "D": 0.46,
+    "R": 0.54
+   },
+   "p_no_rcv_needed": 0.73,
+   "votes": {
+    "D": 61200,
+    "R": 66400
+   },
+   "vote_share": {
+    "D": 0.4796,
+    "R": 0.5204
+   }
+  },
+  {
+   "state": "NC",
+   "race": "2026-NC-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "NC-1 Fixture A (Dem)",
+    "R": "NC-1 Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.62,
+    "R": 0.38
+   },
+   "margin": {
+    "median": 0.0213,
+    "p80": [
+     -0.0087,
+     0.0513
+    ],
+    "p95": [
+     -0.0287,
+     0.0713
+    ]
+   },
+   "reported_votes": 172573,
+   "expected_votes": 410888,
+   "share_counted": 0.42,
+   "votes": {
+    "D": 88123,
+    "R": 84450
+   },
+   "vote_share": {
+    "D": 0.5106,
+    "R": 0.4894
+   }
+  },
+  {
+   "state": "PA",
+   "race": "2026-PA-H07",
+   "race_type": "house",
+   "district": 7,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "PA-7 Fixture A (Dem)",
+    "R": "PA-7 Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.18,
+    "R": 0.82
+   },
+   "margin": {
+    "median": -0.0733,
+    "p80": [
+     -0.1033,
+     -0.0433
+    ],
+    "p95": [
+     -0.1233,
+     -0.0233
+    ]
+   },
+   "reported_votes": 151313,
+   "expected_votes": 360269,
+   "share_counted": 0.42,
+   "votes": {
+    "D": 70111,
+    "R": 81202
+   },
+   "vote_share": {
+    "D": 0.4634,
+    "R": 0.5366
+   }
+  },
+  {
+   "state": "IA",
+   "race": "2026-IA-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "IA-1 Fixture A (Dem)",
+    "R": "IA-1 Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.02,
+    "R": 0.98
+   },
+   "margin": {
+    "median": -0.2149,
+    "p80": [
+     -0.2449,
+     -0.1849
+    ],
+    "p95": [
+     -0.2649,
+     -0.1649
+    ]
+   },
+   "reported_votes": 102150,
+   "expected_votes": 243214,
+   "share_counted": 0.42,
+   "votes": {
+    "D": 40100,
+    "R": 62050
+   },
+   "vote_share": {
+    "D": 0.3926,
+    "R": 0.6074
+   }
+  },
+  {
+   "state": "SC",
+   "race": "2026-SC-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "live",
+   "candidates": {
+    "D": "SC-1 Fixture A (Dem)",
+    "R": "SC-1 Fixture B (Rep)"
+   },
+   "p_win": {
+    "D": 0.996,
+    "R": 0.004
+   },
+   "margin": {
+    "median": 0.193,
+    "p80": [
+     0.163,
+     0.223
+    ],
+    "p95": [
+     0.143,
+     0.243
+    ]
+   },
+   "reported_votes": 151210,
+   "expected_votes": 360023,
+   "share_counted": 0.42,
+   "votes": {
+    "D": 90200,
+    "R": 61010
+   },
+   "vote_share": {
+    "D": 0.5965,
+    "R": 0.4035
+   }
+  },
+  {
+   "state": "NC",
+   "race": "2026-NC-H02",
+   "race_type": "house",
+   "district": 2,
+   "as_of": "21:29 ET",
+   "modeled": true,
+   "status": "waiting"
+  },
+  {
+   "state": "NY",
+   "race": "2026-NY-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "waiting"
+  },
+  {
+   "state": "IL",
+   "race": "2026-IL-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "D": "IL-1 Fixture A (Dem)",
+    "R": "IL-1 Fixture B (Rep)",
+    "other": "IL-1 Fixture C (Oth)"
+   },
+   "votes": {
+    "D": 121008,
+    "R": 62115,
+    "other": 1702
+   },
+   "vote_share": {
+    "D": 0.6547,
+    "R": 0.3361,
+    "other": 0.0092
+   },
+   "pct_reporting": 0.71
+  },
+  {
+   "state": "IL",
+   "race": "2026-IL-H02",
+   "race_type": "house",
+   "district": 2,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "D": "IL-2 Fixture A (Dem)",
+    "R": "IL-2 Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 50114,
+    "R": 54209
+   },
+   "vote_share": {
+    "D": 0.4804,
+    "R": 0.5196
+   },
+   "pct_reporting": null
+  },
+  {
+   "state": "CA",
+   "race": "2026-CA-H12",
+   "race_type": "house",
+   "district": 12,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "D": "CA-12 Fixture A (Dem)",
+    "D2": "CA-12 Fixture B (Dem)"
+   },
+   "votes": {
+    "D": 90111,
+    "D2": 101512
+   },
+   "vote_share": {
+    "D": 0.4703,
+    "D2": 0.5297
+   },
+   "pct_reporting": 0.6
+  },
+  {
+   "state": "VT",
+   "race": "2026-VT-HAL",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "I": "VT-1 Fixture A (Ind)",
+    "R": "VT-1 Fixture B (Rep)"
+   },
+   "votes": {
+    "I": 71200,
+    "R": 40110
+   },
+   "vote_share": {
+    "I": 0.6397,
+    "R": 0.3603
+   },
+   "pct_reporting": 0.88
+  },
+  {
+   "state": "TX",
+   "race": "2026-TX-H01",
+   "race_type": "house",
+   "district": 1,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "D": "TX-1 Fixture A (Dem)",
+    "R": "TX-1 Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 1000,
+    "R": 1000
+   },
+   "vote_share": {
+    "D": 0.5,
+    "R": 0.5
+   },
+   "pct_reporting": 0.05
+  },
+  {
+   "state": "OH",
+   "race": "2026-OH-H09",
+   "race_type": "house",
+   "district": 9,
+   "as_of": "21:29 ET",
+   "modeled": false,
+   "status": "live",
+   "candidates": {
+    "D": "OH-9 Fixture A (Dem)",
+    "R": "OH-9 Fixture B (Rep)"
+   },
+   "votes": {
+    "D": 0,
+    "R": 0
+   },
+   "vote_share": {
+    "D": 0.0,
+    "R": 0.0
+   },
+   "pct_reporting": 0.01
+  }
+ ]
+}

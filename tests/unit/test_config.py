@@ -291,7 +291,7 @@ def test_every_federal_race_is_modeled_results_only_or_none():
     covered = config.coverage(loaded, config.load_results(loaded, ROOT / "config"))
     federal = set(districts.senate_race_ids()) | set(districts.house_race_ids())
     assert covered.keys() == federal, f"unregistered: {sorted(federal - covered.keys())[:10]}"
-    assert sum(kind == "modeled" for kind in covered.values()) == 70  # 76 minus Ohio's 6 dropped forecasts
+    assert sum(kind == "modeled" for kind in covered.values()) == 63  # 76 minus 6 each for Ohio and Florida, and NE-2
     assert sum(covered[race] == "results" for race in covered if race.startswith("2026-OH-H")) == 15
     assert covered["2026-OH-SEN-SPECIAL"] == "modeled"
 

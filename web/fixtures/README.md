@@ -11,7 +11,8 @@ JSON the page is tested against. Every file here must pass the strict contract
 | `cases/partial-modeled/` | Georgia part-counted, `modeled: true`. | Contract v1. |
 | `cases/rcv-null/` | Maine and Alaska with every RCV probability `null` (`awaiting_first_choices`). AK carries no vote counts. | Contract v1 + `docs/rcv.md`. |
 | `cases/final/` | Georgia and Illinois fully counted. | Contract v1. |
-| `demo/` | A mixed night for `npm run dev` and screenshots. `mode: replay`. | Contract v1. |
+| `cases/house/` | One `house.json` covering every House display case: modeled, waiting, results-only (with and without % reporting), RCV with null and with real probabilities, a same-party top-two race, a tie and a zero-vote count. | Contract v2. |
+| `demo/` | A mixed night for `npm run dev` and screenshots, Senate plus a copy of `cases/house/house.json`. `mode: replay`. | Contract v1, v2 for `house.json`. |
 
 Detail files live at `races/{race_id}.json` and exist only for modeled races.
 Everything except `replay-ga/` uses made-up candidates ("GA Fixture A (Dem)") and

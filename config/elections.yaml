@@ -234,3 +234,27 @@ OH:
       "SHERROD BROWN": D
       "BERNIE MORENO": R
       "DON KISSICK": other
+NE:
+  # Osborn (2024, by petition) is the non-R side of the margin, as Democrats were before him.
+  2012_sen:
+    adapter: ne_sos
+    format: state
+    file: 11_651.json  # GetMapDataArchive, electionID 11. Runs 1-3% under the certified totals.
+    candidates:
+      "Bob Kerrey": D
+      "Deb Fischer": R
+  2018_sen:
+    adapter: ne_sos
+    format: state
+    file: 23_8862.json  # GetMapDataArchive, electionID 23. Matches the certified totals.
+    candidates:
+      "Jane Raybould": D
+      "Deb Fischer": R
+      "Jim Schultz": other
+  2024_sen:
+    adapter: ne_sos
+    format: medsl
+    file: OH/2024_medsl/2024-senate-county.csv  # the state's archive had no usable 2024 data
+    candidates:
+      "DAN OSBORN": D
+      "DEB FISCHER": R

@@ -158,3 +158,16 @@ OH:
   # since no final count was found. The gap prior is deliberately agnostic.
   synthetic_split: {early_share: 0.31, gap: 0.0, shift_sd: 0.30, share_sd: 0.15, gap_shift_sd: 0.10, gap_sd: 0.05}
   synthetic_target: {early_share: 0.43}
+
+NE:
+  primary:
+    baseline: 2018_sen
+    target: 2024_sen
+    tau_pair: [2012_sen, 2018_sen]
+    # Public polls late in 2024 had the race close, roughly Fischer +1 (approximate, not a
+    # published average). Result R+6.7. Turnout: two-party 2024 ran about 1.35x 2018.
+    prior: {margin: -0.010, margin_sd: 0.06, turnout_ratio: 1.35, turnout_sd: 0.12}
+  arrival_profile:
+    batch_types: []
+    chunked_types: [all]
+    late_types: []

@@ -484,3 +484,106 @@ a { color: inherit; text-underline-offset: 0.18em; }
 .race-item--swing:hover { background: var(--paper); }
 .race-item--swing.race-item--selected { outline: 3px solid var(--focus); outline-offset: 2px; }
 .race-item--swing.race-item--empty.race-item--selected { box-shadow: none; }
+
+/* ---- Senate | House: filled in like a choice on the ballot ---- */
+.chamber { display: inline-flex; gap: 6px; margin-top: 20px; }
+.chamber__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 6px 16px 6px 12px;
+  border: 2px solid var(--rule);
+  border-radius: 10px;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.chamber__option:hover { border-color: var(--ink); color: var(--ink); }
+.chamber__option[aria-pressed='true'] { border-color: var(--ink); color: var(--ink); background: var(--paper-raised); }
+.chamber__option:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.chamber__oval {
+  flex: none;
+  width: 22px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+.chamber__option[aria-pressed='true'] .chamber__oval { background: var(--ink); }
+
+/* ---- House tile cartogram (F5) ---- */
+.tiles { container-type: inline-size; }
+.legend__small { display: none; }
+.tiles__map { width: 100%; height: auto; display: block; overflow: visible; }
+.tile { cursor: pointer; --tile-text: var(--ink); }
+.tile:focus { outline: none; }
+.tile__box {
+  fill: var(--fill, var(--hatch-bg));
+  stroke: transparent;
+  stroke-width: 0;
+}
+.tile--waiting .tile__box { fill: url(#hatch-tile); }
+.tile--noleader { --fill: var(--noleader); --tile-text: #1b2633; }
+/* Each fill gets the ink that stays readable on it, in both themes. */
+.tile.lead-D, .tile.lead-R { --tile-text: #fff; }
+.tile.lead-other { --tile-text: #1b2633; }
+.tile.strength-medium { --tile-text: #1b2633; }
+.tile.strength-light { --tile-text: var(--ink); }
+.tile__label {
+  fill: var(--tile-text);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+.tile--waiting .tile__label {
+  stroke: var(--hatch-bg);
+  stroke-width: 2.5px;
+  paint-order: stroke;
+}
+.tile:hover .tile__box { stroke: var(--ink); stroke-width: 1.5; }
+.tile:focus-visible .tile__box,
+.tile--selected .tile__box { stroke: var(--focus); stroke-width: 3; paint-order: stroke; }
+.tiles__borders { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: square; pointer-events: none; }
+.tiles__states { display: none; pointer-events: none; }
+.tiles__states text {
+  fill: var(--ink);
+  font-size: 21px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+  stroke: var(--paper);
+  stroke-width: 5px;
+  paint-order: stroke;
+}
+/* Below about 15px a square, its printed number can't be read; state codes take over. */
+@container (max-width: 570px) {
+  .tile__label { display: none; }
+  .tiles__states { display: block; }
+  .legend__numbers { display: none; }
+  .legend__small { display: inline; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tile__box { transition: fill 900ms ease-in-out; }
+}
+
+.house-browse { margin-bottom: 36px; }
+.house-browse__label { display: flex; align-items: center; gap: 10px; margin: 8px 0 12px; font-weight: 650; }
+.house-browse select {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 320px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: var(--paper-raised);
+  color: inherit;
+  font: inherit;
+}
+.house-browse select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

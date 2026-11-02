@@ -136,10 +136,10 @@ races:
     unit: county
     priority: 13
     baseline: 2024_sen
+    tau_pair: [2018_sen, 2024_sen]
     ranked_choice: false
-    status: todo
-    notes: Fischer-Osborn baseline; Osborn is the non-R side. US network needed; format
-      unverified. Ask before HTML parsing.
+    status: done
+    notes: Fischer-Osborn baseline; Osborn is the non-R side. JSON service behind the state's results site.
   # House districts with a forecast (Törehan, Oct 20). Results-only districts live in config/results/.
   2026-AK-HAL:
     state: AK
@@ -251,8 +251,8 @@ races:
     priority: 25
     baseline: 2024_pres_2026lines_09
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-FL-H13:
     state: FL
     race_type: house
@@ -260,8 +260,8 @@ races:
     priority: 26
     baseline: 2024_pres_2026lines_13
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-FL-H14:
     state: FL
     race_type: house
@@ -269,8 +269,8 @@ races:
     priority: 27
     baseline: 2024_pres_2026lines_14
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-FL-H22:
     state: FL
     race_type: house
@@ -278,8 +278,8 @@ races:
     priority: 28
     baseline: 2024_pres_2026lines_22
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-FL-H25:
     state: FL
     race_type: house
@@ -287,8 +287,8 @@ races:
     priority: 29
     baseline: 2024_pres_2026lines_25
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-FL-H27:
     state: FL
     race_type: house
@@ -296,8 +296,8 @@ races:
     priority: 30
     baseline: 2024_pres_2026lines_27
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; the precinct join to the 2026 lines fails the 1% limit in the split counties. Shows vote totals (config/results/FL.yaml).
   2026-IA-H01:
     state: IA
     race_type: house
@@ -421,18 +421,24 @@ races:
     unit: county-part
     priority: 43
     baseline: 2024_pres_2026lines_01
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
-    status: todo
-    notes: Lines redrawn for 2026; baseline is 2024 Pres rebuilt on the new lines (W7).
+    status: done
+    notes: Lines redrawn in Oct 2025; baseline is 2024 Pres rebuilt on them from precincts,
+      with 23 whole counties and Granville and Onslow split (config/house/NC.yaml; W7). tau is
+      the statewide pair, as 2026-NC-SEN.
   2026-NC-H11:
     state: NC
     race_type: house
     unit: county-part
     priority: 44
     baseline: 2024_house_11
+    tau_pair: [2020_pres, 2024_pres]
     ranked_choice: false
-    status: todo
-    notes: Check the lines against the 2026 primary file before using the 2024 House baseline (W7).
+    status: done
+    notes: Lines unchanged since 2024, checked against the 2026 primary and general files;
+      baseline is the 2024 House result by county part (16 parts; W7). tau is the statewide
+      pair, as 2026-NC-SEN. The replay runs on the 13 counties whole in 2022 and 2024.
   2026-NE-H02:
     state: NE
     race_type: house
@@ -440,8 +446,8 @@ races:
     priority: 45
     baseline: 2024_house_02
     ranked_choice: false
-    status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    status: dropped
+    notes: Forecast dropped Nov 2; no House baseline in time. Shows vote totals (config/results/NE.yaml).
   2026-NH-H01:
     state: NH
     race_type: house
