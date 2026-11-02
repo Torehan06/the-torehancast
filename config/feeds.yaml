@@ -11,12 +11,15 @@ feeds:
     adapter: ga_enhanced_voting
     url: https://results.sos.ga.gov/results/public/api/elections/Georgia/2026NovGen/data
     election_id: 2026NovGen
-    status: pending
+    status: ready
+    contest: "US Senate"
+    candidates:
+      "Jon Ossoff (I) (Dem)": D
+      "Mike Collins (Rep)": R
     display: {D: Jon Ossoff, R: Mike Collins}
     polls_close: '2026-11-03T19:00:00-05:00'
     reference_url: https://results.sos.ga.gov/results/public
-    notes: Endpoint exists (204, not published yet, Oct 19). Contest name unverified until
-      results appear.
+    notes: "UNVERIFIED until GA publishes (204 on Nov 2). Contest and ballot-name format follow the 2022 file ('US Senate', 'Raphael Warnock (I) (Dem)'). Check `feedcheck --contests GA` when it publishes; the candidate guard holds the race back if a name is wrong, and config is re-read each cycle."
   2026-NC-SEN:
     adapter: nc_sbe
     url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
@@ -36,14 +39,18 @@ feeds:
   2026-FL-SEN-SPECIAL:
     adapter: fl_dos
     url: https://results.elections.myflorida.com/ResultsExtract.Asp
-    election_id: null
-    status: pending
+    election_id: '2026-11-03'
+    status: ready
+    contest: "USS"
+    candidates:
+      "Nixon, Angie": D
+      "Moody, Ashley": R
     display: {D: Angie Nixon, R: Ashley Moody}
     polls_close: '2026-11-03T19:00:00-05:00'
     reference_url: https://results.elections.myflorida.com/ResultsExtract.Asp
-    notes: Set the verified live URL and election ID before marking ready. Reference
-      URL is for discovery only.
+    notes: "DOS extract answers from the VM with headers only until results post. Names in the adapter's 'Last, First' form; Nixon and Moody won the Aug 18 primaries (extract, read from the VM Nov 2). Other names pool into other."
     params:
+      ElectionDate: 11/3/2026
       OfficialResults: N
       PartyRaces: N
       DataMode: ''
@@ -79,14 +86,19 @@ feeds:
       marked IsTest with zero counts before the election. www.ohiosos.gov and boe.ohio.gov still challenge.
   2026-IA-SEN:
     adapter: ia_clarity
-    url: null
-    election_id: null
-    status: pending
+    url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
+    election_id: '127077'
+    status: ready
+    contest: "United States Senator"
+    candidates:
+      "Josh Turek": D
+      "Ashley Hinson": R
+      "Thomas Laehn": other
+      "Write-in": other
     display: {D: Josh Turek, R: Ashley Hinson}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.iowa.gov/IA/elections.json
-    notes: No 2026 general EID in elections.json yet (Oct 19). The statewide EID is
-      followed by 99 county EIDs.
+    notes: "EID 127077 from elections.json; contest and ballot names from its summary.json, read from the VM Nov 2."
   2026-KS-SEN:
     adapter: null
     url: null
@@ -99,13 +111,20 @@ feeds:
       URL is for discovery only.
   2026-SC-SEN:
     adapter: sc_clarity
-    url: null
-    election_id: null
-    status: pending
+    url: https://www.enr-scvotes.org/SC/127300/current_ver.txt
+    election_id: '127300'
+    status: ready
+    contest: "U.S.  Senate"
+    candidates:
+      "DEM Annie Andrews": D
+      "REP Darline Graham": R
+      "LIB Kasie Whitener": other
+      "CON Mark Hackett": other
+      "Write-In": other
     display: {D: Annie Andrews, R: Darline Graham}
     polls_close: '2026-11-03T19:00:00-05:00'
     reference_url: https://www.enr-scvotes.org/SC/122436/current_ver.txt
-    notes: No 2026 general EID yet (SC elections.json empty, Oct 19).
+    notes: "EID 127300; contest and ballot names from its summary.json, read from the VM Nov 2. Two spaces after U.S. are real."
   2026-MI-SEN:
     adapter: null
     url: null
@@ -146,15 +165,20 @@ feeds:
       URL is for discovery only.
   2026-AK-SEN:
     adapter: ak_doe
-    url: https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv
-    election_id: null
-    status: pending
+    url: https://www.elections.alaska.gov/enr/26GENR/results/GA_ENR_Precinct_State_of_Alaska.csv
+    election_id: '2026-11-03'
+    status: ready
+    contest: "U.S. Senator"
+    candidates:
+      "Peltola, Mary": D
+      "Sullivan, Dan S.": R
+      "Heikes, Gerald L.": R
+      "Sullivan, Daniel J. Jr.": other
+      "McElwain, Heather": other
     display: {D: Mary Peltola, R: Dan Sullivan}
     polls_close: '2026-11-03T20:00:00-09:00'
     reference_url: https://www.elections.alaska.gov/election-results/
-    notes: URL is where the Aug 2026 primary was published (verified from the poller,
-      ETag supported); confirm it carries the general on Nov 3. Needs the shipped TLS
-      intermediate (http.EXTRA_CAS).
+    notes: "URL UNVERIFIED: on Nov 2 the old enr26/ path began redirecting to enr/26PRIM/, and the primary's file moved under it, so the general is expected at enr/26GENR/ (404 until published). Recheck where enr26/ redirects on Nov 3. Ballot names from the 26genr candidate list."
   2026-NE-SEN:
     adapter: null
     url: null
@@ -168,27 +192,26 @@ feeds:
   # House districts with a forecast. url/election_id are set when the state's 2026 file is verified.
   2026-AK-HAL:
     adapter: ak_doe
-    url: https://www.elections.alaska.gov/enr26/results/GA_ENR_Precinct_State_of_Alaska.csv
-    election_id: null
-    status: pending
-    contest: U.S. Representative
+    url: https://www.elections.alaska.gov/enr/26GENR/results/GA_ENR_Precinct_State_of_Alaska.csv
+    election_id: '2026-11-03'
+    status: ready
+    contest: "U.S. Representative"
+    candidates:
+      "Begich, Nick": R
+      "Strickland, Clay": R
+      "Goldfarb, Eddie": R
+      "Hill, Bill": D
+      "Schultz, Matt": D
+      "Hafner, Eric": D
+      "Williams, John B.": D
+      "Reynoso, Yaquelin": D
     # Party blocs, as in config/house/AK.yaml: Hill (NON) is the D side. Schultz withdrew
     # but stays on the ballot; mapping primary names that are off the general ballot is
     # harmless. McDermott (LIB) is "other".
-    candidates:
-      Begich, Nick: R
-      Strickland, Clay: R
-      Goldfarb, Eddie: R
-      Hill, Bill: D
-      Schultz, Matt: D
-      Hafner, Eric: D
-      Williams, John B.: D
-      Reynoso, Yaquelin: D
     display: {D: Bill Hill, R: Nick Begich}
     polls_close: '2026-11-03T20:00:00-09:00'
     reference_url: https://www.elections.alaska.gov/election-results/
-    notes: Same source as 2026-AK-SEN (one fetch serves both). Names are from the Aug 2026
-      primary file; confirm against the general file on Nov 3 before marking ready.
+    notes: "URL UNVERIFIED: on Nov 2 the old enr26/ path began redirecting to enr/26PRIM/, and the primary's file moved under it, so the general is expected at enr/26GENR/ (404 until published). Recheck where enr26/ redirects on Nov 3. Ballot names are the Aug primary's party blocs, as in the baseline; the general's other names (Dutchess, McDermott) pool into other."
   2026-AL-H02:
     adapter: null
     url: null
@@ -287,37 +310,49 @@ feeds:
     notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
   2026-IA-H01:
     adapter: ia_clarity
-    url: null
-    election_id: null
-    status: pending
+    url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
+    election_id: '127077'
+    status: ready
+    contest: "United States Representative District 1"
+    candidates:
+      "Christina Bohannan": D
+      "Mariannette Miller-Meeks": R
+      "Michael Bridgford": other
+      "Write-in": other
+    display: {D: Christina Bohannan, R: Mariannette Miller-Meeks}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.iowa.gov/IA/elections.json
-    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
-      "United States Representative District 1" in 2020 and 2024; set contest and
-      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
-      challenge from this IP.
+    notes: "Same Clarity source as 2026-IA-SEN. Contest and ballot names from EID 127077's summary.json, read from the VM Nov 2."
   2026-IA-H02:
     adapter: ia_clarity
-    url: null
-    election_id: null
-    status: pending
+    url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
+    election_id: '127077'
+    status: ready
+    contest: "United States Representative District 2"
+    candidates:
+      "Lindsay James": D
+      "Joe Mitchell": R
+      "Rick Stewart": other
+      "Dave Bushaw": other
+      "Write-in": other
+    display: {D: Lindsay James, R: Joe Mitchell}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.iowa.gov/IA/elections.json
-    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
-      "United States Representative District 2" in 2020 and 2024; set contest and
-      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
-      challenge from this IP.
+    notes: "Same Clarity source as 2026-IA-SEN. Contest and ballot names from EID 127077's summary.json, read from the VM Nov 2."
   2026-IA-H03:
     adapter: ia_clarity
-    url: null
-    election_id: null
-    status: pending
+    url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
+    election_id: '127077'
+    status: ready
+    contest: "United States Representative District 3"
+    candidates:
+      "Sarah Trone Garriott": D
+      "Zach Nunn": R
+      "Write-in": other
+    display: {D: Sarah Trone Garriott, R: Zach Nunn}
     polls_close: '2026-11-03T20:00:00-06:00'
     reference_url: https://electionresults.iowa.gov/IA/elections.json
-    notes: Same Clarity source as 2026-IA-SEN (one fetch serves both). The contest was
-      "United States Representative District 3" in 2020 and 2024; set contest and
-      candidates from the 2026 general file. Oct 26 the site answers with an AWS WAF
-      challenge from this IP.
+    notes: "Same Clarity source as 2026-IA-SEN. Contest and ballot names from EID 127077's summary.json, read from the VM Nov 2."
   2026-IN-H01:
     adapter: null
     url: null
@@ -502,20 +537,17 @@ feeds:
     adapter: sc_clarity
     url: https://www.enr-scvotes.org/SC/127300/current_ver.txt
     election_id: '127300'
-    status: pending
+    status: ready
     contest: "U.S.  House of Representatives, District  1"
     candidates:
-      DEM Nancy Lacore: D
-      REP Jenny Costa Honeycutt: R
-      LIB Bill Reeside: other
-      Write-In: other
+      "DEM Nancy Lacore": D
+      "REP Jenny Costa Honeycutt": R
+      "LIB Bill Reeside": other
+      "Write-In": other
     display: {D: Nancy Lacore, R: Jenny Costa Honeycutt}
     polls_close: '2026-11-03T19:00:00-05:00'
     reference_url: https://scvotes.gov/
-    notes: Contest and ballot names read from the 2026 general's summary.json in a browser
-      (EID 127300, version 382659, Nov 1). Same statewide Clarity file as 2026-SC-SEN. From
-      this Mac the site refuses the poller's client (AWS WAF 202 on Oct 26, 403 on Nov 1);
-      mark ready only once the VM's feedcheck reaches it.
+    notes: "Same source as 2026-SC-SEN. Names from EID 127300's summary.json; the VM reached the feed Nov 2."
   2026-TX-H09:
     adapter: null
     url: null

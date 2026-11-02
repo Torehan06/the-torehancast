@@ -4,11 +4,12 @@ results:
   sources:
     sos_house:
       adapter: mn_sos
-      url: null
-      election_id: null
-      status: pending
+      url: https://electionresultsfiles.sos.mn.gov/20261103/ushousecty.txt
+      election_id: '2026-11-03'
+      status: ready
+      polls_close: '2026-11-03T20:00:00-06:00'
       contests:
       - office: house
         districts: all
-        template: null
-      notes: House results are a separate per-office file from the Senate one; W4a finds its URL.
+        template: U.S. Representative District {n}
+      notes: Per-office county file; contest names and test data read from the VM Nov 2.

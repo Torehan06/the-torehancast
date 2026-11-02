@@ -4,7 +4,7 @@ results:
   sources:
     clarity:
       same_as: 2026-SC-SEN
-      status: pending
+      status: ready
       contests:
       - office: house
         districts: all

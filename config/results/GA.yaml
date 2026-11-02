@@ -4,7 +4,7 @@ results:
   sources:
     enhanced_voting:
       same_as: 2026-GA-SEN
-      status: pending
+      status: ready
       contests:
       - office: house
         districts: all
