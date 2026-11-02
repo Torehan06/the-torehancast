@@ -500,10 +500,22 @@ feeds:
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-SC-H01:
     adapter: sc_clarity
-    url: null
-    election_id: null
+    url: https://www.enr-scvotes.org/SC/127300/current_ver.txt
+    election_id: '127300'
     status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    contest: "U.S.  House of Representatives, District  1"
+    candidates:
+      DEM Nancy Lacore: D
+      REP Jenny Costa Honeycutt: R
+      LIB Bill Reeside: other
+      Write-In: other
+    display: {D: Nancy Lacore, R: Jenny Costa Honeycutt}
+    polls_close: '2026-11-03T19:00:00-05:00'
+    reference_url: https://scvotes.gov/
+    notes: Contest and ballot names read from the 2026 general's summary.json in a browser
+      (EID 127300, version 382659, Nov 1). Same statewide Clarity file as 2026-SC-SEN. From
+      this Mac the site refuses the poller's client (AWS WAF 202 on Oct 26, 403 on Nov 1);
+      mark ready only once the VM's feedcheck reaches it.
   2026-TX-H09:
     adapter: null
     url: null

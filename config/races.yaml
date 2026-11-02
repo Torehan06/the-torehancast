@@ -610,9 +610,12 @@ races:
     unit: county-part
     priority: 64
     baseline: 2024_house_01
+    tau_pair: [2022_house_01, 2024_house_01]
     ranked_choice: false
-    status: todo
-    notes: Lines unchanged since 2024; baseline is the 2024 House result by county-part (W7).
+    status: done
+    notes: Lines unchanged since 2022; baseline is the 2024 House result by county part
+      (6 parts, straight from the statewide Clarity file; W7). tau is the only pair on the
+      current lines; the replay's is 2018 to 2020 (config/house/SC.yaml).
   2026-TX-H09:
     state: TX
     race_type: house
