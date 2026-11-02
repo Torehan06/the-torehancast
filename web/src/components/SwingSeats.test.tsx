@@ -1,8 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { parseSummary } from '../data/parse'
+import { SWING_SEATS } from '../data/states'
+import { RaceList } from './RaceList'
 import { SwingSeats } from './SwingSeats'
 
 function raw(name: string) {
@@ -25,10 +27,31 @@ function tile(code: string) {
 }
 
 describe('SwingSeats', () => {
-  it('shows all 13 forecast seats', () => {
-    render(<SwingSeats summary={load('cases/waiting')} selected={null} onSelect={() => {}} />)
-    expect(document.querySelectorAll('.race-item--swing')).toHaveLength(13)
-    expect(screen.queryByTestId(/swing-prob-/)).toBeNull()
+  it.each(['absent', 'cases/waiting', 'demo'])('counts active seats even with %s data', (name) => {
+    const summary = name === 'absent' ? null : load(name)
+    render(<SwingSeats summary={summary} selected={null} onSelect={() => {}} />)
+    expect(screen.getByRole('heading', { name: '9 swing seats' })).toBeInTheDocument()
+    expect([...document.querySelectorAll('.race-item--swing')].map((el) => el.getAttribute('data-race')))
+      .toEqual(['AK', 'FL', 'GA', 'IA', 'MN', 'NE', 'NC', 'OH', 'SC'])
+    if (name !== 'demo') expect(screen.queryByTestId(/swing-prob-/)).toBeNull()
+  })
+
+  it('derives the heading from the displayed active races', () => {
+    const membership = vi.spyOn(SWING_SEATS, 'has').mockImplementation((code) => code === 'GA' || code === 'AK')
+    try {
+      render(<SwingSeats summary={null} selected={null} onSelect={() => {}} />)
+      expect(screen.getByRole('heading', { name: '2 swing seats' })).toBeInTheDocument()
+      expect(document.querySelectorAll('.race-item--swing')).toHaveLength(2)
+    } finally {
+      membership.mockRestore()
+    }
+  })
+
+  it('keeps dropped seats accessible in the other-races list', () => {
+    render(<RaceList summary={null} selected={null} onSelect={() => {}} />)
+    for (const name of ['Texas', 'Kansas', 'Michigan', 'Maine']) {
+      expect(screen.getByRole('button', { name: new RegExp(`${name} Senate:`) })).toBeInTheDocument()
+    }
   })
 
   it('leads with the favourite’s win probability in its party colour', () => {
@@ -41,10 +64,10 @@ describe('SwingSeats', () => {
   })
 
   it('never puts a vote share in the big-number slot', () => {
+    // Exercise the same RCV guard with Alaska, which remains active.
     render(<SwingSeats summary={load('demo')} selected={null} onSelect={() => {}} />)
-    // Maine's RCV probabilities are null; it leads only on first-choice votes.
-    expect(screen.queryByTestId('swing-prob-ME')).toBeNull()
-    expect(tile('ME')).toHaveTextContent('leads with 45.2% of the vote')
+    expect(screen.queryByTestId('swing-prob-AK')).toBeNull()
+    expect(tile('AK')).toHaveTextContent('leads with 47.0% of the vote')
   })
 
   it('shows no probability for pre-M3 data without the modeled flag', () => {

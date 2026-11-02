@@ -442,7 +442,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
 }
 .theme-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
 
-/* ---- swing seats: the 13 forecast races, number first ---- */
+/* ---- swing seats: the active forecast races, number first ---- */
 .swing { margin-bottom: 36px; }
 .swing__intro { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.92rem; max-width: 60ch; }
 .swing__grid {

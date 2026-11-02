@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * The 13 forecast seats as tiles, each led by the favourite's win probability
+ * The active forecast seats as tiles, each led by the favourite's win probability
  * in big type and party colour. Tiles stay in alphabetical order: a grid that
  * re-sorts itself every 20 seconds is impossible to follow on election night.
  */
@@ -19,7 +19,7 @@ export function SwingSeats({ summary, selected, onSelect }: Props) {
   return (
     <section className="swing" aria-labelledby="swing-title">
       <h2 id="swing-title" className="list-title">
-        13 swing seats
+        {seats.length} swing seats
       </h2>
       <p className="swing__intro">The races the model forecasts. The big number is the favourite’s chance of winning.</p>
       <ul className="swing__grid">

@@ -48,8 +48,9 @@ export const SENATE_RACES_2026: SenateRace[] = [...CLASS_2, ...SPECIALS]
 export const HAS_SENATE_RACE = new Set(SENATE_RACES_2026.map((r) => r.state.code))
 
 /**
- * The 13 seats in the model's registry (PLAN.md), featured below the map.
+ * The active Senate forecast seats, featured below the map. Dropped feeds stay
+ * in the other-races list; unpublished active feeds remain in this set.
  * This only decides where a race is displayed. Whether it shows a probability
  * still comes from its JSON (`modeled: true` with votes in), never from this list.
  */
-export const SWING_SEATS = new Set(['GA', 'NC', 'FL', 'TX', 'OH', 'IA', 'KS', 'SC', 'MI', 'MN', 'ME', 'AK', 'NE'])
+export const SWING_SEATS = new Set(['GA', 'NC', 'FL', 'OH', 'IA', 'SC', 'MN', 'AK', 'NE'])
