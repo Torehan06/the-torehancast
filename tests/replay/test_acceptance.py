@@ -1,6 +1,7 @@
 """A state goes live only when its replays pass these checks.
 
-Run one state:  pytest tests/replay -k GA
+Run one state:  pytest tests/replay --state GA
+Run one race:   pytest tests/replay --race 2026-IA-H01
 Seeds:          REPLAY_SEEDS=50 pytest tests/replay   (default 20)
 
 Two kinds of arrival order, held to different standards:
@@ -34,9 +35,7 @@ import os
 
 import numpy as np
 import pytest
-import yaml
 
-from torehancast.elections import CONFIG
 from torehancast.replay import harness
 
 COVERAGE_80_MIN = 0.70
@@ -49,12 +48,8 @@ START_TOLERANCE = 0.015  # 0% reporting median vs prior (MC noise + nonlinearity
 END_TOLERANCE = 0.001
 
 SEEDS = int(os.environ.get("REPLAY_SEEDS", "20"))
-PAIRS = [
-    (state, pair)
-    for state, cfg in yaml.safe_load((CONFIG / "replay.yaml").read_text()).items()
-    for pair in ("primary", "secondary")
-    if pair in cfg
-]
+# (key, pair): key is a state (config/replay.yaml) or a House race ID (config/house/).
+PAIRS = [(key, pair) for key in harness.replay_keys() for pair in harness.PAIRS if pair in harness.replay_config(key)]
 pytestmark = pytest.mark.replay
 
 
@@ -62,9 +57,9 @@ def _ids(p):
     return f"{p[0]}-{p[1]}"
 
 
-def realistic_orders(state: str) -> list[str]:
+def realistic_orders(key: str) -> list[str]:
     """random everywhere; timezone only where some units close later."""
-    profile = harness.replay_config(state).get("arrival_profile", {})
+    profile = harness.replay_config(key).get("arrival_profile", {})
     return ["random"] + (["timezone"] if profile.get("late_close") else [])
 
 
@@ -118,7 +113,7 @@ IMPOSSIBLE_ORDERS = {
 @pytest.mark.parametrize("order", ["d_first", "r_first", "ed_first"])
 def test_no_confident_wrong_call_under_adversarial_orders(pair_id, order):
     state, pair = pair_id
-    if (state, order) in IMPOSSIBLE_ORDERS:
+    if (harness.state_of(state), order) in IMPOSSIBLE_ORDERS:
         pytest.skip(f"{order} is impossible in {state} (see IMPOSSIBLE_ORDERS)")
     for seed in range(3):
         r = harness.run(state, pair, order, seed, n_draws=2000)
