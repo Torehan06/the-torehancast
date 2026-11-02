@@ -273,41 +273,41 @@ feeds:
     status: pending
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-FL-H09:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H13:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H14:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H22:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H25:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-FL-H27:
-    adapter: fl_dos
+    adapter: null
     url: null
     election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    status: dropped
+    notes: Forecast dropped; vote totals come from the results-only source.
   2026-IA-H01:
     adapter: ia_clarity
     url: https://electionresults.iowa.gov/IA/127077/current_ver.txt
