@@ -409,16 +409,34 @@ feeds:
     notes: No adapter yet; added with the state's results-only source (W4).
   2026-NC-H01:
     adapter: nc_sbe
-    url: null
-    election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
+    status: ready
+    contest: US HOUSE OF REPRESENTATIVES DISTRICT 01
+    candidates:
+      Don Davis: D
+      Laurie Buckhout: R
+      Tom Bailey: other
+    display: {D: Don Davis, R: Laurie Buckhout}
+    polls_close: '2026-11-03T19:30:00-05:00'
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Same zip as 2026-NC-SEN (one fetch serves both). Contest and ballot names read from
+      the zero-vote 2026 file (Nov 2).
   2026-NC-H11:
     adapter: nc_sbe
-    url: null
-    election_id: null
-    status: pending
-    notes: Same source as the state's Senate feed; contest and candidates are set once the 2026 file lists them.
+    url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip
+    election_id: '2026-11-03'
+    status: ready
+    contest: US HOUSE OF REPRESENTATIVES DISTRICT 11
+    candidates:
+      Jamie Ager: D
+      Jennifer Capps Balkcom: R
+      Travis Groo: other
+    display: {D: Jamie Ager, R: Jennifer Capps Balkcom}
+    polls_close: '2026-11-03T19:30:00-05:00'
+    reference_url: https://s3.amazonaws.com/dl.ncsbe.gov/ENRS
+    notes: Same zip as 2026-NC-SEN (one fetch serves both). Contest and ballot names read from
+      the zero-vote 2026 file (Nov 2). Edwards withdrew in Aug 2026; Balkcom replaced him on the ballot.
   2026-NE-H02:
     adapter: null
     url: null
