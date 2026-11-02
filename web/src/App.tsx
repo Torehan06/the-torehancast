@@ -3,6 +3,7 @@ import { FETCH_TIMEOUT_MS, HOUSE_URL, POLL_MS, STALE_AFTER_S, SUMMARY_URL } from
 import { formatAge, freshness, pollForView } from './data/freshness'
 import { parseHouse, parseSummary, type ParsedHouse, type ParsedSummary } from './data/parse'
 import { parseRoute, routeHash, type Route, type View } from './data/route'
+import { SENATE_RACES_2026, SWING_SEATS } from './data/states'
 import { useNow, usePoll, type PollState } from './hooks/usePoll'
 import { ChamberToggle } from './components/ChamberToggle'
 import { DistrictPanel } from './components/DistrictPanel'
@@ -19,6 +20,7 @@ import { StatusBanner } from './components/StatusBanner'
 export default function App() {
   const [route, setRoute] = useState<Route>(() => parseRoute(window.location.hash))
   const { view, selected } = route
+  const otherRaceCount = SENATE_RACES_2026.filter(({ state }) => !SWING_SEATS.has(state.code)).length
   const summaryPoll = usePoll(SUMMARY_URL, parseSummary, POLL_MS, FETCH_TIMEOUT_MS)
   // house.json is only fetched for the House view, which holds the only panel that reads it.
   const housePoll = usePoll(HOUSE_URL, parseHouse, POLL_MS, FETCH_TIMEOUT_MS, { enabled: view === 'house', missingOk: true })
@@ -93,7 +95,7 @@ export default function App() {
           </aside>
           <div className="layout__list">
             <SwingSeats summary={summary} selected={selected} onSelect={select} />
-            <h2 className="list-title">Other 22 races</h2>
+            <h2 className="list-title">Other {otherRaceCount} races</h2>
             <RaceList summary={summary} selected={selected} onSelect={select} />
           </div>
         </main>
