@@ -96,3 +96,24 @@ def test_enacted_plan_counties_of_the_modeled_districts():
     assert fp.plan_counties(text, 22) == {"BROWARD", "COLLIER", "HENDRY", "PALM BEACH"}
     assert fp.plan_counties(text, 25) == {"BROWARD", "MIAMI-DADE", "PALM BEACH"}
     assert fp.plan_counties(text, 27) == {"MIAMI-DADE"}
+
+
+ARCHIVES = Path(__file__).parents[2] / "data" / "archives" / "FL"
+
+
+@pytest.mark.skipif(not (ARCHIVES / "precinct" / "2026-pri-outputofficial.zip").exists(),
+                    reason="DOS precinct files not archived")
+@pytest.mark.parametrize(("year", "file", "contest", "over_limit"), [
+    (2020, "2020-general-election-rev.zip", "President of the United States",
+     {"BRO", "CLL", "DAD", "HIL", "ORA", "OSC", "PAL", "PAS", "PIN", "POL"}),
+    (2024, "2024-gen-outputofficial1.zip", "President and Vice President",
+     {"BRO", "DAD", "HIL", "ORA", "OSC", "PAL", "PAS", "PIN", "POL"}),
+])
+def test_the_real_precinct_join_is_refused_at_the_limit(year, file, contest, over_limit):
+    """Pins why no FL district has a 2026-lines baseline: the join misses 1% in these counties."""
+    from torehancast.adapters import fl_precinct as fp
+    assign = fp.assignment(fp.read_precinct_archive(ARCHIVES / "precinct" / "2026-pri-outputofficial.zip"))
+    rows = fp.contest_rows(fp.read_precinct_archive(ARCHIVES / "precinct" / file), contest)
+    split = {"BRO", "CLL", "DAD", "HIL", "ORA", "OSC", "PAL", "PAS", "PIN", "POL"}
+    _, report = fp.match_report(rows, assign, split)
+    assert {c for c, m in report.items() if m.unmatched_share > fp.MAX_UNMATCHED} == over_limit

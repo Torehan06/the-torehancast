@@ -1,0 +1,74 @@
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	284	0	0	Representative in Congress	 District 25	140251	Dan Franzese	REP	0	91057	13
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	671	0	0	Representative in Congress	 District 25	140251	Dan Franzese	REP	0	91057	37
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	284	0	0	Representative in Congress	 District 25	140251	Raven Harrison	REP	0	90427	0
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	671	0	0	Representative in Congress	 District 25	140251	Raven Harrison	REP	0	90427	4
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	284	0	0	Representative in Congress	 District 25	140251	Joseph "Joe" Kaufman	REP	0	88881	1
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	671	0	0	Representative in Congress	 District 25	140251	Joseph "Joe" Kaufman	REP	0	88881	15
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	284	0	0	Representative in Congress	 District 25	140251	George R. Moraitis	REP	0	89053	9
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	671	0	0	Representative in Congress	 District 25	140251	George R. Moraitis	REP	0	89053	24
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	284	0	0	Representative in Congress	 District 25	140251	Scott Singer	REP	0	89801	34
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	671	0	0	Representative in Congress	 District 25	140251	Scott Singer	REP	0	89801	44
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	0	0	Representative in Congress	 District 25	140251	OverVotes	 	0	901	0
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	0	0	Representative in Congress	 District 25	140251	OverVotes	 	0	901	1
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	0	0	Representative in Congress	 District 25	140251	UnderVotes	 	0	902	1
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	0	0	Representative in Congress	 District 25	140251	UnderVotes	 	0	902	6
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	136	0	Representative in Congress	 District 25	140252	Oliver Adams Larkin	DEM	0	89736	3
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	348	0	Representative in Congress	 District 25	140252	Oliver Adams Larkin	DEM	0	89736	25
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	136	0	Representative in Congress	 District 25	140252	Jared Moskowitz	DEM	0	88911	24
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	348	0	Representative in Congress	 District 25	140252	Jared Moskowitz	DEM	0	88911	46
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	0	0	Representative in Congress	 District 25	140252	OverVotes	 	0	901	0
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	0	0	Representative in Congress	 District 25	140252	OverVotes	 	0	901	0
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0010	PCT 001/067	676	0	0	0	Representative in Congress	 District 25	140252	UnderVotes	 	0	902	0
+DAD	Miami-Dade	49893	08/18/2026	2026 Primary Election	0020	PCT 002/004	1644	0	0	0	Representative in Congress	 District 25	140252	UnderVotes	 	0	902	4
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Casey Askar	REP	0	92109	403
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Casey Askar	REP	0	92109	2
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	David Burck	REP	0	90645	168
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	David Burck	REP	0	90645	1
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Michael Carbonara	REP	0	90525	182
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Michael Carbonara	REP	0	90525	5
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Richard Evans	REP	0	90934	36
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Richard Evans	REP	0	90934	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Terri Hasdorff	REP	0	91145	99
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Terri Hasdorff	REP	0	91145	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Belinda Keiser	REP	0	90812	222
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Belinda Keiser	REP	0	90812	2
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	3186	0	0	Representative in Congress	 District 22	140221	Michael Thompson	REP	0	90852	38
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	70	0	0	Representative in Congress	 District 22	140221	Michael Thompson	REP	0	90852	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	0	0	Representative in Congress	 District 22	140221	OverVotes	 	0	901	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	0	0	Representative in Congress	 District 22	140221	OverVotes	 	0	901	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	0	0	Representative in Congress	 District 22	140221	UnderVotes	 	0	902	34
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	0	0	Representative in Congress	 District 22	140221	UnderVotes	 	0	902	2
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	1018	0	Representative in Congress	 District 22	140222	Pia Dandiya	DEM	0	89301	215
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	14	0	Representative in Congress	 District 22	140222	Pia Dandiya	DEM	0	89301	3
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	1018	0	Representative in Congress	 District 22	140222	Kaysia Earley	DEM	0	91322	75
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	14	0	Representative in Congress	 District 22	140222	Kaysia Earley	DEM	0	91322	1
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	0	0	Representative in Congress	 District 22	140222	OverVotes	 	0	901	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	0	0	Representative in Congress	 District 22	140222	OverVotes	 	0	901	0
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT101	PCT 101	5523	0	0	0	Representative in Congress	 District 22	140222	UnderVotes	 	0	902	12
+CLL	Collier	49893	08/18/2026	2026 Primary Election	PCT102	PCT 102 & 502	119	0	0	0	Representative in Congress	 District 22	140222	UnderVotes	 	0	902	0
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 20	140201	Brent Andersen	REP	0	91278	31
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 20	140201	Lateresa "LA" Jones	REP	0	89859	3
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 20	140201	Rod Joseph	REP	0	88814	5
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 20	140201	Carla Spalding	REP	0	91886	19
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 20	140201	OverVotes	 	0	901	0
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 20	140201	UnderVotes	 	0	902	8
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 20	140202	Luther "UncleLuke" Campbell	DEM	0	89937	26
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 20	140202	Sheila Cherfilus-McCormick	DEM	0	90432	24
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 20	140202	Dale V.C. Holness	DEM	0	89962	93
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 20	140202	Elijah Manley	DEM	0	89001	56
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 20	140202	Debbie Wasserman Schultz	DEM	0	91577	130
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 20	140202	OverVotes	 	0	901	1
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 20	140202	UnderVotes	 	0	902	0
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Casey Askar	REP	0	92109	46
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	David Burck	REP	0	90645	21
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Michael Carbonara	REP	0	90525	51
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Richard Evans	REP	0	90934	8
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Terri Hasdorff	REP	0	91145	15
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Belinda Keiser	REP	0	90812	26
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	1529	0	0	Representative in Congress	 District 22	140221	Michael Thompson	REP	0	90852	4
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 22	140221	OverVotes	 	0	901	0
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 22	140221	UnderVotes	 	0	902	4
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 22	140222	Pia Dandiya	DEM	0	89301	203
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	3100	0	Representative in Congress	 District 22	140222	Kaysia Earley	DEM	0	91322	146
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 22	140222	OverVotes	 	0	901	0
+BRO	Broward	49893	08/18/2026	2026 Primary Election	M011	M011	7218	0	0	0	Representative in Congress	 District 22	140222	UnderVotes	 	0	902	27

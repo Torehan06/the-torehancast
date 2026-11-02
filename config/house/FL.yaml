@@ -8,8 +8,19 @@
 #   replay  2020 → 2024 President on the 2026 lines,  τ from 2016 → 2020 statewide
 # The live feed is the DOS extract, contest "USR:0NN" (fl_dos, district in Juris1num).
 #
+# Status (Nov 2): no district has a baseline yet. The precinct join exceeds fl_precinct's 1%
+# limit in nearly every split county (9 of 10 for 2024; all 10 for 2020), so the build refuses
+# them, and no replay on the 2026 lines can run. See tests/unit/test_fl_house.py.
+#
 # Statewide county totals for the τ pairs. 2020_pres lives in elections.yaml.
 elections:
+  2016_pres:
+    adapter: fl_precinct
+    file: precinct/precinctlevelelectionresults2016gen.zip
+    names: extract_20201103.txt
+    contest: President of the United States
+    # Seminole's file spells its candidates differently from the other 66 counties.
+    candidates: {"Trump / Pence": R, "Clinton / Kaine": D, "Donald J. Trump": R, "Hillary R. Clinton": D}
   2024_pres:
     adapter: fl_dos
     date: "2024-11-05"

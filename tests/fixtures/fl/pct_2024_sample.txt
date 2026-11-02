@@ -1,0 +1,140 @@
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	444
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	918
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	133
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	382
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	0
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	4
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	4
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	6
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	1
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	001	PRECINCT 001.0	744	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	4
+DAD	Miami-Dade	43888	11/05/2024	2024 General Election	002	PRECINCT 002.0	1854	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	5
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	2994
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	73
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	1352
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	16
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	11
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	4
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	2
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	1
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	6
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	23
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	1
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	2
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	0
+CLL	Collier	43888	11/05/2024	2024 General Election	101	101	5279	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	14
+CLL	Collier	43888	11/05/2024	2024 General Election	102	102	118	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	695
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	2160
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	1626
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	74
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	244
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	773
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	1190
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	430
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	1345
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Trump / Vance	REP	0	84375	716
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	1231
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	723
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	484
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	69
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	55
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	253
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	246
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	105
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	644
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Harris / Walz	DEM	0	88636	286
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	9
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	4
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	6
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	7
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Oliver / ter Maat	LPF	0	88618	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	6
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	4
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	De la Cruz / Garcia	PSL	0	88623	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	8
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Terry / Broden	CPF	0	88632	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Sonski / Onak	ASP	0	88642	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	6
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	8
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	Stein / Ware	GRE	0	88647	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	6
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	4
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	8
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	WriteinVotes	 	0	900	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	13
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	8
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	OverVotes	 	0	901	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	001	001	2274	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	9
+HEN	Hendry	43888	11/05/2024	2024 General Election	002	002	3508	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	3
+HEN	Hendry	43888	11/05/2024	2024 General Election	003	003	2543	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	004	004	204	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	4
+HEN	Hendry	43888	11/05/2024	2024 General Election	005	005	325	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	0
+HEN	Hendry	43888	11/05/2024	2024 General Election	006	006	1195	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	2
+HEN	Hendry	43888	11/05/2024	2024 General Election	007	007	1670	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	4
+HEN	Hendry	43888	11/05/2024	2024 General Election	008	008	614	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	1
+HEN	Hendry	43888	11/05/2024	2024 General Election	009	009	2601	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	5
+HEN	Hendry	43888	11/05/2024	2024 General Election	010	010	1205	0	0	0	President and Vice President	 	100000	UnderVotes	 	0	902	5
