@@ -27,6 +27,10 @@
  */
 import { z } from 'zod'
 
+// Hosting disallows eval. Skip Zod's JIT probe instead of triggering a CSP event
+// and falling back to this same interpreter after the browser blocks it.
+z.config({ jitless: true })
+
 export const RCV_STATUSES = ['awaiting_first_choices', 'awaiting_rcv', 'unresolved', 'resolved'] as const
 export const RACE_TYPES = ['senate', 'senate-special', 'house'] as const
 /** Canonical race ID, as src/torehancast/districts.py builds them. */

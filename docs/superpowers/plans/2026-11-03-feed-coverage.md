@@ -39,3 +39,12 @@ Frontend/copy only; frozen backend and acceptance tests unchanged. Exact copy: `
 - [ ] Merge approved exact head; rebuild merged tree with live VITE_DATA_BASE.
 - [ ] Deploy explicitly to torehancast-2026 before cutoff; verify live widths/themes and console/CSP.
 - [ ] Append factual PLAN handoff with PR, SHAs, checks, release and rollback IDs.
+
+### Task 3: Production CSP follow-up
+
+The live check found Zod's caught eval probe emits a CSP violation. The prior Hosting release was restored before further work. This is a frontend parser optimization setting; public schemas, acceptance thresholds, backend and CSP policy remain unchanged.
+
+- [x] Reproduce with a browser regression applying the actual Firebase CSP to the production build.
+- [x] Set Zod jitless mode before constructing public schemas; lint/typecheck/265 Vitest/39 Playwright passed. Independent review found no actionable issues.
+- [ ] Independently review the follow-up, open PR and require green CI before the approved merge/redeploy.
+- [ ] Repeat the actual live 1280px/390px light/dark checks, including securitypolicyviolation events.
