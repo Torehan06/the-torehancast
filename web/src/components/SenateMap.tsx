@@ -1,3 +1,4 @@
+import { isNotTracked } from '../data/coverage'
 import { geoPath } from 'd3-geo'
 import { feature } from 'topojson-client'
 import type { GeometryCollection, Topology } from 'topojson-specification'
@@ -5,7 +6,7 @@ import type { KeyboardEvent } from 'react'
 import usAtlas from 'us-atlas/states-albers-10m.json'
 import type { ParsedSummary } from '../data/parse'
 import { leader, party, voteState } from '../data/display'
-import { HAS_SENATE_RACE, STATE_BY_FIPS, type UsState } from '../data/states'
+import { HAS_SENATE_RACE, senateRaceId, STATE_BY_FIPS, type UsState } from '../data/states'
 import { raceLabel } from './raceLabel'
 
 // us-atlas ships US Census boundaries already projected to Albers USA in a
@@ -48,7 +49,7 @@ export function SenateMap({ summary, selected, onSelect }: Props) {
         const cls = [
           'state',
           'state--race',
-          lead ? `lead-${party(lead.key)} strength-${lead.strength}` : voteState(race) === 'none' ? 'state--waiting' : 'state--noleader',
+          lead ? `lead-${party(lead.key)} strength-${lead.strength}` : isNotTracked(senateRaceId(state.code), race) ? 'state--not-tracked' : voteState(race) === 'none' ? 'state--waiting' : 'state--noleader',
           state.code === selected ? 'state--selected' : '',
         ].join(' ')
         const label = raceLabel(state, race, summary)

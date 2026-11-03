@@ -36,6 +36,11 @@ const CLASS_2 = [
 ]
 const SPECIALS = ['FL', 'OH']
 
+/** Canonical identity for coverage lookup, including the two special elections. */
+export function senateRaceId(code: string): string {
+  return `2026-${code}-SEN${SPECIALS.includes(code) ? '-SPECIAL' : ''}`
+}
+
 export interface SenateRace {
   state: UsState
   special: boolean

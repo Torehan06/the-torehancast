@@ -181,6 +181,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
 .lead-R.strength-light { --fill: var(--r-light); }
 .lead-other.strength-medium { --fill: var(--o-medium); }
 .lead-other.strength-light { --fill: var(--o-light); }
+.state--not-tracked, .tile--not-tracked { --fill: var(--neutral); }
 .state--neutral { --fill: var(--neutral); }
 .state--noleader { --fill: var(--noleader); }
 [data-theme='dark'] .lead-D { --text: #62b4ec; }
@@ -342,6 +343,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--hatch-line) 22%, transparent) 6px 8px);
   font-weight: 600;
 }
+.panel__empty[data-testid="not-tracked"] { background: var(--neutral); }
 .panel__note { color: var(--ink-soft); font-size: 0.9rem; margin: 14px 0 0; }
 .panel__meta { color: var(--ink-soft); font-size: 0.86rem; margin: 8px 0; }
 .panel__time { color: var(--ink-soft); font-size: 0.8rem; margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--rule); }
@@ -431,6 +433,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
 }
 /* On a phone the switch alone is enough; its name stays for screen readers. */
 @media (max-width: 520px) {
+  .masthead__status { grid-column: 1 / -1; white-space: normal; }
   .theme-toggle__label {
     position: absolute;
     width: 1px;
@@ -481,6 +484,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   margin: 6px 0 4px;
 }
 .race-item--swing .race-item__detail { font-size: 0.85rem; }
+.swing__note { display: block; margin-top: 6px; }
 .race-item--swing:hover { background: var(--paper); }
 .race-item--swing.race-item--selected { outline: 3px solid var(--focus); outline-offset: 2px; }
 .race-item--swing.race-item--empty.race-item--selected { box-shadow: none; }

@@ -1,3 +1,5 @@
+import { isNotTracked, NOT_TRACKED } from '../data/coverage'
+import { senateRaceId } from '../data/states'
 import type { Race } from '../data/contract'
 import { formatProbability, formatShare, leader, NO_VOTES, voteState } from '../data/display'
 import type { District } from '../data/districts'
@@ -9,11 +11,12 @@ import type { UsState } from '../data/states'
  * names. Always states the number behind the colour, and what kind of number.
  */
 export function raceStatus(state: UsState, race: Race | undefined, summary: ParsedSummary | null): string {
-  return statusLine(race, summary?.invalid.includes(state.code) ?? false)
+  return statusLine(race, summary?.invalid.includes(state.code) ?? false, senateRaceId(state.code))
 }
 
-export function statusLine(race: Race | undefined, invalid: boolean): string {
+export function statusLine(race: Race | undefined, invalid: boolean, raceId: string): string {
   if (invalid) return 'data unavailable'
+  if (isNotTracked(raceId, race)) return NOT_TRACKED
   const votes = voteState(race)
   if (votes === 'none') return NO_VOTES
   const lead = leader(race)
@@ -29,5 +32,5 @@ export function raceLabel(state: UsState, race: Race | undefined, summary: Parse
 
 /** "NC-1, North Carolina's 1st District: …", for a tile's name and tooltip. */
 export function districtLabelText(district: District, race: Race | undefined, invalid: boolean): string {
-  return `${district.label}, ${district.name}: ${statusLine(race, invalid)}`
+  return `${district.label}, ${district.name}: ${statusLine(race, invalid, district.raceId)}`
 }

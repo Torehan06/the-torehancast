@@ -94,8 +94,8 @@ describe('DistrictPanel display rules', () => {
     expect(within(panel('OH-09')).getByTestId('no-votes')).toHaveTextContent(EXACTLY_NO_VOTES)
   })
 
-  it('absent from house.json: exactly the no-votes text', () => {
-    expect(within(panel('WY-AL')).getByTestId('no-votes')).toHaveTextContent(EXACTLY_NO_VOTES)
+  it('untracked and absent from house.json: Not tracked', () => {
+    expect(within(panel('WY-AL')).getByTestId('not-tracked')).toHaveTextContent('Not tracked')
   })
 
   it('no house.json at all: exactly the no-votes text and no invented timestamp', () => {

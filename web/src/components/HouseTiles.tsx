@@ -1,3 +1,4 @@
+import { isNotTracked } from '../data/coverage'
 import { memo, useState, type KeyboardEvent } from 'react'
 import { leader, party, voteState } from '../data/display'
 import { DISTRICT_BY_KEY, DISTRICTS, TILE_GRID, tileInDirection, type Direction, type District } from '../data/districts'
@@ -78,7 +79,7 @@ export const HouseTiles = memo(function HouseTiles({ house, selected, onSelect }
         const lead = leader(race)
         const cls = [
           'tile',
-          lead ? `lead-${party(lead.key)} strength-${lead.strength}` : voteState(race) === 'none' ? 'tile--waiting' : 'tile--noleader',
+          lead ? `lead-${party(lead.key)} strength-${lead.strength}` : isNotTracked(district.raceId, race) ? 'tile--not-tracked' : voteState(race) === 'none' ? 'tile--waiting' : 'tile--noleader',
           district.key === selected ? 'tile--selected' : '',
         ].join(' ')
         const label = districtLabelText(district, race, invalid)

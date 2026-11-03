@@ -9,12 +9,13 @@ interface Props {
   onClose: () => void
 }
 
-/** One House district. A race absent from house.json (or no file at all) has no votes. */
+/** One House district, with source coverage independent of the current snapshot. */
 export function DistrictPanel({ districtKey, house, onClose }: Props) {
   const district = DISTRICT_BY_KEY.get(districtKey)
   if (!district) return null
   return (
     <RaceCard
+      raceId={district.raceId}
       title={district.label}
       subtitle={`${district.name}, U.S. House`}
       place={STATE_BY_CODE.get(district.state)?.name ?? district.state}

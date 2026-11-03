@@ -1,6 +1,7 @@
+import { rcvUnavailable, RCV_UNAVAILABLE } from '../data/coverage'
 import { formatProbability, leader, party, voteState } from '../data/display'
 import type { ParsedSummary } from '../data/parse'
-import { SENATE_RACES_2026, SWING_SEATS } from '../data/states'
+import { SENATE_RACES_2026, SWING_SEATS, senateRaceId } from '../data/states'
 import { raceLabel, raceStatus } from './raceLabel'
 
 interface Props {
@@ -55,7 +56,10 @@ export function SwingSeats({ summary, selected, onSelect }: Props) {
                     {formatProbability(forecast.value)}
                   </span>
                 )}
-                <span className="race-item__detail">{detail}</span>
+                <span className="race-item__detail">
+                  {detail}
+                  {rcvUnavailable(senateRaceId(state.code), race) && <span className="swing__note">{RCV_UNAVAILABLE}</span>}
+                </span>
               </button>
             </li>
           )
