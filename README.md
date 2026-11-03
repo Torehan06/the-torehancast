@@ -1,10 +1,105 @@
 # The TörehanCast
 
-Live election-night model and dashboard for the 2026 United States Senate races (Tuesday, November 3, 2026). House coverage is being added: forecasts for 63 selected districts and vote totals for every other district (in progress; see `PLAN.md`).
+Live election-night model and dashboard for the 2026 United States Senate and House elections on **Tuesday, November 3, 2026**. Built with Python, React, and TypeScript, using official state election feeds.
 
-As county and district results arrive from official state election feeds, the model estimates statewide swing and turnout relative to a comparable historical baseline, accounts for within-county vote-type composition (early in-person, mail, Election Day, provisional), extrapolates to partially reported and unreported units, and runs Monte Carlo simulations to estimate each candidate's win probability and two-party margin intervals.
+As county and district results arrive from official state election feeds, the model estimates race-level swing and turnout relative to a comparable historical baseline, accounts for within-county vote-type composition (early in-person, mail, Election Day, provisional), extrapolates to partially reported and unreported units, and runs Monte Carlo simulations to estimate each candidate's win probability and two-party margin intervals.
 
-Non-modeled Senate and House races show reported votes, vote percentages, and percent reporting only (`modeled: false`), with **no forecast** and no win probability.
+Results-only Senate and House races show reported votes, vote percentages, and percent reporting where available (`modeled: false`), with **no forecast** and no win probability. A forecast is a model estimate, not an official race call.
+
+---
+
+## Coverage
+
+The dashboard includes all **35 Senate races** and **435 House districts**, with a Senate map and both tile and geographic House maps. Coverage depends on the configured feeds; displaying a district does not mean its results are being tracked.
+
+As of November 3, the repository configures these forecast feeds:
+
+| Chamber | Forecast races |
+|---|---|
+| Senate (9) | Alaska, Florida special, Georgia, Iowa, Minnesota, Nebraska, North Carolina, Ohio special, South Carolina |
+| House (7) | AK-AL, IA-01, IA-02, IA-03, NC-01, NC-11, SC-01 |
+
+House results-only sources are configured for Florida, Georgia, Iowa, Minnesota, Nebraska, North Carolina, Ohio, and South Carolina. Other races may have pending or dropped feeds. See [race configuration](config/races.yaml), [forecast feeds](config/feeds.yaml), and [results-only sources](config/results/) for the current scope.
+
+A feed marked `ready` is configuration, not proof that live results are available. In particular, Alaska's configured general-election URL is still marked **unverified**. Feed checks run from the poller VM; blocked state portals are never bypassed.
+
+The page distinguishes these states:
+
+- **Waiting:** a configured source has no publishable votes yet. Counts seen before polls close are treated as test data.
+- **Not tracked:** no active source is configured and no valid results have been published.
+- **Results only:** observed votes without a forecast.
+- **Forecast:** probabilities and margin intervals appear only after real votes pass the release gate. Alaska's win probability is withheld while candidate-level ranked-choice simulation is unavailable.
+- **Stale or unreachable:** warnings identify old snapshots or failed fetches; a feed failure preserves its last good numbers and timestamp.
+
+## Run locally
+
+Requires **Python 3.12+** and **Node.js 20.19+** (CI uses Node 22).
+
+```sh
+git clone https://github.com/Torehan06/the-torehancast.git
+cd the-torehancast
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+npm ci --prefix web
+npm run dev --prefix web
+```
+
+Open the local URL printed by Vite. The development server uses bundled demonstration fixtures, so previewing the dashboard needs no cloud credentials, private priors, or archived results. These are demo numbers, not live election results.
+
+Validate draft configuration without fetching feeds:
+
+```sh
+python -m torehancast.config validate
+```
+
+Unset private priors and pending feeds are valid drafts; a successful config check does not certify readiness for live polling.
+
+## Architecture and documentation
+
+The Python poller fetches official feeds, normalizes results, runs the model, and publishes JSON. Forecast sources are polled on a 20-second cycle; dedicated results-only sources on a 60-second cycle. Results-only races sharing a forecast source reuse its faster download cycle, and failures are isolated by race.
+
+Firebase Hosting serves the dashboard; a public Google Cloud Storage bucket serves live JSON. The browser reads published estimates and never computes forecasts. Feed configuration and pre-election priors stay outside the public data and frontend build.
+
+| Path | Purpose |
+|---|---|
+| [`src/torehancast/`](src/torehancast/) | Adapters, model, poller, publisher, and replay harness |
+| [`web/`](web/) | React dashboard, fixtures, and browser tests |
+| [`config/`](config/) | Public race, feed, historical-election, and results-source metadata |
+| [`tests/`](tests/) | Model, adapter, publisher, privacy, and replay checks |
+| [Dashboard guide](web/README.md) | Fixture previews, build settings, and frontend development |
+| [Configuration guide](docs/config.md) | Feed settings, private priors, and results-only sources |
+| [Public JSON contract](docs/public-json.md) | Published shapes and privacy verification |
+| [Replay guide](docs/replay-e2e.md) | Georgia replay from archived native feeds |
+| [RCV notes](docs/rcv.md) | Candidate-level requirements and probability withholding |
+| [Map sources](docs/geo-sources.md) | District geometry and boundary provenance |
+| [Operations runbook](docs/runbook.md) | VM checks, polling, recovery, and deployment procedures |
+
+## Validation and replay
+
+```sh
+python -m pytest -q
+npm run lint --prefix web
+npm run build --prefix web
+npm test --prefix web
+```
+
+The full Python suite needs official historical archives under `data/archives/`, which are not committed. See [CI](.github/workflows/ci.yml) for the archive-independent test selection. Browser tests use installed Google Chrome locally; CI installs Chromium and sets `PLAYWRIGHT_CHANNEL=chromium`.
+
+With the Georgia archives available, replay the native feed into a fresh output directory:
+
+```sh
+python -m torehancast.replay.e2e --state GA --out out/ga-replay
+python scripts/check_public_json.py out/ga-replay --structure-only
+```
+
+This replay makes no network requests and uploads nothing. A structure-only check provides **no private-value privacy coverage**. Checking a live export requires the actual private priors:
+
+```sh
+python scripts/check_public_json.py out/live --mode live --priors config/priors.yaml
+```
+
+Live polling also needs historical baselines and privately configured priors; uploads require the optional `.[poller]` dependencies and cloud credentials. Follow the [runbook](docs/runbook.md) for operations.
 
 ---
 
@@ -14,7 +109,7 @@ Non-modeled Senate and House races show reported votes, vote percentages, and pe
 
 Every state adapter normalizes raw official feeds into a common `Snapshot` of `(unit_id, vote_type)` cells:
 
-- **Units:** Counties in 11 states, towns in Maine, and the 40 State House districts (`620L8` plan) in Alaska.
+- **Units:** Counties for active statewide forecasts, county parts for House districts, and the 40 State House districts (`620L8` plan) in Alaska. Historical support also includes Maine towns; Maine's live feed is dropped.
 - **Vote types:** `early`, `mail`, `election_day`, `provisional`, or `all` where a state does not report a vote-type breakdown.
   - States with explicit vote-type breakdowns in their feeds (Georgia Enhanced Voting JSON, North Carolina SBE precinct TSV, South Carolina Clarity `detail.xml`, Iowa Clarity `detail.xml`) populate per-mode cells directly.
   - Florida reports county totals alongside precinct counts; because Florida law requires counties to post pre-Election-Day (early and mail) totals before precincts report, `BatchTracker` infers the `early` vs. `election_day` split from successive snapshots.
@@ -56,13 +151,13 @@ Maine and Alaska use ranked-choice voting (RCV). When candidate-level first-choi
 - $P(\text{winner}) = P(\text{outright win}) + P(\text{win via RCV})$
 - $P(\text{no RCV needed})$: any candidate clears $50\%$ on first choices
 
-Before RCV transfer evidence is available, RCV probability fields remain `null` rather than forcing an uncalibrated point estimate.
+Overall win and via-RCV probabilities remain `null` until any required transfer evidence is available. Candidate-specific outright probabilities require valid first-choice draws.
 
 ### 6. Privacy and release gates
 
-- A modeled race with zero reported votes publishes only `status: "waiting"` (`modeled: true`), holding back all probability and margin fields until real votes arrive and pass the data-weight release gate.
-- Non-modeled Senate races use `ResultsOnlyUpdate` (`modeled: false`), publishing only observed candidate vote counts, vote shares, and official percent reporting — with **no forecast** and no probability fields.
-- `scripts/check_public_json.py` verifies that published JSON trees contain no private prior identifiers or copied scalar values from the private priors configuration.
+- A modeled race with zero reported votes publishes only `status: "waiting"` (`modeled: true`), holding back all probability and margin fields until real votes arrive and pass the configured release gate.
+- Results-only Senate and House races use `ResultsOnlyUpdate` (`modeled: false`), publishing only observed candidate vote counts, vote shares, and official percent reporting — with **no forecast** and no probability fields.
+- `scripts/check_public_json.py` checks published JSON shapes and scans for private prior identifiers and copied scalar values. Live checks fail closed without valid private priors; `--structure-only` is limited to structural replay validation. The scan cannot detect every transformed or encoded secret, or prove that private inputs cannot be inferred mathematically.
 
 ---
 
@@ -72,10 +167,10 @@ Before RCV transfer evidence is available, RCV probability fields remain `null` 
 2. **Batch inference hazards in county-total feeds:** In Florida (`BatchTracker`), if a large county posts an additional batch of mail ballots *after* its first Election Day precinct has already reported, the delta tracker books that late mail increment as Election Day votes. The replay suite explicitly models this `late_mail` hazard to verify coverage holds under it.
 3. **Unsplit (`all`-cell) feeds:** In states like Minnesota that report county totals without vote-type breakdowns, early reports from a county mix mail and Election Day precincts in unknown proportions. The model inflates partial-county measurement noise (`ALL_PARTIAL_SD · (1 − P) / P²`) and $\tau$ (`ALL_CELL_TAU_INFLATION = 1.25`), trading slower early convergence for protection against early-batch partisan lean.
 4. **Alaska's baseline is a primary, and its margin is a party bloc:** House districts are not counties, so the only earlier election with comparable units and candidates is the August top-4 primary, which has about a third of general-election turnout and a different electorate by vote type. The modelled margin is the Republican bloc against the Democratic bloc of first-choice votes (top-4 generals can carry two Republicans), not an RCV final round. The RCV layer reports P(outright) only once candidate-level draws exist; until then Alaska shows `awaiting_first_choices`. Most absentee ballots are counted after election night, so the election-night count stops well short of 100%.
-5. **Bot protection on official state sites:** Several state election portals (Texas, Kansas, Michigan, Maine) sit behind Cloudflare challenges or geo/IP blocks. By project policy, the poller identifies itself transparently (`torehancast/0.1`) and never spoofs browser headers or bypasses bot protection; states whose official feeds do not grant automated access by October 30 are dropped rather than scraped fragilely.
+5. **Bot protection on official state sites:** Several state election portals (Texas, Kansas, Michigan, Maine) sit behind Cloudflare challenges or geo/IP blocks. By project policy, the poller identifies itself transparently (`torehancast/0.1`) and never spoofs browser headers or bypasses bot protection; Texas, Kansas, Michigan, and Maine were dropped after the October 30 access cutoff.
 6. **Ohio's vote types are inferred:** Ohio's feed has county totals with no early or Election Day split, so, as in Florida, votes posted before a county's precincts report count as its early and absentee batch. Its replay tests that mechanism on an invented split, not on Ohio's real one, and the 2024 pre-Election-Day share (about 43%) is an estimate. Ohio's House forecasts were dropped because no baselines on the 2026 lines were ready, so those districts show vote totals only.
 7. **House districts are modelled on county parts with county demographics:** A county split between districts is its own unit in each district (`COUNTY|NN`), but the ACS covariates exist only per county, so every part of a split county carries its whole county's demographics even when the line divides a city from its suburbs (partisanship and size come from the part's own baseline). Districts with few units (Iowa's have 20–22 whole counties; some have 1–3) give the swing regression little to learn from, so their intervals lean on the prior and on $\tau$ for longer.
-8. **Iowa's House replays are a presidential proxy:** The analogous House pair (2022 → 2024 House, $\tau$ from 2020 → 2022) needs Iowa's 2022 Clarity file, which the state's site refuses to serve to the project's client (an AWS WAF challenge, Oct 26). Until it can be fetched from another machine, IA-1/2/3 replay 2020 → 2024 president on each district's own counties with Iowa's statewide $\tau$ pair. That tests the model on each district's geography but not House-specific swings (incumbency, candidate quality, split tickets). Live, the baseline is still the 2024 House result.
+8. **Iowa's House replays are a presidential proxy:** The analogous House pair (2022 → 2024 House, $\tau$ from 2020 → 2022) needs Iowa's 2022 Clarity file, which the state's site refuses to serve to the project's client (an AWS WAF challenge, Oct 26). IA-1/2/3 therefore replay 2020 → 2024 president on each district's own counties with Iowa's statewide $\tau$ pair. That tests the model on each district's geography but not House-specific swings (incumbency, candidate quality, split tickets). Live, the baseline is still the 2024 House result.
 9. **Florida's and Ohio's redrawn districts have vote totals only:** A forecast on new lines needs past results rebuilt on those lines. In Florida, counties redrew their precincts between elections, so the match between old precincts and the 2026 lines missed the 1% limit in most split counties (Orange County: 68% of the 2024 vote unmatched). The six Florida and six Ohio districts on the watch list were therefore dropped as forecasts rather than loosening the limit.
 10. **Nebraska's Senate race has no history like it:** Osborn is an independent, so the baseline treats him as the non-Republican side, on one prior race. The replay (2018 Democrat → 2024 Osborn) tests how the model handles a big statewide shift, not how Osborn's own 2024 coalition would move against a different opponent. Nebraska reports no vote types.
 11. **North Carolina's House baselines are rebuilt from precincts:** NC-1 was redrawn in 2025, so its baseline and replay are 2020 and 2024 president on the new lines, not House votes. 23 of its 25 counties are whole. Three precincts in Granville and Onslow straddle a line and are apportioned by share, about 1% of the vote, with the whole precinct's lean. NC-11's lines are unchanged since 2024 but changed in 2023, so its 2022 → 2024 House replay covers only the 13 counties whole in both years, 95% of the vote, while live it runs on all 16 parts.
