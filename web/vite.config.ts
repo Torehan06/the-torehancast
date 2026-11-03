@@ -4,6 +4,7 @@ import { resolve, sep } from 'node:path'
 import type { Connect } from 'vite'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { readCoverage } from './scripts/coverage'
 
 /**
  * Local preview only: serves web/fixtures/<FIXTURE>/ at /data/replay/, so
@@ -30,6 +31,15 @@ function serveFixtures(): Connect.NextHandleFunction {
 export default defineConfig({
   plugins: [
     react(),
+    {
+      name: 'torehancast-coverage',
+      resolveId: (id) => id === 'virtual:coverage' ? '\0virtual:coverage' : undefined,
+      load(id) {
+        if (id !== '\0virtual:coverage') return
+        const { trackedRaceIds, rankedChoiceRaceIds } = readCoverage()
+        return `export const trackedRaceIds = ${JSON.stringify(trackedRaceIds)}; export const rankedChoiceRaceIds = ${JSON.stringify(rankedChoiceRaceIds)};`
+      },
+    },
     {
       name: 'torehancast-fixtures',
       apply: 'serve',

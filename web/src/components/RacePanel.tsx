@@ -1,3 +1,4 @@
+import { isNotTracked, NOT_TRACKED, rcvUnavailable, RCV_UNAVAILABLE } from '../data/coverage'
 import type { LiveRace, PluralityRace, Race, RcvRace, RcvStatus } from '../data/contract'
 import {
   formatCount,
@@ -12,7 +13,7 @@ import {
   voteState,
 } from '../data/display'
 import type { ParsedSummary } from '../data/parse'
-import { SENATE_RACES_2026 } from '../data/states'
+import { SENATE_RACES_2026, senateRaceId } from '../data/states'
 
 interface Props {
   code: string
@@ -25,6 +26,7 @@ export function RacePanel({ code, summary, onClose }: Props) {
   if (!entry) return null
   return (
     <RaceCard
+      raceId={senateRaceId(code)}
       title={entry.state.name}
       subtitle={`U.S. Senate${entry.special ? ' special election' : ''}`}
       place={entry.state.name}
@@ -37,6 +39,7 @@ export function RacePanel({ code, summary, onClose }: Props) {
 }
 
 interface CardProps {
+  raceId: string
   title: string
   subtitle: string
   /** Named on the feed-time line: "Georgia feed time 21:29 ET". */
@@ -48,7 +51,7 @@ interface CardProps {
 }
 
 /** The F3 display rules, the same for a Senate race and a House district. */
-export function RaceCard({ title, subtitle, place, race, invalid, generatedAt, onClose }: CardProps) {
+export function RaceCard({ raceId, title, subtitle, place, race, invalid, generatedAt, onClose }: CardProps) {
   const votes = voteState(race)
   return (
     <section className="panel" aria-labelledby="panel-title" data-testid="race-panel">
@@ -64,6 +67,8 @@ export function RaceCard({ title, subtitle, place, race, invalid, generatedAt, o
 
       {invalid ? (
         <p className="panel__empty">Data for this race is unavailable right now.</p>
+      ) : isNotTracked(raceId, race) ? (
+        <p className="panel__empty" data-testid="not-tracked">{NOT_TRACKED}</p>
       ) : votes === 'none' || !race || race.status === 'waiting' ? (
         <p className="panel__empty" data-testid="no-votes">
           {NO_VOTES}
@@ -72,6 +77,9 @@ export function RaceCard({ title, subtitle, place, race, invalid, generatedAt, o
         <LiveBody race={race} />
       )}
 
+      {!invalid && rcvUnavailable(raceId, race) && (votes === 'none' || !race || race.status === 'waiting') && (
+        <p className="panel__note" data-testid="rcv-unavailable">{RCV_UNAVAILABLE}</p>
+      )}
       <Timestamps place={place} generatedAt={generatedAt} asOf={race?.as_of ?? null} />
     </section>
   )
@@ -194,7 +202,7 @@ function RcvProbabilities({ race }: { race: RcvRace }) {
         otherwise the ranked-choice count decides. “Wins overall” is the sum of the two.
       </p>
       <p className="panel__meta" data-testid="rcv-status">
-        {RCV_STATUS_TEXT[race.rcv_status]}
+        {rcvUnavailable(race.race, race) ? RCV_UNAVAILABLE : RCV_STATUS_TEXT[race.rcv_status]}
       </p>
       <table className="results">
         <thead>

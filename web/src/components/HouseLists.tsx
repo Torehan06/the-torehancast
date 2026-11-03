@@ -1,3 +1,4 @@
+import { isNotTracked } from '../data/coverage'
 import { memo, useState } from 'react'
 import { formatProbability, formatShare, leader, party, showsProbabilities } from '../data/display'
 import { DISTRICT_BY_KEY, DISTRICTS, type District } from '../data/districts'
@@ -22,7 +23,7 @@ function DistrictRow({ district, house, selected, onSelect }: { district: Distri
   // With a leader, the number gets its own column and the text names who and what.
   const detail = lead
     ? `${lead.name}, ${lead.basis === 'probability' ? 'chance to win' : 'share of the vote'}`
-    : statusLine(race, invalid)
+    : statusLine(race, invalid, district.raceId)
   const value = lead ? (lead.basis === 'probability' ? formatProbability(lead.value) : formatShare(lead.value)) : null
   return (
     <li>
@@ -34,7 +35,7 @@ function DistrictRow({ district, house, selected, onSelect }: { district: Distri
         aria-label={districtLabelText(district, race, invalid)}
         onClick={() => onSelect(district.key)}
       >
-        <span className={`swatch ${lead ? `lead-${party(lead.key)} strength-${lead.strength}` : 'swatch--none'}`} />
+        <span className={`swatch ${lead ? `lead-${party(lead.key)} strength-${lead.strength}` : isNotTracked(district.raceId, race) ? 'state--not-tracked' : 'swatch--none'}`} />
         <span className="race-item__name">{district.label}</span>
         <span className="race-item__detail">{detail}</span>
         {value && <span className={`race-item__value lead-${party(lead!.key)}`}>{value}</span>}

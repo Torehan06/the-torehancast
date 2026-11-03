@@ -1,7 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { fixture, houseFixture, serveHouse, serveSummary, withGeneratedAt } from './helpers'
 
-const NO_VOTES = 'no votes reported for this race'
 const T0 = new Date('2026-11-04T02:30:00Z')
 const iso = (offsetS: number) => new Date(T0.getTime() + offsetS * 1000).toISOString()
 const tiles = (page: Page) => page.locator('[data-district]')
@@ -72,24 +71,26 @@ test.describe('F5 House view', () => {
     expect(requests.count).toBeGreaterThan(0)
   })
 
-  test('a missing house.json is fine: every tile says no votes and no banner appears', async ({ page }) => {
+  test('a missing house.json preserves configured coverage and no banner appears', async ({ page }) => {
     await page.clock.install({ time: new Date(T0.getTime() + 10_000) })
     await serveSummary(page, () => ({ status: 200, body: fixture('demo') }))
     await serveHouse(page, () => ({ status: 404 }))
     await page.goto('/#house')
     await expect(tiles(page)).toHaveCount(435)
-    await expect(page.locator('.tile--waiting')).toHaveCount(435)
+    await expect(page.locator('.tile--waiting')).toHaveCount(94)
+    await expect(page.locator('.tile--not-tracked')).toHaveCount(341)
     await page.clock.fastForward('00:21') // a second 404 changes nothing
-    await expect(page.locator('.tile--waiting')).toHaveCount(435)
+    await expect(page.locator('.tile--waiting')).toHaveCount(94)
+    await expect(page.locator('.tile--not-tracked')).toHaveCount(341)
     for (const label of await tiles(page).evaluateAll((els) => els.map((e) => e.getAttribute('aria-label') ?? ''))) {
-      expect(label).toContain(NO_VOTES)
+      expect(label).toMatch(/no votes reported for this race|Not tracked/)
     }
     await expect(page.getByTestId('failing-banner')).toHaveCount(0)
     await expect(page.getByTestId('stale-banner')).toHaveCount(0)
     await expect(page.getByTestId('freshness')).toContainText(/Updated \d+s ago/)
 
     await page.locator('[data-district="PA-07"]').click()
-    await expect(page.getByTestId('no-votes')).toHaveText(NO_VOTES)
+    await expect(page.getByTestId('not-tracked')).toHaveText('Not tracked')
   })
 
   test('house.json appearing later fills the tiles without a reload', async ({ page }) => {
@@ -98,20 +99,21 @@ test.describe('F5 House view', () => {
     await serveSummary(page, () => ({ status: 200, body: withGeneratedAt(fixture('demo'), iso(0)) }))
     await serveHouse(page, () => (published ? { status: 200, body: withGeneratedAt(houseFixture(), iso(0)) } : { status: 404 }))
     await page.goto('/#house')
-    await expect(page.locator('.tile--waiting')).toHaveCount(435)
+    await expect(page.locator('.tile--waiting')).toHaveCount(94)
+    await expect(page.locator('.tile--not-tracked')).toHaveCount(341)
     published = true
     await page.clock.fastForward('00:21')
     await expect(page.locator('[data-district="NC-01"]')).toHaveClass(/lead-D/)
   })
 
-  test('tiles are coloured by leader and always carry the number; absent races stay hatched', async ({ page }) => {
+  test('tiles are coloured by leader and carry the number; untracked races are distinct', async ({ page }) => {
     await serveSummary(page, () => ({ status: 200, body: fixture('demo') }))
     await serveHouse(page, () => ({ status: 200, body: houseFixture() }))
     await page.goto('/#house')
     await expect(page.locator('[data-district="NC-01"]')).toHaveClass(/lead-D/)
     await expect(page.locator('[data-district="IA-01"]')).toHaveClass(/lead-R/)
     await expect(page.locator('[data-district="VT-AL"]')).toHaveClass(/lead-other/)
-    await expect(page.locator('[data-district="WY-AL"]')).toHaveClass(/tile--waiting/)
+    await expect(page.locator('[data-district="WY-AL"]')).toHaveClass(/tile--not-tracked/)
     await expect(page.locator('[data-district="TX-01"]')).toHaveClass(/tile--noleader/)
     const coloured = page.locator('[data-district][class*="lead-"]')
     for (const label of await coloured.evaluateAll((els) => els.map((e) => e.getAttribute('aria-label') ?? ''))) {
@@ -247,7 +249,8 @@ test.describe('F5 stale-data and failure warnings', () => {
     await serveSummary(page, () => ({ status: 200, body: withGeneratedAt(fixture('demo'), iso(0)) }))
     await serveHouse(page, () => ({ status: 404 }))
     await page.goto('/#house')
-    await expect(page.locator('.tile--waiting')).toHaveCount(435)
+    await expect(page.locator('.tile--waiting')).toHaveCount(94)
+    await expect(page.locator('.tile--not-tracked')).toHaveCount(341)
     await page.clock.fastForward('02:00')
     await expect(page.getByTestId('stale-banner')).toBeVisible()
   })

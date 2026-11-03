@@ -22,13 +22,16 @@ test.describe('F2 Senate map', () => {
     await expect(page.locator('svg.map path.state--race')).toHaveCount(35)
   });
 
-  test('every race is waiting: map still renders, every race says no votes', async ({ page }) => {
+  test('no counts yet: tracked races wait, no-feed races say Not tracked', async ({ page }) => {
     await serveSummary(page, () => ({ status: 200, body: fixture('cases/waiting') }))
     await page.goto('/')
-    await expect(page.locator('svg.map path.state--waiting')).toHaveCount(35)
-    const items = page.locator('.race-item__detail')
+    await expect(page.locator('svg.map path.state--waiting')).toHaveCount(9)
+    await expect(page.locator('svg.map path.state--not-tracked')).toHaveCount(26)
+    const items = page.locator('.race-item__name + .race-item__detail')
     await expect(items).toHaveCount(35)
-    for (const text of await items.allTextContents()) expect(text).toBe('no votes reported for this race')
+    const texts = await items.allTextContents()
+    expect(texts.filter((text) => text.trim().startsWith('no votes reported for this race'))).toHaveLength(9)
+    expect(texts.filter((text) => text === 'Not tracked')).toHaveLength(26)
   });
 
   test('no request leaves the page origin (data is same-origin in tests)', async ({ page, baseURL }) => {

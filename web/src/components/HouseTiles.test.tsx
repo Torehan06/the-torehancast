@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
+import { trackedRaceIds } from 'virtual:coverage'
+import { DISTRICTS } from '../data/districts'
 import { NO_VOTES } from '../data/display'
 import { parseHouse } from '../data/parse'
 import { HouseLists } from './HouseLists'
@@ -23,17 +25,19 @@ describe('HouseTiles', () => {
     }
   })
 
-  it('with no house.json, every tile shows the no-votes state', () => {
+  it('with no house.json, coverage distinguishes waiting from Not tracked', () => {
     const { container } = render(<HouseTiles house={null} selected={null} onSelect={() => {}} />)
     for (const el of tiles(container)) {
-      expect(el).toHaveClass('tile--waiting')
-      expect(el.getAttribute('aria-label')).toContain(NO_VOTES)
+      const district = DISTRICTS.find((d) => d.key === el.getAttribute('data-district'))!
+      const tracked = trackedRaceIds.includes(district.raceId)
+      expect(el).toHaveClass(tracked ? 'tile--waiting' : 'tile--not-tracked')
+      expect(el.getAttribute('aria-label')).toContain(tracked ? NO_VOTES : 'Not tracked')
     }
   })
 
-  it('a race absent from house.json shows the no-votes state beside coloured ones', () => {
+  it('an untracked race absent from house.json is distinct beside coloured ones', () => {
     const { container } = render(<HouseTiles house={house} selected={null} onSelect={() => {}} />)
-    expect(tile(container, 'WY-AL')).toHaveClass('tile--waiting')
+    expect(tile(container, 'WY-AL')).toHaveClass('tile--not-tracked')
     expect(tile(container, 'NC-01')).toHaveClass('lead-D')
   })
 
@@ -101,7 +105,7 @@ describe('HouseLists', () => {
     expect(rows).toHaveLength(17)
     expect(rows[0]).toHaveTextContent('IL-1')
     expect(rows[0]).toHaveTextContent('65.5%')
-    expect(rows[16]).toHaveTextContent(NO_VOTES)
+    expect(rows[16]).toHaveTextContent('Not tracked')
     fireEvent.click(rows[0])
     expect(onSelect).toHaveBeenCalledWith('IL-01')
   })

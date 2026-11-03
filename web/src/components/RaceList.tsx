@@ -1,6 +1,7 @@
+import { isNotTracked } from '../data/coverage'
 import type { ParsedSummary } from '../data/parse'
 import { formatProbability, formatShare, leader, party } from '../data/display'
-import { SENATE_RACES_2026, SWING_SEATS } from '../data/states'
+import { SENATE_RACES_2026, SWING_SEATS, senateRaceId } from '../data/states'
 import { raceLabel, raceStatus } from './raceLabel'
 
 interface Props {
@@ -36,7 +37,7 @@ export function RaceList({ summary, selected, onSelect }: Props) {
               aria-label={label}
               onClick={() => onSelect(state.code)}
             >
-              <span className={`swatch ${lead ? `lead-${party(lead.key)} strength-${lead.strength}` : 'swatch--none'}`} />
+              <span className={`swatch ${lead ? `lead-${party(lead.key)} strength-${lead.strength}` : isNotTracked(senateRaceId(state.code), race) ? 'state--not-tracked' : 'swatch--none'}`} />
               <span className="race-item__name">
                 {state.name}
                 {special && <span className="tag">special</span>}

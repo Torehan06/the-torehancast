@@ -30,6 +30,10 @@ export function Legend({ chamber = 'senate' }: { chamber?: 'senate' | 'house' })
           <span className="swatch state--waiting" aria-hidden="true" />
           No votes yet
         </li>
+        <li>
+          <span className="swatch state--not-tracked" aria-hidden="true" />
+          Not tracked
+        </li>
         {chamber === 'senate' && (
           <li>
             <span className="swatch state--neutral" aria-hidden="true" />

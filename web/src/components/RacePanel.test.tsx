@@ -6,9 +6,10 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import { trackedRaceIds } from 'virtual:coverage'
 import { NO_VOTES } from '../data/display'
 import { parseSummary } from '../data/parse'
-import { SENATE_RACES_2026 } from '../data/states'
+import { SENATE_RACES_2026, senateRaceId } from '../data/states'
 import { RacePanel } from './RacePanel'
 
 function load(name: string) {
@@ -24,11 +25,12 @@ function panel(name: string, code: string) {
 const PROBABILITY_WORDS = /chance|probab|win/i
 
 describe('RacePanel fixture cases', () => {
-  it('waiting: every Senate race shows exactly the no-votes text and a timestamp', () => {
+  it('waiting: configured races say no votes, other races say Not tracked, with a timestamp', () => {
     const summary = load('waiting')
     for (const { state } of SENATE_RACES_2026) {
       const { unmount } = render(<RacePanel code={state.code} summary={summary} onClose={() => {}} />)
-      expect(screen.getByTestId('no-votes')).toHaveTextContent(new RegExp(`^${NO_VOTES}$`))
+      const tracked = trackedRaceIds.includes(senateRaceId(state.code))
+      expect(screen.getByTestId(tracked ? 'no-votes' : 'not-tracked')).toHaveTextContent(tracked ? new RegExp(`^${NO_VOTES}$`) : /^Not tracked$/)
       expect(screen.queryByTestId('probabilities')).toBeNull()
       expect(screen.getByTestId('snapshot-time')).toBeInTheDocument()
       unmount()
@@ -87,9 +89,9 @@ describe('RacePanel fixture cases', () => {
     expect(within(el).getByTestId('probabilities').textContent).not.toContain('100%')
   })
 
-  it('a race absent from the JSON shows the no-votes text', () => {
+  it('an untracked race absent from the JSON says Not tracked', () => {
     const el = panel('final', 'TX')
-    expect(within(el).getByTestId('no-votes')).toHaveTextContent(NO_VOTES)
+    expect(within(el).getByTestId('not-tracked')).toHaveTextContent('Not tracked')
   })
 
   it('pre-M3 replay output (no modeled flag) shows no probability', () => {
